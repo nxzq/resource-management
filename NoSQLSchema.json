@@ -1,0 +1,65 @@
+{
+    "FirstName": "data",
+    "LastName": "data",
+    "Role": "data",
+    "Email": "data",
+    "Phone": "data",
+    "LinkedIn": "data",
+    "GitHub": "data",
+    "PersonalSite": "data",
+    "SummaryText": "data",
+    "Education": [
+        {
+            "School": "Mmathers Uni",
+            "Location": "Moline",
+            "GradDate": "May 2019",
+            "Degree": "Master",
+            "Major": ["CS", "math"],
+            "Minor": ["dance", "music"],
+            "GPA": "4.0"
+        },
+        {}
+    ],
+    "Experience": [
+        {
+            "JobTitle": "data",
+            "JobOrg": "data",
+            "JobStartDate": "data",
+            "JobEndDate": "data",
+            "JobInfo1": "data",
+            "JobInfo2": "data",
+            "JobInfo3": "data"
+        },
+        {}
+    ],
+    "Project": [
+        {
+            "ProjName": "data",
+            "ProjDate": "data",
+            "ProjAssociation": "data",
+            "ProjInfo1": "data",
+            "ProjInfo2": "data",
+            "ProjInfo3": "data"
+        },
+        {}
+    ],
+    "Certification": [
+        {
+            "CertName": "data",
+            "CertDate": "data",
+            "CertAssociation": "data"
+        },
+        {}
+    ],
+    "Skill": [
+        {
+            "Languages": ["data", "data"],
+            "Frameworks": ["data", "data"],
+            "WebTechnologies": ["data", "data"],
+            "DatabaseTech": ["data", "data"],
+            "Cloud": ["data", "data"],
+            "DevOps": ["data", "data"]
+        },
+        {}
+    ]
+}
