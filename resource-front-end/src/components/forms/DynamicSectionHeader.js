@@ -1,12 +1,15 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-const DynamicSectionHeader = ({ name }) => {
+const DynamicSectionHeader = ({ name, count, addForm}) => {
+    const AddFormButton = (count) => {
+        while (count < 3) return <Button onClick={addForm} style={{}}><b>+</b> Add New {name}</Button>
+    }
     return (
         <div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <h3>{name}</h3>
-                <Button style={{}}><i className="fas fa-plus-circle"></i>+ Add New {name}</Button>
+                {AddFormButton(count)}
             </div>
             <hr />
         </div>

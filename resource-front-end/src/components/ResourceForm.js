@@ -12,11 +12,22 @@ import DynamicSectionHeader from './forms/DynamicSectionHeader';
 
 class ResourceForm extends Component {
     state = {
-        skills: ['React.js', 'Python']
+        skills: ['React.js', 'Python'],
+        EducationForms: [],
+        EducationFormsCount: [],
+        CertificationForms: [],
+        ExperienceForms: [],
+        ProjectForms: []
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
+    }
+
+    handleAddSkill = (skill) => {
+        this.setState({
+            skills: [...this.state.skills, skill]
+        })
     }
 
     handleRemoveSkill = (skill) => {
@@ -26,9 +37,67 @@ class ResourceForm extends Component {
         })
     }
 
-    handleAddSkill = (skill) => {
+    handleAddEducation = () => {
+        let index = this.state.EducationForms.length
         this.setState({
-            skills: [...this.state.skills, skill]
+            EducationForms: [...this.state.EducationForms, <EducationForm key={index} index={index} removeEducation={this.handleRemoveEducation} />]
+        })
+    }
+
+    handleRemoveEducation = (index) => {
+        let form = []
+        if (this.state.EducationForms.length === 1) form = []
+        else form = [...this.state.EducationForms.slice(0, index), ...this.state.EducationForms.slice(index + 1)]
+        this.setState({
+            EducationForms: form
+        })
+    }
+
+    handleAddCertification = () => {
+        let index = this.state.CertificationForms.length
+        this.setState({
+            CertificationForms: [...this.state.CertificationForms, <CertificationForm key={index} index={index} removeCertification={this.handleRemoveCertification} />]
+        })
+    }
+
+    handleRemoveCertification = (index) => {
+        let form = []
+        if (this.state.CertificationForms.length === 1) form = []
+        else form = [...this.state.CertificationForms.slice(0, index), ...this.state.CertificationForms.slice(index + 1)]
+        this.setState({
+            CertificationForms: form
+        })
+    }
+
+    handleAddExperience = () => {
+        let index = this.state.ExperienceForms.length
+        this.setState({
+            ExperienceForms: [...this.state.ExperienceForms, <ExperienceForm key={index} index={index} removeExperience={this.handleRemoveExperience} />]
+        })
+    }
+
+    handleRemoveExperience = (index) => {
+        let form = []
+        if (this.state.ExperienceForms.length === 1) form = []
+        else form = [...this.state.ExperienceForms.slice(0, index), ...this.state.ExperienceForms.slice(index + 1)]
+        this.setState({
+            ExperienceForms: form
+        })
+    }
+
+    handleAddProject = () => {
+        let index = this.state.ProjectForms.length
+        this.setState({
+            ProjectForms: [...this.state.ProjectForms, <ProjectForm key={index} index={index} removeProject={this.handleRemoveProject} />]
+        })
+    }
+
+    handleRemoveProject = (index) => {
+        let form = []
+        if (this.state.ProjectForms.length === 1) form = []
+        else form = [...this.state.ProjectForms.slice(0, index), ...this.state.ProjectForms.slice(index + 1)]
+        this.setState({
+            ProjectForms: form
         })
     }
 
@@ -42,21 +111,21 @@ class ResourceForm extends Component {
                     <AboutForm />
                     <SectionHeader name="Summary" />
                     <SummaryForm />
-                    <DynamicSectionHeader name="Education" />
-                    <EducationForm />
-                    <DynamicSectionHeader name="Certifications" />
-                    <CertificationForm />
-                    <DynamicSectionHeader name="Experience" />
-                    <ExperienceForm />
-                    <DynamicSectionHeader name="Projects" />
-                    <ProjectForm />
+                    <DynamicSectionHeader name="Education" count={this.state.EducationForms.length} addForm={this.handleAddEducation} />
+                    {this.state.EducationForms}
+                    <DynamicSectionHeader name="Certifications" count={this.state.CertificationForms.length} addForm={this.handleAddCertification} />
+                    {this.state.CertificationForms}
+                    <DynamicSectionHeader name="Experience" count={this.state.ExperienceForms.length} addForm={this.handleAddExperience} />
+                    {this.state.ExperienceForms}
+                    <DynamicSectionHeader name="Projects" count={this.state.ProjectForms.length} addForm={this.handleAddProject} />
+                    {this.state.ProjectForms}
                     <SectionHeader name="Skills" />
                     <SkillForm skills={this.state.skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
-                        <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
+                    <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
                 </Form>
             </Container>
-                );
-            }
-        }
-        
+        );
+    }
+}
+
 export default ResourceForm;

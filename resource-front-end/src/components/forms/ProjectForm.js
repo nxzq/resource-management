@@ -1,41 +1,36 @@
 import React from 'react';
-import { Label, Input, FormGroup, Row } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const ProjectForm = () => {
+const ProjectForm = ({index, removeProject}) => {
     return (
         <div>
             <Row>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="firstName">First Name</Label>
-                    <Input type="text" name="firstName" id="firstName" placeholder="First Name" />
+                    <Label for="projName">Name</Label>
+                    <Input type="text" name="projName" id="projName" placeholder="Project Name" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="lastName">Last Name</Label>
-                    <Input type="text" name="lastName" id="LastName" placeholder="Last Name" />
+                    <Label for="projDate">Date</Label>
+                    <Input type="text" name="projDate" id="projDate" placeholder="Project Date" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="role">Role</Label>
-                    <Input type="text" name="role" id="role" placeholder="Title/Role" />
+                    <Label for="projAssociation">Association</Label>
+                    <Input type="text" name="projAssociation" id="projAssociation" placeholder="Project Association" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="Email Address" />
+                    <Label for="projDetails1">Details</Label>
+                    <Input type="textarea" name="projDetails1" id="projDetails1" placeholder="Project Details" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="phone">Phone</Label>
-                    <Input type="text" name="phone" id="phone" placeholder="Phone Number" />
+                    <Label for="projDetails2">Details</Label>
+                    <Input type="textarea" name="projDetails2" id="projDetails2" placeholder="Project Details" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="linkedIn">LinkedIn</Label>
-                    <Input type="text" name="linkedIn" id="linkedIn" placeholder="linkedin.com/in/yourlink" />
+                    <Label for="projDetails3">Details</Label>
+                    <Input type="textarea" name="projDetails3" id="projDetails3" placeholder="Project Details" />
                 </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="github">GitHub</Label>
-                    <Input type="text" name="github" id="github" placeholder="github.com/youraccount" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="personalSite">Personal Website</Label>
-                    <Input type="text" name="personalSite" id="personalSite" placeholder="www.yoursiteurl.com" />
+                <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <Button onClick={() => {removeProject(index)}} style={{}} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />

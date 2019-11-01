@@ -1,8 +1,8 @@
 import React from 'react';
-import { Label, Input, FormGroup, Row } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
 
-const EducationForm = () => {
+const EducationForm = ({index, removeEducation}) => {
     return (
         <div>
             <Row>
@@ -17,6 +17,7 @@ const EducationForm = () => {
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="degree">Degree</Label>
                     <Input type="select" name="degree" id="degree" placeholder="Degree Obtained">
+                        <option value='' selected disabled>Please Select</option>
                         <option>Associate</option>
                         <option>Bacholor</option>
                         <option>Master</option>
@@ -30,6 +31,9 @@ const EducationForm = () => {
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="gradDate">Graduation Date</Label>
                     <Input type="text" name="gradDate" id="gradDate" placeholder="Graduation Date" />
+                </FormGroup>
+                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                    <Button onClick={() => {removeEducation(index)}} style={{position: 'absolute', bottom: 0, right: 0}} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />

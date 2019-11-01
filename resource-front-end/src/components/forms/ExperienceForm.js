@@ -1,41 +1,46 @@
 import React from 'react';
-import { Label, Input, FormGroup, Row } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const ExperienceForm = () => {
+const ExperienceForm = ({index, removeExperience}) => {
     return (
         <div>
             <Row>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="firstName">First Name</Label>
-                    <Input type="text" name="firstName" id="firstName" placeholder="First Name" />
+                    <Label for="expTitle">Title</Label>
+                    <Input type="text" name="expName" id="expName" placeholder="Title/Role" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="lastName">Last Name</Label>
-                    <Input type="text" name="lastName" id="LastName" placeholder="Last Name" />
+                    <Label for="expAssociation">Association</Label>
+                    <Input type="text" name="expAssociation" id="expAssociation" placeholder="Experience Association" />
+                </FormGroup>
+                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                    <Label for="exStartpDate">Start Date</Label>
+                    <Input type="text" name="exStartpDate" id="exStartpDate" placeholder="Start Date" />
+                </FormGroup>
+                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                    <Label for="expEndDate">End Date</Label>
+                    <Input type="text" name="expEndDate" id="expEndDate" placeholder="End Date" />
+                </FormGroup>
+                <FormGroup check className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                    <Label check >
+                    <Input type="checkbox" />{' '}
+                        Current Position
+                    </Label>
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="role">Role</Label>
-                    <Input type="text" name="role" id="role" placeholder="Title/Role" />
+                    <Label for="expDetails1">Details</Label>
+                    <Input type="textarea" name="expDetails1" id="expDetails1" placeholder="Experience Details" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="Email Address" />
+                    <Label for="expDetails2">Details</Label>
+                    <Input type="textarea" name="expDetails2" id="expDetails2" placeholder="Experience Details" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="phone">Phone</Label>
-                    <Input type="text" name="phone" id="phone" placeholder="Phone Number" />
+                    <Label for="expDetails3">Details</Label>
+                    <Input type="textarea" name="expDetails3" id="expDetails3" placeholder="Experience Details" />
                 </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="linkedIn">LinkedIn</Label>
-                    <Input type="text" name="linkedIn" id="linkedIn" placeholder="linkedin.com/in/yourlink" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="github">GitHub</Label>
-                    <Input type="text" name="github" id="github" placeholder="github.com/youraccount" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="personalSite">Personal Website</Label>
-                    <Input type="text" name="personalSite" id="personalSite" placeholder="www.yoursiteurl.com" />
+                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                    <Button onClick={() => {removeExperience(index)}} style={{}} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />

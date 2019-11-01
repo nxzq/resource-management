@@ -1,41 +1,24 @@
 import React from 'react';
-import { Label, Input, FormGroup, Row } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const CertificationForm = () => {
+const CertificationForm = ({index, removeCertification}) => {
     return (
         <div>
             <Row>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="firstName">First Name</Label>
-                    <Input type="text" name="firstName" id="firstName" placeholder="First Name" />
+            <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <Label for="certName">Name</Label>
+                    <Input type="text" name="certName" id="certName" placeholder="Certification Name" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="lastName">Last Name</Label>
-                    <Input type="text" name="lastName" id="LastName" placeholder="Last Name" />
+                    <Label for="certDate">Date</Label>
+                    <Input type="text" name="certDate" id="certDate" placeholder="Date Completed" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="role">Role</Label>
-                    <Input type="text" name="role" id="role" placeholder="Title/Role" />
+                    <Label for="certAssociation">Association</Label>
+                    <Input type="text" name="certAssociation" id="certAssociation" placeholder="Certification Association" />
                 </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="Email Address" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="phone">Phone</Label>
-                    <Input type="text" name="phone" id="phone" placeholder="Phone Number" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="linkedIn">LinkedIn</Label>
-                    <Input type="text" name="linkedIn" id="linkedIn" placeholder="linkedin.com/in/yourlink" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="github">GitHub</Label>
-                    <Input type="text" name="github" id="github" placeholder="github.com/youraccount" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="personalSite">Personal Website</Label>
-                    <Input type="text" name="personalSite" id="personalSite" placeholder="www.yoursiteurl.com" />
+                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                    <Button onClick={() => {removeCertification(index)}} style={{position: 'absolute', bottom: 0, right: 0}} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />
@@ -43,4 +26,4 @@ const CertificationForm = () => {
     )
 }
 
-export default CertificationForm
+export default CertificationForm;
