@@ -1,12 +1,15 @@
 import React from 'react';
-import Header from './components/Header';
-import Form from './components/Form';
+import Header from './components/Header'
+import ResourceForm from './components/ResourceForm'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Form />
+      <ResourceForm />
+      <br />
+      <Footer />
     </div>
   );
 }

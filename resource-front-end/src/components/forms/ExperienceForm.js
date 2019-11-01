@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row } from 'reactstrap';
 
-const ProjectForm = () => {
+const ExperienceForm = () => {
     return (
         <div>
             <Row>
@@ -43,4 +43,4 @@ const ProjectForm = () => {
     )
 }
 
-export default ProjectForm
+export default ExperienceForm
