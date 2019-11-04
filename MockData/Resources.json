@@ -1,0 +1,200 @@
+[
+    {
+        "FirstName": "John",
+        "LastName": "Anderson",
+        "Role": "Sr. Technical Lead",
+        "Email": "john.anderson@yash.com",
+        "Phone": "1234567890",
+        "LinkedIn": "",
+        "GitHub": "",
+        "PersonalSite": "",
+        "SummaryText": "Sr. Technical Lead at Yash Technologies",
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2018",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [
+                    "art"
+                ],
+                "GPA": "3.5"
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2018",
+                "JobEndDate": "",
+                "JobInfo1": "Graduate Training progam",
+                "JobInfo2": "some project",
+                "JobInfo3": "Cat-o-pilar"
+            },
+            {
+                "JobTitle": "Intern",
+                "JobOrg": "not Yash",
+                "JobStartDate": "May 2017",
+                "JobEndDate": "Aug 2017",
+                "JobInfo1": "stuff i did",
+                "JobInfo2": "other stuff",
+                "JobInfo3": "even more suff"
+            }
+        ],
+        "Project": [
+            {
+                "ProjName": "personal project",
+                "ProjDate": "2019",
+                "ProjAssociation": "personal",
+                "ProjInfo1": "data",
+                "ProjInfo2": "data",
+                "ProjInfo3": "data"
+            },
+            {
+                "ProjName": "school project",
+                "ProjDate": "2017",
+                "ProjAssociation": "Univeristy of Illinois",
+                "ProjInfo1": "data",
+                "ProjInfo2": "data",
+                "ProjInfo3": "data"
+            }
+        ],
+        "Certification": [
+            {
+                "CertName": "AWS Associate Developer",
+                "CertDate": "2019",
+                "CertAssociation": "Amazon Web Services"
+            }
+        ],
+        "Skill": [
+            {
+                "Languages": [
+                    "JavaScript",
+                    "Python"
+                ],
+                "Frameworks": [
+                    "Angular.JS",
+                    ".NET Framework"
+                ],
+                "WebTechnologies": [
+                    "HTML",
+                    "CSS"
+                ],
+                "DatabaseTech": [
+                    "MySQL",
+                    "PostgreSQL"
+                ],
+                "Cloud": [
+                    "Microsoft Azure"
+                ],
+                "DevOps": [
+                    "Jenkins",
+                    "data"
+                ]
+            }
+        ]
+    },
+    {
+        "FirstName": "fname",
+        "LastName": "lname",
+        "Role": "Jr. Software Developer",
+        "Email": "fname.lname@email.com",
+        "Phone": "1234567890",
+        "LinkedIn": "linkedin.com",
+        "GitHub": "github.com",
+        "PersonalSite": "google.com",
+        "SummaryText": "this is my summary",
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2018",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [
+                    "art"
+                ],
+                "GPA": "3.5"
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2018",
+                "JobEndDate": "",
+                "JobInfo1": "Graduate Training progam",
+                "JobInfo2": "some project",
+                "JobInfo3": "Cat-o-pilar"
+            },
+            {
+                "JobTitle": "Intern",
+                "JobOrg": "not Yash",
+                "JobStartDate": "May 2017",
+                "JobEndDate": "Aug 2017",
+                "JobInfo1": "stuff i did",
+                "JobInfo2": "other stuff",
+                "JobInfo3": "even more suff"
+            }
+        ],
+        "Project": [
+            {
+                "ProjName": "personal project",
+                "ProjDate": "2019",
+                "ProjAssociation": "personal",
+                "ProjInfo1": "data",
+                "ProjInfo2": "data",
+                "ProjInfo3": "data"
+            },
+            {
+                "ProjName": "school project",
+                "ProjDate": "2017",
+                "ProjAssociation": "Univeristy of Illinois",
+                "ProjInfo1": "data",
+                "ProjInfo2": "data",
+                "ProjInfo3": "data"
+            }
+        ],
+        "Certification": [
+            {
+                "CertName": "AWS Associate Developer",
+                "CertDate": "2019",
+                "CertAssociation": "Amazon Web Services"
+            }
+        ],
+        "Skill": [
+            {
+                "Languages": [
+                    "JavaScript",
+                    "Python"
+                ],
+                "Frameworks": [
+                    "Angular.JS",
+                    ".NET Framework"
+                ],
+                "WebTechnologies": [
+                    "HTML",
+                    "CSS"
+                ],
+                "DatabaseTech": [
+                    "MySQL",
+                    "PostgreSQL"
+                ],
+                "Cloud": [
+                    "Microsoft Azure"
+                ],
+                "DevOps": [
+                    "Jenkins",
+                    "data"
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "Language": [
+            "JavaScript",
+            "Python",
+            "Java",
+            "C++",
+            "Swift",
+            "TypeScript",
+            "Go",
+            "SQL",
+            "Ruby",
+            "R",
+            "PHP",
+            "Perl",
+            "C#",
+            "Kotlin",
+            "Rust",
+            "Scheme",
+            "Erlang",
+            "Scala",
+            "Elixir",
+            "Haskell",
+            "Visual Basic"
+        ]
+    },
+    {
+        "WebDevelopment": [
+            "HTML",
+            "CSS",
+            "React.js",
+            "Angular.js",
+            "Vue.js",
+            "Node.js",
+            "Express.js",
+            "Sass",
+            "jQuery",
+            "Bootstrap",
+            "ASP.NET"
+        ]
+    },
+    {
+        "Framework": [
+            ".NET Framework",
+            ".NET Core"
+        ]
+    },
+    {
+        "Library": []
+    },
+    {
+        "Technology": ["GitHub", "Git"]
+    },
+    {
+        "Software": []
+    },
+    {
+        "Other": []
+    }
+]
