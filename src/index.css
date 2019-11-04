@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
-i {
-  font-family: FontAwesome !important;
+i{
+  font-family: "FontAwesome" !important;
+  font-style: normal;
+  margin-left: 5px;
 }

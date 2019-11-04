@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Form, Button } from 'reactstrap';
+import Header from '../components/Header';
 import AboutForm from '../components/forms/AboutForm';
 import SummaryForm from '../components/forms/SummaryForm';
 import EducationForm from '../components/forms/EducationForm';
@@ -14,7 +15,7 @@ class ResourceForm extends Component {
     state = {
         skills: ['React.js', 'Python'],
         EducationForms: [],
-        EducationFormsCount: [],
+        EducationFormsCount: 0,
         CertificationForms: [],
         ExperienceForms: [],
         ProjectForms: []
@@ -104,8 +105,7 @@ class ResourceForm extends Component {
     render() {
         return (
             <Container className="ResourceForm">
-                <h1 style={{ textAlign: 'center' }}>Resource Skills Form</h1>
-                <hr />
+                <Header name={'Resource Skills Form'} />
                 <Form onSubmit={this.handleSubmit}>
                     <SectionHeader name="About" />
                     <AboutForm />
