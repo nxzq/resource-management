@@ -16,7 +16,6 @@ class ResourceForm extends Component {
     state = {
         skills: ['React.js', 'Python'],
         EducationForms: [],
-        EducationFormsCount: 0,
         CertificationForms: [],
         ExperienceForms: [],
         ProjectForms: []
@@ -48,7 +47,10 @@ class ResourceForm extends Component {
 
     handleRemoveEducation = (index) => {
         let form = []
-        if (this.state.EducationForms.length === 1) form = []
+        if (this.state.EducationForms.length === 1 || this.state.EducationForms.length === index) {
+            form = [...this.state.EducationForms]
+            form.pop()
+        }
         else form = [...this.state.EducationForms.slice(0, index), ...this.state.EducationForms.slice(index + 1)]
         this.setState({
             EducationForms: form
@@ -64,7 +66,10 @@ class ResourceForm extends Component {
 
     handleRemoveCertification = (index) => {
         let form = []
-        if (this.state.CertificationForms.length === 1) form = []
+        if (this.state.CertificationForms.length === 1 || this.state.CertificationForms.length === index) {
+            form = [...this.state.EducationForms]
+            form.pop()
+        }
         else form = [...this.state.CertificationForms.slice(0, index), ...this.state.CertificationForms.slice(index + 1)]
         this.setState({
             CertificationForms: form
@@ -80,7 +85,10 @@ class ResourceForm extends Component {
 
     handleRemoveExperience = (index) => {
         let form = []
-        if (this.state.ExperienceForms.length === 1) form = []
+        if (this.state.ExperienceForms.length === 1 || this.state.ExperienceForms.length === index) {
+            form = [...this.state.EducationForms]
+            form.pop()
+        }
         else form = [...this.state.ExperienceForms.slice(0, index), ...this.state.ExperienceForms.slice(index + 1)]
         this.setState({
             ExperienceForms: form
@@ -96,7 +104,10 @@ class ResourceForm extends Component {
 
     handleRemoveProject = (index) => {
         let form = []
-        if (this.state.ProjectForms.length === 1) form = []
+        if (this.state.ProjectForms.length === 1 || this.state.ProjectForms.length === index) {
+            form = [...this.state.EducationForms]
+            form.pop()
+        }
         else form = [...this.state.ProjectForms.slice(0, index), ...this.state.ProjectForms.slice(index + 1)]
         this.setState({
             ProjectForms: form
@@ -105,26 +116,28 @@ class ResourceForm extends Component {
 
     render() {
         return (
-            <Container className="ResourceForm">
+            <div>
                 <Header name={'Resource Skills Form'} />
-                <Form onSubmit={this.handleSubmit}>
-                    <SectionHeader name="About" />
-                    <AboutForm />
-                    <SectionHeader name="Summary" />
-                    <SummaryForm />
-                    <DynamicSectionHeader name="Education" count={this.state.EducationForms.length} addForm={this.handleAddEducation} />
-                    {this.state.EducationForms}
-                    <DynamicSectionHeader name="Certifications" count={this.state.CertificationForms.length} addForm={this.handleAddCertification} />
-                    {this.state.CertificationForms}
-                    <DynamicSectionHeader name="Experience" count={this.state.ExperienceForms.length} addForm={this.handleAddExperience} />
-                    {this.state.ExperienceForms}
-                    <DynamicSectionHeader name="Projects" count={this.state.ProjectForms.length} addForm={this.handleAddProject} />
-                    {this.state.ProjectForms}
-                    <SectionHeader name="Skills" />
-                    <SkillForm skills={this.state.skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
-                    <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
-                </Form>
-            </Container>
+                <Container className="ResourceForm">
+                    <Form onSubmit={this.handleSubmit}>
+                        <SectionHeader name="About" />
+                        <AboutForm />
+                        <SectionHeader name="Summary" />
+                        <SummaryForm />
+                        <DynamicSectionHeader name="Education" count={this.state.EducationForms.length} addForm={this.handleAddEducation} />
+                        {this.state.EducationForms}
+                        <DynamicSectionHeader name="Certifications" count={this.state.CertificationForms.length} addForm={this.handleAddCertification} />
+                        {this.state.CertificationForms}
+                        <DynamicSectionHeader name="Experience" count={this.state.ExperienceForms.length} addForm={this.handleAddExperience} />
+                        {this.state.ExperienceForms}
+                        <DynamicSectionHeader name="Projects" count={this.state.ProjectForms.length} addForm={this.handleAddProject} />
+                        {this.state.ProjectForms}
+                        <SectionHeader name="Skills" />
+                        <SkillForm skills={this.state.skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
+                        <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
+                    </Form>
+                </Container>
+            </div>
         );
     }
 }

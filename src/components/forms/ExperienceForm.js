@@ -22,7 +22,7 @@ const ExperienceForm = ({index, removeExperience}) => {
                     <Input type="text" name="expEndDate" id="expEndDate" placeholder="End Date" />
                 </FormGroup>
                 <FormGroup check className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
-                    <Label check >
+                    <Label style={{ marginTop: '35px' }} check >
                     <Input type="checkbox" />{' '}
                         Current Position
                     </Label>
@@ -39,8 +39,8 @@ const ExperienceForm = ({index, removeExperience}) => {
                     <Label for="expDetails3">Details</Label>
                     <Input type="textarea" name="expDetails3" id="expDetails3" placeholder="Experience Details" />
                 </FormGroup>
-                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                    <Button onClick={() => {removeExperience(index)}} style={{}} color="danger">Remove Education</Button>
+                <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                    <Button onClick={() => {removeExperience(index)}} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />

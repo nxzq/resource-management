@@ -19,7 +19,7 @@ const Resources = () => {
               </input>
             </div>
           </div>
-          <Button id="addResource" type="button" className="btn btn-primary"><i className="fas fa-plus"></i>&nbsp;&nbsp;>Add
+          <Button id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>&nbsp;&nbsp;Add
           Resource</Button>
         </Row>
         <Row>

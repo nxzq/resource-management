@@ -32,8 +32,8 @@ const EducationForm = ({index, removeEducation}) => {
                     <Label for="gradDate">Graduation Date</Label>
                     <Input type="text" name="gradDate" id="gradDate" placeholder="Graduation Date" />
                 </FormGroup>
-                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                    <Button onClick={() => {removeEducation(index)}} style={{position: 'absolute', bottom: 0, right: 0}} color="danger">Remove Education</Button>
+                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                    <Button onClick={() => {removeEducation(index)}} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />

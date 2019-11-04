@@ -5,15 +5,15 @@
         "Role": "Sr. Technical Lead",
         "Email": "john.anderson@yash.com",
         "Phone": "1234567890",
-        "LinkedIn": "",
-        "GitHub": "",
-        "PersonalSite": "",
+        "LinkedIn": "https://www.linkedin.com/in/anderjohn",
+        "GitHub": "https://github.com/anderjohn",
+        "PersonalSite": "www.googleanderjohn.com",
         "SummaryText": "Sr. Technical Lead at Yash Technologies",
         "Education": [
             {
                 "School": "University of Illinois",
                 "Location": "Champagin, IL",
-                "GradDate": "2018",
+                "GradDate": "2016",
                 "Degree": "Bachelor",
                 "Major": [
                     "Computer Science",
@@ -23,6 +23,19 @@
                     "art"
                 ],
                 "GPA": "3.5"
+            },
+            {
+                "School": "University of Nebraska Omaha",
+                "Location": "Champagin, IL",
+                "GradDate": "2019",
+                "Degree": "Master",
+                "Major": [
+                    "MIS"
+                ],
+                "Minor": [
+                    ""
+                ],
+                "GPA": "3.8"
             }
         ],
         "Experience": [
@@ -30,51 +43,58 @@
                 "JobTitle": "Junior Software Developer",
                 "JobOrg": "Yash Technologies",
                 "JobStartDate": "June 2018",
-                "JobEndDate": "",
-                "JobInfo1": "Graduate Training progam",
-                "JobInfo2": "some project",
-                "JobInfo3": "Cat-o-pilar"
+                "JobEndDate": "Present",
+                "JobInfo1": "Provide a variety of technical solutions for vendors like Zantos",
+                "JobInfo2": "Experienced in project phases using Agile Methodologies",
+                "JobInfo3": "Demonstrated knowledge in Azure DevOps, Sharepoint, React, RESTful API, Unity and C#"
             },
             {
                 "JobTitle": "Intern",
-                "JobOrg": "not Yash",
+                "JobOrg": "MooFarms",
                 "JobStartDate": "May 2017",
                 "JobEndDate": "Aug 2017",
-                "JobInfo1": "stuff i did",
-                "JobInfo2": "other stuff",
-                "JobInfo3": "even more suff"
+                "JobInfo1": "Implemented an automated milk collection system for local dairy farmers in the Iowa that increased production by 35%",
+                "JobInfo2": "Experienced and designed add-ons for latest drone model such as DJI-Mavic 2 Enterprise",
+                "JobInfo3": "Kept accurate data on livestock, and compiled the data in Power BI "
             }
         ],
         "Project": [
             {
-                "ProjName": "personal project",
+                "ProjName": "Currency Converter",
                 "ProjDate": "2019",
-                "ProjAssociation": "personal",
-                "ProjInfo1": "data",
-                "ProjInfo2": "data",
-                "ProjInfo3": "data"
+                "ProjAssociation": "Personal",
+                "ProjInfo1": "Collaborated to create an ASP.NET Core REST API that provides real-time currency conversions for 157 currencies",
+                "ProjInfo2": "",
+                "ProjInfo3": ""
             },
             {
-                "ProjName": "school project",
+                "ProjName": "School IOS App",
                 "ProjDate": "2017",
                 "ProjAssociation": "Univeristy of Illinois",
-                "ProjInfo1": "data",
-                "ProjInfo2": "data",
-                "ProjInfo3": "data"
+                "ProjInfo1": "Designed and created graphing algorithm systems to handle node and user distances",
+                "ProjInfo2": "Designed the app's storage and caching system for downloading and storing information from an API",
+                "ProjInfo3": ""
             }
         ],
         "Certification": [
             {
                 "CertName": "AWS Associate Developer",
-                "CertDate": "2019",
+                "CertDate": "2017",
                 "CertAssociation": "Amazon Web Services"
+            },
+            {
+                "CertName": "Microsoft Certified: Azure Developer Associate",
+                "CertDate": "2019",
+                "CertAssociation": "Microsoft"
             }
         ],
         "Skill": [
             {
                 "Languages": [
-                    "JavaScript",
-                    "Python"
+                    "Python",
+                    "C#",
+                    "Java",
+                    "R"
                 ],
                 "Frameworks": [
                     "Angular.JS",
@@ -82,7 +102,8 @@
                 ],
                 "WebTechnologies": [
                     "HTML",
-                    "CSS"
+                    "CSS",
+                    "React.js"
                 ],
                 "DatabaseTech": [
                     "MySQL",
@@ -93,106 +114,97 @@
                 ],
                 "DevOps": [
                     "Jenkins",
-                    "data"
+                    "Azure Pipelines",
+                    "Docker"
                 ]
             }
         ]
     },
     {
-        "FirstName": "fname",
-        "LastName": "lname",
+        "FirstName": "Sam",
+        "LastName": "Hyderbell",
         "Role": "Jr. Software Developer",
-        "Email": "fname.lname@email.com",
-        "Phone": "1234567890",
-        "LinkedIn": "linkedin.com",
-        "GitHub": "github.com",
-        "PersonalSite": "google.com",
-        "SummaryText": "this is my summary",
+        "Email": "sam.hyderbell@email.com",
+        "Phone": "424-218-4950",
+        "LinkedIn": "https://www.linkedin.com/in/hydersam",
+        "GitHub": "https://github.com/hydersam",
+        "PersonalSite": "www.googlehydersam.com",
+        "SummaryText": "Hey many name is Sam, and i'm a Junior Software Developer",
         "Education": [
             {
-                "School": "University of Illinois",
-                "Location": "Champagin, IL",
-                "GradDate": "2018",
+                "School": "University of Northern Iowa",
+                "Location": "Cedar Falls, Iowa",
+                "GradDate": "2019",
                 "Degree": "Bachelor",
                 "Major": [
-                    "Computer Science",
-                    "Math"
+                    "Computer Science"
                 ],
                 "Minor": [
-                    "art"
+                    ""
                 ],
-                "GPA": "3.5"
+                "GPA": "3.32"
             }
         ],
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
                 "JobOrg": "Yash Technologies",
-                "JobStartDate": "June 2018",
-                "JobEndDate": "",
-                "JobInfo1": "Graduate Training progam",
-                "JobInfo2": "some project",
-                "JobInfo3": "Cat-o-pilar"
-            },
-            {
-                "JobTitle": "Intern",
-                "JobOrg": "not Yash",
-                "JobStartDate": "May 2017",
-                "JobEndDate": "Aug 2017",
-                "JobInfo1": "stuff i did",
-                "JobInfo2": "other stuff",
-                "JobInfo3": "even more suff"
+                "JobStartDate": "August 2017",
+                "JobEndDate": "October 2018",
+                "JobInfo1": "Worked closely with onshore and offshore team to achieve quality and performance goals",
+                "JobInfo2": "Pulled from Graduated Training Program to work on a .NET team ",
+                "JobInfo3": ""
             }
         ],
         "Project": [
             {
-                "ProjName": "personal project",
+                "ProjName": "Azure Cloud Migration",
                 "ProjDate": "2019",
-                "ProjAssociation": "personal",
-                "ProjInfo1": "data",
-                "ProjInfo2": "data",
-                "ProjInfo3": "data"
-            },
-            {
-                "ProjName": "school project",
-                "ProjDate": "2017",
-                "ProjAssociation": "Univeristy of Illinois",
-                "ProjInfo1": "data",
-                "ProjInfo2": "data",
-                "ProjInfo3": "data"
+                "ProjAssociation": "Yash Technologies",
+                "ProjInfo1": "Designed solutions with CI/CD pipelines in order to automate processes for users to create, build, and deploy products through the cloud with little interaction needed. ",
+                "ProjInfo2": "Automated creation and queuing of build pipelines using Powershell and Azure Rest API ",
+                "ProjInfo3": "Created Azure resources through Azure ARM template configurations "
             }
         ],
         "Certification": [
             {
-                "CertName": "AWS Associate Developer",
-                "CertDate": "2019",
-                "CertAssociation": "Amazon Web Services"
+                "CertName": "",
+                "CertDate": "",
+                "CertAssociation": ""
             }
         ],
         "Skill": [
             {
                 "Languages": [
                     "JavaScript",
-                    "Python"
+                    "Python",
+                    "Go",
+                    "PHP",
+                    "C#"
                 ],
                 "Frameworks": [
-                    "Angular.JS",
                     ".NET Framework"
                 ],
                 "WebTechnologies": [
                     "HTML",
-                    "CSS"
+                    "CSS",
+                    "jQuery",
+                    "Node.js"
                 ],
                 "DatabaseTech": [
                     "MySQL",
-                    "PostgreSQL"
+                    "PostgreSQL",
+                    "CosmosDB"
                 ],
                 "Cloud": [
-                    "Microsoft Azure"
+                    "AWS",
+                    "Azure"
                 ],
                 "DevOps": [
                     "Jenkins",
-                    "data"
+                    "Azure Functions",
+                    "Azure Key Vault",
+                    "Kubernetes"
                 ]
             }
         ]

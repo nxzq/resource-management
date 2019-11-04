@@ -20,20 +20,17 @@ const SkillForm = ({ skills, addSkill, removeSkill }) => {
                     <Label for="lastName">Skill</Label>
                     <Input onChange={handleChange} type="text" name="lastName" id="LastName" placeholder="Skill Name" value={skill} />
                 </FormGroup>
-                <FormGroup className="col-xl-4 col-lg-4 col-md-4 col-sm-9 col-xs-9">
-                    <Label for="skillType">Skill Type</Label>
-                    <Input type="select" name="skillType" id="skillType" placeholder="Select" >
+                <FormGroup className="col-xl-4 col-lg-4 col-md-3 col-sm-6 col-xs-6">
+                    <Label for="skillType">Skill Level</Label>
+                    <Input type="select" name="skillType" id="skillType" >
                         <option value='' selected disabled>Please select</option>
-                        <option>Language</option>
-                        <option>Framework</option>
-                        <option>Library</option>
-                        <option>Technology</option>
-                        <option>Software</option>
-                        <option>Other</option>
+                        <option>Proficient</option>
+                        <option>Intermediate</option>
+                        <option>Novice</option>
                     </Input>
                 </FormGroup>
-                <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                    <Button onClick={handleAddSkill} style={{ position: 'absolute', bottom: 0 }}>+ Add Skill</Button>
+                <FormGroup className="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-6">
+                    <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'white', borderColor: 'white', marginTop: '32px' }}><i className="fas fa-plus-circle fa-lg"></i> Add Skill</Button>
                 </FormGroup>
             </Row>
             <Skill skills={skills} removeSkill={removeSkill} />

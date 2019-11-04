@@ -29,8 +29,8 @@ const ProjectForm = ({index, removeProject}) => {
                     <Label for="projDetails3">Details</Label>
                     <Input type="textarea" name="projDetails3" id="projDetails3" placeholder="Project Details" />
                 </FormGroup>
-                <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <Button onClick={() => {removeProject(index)}} style={{}} color="danger">Remove Education</Button>
+                <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                    <Button onClick={() => {removeProject(index)}} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>
                 </FormGroup>
             </Row>
             <hr />
