@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Form, Button } from 'reactstrap';
-import AboutForm from './forms/AboutForm';
-import SummaryForm from './forms/SummaryForm';
-import EducationForm from './forms/EducationForm';
-import CertificationForm from './forms/CertificationForm';
-import ExperienceForm from './forms/ExperienceForm';
-import ProjectForm from './forms/ProjectForm';
-import SkillForm from './forms/SkillForm';
-import SectionHeader from './forms/SectionHeader';
-import DynamicSectionHeader from './forms/DynamicSectionHeader';
+import AboutForm from '../components/forms/AboutForm';
+import SummaryForm from '../components/forms/SummaryForm';
+import EducationForm from '../components/forms/EducationForm';
+import CertificationForm from '../components/forms/CertificationForm';
+import ExperienceForm from '../components/forms/ExperienceForm';
+import ProjectForm from '../components/forms/ProjectForm';
+import SkillForm from '../components/forms/SkillForm';
+import SectionHeader from '../components/forms/SectionHeader';
+import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
 class ResourceForm extends Component {
     state = {

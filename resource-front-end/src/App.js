@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header'
-import ResourceForm from './components/ResourceForm'
+import ResourceForm from './pages/ResourceForm'
 import Footer from './components/Footer'
 
 function App() {
