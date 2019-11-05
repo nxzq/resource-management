@@ -12,7 +12,7 @@ import SkillForm from '../components/forms/SkillForm';
 import SectionHeader from '../components/forms/SectionHeader';
 import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
-class ResourceForm extends Component {
+class AddResource extends Component {
     state = {
         skills: ['React.js', 'Python'],
         EducationForms: [],
@@ -142,4 +142,4 @@ class ResourceForm extends Component {
     }
 }
 
-export default ResourceForm;
+export default AddResource;

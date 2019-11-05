@@ -11,7 +11,6 @@ const SkillForm = ({ skills, addSkill, removeSkill }) => {
         e.preventDefault()
         addSkill(skill)
         setSkill('')
-
     }
     return (
         <div>

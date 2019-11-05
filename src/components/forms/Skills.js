@@ -11,13 +11,19 @@ const Skill = ({ skills, removeSkill }) => {
         marginBottom: '5px',
         backgroundColor: 'lightGrey'
     }
-    return (
-        <Row className="col-md-12">
-            {skills.map((skill) => (
-                <Button onClick={() => {removeSkill(skill)}} style={style} key={skill}>
+    const badges = (skills) => {
+        let badges = []
+        if (skills.length === 0) {}
+        else badges = skills.map((skill) => (
+                <Button onClick={() => {removeSkill(skill)}} style={style} key={skill} className="shadow-none">
                     <b>X </b> {skill}
                 </Button>
-            ))}
+        ))
+        return badges
+    }
+    return (
+        <Row className="col-md-12">
+            {badges(skills)}
         </Row>
     )
 }

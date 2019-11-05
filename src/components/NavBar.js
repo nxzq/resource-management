@@ -10,11 +10,11 @@ const NavBar = () => {
     <div>
       <Navbar color="faded" light expand="md">
         <NavbarBrand href="https://www.yash.com/">
-          <img style={{ marginTop: '15px', marginLeft: '15px'}} alt="YASH Technologies" src="https://www.yash.com/wp-content/themes/Yash/images/yash-logo.svg" title="YASH Technologies" width="130" />
+          <img alt="YASH Technologies" src="https://www.yash.com/wp-content/themes/Yash/images/yash-logo.svg" title="YASH Technologies" width="70" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto w-50" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink href="/">Overview</NavLink>
             </NavItem>
@@ -22,7 +22,7 @@ const NavBar = () => {
               <NavLink href="/resources">Resources</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/resourceform">Add Resource</NavLink>
+              <NavLink href="/addresource">Add Resource</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/addjob">Add Job</NavLink>

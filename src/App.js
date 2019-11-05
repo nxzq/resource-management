@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Overview from './pages/Overview';
 import Resources from './pages/Resources';
-import ResourceForm from './pages/ResourceForm';
+import AddResource from './pages/AddResource';
 import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
 import Footer from './components/Footer';
@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Route exact path='/' component={Overview} />
         <Route path='/resources' component={Resources} />
-        <Route path='/resourceform' component={ResourceForm} />
+        <Route path='/addresource' component={AddResource} />
         <Route path='/addjob' component={AddJob} />
         <Route path='/profile' component={Profile} />
         <br />
