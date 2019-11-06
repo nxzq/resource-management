@@ -11,7 +11,12 @@ const ProjectForm = ({index, removeProject}) => {
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="projDate">Date</Label>
-                    <Input type="text" name="projDate" id="projDate" placeholder="Project Date" />
+                    <Input
+                    type="date"
+                    name="projDate"
+                    id="projDate"
+                    placeholder="date placeholder"
+                    />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="projAssociation">Association</Label>
@@ -20,14 +25,6 @@ const ProjectForm = ({index, removeProject}) => {
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="projDetails1">Details</Label>
                     <Input type="textarea" name="projDetails1" id="projDetails1" placeholder="Project Details" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="projDetails2">Details</Label>
-                    <Input type="textarea" name="projDetails2" id="projDetails2" placeholder="Project Details" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="projDetails3">Details</Label>
-                    <Input type="textarea" name="projDetails3" id="projDetails3" placeholder="Project Details" />
                 </FormGroup>
                 <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                     <Button onClick={() => {removeProject(index)}} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>

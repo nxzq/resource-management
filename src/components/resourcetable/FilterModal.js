@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from 'reactstrap';
 import NeededSkill from './NeededSkill';
 
-const FilterModal = ({ skills }) => {
+const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch }) => {
     const [neededSkills, setNeededSkill] = useState([])
     const [skill, setSkill] = useState('')
     
@@ -11,10 +11,12 @@ const FilterModal = ({ skills }) => {
     }
     const handleAddSkill = (e) => {
         e.preventDefault()
+        if (skill === '') return
+        else { 
         let added = neededSkills
         added.push(skill)
         setNeededSkill(added)
-        setSkill('')
+        setSkill('') }
     }
     const handleRemoveSkill = (skill) => {
         let remove = neededSkills.filter(s => s !== skill)
@@ -22,8 +24,15 @@ const FilterModal = ({ skills }) => {
     }
     const handleFilter = (e) => {
         e.preventDefault()
+        if (neededSkills.length === 0) {
+            hideSkillMatch()
+            toggle()
+        }
+        else {
         // Set props.skills = neededSkills
+        toggleSkillMatch()
         toggle()
+        }
     }
     const handleCancel = (e) => {
         e.preventDefault()
@@ -31,7 +40,6 @@ const FilterModal = ({ skills }) => {
         toggle()
     }
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
 
     return (

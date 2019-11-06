@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Button, CustomInput } from 'reactstrap';
 
 const ExperienceForm = ({index, removeExperience}) => {
     return (
@@ -14,30 +14,29 @@ const ExperienceForm = ({index, removeExperience}) => {
                     <Input type="text" name="expAssociation" id="expAssociation" placeholder="Experience Association" />
                 </FormGroup>
                 <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
-                    <Label for="exStartpDate">Start Date</Label>
-                    <Input type="text" name="exStartpDate" id="exStartpDate" placeholder="Start Date" />
+                    <Label for="expStartDate">Start Date</Label>
+                    <Input
+                    type="date"
+                    name="expStartDate"
+                    id="expStartDate"
+                    placeholder="date placeholder"
+                    />
                 </FormGroup>
                 <FormGroup className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
-                    <Label for="expEndDate">End Date</Label>
-                    <Input type="text" name="expEndDate" id="expEndDate" placeholder="End Date" />
+                    <Label for="expEndDate">Start Date</Label>
+                    <Input
+                    type="date"
+                    name="expEndDate"
+                    id="expEndDate"
+                    placeholder="date placeholder"
+                    />
                 </FormGroup>
-                <FormGroup check className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
-                    <Label style={{ marginTop: '35px' }} check >
-                    <Input type="checkbox" />{' '}
-                        Current Position
-                    </Label>
+                <FormGroup style={{ marginTop: '40px' }} className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                    <CustomInput type="checkbox" id="exampleCustomCheckbox" label="Current Position" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="expDetails1">Details</Label>
                     <Input type="textarea" name="expDetails1" id="expDetails1" placeholder="Experience Details" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="expDetails2">Details</Label>
-                    <Input type="textarea" name="expDetails2" id="expDetails2" placeholder="Experience Details" />
-                </FormGroup>
-                <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="expDetails3">Details</Label>
-                    <Input type="textarea" name="expDetails3" id="expDetails3" placeholder="Experience Details" />
                 </FormGroup>
                 <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                     <Button onClick={() => {removeExperience(index)}} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>

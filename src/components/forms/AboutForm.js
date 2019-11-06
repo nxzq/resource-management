@@ -27,15 +27,15 @@ const AboutForm = () => {
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="linkedIn">LinkedIn</Label>
-                    <Input type="text" name="linkedIn" id="linkedIn" placeholder="linkedin.com/in/yourlink" />
+                    <Input type="text" name="linkedIn" id="linkedIn" placeholder="linkedin.com/in/yourlink (Optional)" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="github">GitHub</Label>
-                    <Input type="text" name="github" id="github" placeholder="github.com/youraccount" />
+                    <Input type="text" name="github" id="github" placeholder="github.com/youraccount (Optional)" />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="personalSite">Personal Website</Label>
-                    <Input type="text" name="personalSite" id="personalSite" placeholder="www.yoursiteurl.com" />
+                    <Input type="text" name="personalSite" id="personalSite" placeholder="www.yoursiteurl.com (Optional)" />
                 </FormGroup>
             </Row>
             <hr />

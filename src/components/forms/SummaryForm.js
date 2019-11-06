@@ -7,7 +7,7 @@ const SummaryForm = () => {
         <div>
             <FormGroup>
                 <Label for="summaryText">Summary</Label>
-                <Input type="textarea" name="summaryText" id="summaryText" placeholder="Summary" />
+                <Input type="textarea" name="summaryText" id="summaryText" placeholder="Summary (Optional)" />
             </FormGroup>
             <hr />
         </div>

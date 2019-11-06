@@ -11,7 +11,12 @@ const CertificationForm = ({index, removeCertification}) => {
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="certDate">Date</Label>
-                    <Input type="text" name="certDate" id="certDate" placeholder="Date Completed" />
+                    <Input
+                    type="date"
+                    name="certDate"
+                    id="certDate"
+                    placeholder="date placeholder"
+                    />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="certAssociation">Association</Label>
