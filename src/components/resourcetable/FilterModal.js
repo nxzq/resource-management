@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from 'reactstrap';
 import NeededSkill from './NeededSkill';
 
-const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) => {
+const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill, filterTable }) => {
     
     const [skill, setSkill] = useState('')
     
@@ -13,9 +13,7 @@ const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch, notHidden, need
         e.preventDefault()
         if (skill === '') return
         else { 
-        let added = neededSkills
-        added.push(skill)
-        setNeededSkill(added)
+        setNeededSkill([...neededSkills, skill])
         setSkill('') }
     }
     const handleRemoveSkill = (skill) => {

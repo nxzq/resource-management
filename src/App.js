@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Overview from './pages/Overview';
 import Resources from './pages/Resources';
+import Help from './pages/Help';
 import AddResource from './pages/AddResource';
 import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
@@ -17,6 +18,7 @@ function App() {
         <Header />
         <Route exact path='/' component={Overview} />
         <Route path='/resources' component={Resources} />
+        <Route path='/help' component={Help} />
         <Route path='/addresource' component={AddResource} />
         <Route path='/addjob' component={AddJob} />
         <Route path='/profile' component={Profile} />

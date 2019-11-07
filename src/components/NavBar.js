@@ -22,10 +22,7 @@ const NavBar = () => {
               <NavLink href="/resources">Resources</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/addresource">Add Resource</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/addjob">Add Job</NavLink>
+              <NavLink href="/help"><i className="fas fa-question-circle fa-lg"></i></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
