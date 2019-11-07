@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from 'reactstrap';
 import NeededSkill from './NeededSkill';
 
-const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch }) => {
-    const [neededSkills, setNeededSkill] = useState([])
+const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) => {
+    
     const [skill, setSkill] = useState('')
     
     const handleChange = (e) => {
@@ -28,16 +28,24 @@ const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch }) => {
             hideSkillMatch()
             toggle()
         }
+        else if (notHidden === true) {
+            toggle()
+        }
         else {
-        // Set props.skills = neededSkills
-        toggleSkillMatch()
-        toggle()
+            toggleSkillMatch()
+            toggle()
         }
     }
     const handleCancel = (e) => {
         e.preventDefault()
-        setNeededSkill([])
-        toggle()
+        if (notHidden === true) {
+            hideSkillMatch()
+            setNeededSkill([])
+            toggle() 
+        } else {
+            setNeededSkill([])
+            toggle()
+        }
     }
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
@@ -67,7 +75,7 @@ const FilterModal = ({ skills, toggleSkillMatch, hideSkillMatch }) => {
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" className="shadow-none" onClick={handleFilter}>Filter</Button>{' '}
-                    <Button color="secondary" className="shadow-none" onClick={handleCancel}>Cancel</Button>
+                    <Button color="secondary" className="shadow-none" onClick={handleCancel}>Remove Filter</Button>
                 </ModalFooter>
             </Modal>
         </div>

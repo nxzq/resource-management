@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 
 const Profile = () => {
+
+    const [data, setDate] = []
+
     return (
         <div>
             <Header name={'Profile: Name'} />
