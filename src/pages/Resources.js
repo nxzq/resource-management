@@ -3,7 +3,7 @@ import { Container, Row, Button, Table, Progress } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../styles/ResourcePage.css'
 import Header from '../components/Header';
-import SkillPopOver from '../components/resourcetable/SkillPopOver';
+import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
 
 const Resources = () => {
@@ -145,7 +145,7 @@ const Resources = () => {
         {showSkillMatch ?
           <td>
             <div>
-              <SkillPopOver target={'SkillMatch' + person.Id} matched={getMatchedSkills(person.Skills)} unmatched={getUnmatchedSkills(person.Skills)} id={'SkillMatch' + person.Id}
+              <SkillCollapse matched={getMatchedSkills(person.Skills)} unmatched={getUnmatchedSkills(person.Skills)} key={'SkillMatch' + person.Id}
                 content={<Progress className="unselectable" value={getSkillMatch(person.Skills)} color="primary">{getSkillMatch(person.Skills)}%</Progress>} />
             </div>
           </td>
