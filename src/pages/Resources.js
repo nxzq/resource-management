@@ -168,12 +168,12 @@ const Resources = () => {
         <Row>
           <FilterModal neededSkills={neededSkills} filterTable={tableData} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
           <div className="col-xl-9 col-lg-9 col-md-7 col-sm-7 col-xs-7">
-            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style={{ marginRight: '15px', marginLeft: '15px' }}>
+            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
               <div className="input-group">
                 <div className="input-group-prepend">
                   <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i className="fa fa-search"></i></button>
                 </div>
-                <input type="search" id="myInput" placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
+                <input style={{ marginRight: '15px', marginLeft: '15px' }} type="search" id="myInput" placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
                 </input>
               </div>
             </div>
