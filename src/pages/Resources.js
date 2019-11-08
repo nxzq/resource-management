@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Row, Button, Table, Progress } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import '../styles/ResourcePage.css'
+import '../styles/ResourcePage.css';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
 
 const Resources = () => {
 
-  const [neededSkills, setNeededSkill] = useState([])
+  const [neededSkills, setNeededSkill] = useState([]);
   const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
@@ -62,7 +62,7 @@ const Resources = () => {
         "LastName": "Legett",
         "Role": "Jr. Software Developer",
         "Email": "brendan.legett@yash.com",
-        "Skills": ["java", "amazon web services", "html", "css", "javascript", "git", "spring", "react", "angular", "object-oriented programming", "bootstrap"]
+        "Skills": ["java", "aws", "html", "css", "javascript", "git", "spring", "react", "angular", "object-oriented programming", "bootstrap"]
       }, {
         "Id": "8",
         "FirstName": "Andre",
@@ -82,7 +82,7 @@ const Resources = () => {
         "FirstName": "Mohammed",
         "LastName": "Aldalooj",
         "Role": "Jr. Software Developer",
-        "Email": "maldalooj@unomaha.edu",
+        "Email": "mohammed.aldalooj@yash.com",
         "Skills":
           ["Java", "c#", "azure", "TypeScript", "Python", "HTML", "CSS", "SQL", "React"]
       }
@@ -107,31 +107,19 @@ const Resources = () => {
   }
 
   const getMatchedSkills = (skills) => {
-    let personalSkills = skills.map(function (value) {
-      return value.toLowerCase();
-    })
-    let jobSkills = neededSkills.map(function (value) {
-      return value.toLowerCase();
-    })
+    let personalSkills = skills.map(value => value.toLowerCase())
+    let jobSkills = neededSkills.map(value => value.toLowerCase())
     let matched = jobSkills.filter(value => personalSkills.includes(value))
-    matched = matched.map(function (value) {
-      return value.charAt(0).toUpperCase() + value.substring(1);
-    })
+    matched = matched.map(value => value.charAt(0).toUpperCase() + value.substring(1))
     matched = matched.join(', ')
     return matched
   }
 
   const getUnmatchedSkills = (skills) => {
-    let personalSkills = skills.map(function (value) {
-      return value.toLowerCase();
-    })
-    let jobSkills = neededSkills.map(function (value) {
-      return value.toLowerCase();
-    })
+    let personalSkills = skills.map(value => value.toLowerCase())
+    let jobSkills = neededSkills.map(value => value.toLowerCase())
     let unmatched = jobSkills.filter(value => !personalSkills.includes(value))
-    unmatched = unmatched.map(function (value) {
-      return value.charAt(0).toUpperCase() + value.substring(1);
-    })
+    unmatched = unmatched.map(value => value.charAt(0).toUpperCase() + value.substring(1))
     unmatched = unmatched.join(', ')
     return unmatched
   }

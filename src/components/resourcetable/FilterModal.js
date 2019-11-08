@@ -3,18 +3,19 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from '
 import NeededSkill from './NeededSkill';
 
 const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill, filterTable }) => {
-    
+
     const [skill, setSkill] = useState('')
-    
+
     const handleChange = (e) => {
         setSkill(e.target.value)
     }
     const handleAddSkill = (e) => {
         e.preventDefault()
         if (skill === '') return
-        else { 
-        setNeededSkill([...neededSkills, skill])
-        setSkill('') }
+        else {
+            setNeededSkill([...neededSkills, skill])
+            setSkill('')
+        }
     }
     const handleRemoveSkill = (skill) => {
         let remove = neededSkills.filter(s => s !== skill)
@@ -39,7 +40,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
         if (notHidden === true) {
             hideSkillMatch()
             setNeededSkill([])
-            toggle() 
+            toggle()
         } else {
             setNeededSkill([])
             toggle()
@@ -66,7 +67,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'white', borderColor: 'white', marginTop: '5px'}}><i className="fas fa-plus-circle fa-lg"></i> Add</Button>
+                            <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'white', borderColor: 'white', marginTop: '5px' }}><i className="fas fa-plus-circle fa-lg"></i> Add</Button>
                         </div>
                     </Row>
                     <NeededSkill skills={neededSkills} removeSkill={handleRemoveSkill} />
