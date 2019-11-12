@@ -33,3 +33,10 @@ nav a:hover {
   -ms-user-select: none;
   user-select: none;
 }
+
+#section-header, #section-header:hover, .section-header:active, #add-skill, #add-skill:hover {
+  color: #007bff; 
+  background-color: transparent; 
+  border-color: transparent;
+  text-decoration: none;
+}

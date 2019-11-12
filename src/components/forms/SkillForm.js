@@ -9,9 +9,13 @@ const SkillForm = ({ skills, addSkill, removeSkill }) => {
     }
     const handleAddSkill = (e) => {
         e.preventDefault()
-        addSkill(skill)
-        setSkill('')
+        if (skill === '') return
+        else {
+            addSkill(skill)
+            setSkill('')
+        }
     }
+    
     return (
         <div>
             <Row>
@@ -29,7 +33,8 @@ const SkillForm = ({ skills, addSkill, removeSkill }) => {
                     </Input>
                 </FormGroup>
                 <FormGroup className="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-6">
-                    <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'transparent', borderColor: 'transparent', marginTop: '32px' }}><i style={{color: '#007bff'}} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add Skill</Button>
+                    <Button color="primary" onClick={handleAddSkill} id="add-skill" className="shadow-none" style={{ marginTop: '32px' }}>
+                        <i style={{color: 'inherit'}} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add Skill</Button>
                 </FormGroup>
             </Row>
             <Skill skills={skills} removeSkill={removeSkill} />

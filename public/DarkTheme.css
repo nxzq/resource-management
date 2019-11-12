@@ -58,12 +58,12 @@ nav a:hover {
 
 input, textarea, select, .custom-checkbox {
   color: #000;
-  opacity: 0.80;
+  opacity: 0.90;
 }
 
 .custom-checkbox {
   color: #fff;
-  opacity: 0.80;
+  opacity: 0.90;
 }
 
 .modal-content {
@@ -72,4 +72,12 @@ input, textarea, select, .custom-checkbox {
 
 .rounded-input {
   opacity: 0.85
+}
+
+#section-header, #section-header:hover, #section-header:active, #section-header:focus, #add-skill, #add-skill:hover {
+  color: #fff;
+  opacity: 0.60;
+  background-color: transparent !important; 
+  border-color: transparent !important;
+  text-decoration: none !important;
 }

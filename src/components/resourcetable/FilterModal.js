@@ -67,7 +67,8 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'transparent', borderColor: 'transparent', marginTop: '5px' }}><i style={{color: '#007bff'}} className="fas fa-plus-circle fa-lg"></i> Add</Button>
+                            <Button onClick={handleAddSkill} id="add-skill" className="shadow-none" style={{ marginTop: '5px' }}>
+                                <i style={{color: 'inherit'}} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add</Button>
                         </div>
                     </Row>
                     <NeededSkill skills={neededSkills} removeSkill={handleRemoveSkill} />
