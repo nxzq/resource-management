@@ -20,7 +20,7 @@ const NavBar = () => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav id="navlinks" className="ml-auto" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink style={{ color: 'inherit' }} tag={Link} to="/">Overview</NavLink>
             </NavItem>

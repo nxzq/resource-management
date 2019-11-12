@@ -140,7 +140,7 @@ const Resources = () => {
         <td>
           <Link style={{ textDecoration: 'none', color: '#212529' }} to="/profile"><i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user"
             aria-hidden="true"></i></Link>
-          <span>&nbsp;</span>
+          <span>&nbsp;&nbsp;</span>
           <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt"></i>
         </td>
       </tr>
@@ -165,19 +165,19 @@ const Resources = () => {
               </div>
             </div>
           </div>
-          <Link to="/addjob" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
+          <Link style={{ textDecoration: 'none' }} to="/addjob" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
             <Button style={{ height: '50px', marginRight: 0 }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Job
             </Button>
           </Link>
-          <Link to="/addresource" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
-            <Button style={{ height: '50px', marginRight: 0 }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+          <Link style={{ textDecoration: 'none' }} to="/addresource" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
+            <Button style={{ height: '50px', marginRight: 0, textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Resource
             </Button>
           </Link>
         </Row>
         <Row>
-          <Table className="table table-striped col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <Table striped className="table col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <thead>
               <tr>
                 <th>Name</th>

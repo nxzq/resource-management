@@ -17,8 +17,12 @@ i{
   font-style: normal;
 }
 
-#navlinks {
-  color: rgba(0,0,0,.75) !important;
+nav a {
+  color: rgba(0,0,0,.65) !important;
+}
+
+nav a:hover {
+  color: rgba(0,0,0,.85) !important;
 }
 
 .unselectable {

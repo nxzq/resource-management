@@ -36,10 +36,16 @@ th, td {
   opacity: 0.90;
 }
 
-#navlinks {
+nav a {
   color: #fff !important;
   opacity: 0.90;
 }
+
+nav a:hover {
+  color: #fff !important;
+  opacity: 0.60;
+}
+
 
 .unselectable {
   -webkit-touch-callout: none;
