@@ -55,3 +55,21 @@ nav a:hover {
   -ms-user-select: none;
   user-select: none;
 }
+
+input, textarea, select, .custom-checkbox {
+  color: #000;
+  opacity: 0.80;
+}
+
+.custom-checkbox {
+  color: #fff;
+  opacity: 0.80;
+}
+
+.modal-content {
+  background-color: #1a1919;
+}
+
+.rounded-input {
+  opacity: 0.85
+}

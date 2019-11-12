@@ -56,8 +56,8 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                 <ModalHeader className="modalheader" toggle={toggle}>Filter Based on Skills</ModalHeader>
                 <ModalBody className="modalbody">
                     <Row>
-                        <div className="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style={{}}>
+                        <div className="rounded-input col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
                                         <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
@@ -67,7 +67,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'white', borderColor: 'white', marginTop: '5px' }}><i style={{color: '#007bff'}} className="fas fa-plus-circle fa-lg"></i> Add</Button>
+                            <Button onClick={handleAddSkill} className="shadow-none" style={{ color: '#007bff', backgroundColor: 'transparent', borderColor: 'transparent', marginTop: '5px' }}><i style={{color: '#007bff'}} className="fas fa-plus-circle fa-lg"></i> Add</Button>
                         </div>
                     </Row>
                     <NeededSkill skills={neededSkills} removeSkill={handleRemoveSkill} />
