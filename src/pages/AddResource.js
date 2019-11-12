@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Form, Button } from 'reactstrap';
-import '../styles/ResourceForm.css'
 import Header from '../components/Header';
 import AboutForm from '../components/forms/AboutForm';
 import SummaryForm from '../components/forms/SummaryForm';

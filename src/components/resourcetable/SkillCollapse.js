@@ -11,7 +11,7 @@ const SkillPopOver = ({ matched, unmatched, content }) => {
         {content}
       </div>
       <Collapse isOpen={isOpen}>
-        <Card>
+        <Card className="card">
           <CardHeader className="text-center">Skill Match Breakdown</CardHeader>
           <CardBody>
             {(matched !== '') ? <p><b>Matched Skills:</b> {matched}</p> : ''}

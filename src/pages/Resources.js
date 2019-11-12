@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Button, Table, Progress } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import '../styles/ResourcePage.css';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
@@ -155,19 +154,24 @@ const Resources = () => {
       <Container>
         <Row>
           <FilterModal neededSkills={neededSkills} filterTable={tableData} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
-          <div className="col-xl-9 col-lg-9 col-md-7 col-sm-7 col-xs-7">
-            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div className="col-xl-7 col-lg-7 col-md-5 col-sm-5 col-xs-5">
+            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4 form-inline">
               <div className="input-group">
                 <div className="input-group-prepend">
-                  <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i className="fa fa-search"></i></button>
+                  <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
                 </div>
                 <input style={{ marginRight: '15px', marginLeft: '15px' }} type="search" id="myInput" placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
                 </input>
               </div>
             </div>
           </div>
+          <Link to="/addjob" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
+            <Button style={{ height: '50px', marginRight: 0 }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
+              &nbsp;&nbsp;Add Job
+            </Button>
+          </Link>
           <Link to="/addresource" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
-            <Button style={{ height: '50px', marginRight: 0 }} className="shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+            <Button style={{ height: '50px', marginRight: 0 }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Resource
             </Button>
           </Link>
