@@ -9,6 +9,10 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
     const handleChange = (e) => {
         setSkill(e.target.value)
     }
+    // Added an event handler for hitting enter to add a new skill to the filter.
+    const handleKeyPress = e => {
+        if (e.key === "Enter") handleAddSkill(e)
+    }
     const handleAddSkill = (e) => {
         e.preventDefault()
         if (skill === '') return
@@ -62,7 +66,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                                     <div className="input-group-prepend">
                                         <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
                                     </div>
-                                    <Input onChange={handleChange} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />
+                                    <Input onChange={handleChange} onKeyPress={handleKeyPress} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />
                                 </div>
                             </div>
                         </div>
