@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Tooltip } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 
 const Profile = ({person}) => {
+
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+    const toggle = () => setTooltipOpen(!tooltipOpen);
 
     const [resource] = useState(
         {
@@ -143,7 +147,14 @@ const Profile = ({person}) => {
 
     return (
         <div>
-            <Header name={resource.FirstName + ' ' + resource.LastName} />
+            <Header name={
+                <div>
+                {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;<i id="edit" className="fas fa-edit"></i>
+                <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>
+                    Edit Profile
+                </Tooltip>
+                </div>
+            } />
             <Container>
                 <Row>
                     <p className="col-md-6">
