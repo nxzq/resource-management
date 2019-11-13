@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from 'reactstrap';
 import NeededSkill from './NeededSkill';
 
-const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill, filterTable }) => {
+const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) => {
 
     const [skill, setSkill] = useState('')
+    const [skillFilter, setSkillFilter] = useState([...neededSkills])
 
     const handleChange = (e) => {
         setSkill(e.target.value)
@@ -17,24 +18,27 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
         e.preventDefault()
         if (skill === '') return
         else {
-            setNeededSkill([...neededSkills, skill])
+            setSkillFilter([...skillFilter, skill])
             setSkill('')
         }
     }
     const handleRemoveSkill = (skill) => {
-        let remove = neededSkills.filter(s => s !== skill)
-        setNeededSkill(remove)
+        let remove = skillFilter.filter(s => s !== skill)
+        setSkillFilter(remove)
     }
     const handleFilter = (e) => {
         e.preventDefault()
-        if (neededSkills.length === 0) {
+        if (skillFilter.length === 0) {
+            setNeededSkill(skillFilter)
             hideSkillMatch()
             toggle()
         }
         else if (notHidden === true) {
+            setNeededSkill(skillFilter)
             toggle()
         }
         else {
+            setNeededSkill(skillFilter)
             toggleSkillMatch()
             toggle()
         }
@@ -75,7 +79,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                                 <i style={{color: 'inherit'}} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add</Button>
                         </div>
                     </Row>
-                    <NeededSkill skills={neededSkills} removeSkill={handleRemoveSkill} />
+                    <NeededSkill skills={skillFilter} removeSkill={handleRemoveSkill} />
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" className="shadow-none" onClick={handleFilter}>Filter</Button>{' '}

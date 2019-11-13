@@ -8,7 +8,7 @@ import CertificationForm from '../components/forms/CertificationForm';
 import ExperienceForm from '../components/forms/ExperienceForm';
 import ProjectForm from '../components/forms/ProjectForm';
 import SkillForm from '../components/forms/SkillForm';
-import SectionHeader from '../components/forms/SectionHeader';
+import SectionHeader from '../components/SectionHeader';
 import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
 class AddResource extends Component {

@@ -159,7 +159,7 @@ const Resources = () => {
       <Header name={'Resource Management'} />
       <Container>
         <Row>
-          <FilterModal neededSkills={neededSkills} filterTable={tableData} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
+          <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
 
           <div className="rounded-input col-xl-7 col-lg-7 col-md-5 col-sm-5 col-xs-5">
             <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">

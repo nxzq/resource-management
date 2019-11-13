@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Tooltip } from 'reactstrap';
 // import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import SectionHeader from '../components/forms/SectionHeader';
+import SectionHeader from '../components/SectionHeader';
 
 const Profile = ({person}) => {
 
