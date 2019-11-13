@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Button, Table, Progress } from 'reactstrap';
+import { Container, Row, Button, Table, Progress, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
@@ -82,8 +82,14 @@ const Resources = () => {
         "LastName": "Aldalooj",
         "Role": "Jr. Software Developer",
         "Email": "mohammed.aldalooj@yash.com",
-        "Skills":
-          ["Java", "c#", "azure", "TypeScript", "Python", "HTML", "CSS", "SQL", "React"]
+        "Skills": ["Java", "c#", "azure", "TypeScript", "Python", "HTML", "CSS", "SQL", "React"]
+      }, {
+        "Id": "11",
+        "FirstName": "Sam",
+        "LastName": "Hyderbell",
+        "Role": "Jr. Software Developer",
+        "Email": "sam.hyderbell@yash.com",
+        "Skills": ["JavaScript", "Python", "Go", "PHP", "C#", ".NET Framework", "HTML", "CSS", "jQuery", "Node.js", "MySQL", "PostgreSQL", "CosmosDB", "AWS", "Azure", "Jenkins", "Azure Functions", "Azure Key Vault", "Kubernetes"]
       }
     ])
 
@@ -154,24 +160,25 @@ const Resources = () => {
       <Container>
         <Row>
           <FilterModal neededSkills={neededSkills} filterTable={tableData} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
+
           <div className="rounded-input col-xl-7 col-lg-7 col-md-5 col-sm-5 col-xs-5">
-            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4 form-inline">
+            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
               <div className="input-group">
                 <div className="input-group-prepend">
                   <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
                 </div>
-                <input style={{ marginRight: '15px', marginLeft: '15px' }} type="search" id="myInput" placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
-                </input>
+                <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
+                </Input>
               </div>
             </div>
           </div>
           <Link style={{ textDecoration: 'none' }} to="/addjob" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
-            <Button style={{ height: '50px', marginRight: 0 }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
+            <Button style={{ height: '50px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Job
             </Button>
           </Link>
           <Link style={{ textDecoration: 'none' }} to="/addresource" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
-            <Button style={{ height: '50px', marginRight: 0, textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+            <Button style={{ height: '50px', textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Resource
             </Button>
           </Link>
