@@ -8,6 +8,7 @@ import FilterModal from '../components/resourcetable/FilterModal';
 const Resources = () => {
 
   const [neededSkills, setNeededSkill] = useState([]);
+  const [search, setSearch] = useState('');
   const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
@@ -129,8 +130,20 @@ const Resources = () => {
     return unmatched
   }
 
+  const Search = () => {
+    let rawData =  data.filter(resource => resource.Role.toLowerCase().includes(search.toLowerCase()) 
+    || resource.FirstName.toLowerCase().includes(search.toLowerCase())
+    || resource.LastName.toLowerCase().includes(search.toLowerCase()))
+    return rawData
+  }
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+}
+
   const tableData = () => {
-    let tableData = data.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
+    let rawData = (search === '' ? [...data] : Search())
+    let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
       <tr key={person.Id}>
         <td>{person.FirstName + ' ' + person.LastName}</td>
         <td>{person.Role}</td>
@@ -160,14 +173,13 @@ const Resources = () => {
       <Container>
         <Row>
           <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
-
           <div className="rounded-input col-xl-7 col-lg-7 col-md-5 col-sm-5 col-xs-5">
             <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
               <div className="input-group">
                 <div className="input-group-prepend">
                   <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
                 </div>
-                <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
+                <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
                 </Input>
               </div>
             </div>
@@ -184,7 +196,7 @@ const Resources = () => {
           </Link>
         </Row>
         <Row>
-          <Table striped className="table col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <Table striped>
             <thead>
               <tr>
                 <th>Name</th>
