@@ -1,6 +1,152 @@
 [
     {
-        "Id": "1",
+        "Id": 1,
+        "FirstName": "Nicklas",
+        "LastName": "Lanman",
+        "Role": "Software Developer",
+        "Email": "nicklas.lanman@yash.com",
+        "Phone": "1234567890",
+        "LinkedIn": "https://www.linkedin.com/in/nicklaslanman",
+        "GitHub": "https://github.com/nicklaslanman",
+        "PersonalSite": "",
+        "SummaryText": "Full Stack Software Engineer",
+        "Education": [
+            {
+                "School": "St. Cloud State University",
+                "Location": "St. Cloud, MN",
+                "GradDate": "2019",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Software Engineering"
+                ],
+                "Minor": [],
+                "GPA": ""
+            },
+            {
+                "School": "Anoka Ramsey Community College",
+                "Location": "Coon Rapids, MN",
+                "GradDate": "2019",
+                "Degree": "Associate",
+                "Major": [
+                    "Computer Science",
+                    "Arts"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            },
+            {
+                "JobTitle": "Software Engineering Intern",
+                "JobOrg": "Productive Tech Solutions",
+                "JobStartDate": "June 2018",
+                "JobEndDate": "August 2018",
+                "JobInfo": ""
+            }
+        ],
+        "Project": [],
+        "Certification": [],
+        "Skills": [
+            "Git",
+            "JavaScript",
+            "React",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "Node.js",
+            "Express"
+        ]
+    },
+    {
+        "Id": 2,
+        "FirstName": "Sam",
+        "LastName": "Eakin",
+        "Role": "Jr. Software Developer",
+        "Email": "sam.eakin@yash.com",
+        "Phone": "1234567890",
+        "LinkedIn": "https://www.linkedin.com/in/sam-eakin-321059138/",
+        "GitHub": "https://github.com/SamEakin",
+        "PersonalSite": "https://github.com/SamEakin",
+        "SummaryText": "Jr. Software Developer at Yash Technologies",
+        "Education": [
+            {
+                "School": "University of Iowa",
+                "Location": "Iowa City, IA",
+                "GradDate": "2019",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science"
+                ],
+                "Minor": [],
+                "GPA": "3.0"
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": "Interface with Clients for project proposals, planning, and requirements gathering. Ensure communication between client and off-shore development teams goes smoothly."
+            },
+            {
+                "JobTitle": "IT Help Desk",
+                "JobOrg": "University of Iowa",
+                "JobStartDate": "Aug 2014",
+                "JobEndDate": "May 2018",
+                "JobInfo": "Perform desktop support for university faculty and students."
+            }
+        ],
+        "Project": [
+            {
+                "ProjName": "Rental Fleet Application",
+                "ProjDate": "2019",
+                "ProjAssociation": "CATERPILLAR",
+                "ProjInfo": "Automate the processing of incoming dealer reports using Azure AI/ML. Provide an interface for managing the new workflow with SharePoint Online and React."
+            },
+            {
+                "ProjName": "Dealer Portal",
+                "ProjDate": "2019",
+                "ProjAssociation": "CATERPILLAR",
+                "ProjInfo": "Provide a solution for a centralized knowledgebase for CAT dealers to collaborate and share resources for improving daily business practices."
+            },
+            {
+                "ProjName": "MS LookBook",
+                "ProjDate": "2019",
+                "ProjAssociation": "YASH",
+                "ProjInfo": "Assisted in the testing, and content creation for a custom SharePoint Online site."
+            }
+        ],
+        "Certification": [],
+        "Skills": [
+            "Python",
+            "C#",
+            "Java",
+            "C",
+            "Angular.JS",
+            ".NET Framework",
+            "HTML",
+            "CSS",
+            "React",
+            "MySQL",
+            "PostgreSQL",
+            "Microsoft Azure",
+            "Jenkins",
+            "Azure Pipelines",
+            "Docker",
+            "Node",
+            "Git"
+        ]
+    },
+    {
+        "Id": 3,
         "FirstName": "John",
         "LastName": "Anderson",
         "Role": "Sr. Technical Lead",
@@ -98,24 +244,25 @@
         ]
     },
     {
-        "Id": "2",
-        "FirstName": "Tim",
-        "LastName": "Johnson",
-        "Role": "Jr. Software Developer",
-        "Email": "tim.johnson@yash.com",
-        "Phone": "",
+        "Id": 4,
+        "FirstName": "Travis",
+        "LastName": "Platt",
+        "Role": "Business Analyst",
+        "Email": "travis.platt@yash.com",
+        "Phone": "6494621459",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
-        "SummaryText": "",
+        "SummaryText": "Business Analyst at Yash Technologies",
         "Education": [
             {
                 "School": "University of Illinois",
                 "Location": "Champagin, IL",
-                "GradDate": "2018",
+                "GradDate": "2016",
                 "Degree": "Bachelor",
                 "Major": [
-                    "Computer Science"
+                    "Computer Science",
+                    "Math"
                 ],
                 "Minor": [],
                 "GPA": ""
@@ -126,59 +273,10 @@
                 "JobTitle": "Junior Software Developer",
                 "JobOrg": "Yash Technologies",
                 "JobStartDate": "June 2018",
-                "JobEndDate": "Present",
-                "JobInfo": ".NET Developer"
+                "JobEndDate": "",
+                "JobInfo": ""
             }
         ],
-        "Project": [],
-        "Certification": [],
-        "Skills": [
-            "C#",
-            ".NET Framework",
-            "PowerApps",
-            "ASP.NET",
-            "React",
-            "Power BI",
-            "Azure",
-            "Git"
-        ]
-    },
-    {
-        "Id": "3",
-        "FirstName": "John",
-        "LastName": "Jackson",
-        "Role": "Jr. Software Developer",
-        "Email": "john.jackson@yash.com",
-        "Phone": "",
-        "LinkedIn": "",
-        "GitHub": "",
-        "PersonalSite": "",
-        "SummaryText": "",
-        "Education": [],
-        "Experience": [],
-        "Project": [],
-        "Certification": [],
-        "Skills": [
-            "Java",
-            "HTML",
-            "Spring Boot",
-            "CSS",
-            "Angular"
-        ]
-    },
-    {
-        "Id": "4",
-        "FirstName": "Travis",
-        "LastName": "Platt",
-        "Role": "Business Analyst",
-        "Email": "travis.platt@yash.com",
-        "Phone": "",
-        "LinkedIn": "",
-        "GitHub": "",
-        "PersonalSite": "",
-        "SummaryText": "",
-        "Education": [],
-        "Experience": [],
         "Project": [],
         "Certification": [],
         "Skills": [
@@ -187,18 +285,39 @@
         ]
     },
     {
-        "Id": "5",
+        "Id": 5,
         "FirstName": "Mary",
         "LastName": "Dixon",
         "Role": "Software Developer",
         "Email": "mary.dixon@yash.com",
-        "Phone": "",
+        "Phone": "9483152461",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
         "SummaryText": "",
-        "Education": [],
-        "Experience": [],
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2016",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
         "Project": [],
         "Certification": [],
         "Skills": [
@@ -209,18 +328,39 @@
         ]
     },
     {
-        "Id": "6",
+        "Id": 6,
         "FirstName": "Todd",
         "LastName": "Dooley",
         "Role": "Data Analyst",
         "Email": "todd.dooley@yash.com",
-        "Phone": "",
+        "Phone": "4564518465",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
         "SummaryText": "",
-        "Education": [],
-        "Experience": [],
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2016",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
         "Project": [],
         "Certification": [],
         "Skills": [
@@ -232,20 +372,47 @@
         ]
     },
     {
-        "Id": "7",
+        "Id": 7,
         "FirstName": "Brendan",
         "LastName": "Legett",
         "Role": "Jr. Software Developer",
         "Email": "brendan.legett@yash.com",
-        "Phone": "",
+        "Phone": "9845461248",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
-        "SummaryText": "",
-        "Education": [],
-        "Experience": [],
+        "SummaryText": "Front-end developer at Yash Technologies",
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2016",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
         "Project": [],
-        "Certification": [],
+        "Certification": [
+            {
+                "CertName": "AWS Associate Developer",
+                "CertDate": "2019",
+                "CertAssociation": "Amazon Web Services"
+            }
+        ],
         "Skills": [
             "java",
             "aws",
@@ -261,7 +428,7 @@
         ]
     },
     {
-        "Id": "8",
+        "Id": 8,
         "FirstName": "Andre",
         "LastName": "Prawira",
         "Role": "Jr. Software Developer",
@@ -271,8 +438,29 @@
         "GitHub": "",
         "PersonalSite": "",
         "SummaryText": "",
-        "Education": [],
-        "Experience": [],
+        "Education": [
+            {
+                "School": "University of Mankato",
+                "Location": "Mankato, MN",
+                "GradDate": "2019",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
         "Project": [],
         "Certification": [],
         "Skills": [
@@ -286,7 +474,7 @@
         ]
     },
     {
-        "Id": "9",
+        "Id": 9,
         "FirstName": "Matthew",
         "LastName": "Voels",
         "Role": "Jr. Software Developer",
@@ -296,8 +484,29 @@
         "GitHub": "",
         "PersonalSite": "",
         "SummaryText": "",
-        "Education": [],
-        "Experience": [],
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2019",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
         "Project": [],
         "Certification": [],
         "Skills": [
@@ -314,18 +523,39 @@
         ]
     },
     {
-        "Id": "10",
+        "Id": 10,
         "FirstName": "Mohammed",
         "LastName": "Aldalooj",
         "Role": "Jr. Software Developer",
         "Email": "mohammed.aldalooj@yash.com",
-        "Phone": "",
+        "Phone": "1549863251",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
         "SummaryText": "",
-        "Education": [],
-        "Experience": [],
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2016",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
         "Project": [],
         "Certification": [],
         "Skills": [
@@ -341,12 +571,12 @@
         ]
     },
     {
-        "Id": "11",
+        "Id": 11,
         "FirstName": "Sam",
         "LastName": "Hyderbell",
         "Role": "Jr. Software Developer",
         "Email": "sam.hyderbell@yash.com",
-        "Phone": "424-218-4950",
+        "Phone": "4242184950",
         "LinkedIn": "https://www.linkedin.com/in/hydersam",
         "GitHub": "https://github.com/hydersam",
         "PersonalSite": "www.googlehydersam.com",
@@ -402,6 +632,96 @@
             "Azure Functions",
             "Azure Key Vault",
             "Kubernetes"
+        ]
+    },
+    {
+        "Id": 12,
+        "FirstName": "Tim",
+        "LastName": "Johnson",
+        "Role": "Jr. Software Developer",
+        "Email": "tim.johnson@yash.com",
+        "Phone": "7914461492",
+        "LinkedIn": "",
+        "GitHub": "",
+        "PersonalSite": "",
+        "SummaryText": "I am a .NET Developer",
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2018",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2018",
+                "JobEndDate": "Present",
+                "JobInfo": ".NET Developer"
+            }
+        ],
+        "Project": [],
+        "Certification": [],
+        "Skills": [
+            "C#",
+            ".NET Framework",
+            "PowerApps",
+            "ASP.NET",
+            "React",
+            "Power BI",
+            "Azure",
+            "Git"
+        ]
+    },
+    {
+        "Id": 13,
+        "FirstName": "John",
+        "LastName": "Jackson",
+        "Role": "Jr. Software Developer",
+        "Email": "john.jackson@yash.com",
+        "Phone": "",
+        "LinkedIn": "",
+        "GitHub": "",
+        "PersonalSite": "",
+        "SummaryText": "",
+        "Education": [
+            {
+                "School": "University of Illinois",
+                "Location": "Champagin, IL",
+                "GradDate": "2016",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": ""
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        ],
+        "Project": [],
+        "Certification": [],
+        "Skills": [
+            "Java",
+            "HTML",
+            "Spring Boot",
+            "CSS",
+            "Angular"
         ]
     }
 ]

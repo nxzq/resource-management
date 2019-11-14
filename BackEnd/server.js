@@ -1,6 +1,6 @@
-const Joi = require('joi');
 const express = require('express');
 const app = express();
+const fs = require('fs')
 
 // enable middleware || pipeline
 app.use(express.json())
@@ -8,82 +8,83 @@ app.use(express.json())
 // PORT
 const PORT = process.env.PORT || 5000;
 
-// app.get()
-// app.post()
-// app.put()
-// app.delete()
-
 // Mock Data
-const courses = [
-    { id: 1, name: 'course1' },
-    { id: 2, name: 'course2' },
-    { id: 3, name: 'course3' },
-    { id: 4, name: 'course4' },
-    { id: 5, name: 'course5' }
-]
+var resources
+fs.readFile('./MockData/Resources.json', 'utf8', (err, jsonString) => {
+    if (err) {
+        console.log("File read failed:", err)
+        return 
+    }
+    resources = JSON.parse(jsonString)
+})
 
-// Validation Funciton
-function validateCourseName(course) {
-    let schema = {
-        name: Joi.string().min(3).required()
-    };
-    return Joi.validate(course, schema);
-};
-
-app.get('/', (req, res) => {
-    res.send('Hello World');
+// GET ALL
+app.get('/resources', (req, res) => {
+    res.send(resources);
 });
 
-app.get('/api/courses', (req, res) => {
-    res.send(courses);
+// GET Table Data
+app.get('/resources/table', (req, res) => {
+    let tableData = []
+    resources.forEach(r => {
+        data = {
+            Id: r.Id,
+            FirstName: r.FirstName,
+            LastName: r.LastName,
+            Role: r.Role,
+            Email: r.Email,
+            Skills: r.Skills
+        }
+        tableData.push(data)
+    })
+    res.send(tableData);
 });
 
-app.post('/api/courses', (req, res) => {
-    // Import Validation
-    let { error } = validateCourseName(req.body);
-    // 400 Bad Request
-    if (error) return res.status(400).send(result.error.details[0].message);
-    let course = {
-        id: courses.length + 1,
-        name: req.body.name
-    };
-    courses.push(course);
-    res.send(course);
-});
-
-app.put('/api/courses/:id', (req, res) => {
+// GET Resource By ID
+app.get('/resources/:id', (req, res) => {
     // Find Resource
-    let course = courses.find(c => c.id === parseInt(req.params.id));
+    let resource = resources.find(r => r.Id === parseInt(req.params.id));
     // 404 Not Found
-    if (!course) return res.status(404).send('The course with the given ID was not found');
-    // Import Validation
-    let { error } = validateCourseName(req.body);
-    // 400 Bad Request
-    if (error) return res.status(400).send(result.error.details[0].message);
-    // Update Resource
-    course.name = req.body.name;
-    res.send(course);
+    if (!resource) return res.status(404).send('The resource with the given ID was not found');
+    res.send(resource);
 });
 
-app.delete('/api/courses/:id', (req, res) => {
-    // Find Resource
-    let course = courses.find(c => c.id === parseInt(req.params.id));
-    // 404 Not Found
-    if (!course) return res.status(404).send('The course with the given ID was not found');
-    // Delete
-    let index = courses.indexOf(course);
-    courses.splice(index, 1);
-    // Return
-    res.send(course);
-});
+// // POST Resource By ID [{NOT CURRNENTLY WORKING}]
+// app.post('/resource', (req, res) => {
+//     // 400 Bad Request
+//     // if (error) return res.status(400).send(result.error.details[0].message);
+//     let resource = {
+//         // Create Object
+//     };
+//     resources.push(resource);
+//     res.send(resource);
+// });
 
-app.get('/api/courses/:id', (req, res) => {
-    let course = courses.find(c => c.id === parseInt(req.params.id));
-    // 404 Not Found
-    if (!course) return res.status(404).send('The course with the given ID was not found');
-    res.send(course);
-});
+// // DELETE Resource By ID [{NOT CURRNENTLY WORKING}]
+// app.delete('/resources/:id', (req, res) => {
+//     // Find Resource
+//     let resource = resources.find(r => r.Id === parseInt(req.params.id));
+//     // 404 Not Found
+//     if (!resource) return res.status(404).send('The resource with the given ID was not found');
+//     // Delete
+//     let index = resources.indexOf(resource);
+//     resources.splice(index, 1);
+//     // Return
+//     res.send(resource);
+// });
 
+// // UPDATE Resource By ID [{NOT CURRNENTLY WORKING}]
+// app.put('/resources/:id', (req, res) => {
+//     // Find Resource
+//     let resource = resources.find(r => r.Id === parseInt(req.params.id));
+//     // 404 Not Found
+//     if (!resource) return res.status(404).send('The resource with the given ID was not found');
+//     // Update Resource
+//         // Logic
+//     res.send(resource);
+// });
+
+// PORT
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`);
 });
