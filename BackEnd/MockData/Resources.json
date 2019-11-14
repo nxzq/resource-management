@@ -535,13 +535,12 @@
         "SummaryText": "",
         "Education": [
             {
-                "School": "University of Illinois",
-                "Location": "Champagin, IL",
-                "GradDate": "2016",
+                "School": "University of Nebraska-Omaha",
+                "Location": "Omaha, NE",
+                "GradDate": "2019",
                 "Degree": "Bachelor",
                 "Major": [
-                    "Computer Science",
-                    "Math"
+                    "Computer Science"
                 ],
                 "Minor": [],
                 "GPA": ""
@@ -552,11 +551,18 @@
                 "JobTitle": "Junior Software Developer",
                 "JobOrg": "Yash Technologies",
                 "JobStartDate": "June 2019",
-                "JobEndDate": "",
-                "JobInfo": ""
+                "JobEndDate": "Present",
+                "JobInfo": "Cog Search"
             }
         ],
-        "Project": [],
+        "Project": [
+            {
+                "ProjName": "Cognitive Search POC",
+                "ProjDate": "2019",
+                "ProjAssociation": "Yash Technologies",
+                "ProjInfo": "Full Stack"
+            }
+        ],
         "Certification": [],
         "Skills": [
             "Java",

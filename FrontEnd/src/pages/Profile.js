@@ -30,18 +30,20 @@ const Profile = (props) => {
     )
 
     useEffect(() => {
+        try {
         axios.get('http://localhost:5000/api/resources/' + props.location.value.id)
           .then(res => {
             const resourceData = res.data;
             setResource( resourceData )
           })
-      }, [])
+      } catch {}}, [])
 
     const Education = () => {
         let Education = []
+        let width = resource.Education.length > 2 ? 4 : 6
         for (let i=0; i<resource.Education.length; i++) {
             Education = [...Education, 
-            <div className="col-md-6">
+            <div className={"col-md-"+ width}>
                 <p><b>School/University:</b>&nbsp;{resource.Education[i].School}</p>
                 <p><b>Location:</b>&nbsp;{resource.Education[i].Location}</p>
                 <p><b>Graduation Date:</b>&nbsp;{resource.Education[i].GradDate}</p>
@@ -63,13 +65,14 @@ const Profile = (props) => {
 
     const Experience = () => {
         let Experience = []
+        let width = resource.Experience.length > 2 ? 4 : 6
         for (let i=0; i<resource.Experience.length; i++) {
             Experience = [...Experience, 
-            <div className="col-md-6">
+            <div className={"col-md-"+ width}>
                 <p><b>Job Title:</b>&nbsp;{resource.Experience[i].JobTitle}</p>
                 <p><b>Job Company/Organization:</b>&nbsp;{resource.Experience[i].JobOrg}</p>
                 <p><b>Start Date:</b>&nbsp;{resource.Experience[i].JobStartDate}</p>
-                {resource.Experience[i].JobEndDate !== '' ? 
+                {resource.Experience[i].JobEndDate === '' ? 
                     <p><b>End Date:</b>&nbsp;Present</p>
                     : 
                     <p><b>End Date:</b>&nbsp;{resource.Experience[i].JobEndDate}</p>
@@ -83,9 +86,10 @@ const Profile = (props) => {
 
     const Project = () => {
         let Project = []
+        let width = resource.Project.length > 2 ? 4 : 6
         for (let i=0; i<resource.Project.length; i++) {
             Project = [...Project, 
-            <div className="col-md-6">
+            <div className={"col-md-"+ width}>
                 <p><b>Project Name:</b>&nbsp;{resource.Project[i].ProjName}</p>
                 <p><b>Project Association:</b>&nbsp;{resource.Project[i].ProjAssociation}</p>
                 <p><b>Project Date:</b>&nbsp;{resource.Project[i].ProjDate}</p>
@@ -98,9 +102,10 @@ const Profile = (props) => {
 
     const Certification = () => {
         let Certification = []
+        let width = resource.Certification.length > 2 ? 4 : 6
         for (let i=0; i<resource.Certification.length; i++) {
             Certification = [...Certification, 
-            <div className="col-md-6">
+            <div className={"col-md-"+ width}>
                 <p><b>Certification Name:</b>&nbsp;{resource.Certification[i].CertName}</p>
                 <p><b>Certification Association:</b>&nbsp;{resource.Certification[i].CertAssociation}</p>
                 <p><b>Certification Date:</b>&nbsp;{resource.Certification[i].CertDate}</p>
