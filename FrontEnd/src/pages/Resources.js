@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Container, Row, Button, Table, Progress, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -12,87 +13,15 @@ const Resources = () => {
   const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
-  const [data] = useState(
-    [
-      {
-        "Id": "1",
-        "FirstName": "John",
-        "LastName": "Anderson",
-        "Role": "Sr. Technical Lead",
-        "Email": "john.anderson@yash.com",
-        "Skills": ["Project Management", "AWS",]
-      }, {
-        "Id": "2",
-        "FirstName": "Tim",
-        "LastName": "Johnson",
-        "Role": "Jr. Software Developer",
-        "Email": "tim.johnson@yash.com",
-        "Skills": ["C#", ".NET Framework", "PowerApps", "ASP.NET", "React", "Power BI", "Azure", "Git"]
-      }, {
-        "Id": "3",
-        "FirstName": "John",
-        "LastName": "Jackson",
-        "Role": "Jr. Software Developer",
-        "Email": "john.jackson@yash.com",
-        "Skills": ["Java", "HTML", "Spring Boot", "CSS", "Angular"]
-      }, {
-        "Id": "4",
-        "FirstName": "Travis",
-        "LastName": "Platt",
-        "Role": "Business Analyst",
-        "Email": "travis.platt@yash.com",
-        "Skills": ["Software Analysis", "Requirement Gathering"]
-      }, {
-        "Id": "5",
-        "FirstName": "Mary",
-        "LastName": "Dixon",
-        "Role": "Software Developer",
-        "Email": "mary.dixon@yash.com",
-        "Skills": ["React", "HTML", "JavaScript", "CSS"]
-      }, {
-        "Id": "6",
-        "FirstName": "Todd",
-        "LastName": "Dooley",
-        "Role": "Data Analyst",
-        "Email": "todd.dooley@yash.com",
-        "Skills": ["SQL", "MongoDB", "NoSQL", "Python", "Tableau"]
-      }, {
-        "Id": "7",
-        "FirstName": "Brendan",
-        "LastName": "Legett",
-        "Role": "Jr. Software Developer",
-        "Email": "brendan.legett@yash.com",
-        "Skills": ["java", "aws", "html", "css", "javascript", "git", "spring", "react", "angular", "object-oriented programming", "bootstrap"]
-      }, {
-        "Id": "8",
-        "FirstName": "Andre",
-        "LastName": "Prawira",
-        "Role": "Jr. Software Developer",
-        "Email": "andre.prawira@gmail.com",
-        "Skills": ["python", "java", "git", "aws", "html", "cobol", "springboot"]
-      }, {
-        "Id": "9",
-        "FirstName": "Matthew",
-        "LastName": "Voels",
-        "Role": "Jr. Software Developer",
-        "Email": "matthew.voels@yash.com",
-        "Skills": ["Python", "Java", "AWS", "Javascript", "HTML", "Tensorflow", "Spring Boot", "Spring 4", "React", "Angular"]
-      }, {
-        "Id": "10",
-        "FirstName": "Mohammed",
-        "LastName": "Aldalooj",
-        "Role": "Jr. Software Developer",
-        "Email": "mohammed.aldalooj@yash.com",
-        "Skills": ["Java", "c#", "azure", "TypeScript", "Python", "HTML", "CSS", "SQL", "React"]
-      }, {
-        "Id": "11",
-        "FirstName": "Sam",
-        "LastName": "Hyderbell",
-        "Role": "Jr. Software Developer",
-        "Email": "sam.hyderbell@yash.com",
-        "Skills": ["JavaScript", "Python", "Go", "PHP", "C#", ".NET Framework", "HTML", "CSS", "jQuery", "Node.js", "MySQL", "PostgreSQL", "CosmosDB", "AWS", "Azure", "Jenkins", "Azure Functions", "Azure Key Vault", "Kubernetes"]
-      }
-    ])
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/resources/table`)
+      .then(res => {
+        const resourceData = res.data;
+        setData( resourceData )
+      })
+  }, [])
 
   const getSkillMatch = (skills) => {
     let count = 0
@@ -155,9 +84,9 @@ const Resources = () => {
                 content={<Progress className="unselectable" value={getSkillMatch(person.Skills)} color="primary">{getSkillMatch(person.Skills)}%</Progress>} />
             </div>
           </td>
-          : ''}
+          : null}
         <td>
-          <Link style={{ textDecoration: 'none', color: '#212529' }} to="/profile"><i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user"
+          <Link style={{ textDecoration: 'none', color: '#212529' }} to={{pathname: "/profile", value: {id: person.Id}}}><i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user"
             aria-hidden="true"></i></Link>
           <span>&nbsp;&nbsp;</span>
           <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt"></i>
@@ -169,11 +98,12 @@ const Resources = () => {
 
   return (
     <div>
+      {console.log(data)}
       <Header name={'Resource Management'} />
       <Container>
         <Row>
-          <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-2" />
-          <div className="rounded-input col-xl-7 col-lg-7 col-md-5 col-sm-5 col-xs-5">
+          <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-4 col-sm-6 col-xs-6" />
+          <div className="rounded-input col-xl-7 col-lg-7 col-md-8 col-sm-6 col-xs-6">
             <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -184,12 +114,12 @@ const Resources = () => {
               </div>
             </div>
           </div>
-          <Link style={{ textDecoration: 'none' }} to="/addjob" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
+          <Link style={{ textDecoration: 'none' }} to="/addjob" className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
             <Button style={{ height: '50px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Job
             </Button>
           </Link>
-          <Link style={{ textDecoration: 'none' }} to="/addresource" className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
+          <Link style={{ textDecoration: 'none' }} to="/addresource" className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
             <Button style={{ height: '50px', textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
               &nbsp;&nbsp;Add Resource
             </Button>
@@ -202,7 +132,7 @@ const Resources = () => {
                 <th>Name</th>
                 <th>Role</th>
                 <th>Email</th>
-                {showSkillMatch ? <th>Skill Match</th> : ''}
+                {showSkillMatch ? <th>Skill Match</th> : null}
                 <th>Action</th>
               </tr>
             </thead>

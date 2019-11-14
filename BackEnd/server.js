@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 const fs = require('fs')
 
 // enable middleware || pipeline
 app.use(express.json())
+app.use(cors())
 
 // PORT
 const PORT = process.env.PORT || 5000;
@@ -19,12 +21,12 @@ fs.readFile('./MockData/Resources.json', 'utf8', (err, jsonString) => {
 })
 
 // GET ALL
-app.get('/resources', (req, res) => {
+app.get('/api/resources', (req, res) => {
     res.send(resources);
 });
 
 // GET Table Data
-app.get('/resources/table', (req, res) => {
+app.get('/api/resources/table', (req, res) => {
     let tableData = []
     resources.forEach(r => {
         data = {
@@ -41,7 +43,7 @@ app.get('/resources/table', (req, res) => {
 });
 
 // GET Resource By ID
-app.get('/resources/:id', (req, res) => {
+app.get('/api/resources/:id', (req, res) => {
     // Find Resource
     let resource = resources.find(r => r.Id === parseInt(req.params.id));
     // 404 Not Found
@@ -50,7 +52,7 @@ app.get('/resources/:id', (req, res) => {
 });
 
 // // POST Resource By ID [{NOT CURRNENTLY WORKING}]
-// app.post('/resource', (req, res) => {
+// app.post('/api/resource', (req, res) => {
 //     // 400 Bad Request
 //     // if (error) return res.status(400).send(result.error.details[0].message);
 //     let resource = {
@@ -61,7 +63,7 @@ app.get('/resources/:id', (req, res) => {
 // });
 
 // // DELETE Resource By ID [{NOT CURRNENTLY WORKING}]
-// app.delete('/resources/:id', (req, res) => {
+// app.delete('/api/resources/:id', (req, res) => {
 //     // Find Resource
 //     let resource = resources.find(r => r.Id === parseInt(req.params.id));
 //     // 404 Not Found
@@ -74,7 +76,7 @@ app.get('/resources/:id', (req, res) => {
 // });
 
 // // UPDATE Resource By ID [{NOT CURRNENTLY WORKING}]
-// app.put('/resources/:id', (req, res) => {
+// app.put('/api/resources/:id', (req, res) => {
 //     // Find Resource
 //     let resource = resources.find(r => r.Id === parseInt(req.params.id));
 //     // 404 Not Found
