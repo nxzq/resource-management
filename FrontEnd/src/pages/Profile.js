@@ -54,10 +54,6 @@ const Profile = (props) => {
                     <p>
                         <b>Minor:</b>&nbsp;{resource.Education[i].Minor.join(', ')}
                     </p> : null}
-                {resource.Education[i].GPA !== '' ? 
-                <p>
-                    <b>GPA:</b>&nbsp;{resource.Education[i].GPA}
-                </p> : null}
             </div>
         ]
         }
@@ -161,20 +157,20 @@ const Profile = (props) => {
                         </p>
                         {resource.LinkedIn !== '' ? 
                         <p className="col-md-6">
-                            <b>LinkedIn:</b>&nbsp;{resource.LinkedIn}
-                        </p> : ''}
+                            <b>LinkedIn:</b>&nbsp;<a href={resource.LinkedIn} target="_blank" rel="noopener noreferrer">{resource.LinkedIn}</a>
+                        </p> : null}
                         {resource.GitHub !== '' ? 
                         <p className="col-md-6">
-                            <b>GitHub:</b>&nbsp;{resource.GitHub}
-                        </p> : ''}
+                            <b>GitHub:</b>&nbsp;<a href={resource.GitHub} target="_blank" rel="noopener noreferrer">{resource.GitHub}</a>
+                        </p> : null}
                         {resource.PersonalSite !== '' ? 
                         <p className="col-md-6">
-                            <b>Personal Site:</b>&nbsp;{resource.PersonalSite}
-                        </p> : ''}
+                            <b>Personal Site:</b>&nbsp;<a href={resource.PersonalSite} target="_blank" rel="noopener noreferrer">{resource.PersonalSite}</a>
+                        </p> : null}
                         {resource.SummaryText !== '' ? 
                         <p className="col-md-12">
                             <b>Summary:</b>&nbsp;{resource.SummaryText}
-                        </p> : ''}
+                        </p> : null}
                     </Row>
                     <br />
                     <Row>
