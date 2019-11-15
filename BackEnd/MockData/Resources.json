@@ -19,8 +19,7 @@
                 "Major": [
                     "Software Engineering"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             },
             {
                 "School": "Anoka Ramsey Community College",
@@ -31,8 +30,7 @@
                     "Computer Science",
                     "Arts"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -84,8 +82,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": "3.0"
+                "Minor": []
             }
         ],
         "Experience": [
@@ -165,8 +162,7 @@
                 "Major": [
                     "MIS"
                 ],
-                "Minor": [],
-                "GPA": "3.8"
+                "Minor": []
             },
             {
                 "School": "University of Illinois",
@@ -177,8 +173,7 @@
                     "Computer Science",
                     "Math"
                 ],
-                "Minor": [],
-                "GPA": "3.5"
+                "Minor": []
             }
         ],
         "Experience": [
@@ -265,8 +260,7 @@
                 ],
                 "Minor": [
                     "Computer Science"
-                ],
-                "GPA": ""
+                ]
             }
         ],
         "Experience": [
@@ -305,8 +299,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -351,8 +344,7 @@
                 ],
                 "Minor": [
                     "Computer Science"
-                ],
-                "GPA": ""
+                ]
             }
         ],
         "Experience": [
@@ -394,8 +386,7 @@
                 "Major": [
                     "Information Systems"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -449,8 +440,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -494,8 +484,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -542,8 +531,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -596,8 +584,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": "3.32"
+                "Minor": []
             }
         ],
         "Experience": [
@@ -660,8 +647,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -706,8 +692,7 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": [],
-                "GPA": ""
+                "Minor": []
             }
         ],
         "Experience": [
@@ -749,8 +734,9 @@
                 "Major": [
                     "Computer Science"
                 ],
-                "Minor": ["Math"],
-                "GPA": "3.4"
+                "Minor": [
+                    "Math"
+                ]
             }
         ],
         "Experience": [
@@ -807,8 +793,7 @@
                     "Computer Science",
                     "Math"
                 ],
-                "Minor": [],
-                "GPA": "4.0"
+                "Minor": []
             }
         ],
         "Experience": [
