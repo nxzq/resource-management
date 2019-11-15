@@ -7,6 +7,7 @@ import SectionHeader from '../components/SectionHeader';
 
 const Profile = (props) => {
 
+    const [id] = useState(props.match.params.id)
     const [tooltipOpen, setTooltipOpen] = useState(false);
     const toggle = () => setTooltipOpen(!tooltipOpen);
     const [resource, setResource] = useState(
@@ -135,7 +136,10 @@ const Profile = (props) => {
             <div>
                 <Header name={
                     <div>
-                    {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;<i id="edit" className="fas fa-edit"></i>
+                    {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;
+                    <Link style={{ textDecoration: 'none' }} to={"/editresource/" + id}>
+                    <i id="edit" className="fas fa-edit"></i>
+                    </Link>
                     <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>
                         Edit Profile
                     </Tooltip>

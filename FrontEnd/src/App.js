@@ -7,6 +7,7 @@ import Resources from './pages/Resources';
 import Help from './pages/Help';
 import Settings from './pages/Settings';
 import AddResource from './pages/AddResource';
+import EditResource from './pages/EditResource';
 import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
 import Footer from './components/Footer';
@@ -27,6 +28,7 @@ function App() {
         <Route path='/help' component={Help} />
         <Route path='/settings' render={(props) => <Settings {...props} toggleDarkTheme={toggleDarkTheme} DarkTheme={DarkTheme} />} />
         <Route path='/addresource' component={AddResource} />
+        <Route path='/editresource/:id' component={EditResource} />
         <Route path='/addjob' component={AddJob} />
         <Route path='/profile/:id' component={Profile} />
         <br />

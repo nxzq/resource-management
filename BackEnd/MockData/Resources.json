@@ -435,7 +435,7 @@
         "LastName": "Prawira",
         "Role": "Jr. Software Developer",
         "Email": "andre.prawira@gmail.com",
-        "Phone": "",
+        "Phone": "11234567890",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
@@ -480,7 +480,7 @@
         "LastName": "Voels",
         "Role": "Jr. Software Developer",
         "Email": "matthew.voels@yash.com",
-        "Phone": "",
+        "Phone": "11234567890",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
@@ -727,6 +727,111 @@
             "Spring Boot",
             "CSS",
             "Angular"
+        ]
+    },
+    {
+        "Id": 14,
+        "FirstName": "Ian",
+        "LastName": "Taylor",
+        "Role": "DevOps Engineer",
+        "Email": "ian.taylor@yash.com",
+        "Phone": "11234567890",
+        "LinkedIn": "",
+        "GitHub": "",
+        "PersonalSite": "",
+        "SummaryText": "",
+        "Education": [
+            {
+                "School": "Washington State University",
+                "Location": "Spokane, WA",
+                "GradDate": "2019",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science"
+                ],
+                "Minor": ["Math"],
+                "GPA": "3.4"
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "DevOps Engineer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "July 2019",
+                "JobEndDate": "Present",
+                "JobInfo": ""
+            },
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "July 2019",
+                "JobInfo": ""
+            }
+        ],
+        "Project": [
+            {
+                "ProjName": "ECIF",
+                "ProjDate": "2019",
+                "ProjAssociation": "Yash Technologies",
+                "ProjInfo": ""
+            }
+        ],
+        "Certification": [],
+        "Skills": [
+            "Cloud",
+            "DOM Manipulation",
+            "Pipelines",
+            "CI/CD",
+            "UX/UI"
+        ]
+    },
+    {
+        "Id": 15,
+        "FirstName": "Caleb",
+        "LastName": "Reiter",
+        "Role": "Software Engineer",
+        "Email": "caleb.reiter@yash.com",
+        "Phone": "11234567890",
+        "LinkedIn": "",
+        "GitHub": "",
+        "PersonalSite": "",
+        "SummaryText": "",
+        "Education": [
+            {
+                "School": "St. Ambrose University",
+                "Location": "Davenport, IA",
+                "GradDate": "2018",
+                "Degree": "Bachelor",
+                "Major": [
+                    "Computer Science",
+                    "Math"
+                ],
+                "Minor": [],
+                "GPA": "4.0"
+            }
+        ],
+        "Experience": [
+            {
+                "JobTitle": "Software Engineer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2019",
+                "JobEndDate": "Present",
+                "JobInfo": ""
+            },
+            {
+                "JobTitle": "Junior Software Developer",
+                "JobOrg": "Yash Technologies",
+                "JobStartDate": "June 2018",
+                "JobEndDate": "June 2019",
+                "JobInfo": ""
+            }
+        ],
+        "Project": [],
+        "Certification": [],
+        "Skills": [
+            "Redux-Thunk",
+            "Sprint Data JPA"
         ]
     }
 ]
