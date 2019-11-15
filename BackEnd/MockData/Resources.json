@@ -158,6 +158,17 @@
         "SummaryText": "Sr. Technical Lead at Yash Technologies",
         "Education": [
             {
+                "School": "University of Nebraska Omaha",
+                "Location": "Champagin, IL",
+                "GradDate": "2019",
+                "Degree": "Master",
+                "Major": [
+                    "MIS"
+                ],
+                "Minor": [],
+                "GPA": "3.8"
+            },
+            {
                 "School": "University of Illinois",
                 "Location": "Champagin, IL",
                 "GradDate": "2016",
@@ -168,17 +179,6 @@
                 ],
                 "Minor": [],
                 "GPA": "3.5"
-            },
-            {
-                "School": "University of Nebraska Omaha",
-                "Location": "Champagin, IL",
-                "GradDate": "2019",
-                "Degree": "Master",
-                "Major": [
-                    "MIS"
-                ],
-                "Minor": [],
-                "GPA": "3.8"
             }
         ],
         "Experience": [
