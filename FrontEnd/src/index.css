@@ -40,3 +40,7 @@ nav a:hover {
   border-color: transparent;
   text-decoration: none;
 }
+
+#edit {
+  color: #212529;
+}
