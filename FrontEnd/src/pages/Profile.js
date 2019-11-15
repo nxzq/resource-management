@@ -49,15 +49,15 @@ const Profile = (props) => {
                 <p><b>Location:</b>&nbsp;{resource.Education[i].Location}</p>
                 <p><b>Graduation Date:</b>&nbsp;{resource.Education[i].GradDate}</p>
                 <p><b>Degree:</b>&nbsp;{resource.Education[i].Degree}</p>
-                <p><b>Major:</b>&nbsp;{resource.Education[i].Major}</p>
+                <p><b>Major:</b>&nbsp;{resource.Education[i].Major.join(', ')}</p>
                 {resource.Education[i].Minor[0] ? 
                     <p>
-                        <b>Minor:</b>&nbsp;{resource.Education[i].Minor}
-                    </p> : ''}
+                        <b>Minor:</b>&nbsp;{resource.Education[i].Minor.join(', ')}
+                    </p> : null}
                 {resource.Education[i].GPA !== '' ? 
                 <p>
                     <b>GPA:</b>&nbsp;{resource.Education[i].GPA}
-                </p> : ''}
+                </p> : null}
             </div>
         ]
         }
