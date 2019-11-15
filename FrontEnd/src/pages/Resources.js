@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Button, Table, Progress, Input } from 'reactstrap';
+import { Container, Row, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
@@ -72,6 +72,7 @@ const Resources = () => {
 
   const tableData = () => {
     let rawData = (search === '' ? [...data] : Search())
+    rawData = rawData.sort((a, b) => a.FirstName !== b.FirstName ? a.FirstName < b.FirstName ? 1 : -1 : 0)
     let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
       <tr key={person.Id}>
         <td>{person.FirstName + ' ' + person.LastName}</td>
@@ -98,7 +99,6 @@ const Resources = () => {
 
   return (
     <div>
-      {console.log(data)}
       <Header name={'Resource Management'} />
       <Container>
         <Row>
@@ -136,9 +136,14 @@ const Resources = () => {
                 <th>Action</th>
               </tr>
             </thead>
+            { data[0] === undefined ?
+            <tbody>
+            <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
+            </tbody>
+            : 
             <tbody>
               {tableData()}
-            </tbody>
+            </tbody>}
           </Table>
         </Row>
       </Container>

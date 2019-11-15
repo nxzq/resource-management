@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Tooltip } from 'reactstrap';
+import { Container, Row, Tooltip, Spinner } from 'reactstrap';
 // import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SectionHeader from '../components/SectionHeader';
@@ -125,78 +125,82 @@ const Profile = (props) => {
         <div>
             {console.log(resource)}
             {console.log(resource.Id)}
-            <Header name={
-                <div>
-                {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;<i id="edit" className="fas fa-edit"></i>
-                <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>
-                    Edit Profile
-                </Tooltip>
-                </div>
-            } />
-            <Container>
-                <Row>
-                    <p className="col-md-6">
-                        <b>Role:</b>&nbsp;{resource.Role}
-                    </p>
-                    <p className="col-md-6">
-                        <b>Email:</b>&nbsp;{resource.Email}
-                    </p>
-                    <p className="col-md-6">
-                        <b>Phone:</b>&nbsp;{resource.Phone}
-                    </p>
-                    {resource.LinkedIn !== '' ? 
-                    <p className="col-md-6">
-                        <b>LinkedIn:</b>&nbsp;{resource.LinkedIn}
-                    </p> : ''}
-                    {resource.GitHub !== '' ? 
-                    <p className="col-md-6">
-                        <b>GitHub:</b>&nbsp;{resource.GitHub}
-                    </p> : ''}
-                    {resource.PersonalSite !== '' ? 
-                    <p className="col-md-6">
-                        <b>Personal Site:</b>&nbsp;{resource.PersonalSite}
-                    </p> : ''}
-                    {resource.SummaryText !== '' ? 
-                    <p className="col-md-12">
-                        <b>Summary:</b>&nbsp;{resource.SummaryText}
-                    </p> : ''}
-                </Row>
-                <br />
-                <Row>
-                    <SectionHeader name={'Education'} />
-                </Row>
-                <Row>
-                    {Education()}
-                </Row>
-                <br />
-                <Row>
-                    <SectionHeader name={'Experience'} />
-                </Row>
-                <Row>
-                    {Experience()}
-                </Row>
-                <br />
-                <Row>
-                    <SectionHeader name={'Projects'} />
-                </Row>
-                <Row>
-                    {Project()}
-                </Row>
-                <br />
-                <Row>
-                    <SectionHeader name={'Certifications'} />
-                </Row>
-                <Row>
-                    {Certification()}
-                </Row>
-                <br />
-                <Row>
-                    <SectionHeader name={'Skills'} />
-                </Row>
-                <Row>
-                    {Skills()}
-                </Row>
-            </Container>
+            { resource.Id === null ? <div className="text-center"><Spinner color="primary" /></div> :
+            <div>
+                <Header name={
+                    <div>
+                    {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;<i id="edit" className="fas fa-edit"></i>
+                    <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>
+                        Edit Profile
+                    </Tooltip>
+                    </div>
+                } />
+                <Container>
+                    <Row>
+                        <p className="col-md-6">
+                            <b>Role:</b>&nbsp;{resource.Role}
+                        </p>
+                        <p className="col-md-6">
+                            <b>Email:</b>&nbsp;{resource.Email}
+                        </p>
+                        <p className="col-md-6">
+                            <b>Phone:</b>&nbsp;{resource.Phone}
+                        </p>
+                        {resource.LinkedIn !== '' ? 
+                        <p className="col-md-6">
+                            <b>LinkedIn:</b>&nbsp;{resource.LinkedIn}
+                        </p> : ''}
+                        {resource.GitHub !== '' ? 
+                        <p className="col-md-6">
+                            <b>GitHub:</b>&nbsp;{resource.GitHub}
+                        </p> : ''}
+                        {resource.PersonalSite !== '' ? 
+                        <p className="col-md-6">
+                            <b>Personal Site:</b>&nbsp;{resource.PersonalSite}
+                        </p> : ''}
+                        {resource.SummaryText !== '' ? 
+                        <p className="col-md-12">
+                            <b>Summary:</b>&nbsp;{resource.SummaryText}
+                        </p> : ''}
+                    </Row>
+                    <br />
+                    <Row>
+                        <SectionHeader name={'Education'} />
+                    </Row>
+                    <Row>
+                        {Education()}
+                    </Row>
+                    <br />
+                    <Row>
+                        <SectionHeader name={'Experience'} />
+                    </Row>
+                    <Row>
+                        {Experience()}
+                    </Row>
+                    <br />
+                    <Row>
+                        <SectionHeader name={'Projects'} />
+                    </Row>
+                    <Row>
+                        {Project()}
+                    </Row>
+                    <br />
+                    <Row>
+                        <SectionHeader name={'Certifications'} />
+                    </Row>
+                    <Row>
+                        {Certification()}
+                    </Row>
+                    <br />
+                    <Row>
+                        <SectionHeader name={'Skills'} />
+                    </Row>
+                    <Row>
+                        {Skills()}
+                    </Row>
+                </Container> 
+            </div>
+            }
         </div>
     );
 }
