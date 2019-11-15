@@ -7,7 +7,6 @@ import SectionHeader from '../components/SectionHeader';
 
 const Profile = (props) => {
 
-    const [id] = useState((props.location.value.id === 'undefined') ? -1 : props.location.value.id)
     const [tooltipOpen, setTooltipOpen] = useState(false);
     const toggle = () => setTooltipOpen(!tooltipOpen);
     const [resource, setResource] = useState(
@@ -31,13 +30,13 @@ const Profile = (props) => {
     )
 
     useEffect(() => {
-        try {
-        axios.get('http://localhost:5000/api/resources/' + id)
+        const { match: { params } } = props;
+        axios.get(`http://localhost:5000/api/resources/${params.id}`)
           .then(res => {
             const resourceData = res.data;
             setResource( resourceData )
-          })
-      } catch {}}, [id])
+          }) // eslint-disable-next-line
+      }, [])
 
     const Education = () => {
         let Education = []
@@ -78,7 +77,11 @@ const Profile = (props) => {
                     : 
                     <p><b>End Date:</b>&nbsp;{resource.Experience[i].JobEndDate}</p>
                 }
-                <p><b>Details:</b>&nbsp;{resource.Experience[i].JobInfo}</p>
+                {resource.Experience[i].JobInfo === '' ? 
+                    <p><b>Details:</b>&nbsp;None</p>
+                    : 
+                    <p><b>Details:</b>&nbsp;{resource.Experience[i].JobInfo}</p>
+                }
             </div>
         ]
         }
@@ -94,7 +97,11 @@ const Profile = (props) => {
                 <p><b>Project Name:</b>&nbsp;{resource.Project[i].ProjName}</p>
                 <p><b>Project Association:</b>&nbsp;{resource.Project[i].ProjAssociation}</p>
                 <p><b>Project Date:</b>&nbsp;{resource.Project[i].ProjDate}</p>
-                <p><b>Details:</b>&nbsp;{resource.Project[i].ProjInfo}</p>
+                {resource.Project[i].ProjInfo === '' ? 
+                    <p><b>Details:</b>&nbsp;None</p>
+                    : 
+                    <p><b>Details:</b>&nbsp;{resource.Project[i].ProjInfo}</p>
+                }
             </div>
         ]
         }
@@ -143,7 +150,10 @@ const Profile = (props) => {
                             <b>Email:</b>&nbsp;{resource.Email}
                         </p>
                         <p className="col-md-6">
-                            <b>Phone:</b>&nbsp;{resource.Phone}
+                            <b>Phone:</b>&nbsp;{resource.Phone.length === 10 ? 
+                            `(${resource.Phone.substring(0, resource.Phone.length - 7)})-${resource.Phone.substring(resource.Phone.length - 7, resource.Phone.length - 4)}-${resource.Phone.substring(resource.Phone.length - 4, resource.Phone.length)}`
+                            : `+${resource.Phone.substring(0, resource.Phone.length - 10)} (${resource.Phone.substring(resource.Phone.length - 10, resource.Phone.length - 7)})-${resource.Phone.substring(resource.Phone.length - 7, resource.Phone.length - 4)}-${resource.Phone.substring(resource.Phone.length - 4, resource.Phone.length)}`
+                            }
                         </p>
                         {resource.LinkedIn !== '' ? 
                         <p className="col-md-6">

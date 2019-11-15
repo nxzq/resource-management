@@ -28,7 +28,7 @@ function App() {
         <Route path='/settings' render={(props) => <Settings {...props} toggleDarkTheme={toggleDarkTheme} DarkTheme={DarkTheme} />} />
         <Route path='/addresource' component={AddResource} />
         <Route path='/addjob' component={AddJob} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/profile/:id' component={Profile} />
         <br />
         <Footer />
       </div>

@@ -72,7 +72,7 @@ const Resources = () => {
 
   const tableData = () => {
     let rawData = (search === '' ? [...data] : Search())
-    rawData = rawData.sort((a, b) => a.FirstName !== b.FirstName ? a.FirstName < b.FirstName ? 1 : -1 : 0)
+    rawData = rawData.sort((a, b) => a.FirstName !== b.FirstName ? a.FirstName > b.FirstName ? 1 : -1 : 0)
     let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
       <tr key={person.Id}>
         <td>{person.FirstName + ' ' + person.LastName}</td>
@@ -87,7 +87,7 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <Link style={{ textDecoration: 'none', color: '#212529' }} to={{pathname: "/profile", value: {id: person.Id}}}><i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user"
+          <Link style={{ textDecoration: 'none', color: '#212529' }} to={"/profile/" + person.Id}><i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user"
             aria-hidden="true"></i></Link>
           <span>&nbsp;&nbsp;</span>
           <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt"></i>
