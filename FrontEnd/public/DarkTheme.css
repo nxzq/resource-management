@@ -58,7 +58,7 @@ nav a:hover {
 }
 
 input, textarea, select, .custom-checkbox {
-  color: #000;
+  color: #fff;
   opacity: 0.90;
 }
 
@@ -72,7 +72,7 @@ input, textarea, select, .custom-checkbox {
 }
 
 .rounded-input {
-  opacity: 0.85
+  opacity: 0.90
 }
 
 #section-header, #section-header:hover, #section-header:active, #section-header:focus, #add-skill, #add-skill:hover {
