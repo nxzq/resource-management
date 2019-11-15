@@ -48,9 +48,11 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
         if (notHidden === true) {
             hideSkillMatch()
             setNeededSkill([])
+            setSkillFilter([])
             toggle()
         } else {
             setNeededSkill([])
+            setSkillFilter([])
             toggle()
         }
     }
