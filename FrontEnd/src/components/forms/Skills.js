@@ -14,7 +14,7 @@ const Skill = ({ skills, removeSkill }) => {
     const badges = (skills) => {
         let badges = []
         if (skills.length === 0) {}
-        else badges = skills.map((skill) => (
+        else badges = skills.sort((a, b) => a !== b ? a > b ? 1 : -1 : 0).map((skill) => (
                 <Button onClick={() => {removeSkill(skill)}} style={style} key={skill} className="shadow-none">
                     <b>X </b> {skill}
                 </Button>

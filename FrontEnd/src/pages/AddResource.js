@@ -13,7 +13,23 @@ import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
 class AddResource extends Component {
     state = {
-        skills: ['React.js', 'Python'],
+        data: {
+            "Id": "",
+            "FirstName": "test",
+            "LastName": "ltest",
+            "Role": "role city",
+            "Email": "emailad",
+            "Phone": "909090",
+            "LinkedIn": "linkningns",
+            "GitHub": "githubs",
+            "PersonalSite": "",
+            "SummaryText": "",
+            "Education": [],
+            "Experience": [],
+            "Project": [],
+            "Certification": [],
+            "Skills": []
+        },
         EducationForms: [],
         CertificationForms: [],
         ExperienceForms: [],
@@ -25,15 +41,18 @@ class AddResource extends Component {
     }
 
     handleAddSkill = (skill) => {
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Skills = [...this.state.data.Skills, skill]
         this.setState({
-            skills: [...this.state.skills, skill]
+            data
         })
     }
 
     handleRemoveSkill = (skill) => {
-        let skills = this.state.skills.filter(s => s !== skill)
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Skills = this.state.data.Skills.filter(s => s !== skill)
         this.setState({
-            skills: skills
+            data
         })
     }
 
@@ -116,7 +135,7 @@ class AddResource extends Component {
     render() {
         return (
             <div>
-                <Header name={'Resource Skills Form'} />
+                <Header name={'Add Resource Form'} />
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
                         <SectionHeader name="About" />
@@ -132,7 +151,7 @@ class AddResource extends Component {
                         <DynamicSectionHeader name="Projects" count={this.state.ProjectForms.length} addForm={this.handleAddProject} />
                         {this.state.ProjectForms}
                         <SectionHeader name="Skills" />
-                        <SkillForm skills={this.state.skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
+                        <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
                         <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
                     </Form>
                 </Container>

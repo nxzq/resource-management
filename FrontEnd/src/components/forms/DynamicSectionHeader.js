@@ -11,8 +11,8 @@ const DynamicSectionHeader = ({ name, count, addForm}) => {
             <Row>
             <div className="col-md-9">
                 <h3>{name}</h3>
-                </div>
-                <div className="col-md-3">
+            </div>
+            <div className="col-md-3">
                 {AddFormButton(count)}
             </div>
             </Row>

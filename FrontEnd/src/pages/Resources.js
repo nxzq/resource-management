@@ -19,7 +19,7 @@ const Resources = () => {
     axios.get(`http://localhost:5000/api/resources/table`)
       .then(res => {
         const resourceData = res.data;
-        setData( resourceData )
+        setData(resourceData)
       })
   }, [])
 
@@ -60,15 +60,15 @@ const Resources = () => {
   }
 
   const Search = () => {
-    let rawData =  data.filter(resource => resource.Role.toLowerCase().includes(search.toLowerCase()) 
-    || resource.FirstName.toLowerCase().includes(search.toLowerCase())
-    || resource.LastName.toLowerCase().includes(search.toLowerCase()))
+    let rawData = data.filter(resource => resource.Role.toLowerCase().includes(search.toLowerCase())
+      || resource.FirstName.toLowerCase().includes(search.toLowerCase())
+      || resource.LastName.toLowerCase().includes(search.toLowerCase()))
     return rawData
   }
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
-}
+  }
 
   const tableData = () => {
     let rawData = (search === '' ? [...data] : Search())
@@ -107,7 +107,7 @@ const Resources = () => {
             <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
               <div className="input-group">
                 <div className="input-group-prepend">
-                  <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
+                  <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{ color: '#007bff' }} className="fa fa-search"></i></button>
                 </div>
                 <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
                 </Input>
@@ -136,14 +136,14 @@ const Resources = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            { data[0] === undefined ?
-            <tbody>
-            <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
-            </tbody>
-            : 
-            <tbody>
-              {tableData()}
-            </tbody>}
+            {data[0] === undefined ?
+              <tbody>
+                <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
+              </tbody>
+              :
+              <tbody>
+                {tableData()}
+              </tbody>}
           </Table>
         </Row>
       </Container>
