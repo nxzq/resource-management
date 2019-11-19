@@ -157,15 +157,15 @@ const Profile = (props) => {
                             </p>
                             {resource.LinkedIn !== '' ?
                                 <p className="col-md-6">
-                                    <b>LinkedIn:</b>&nbsp;<a href={resource.LinkedIn} target="_blank" rel="noopener noreferrer">{resource.LinkedIn}</a>
+                                    <b>LinkedIn:</b>&nbsp;<a className="profileLink" href={resource.LinkedIn} target="_blank" rel="noopener noreferrer">{resource.LinkedIn}</a>
                                 </p> : null}
                             {resource.GitHub !== '' ?
                                 <p className="col-md-6">
-                                    <b>GitHub:</b>&nbsp;<a href={resource.GitHub} target="_blank" rel="noopener noreferrer">{resource.GitHub}</a>
+                                    <b>GitHub:</b>&nbsp;<a className="profileLink" href={resource.GitHub} target="_blank" rel="noopener noreferrer">{resource.GitHub}</a>
                                 </p> : null}
                             {resource.PersonalSite !== '' ?
                                 <p className="col-md-6">
-                                    <b>Personal Site:</b>&nbsp;<a href={resource.PersonalSite} target="_blank" rel="noopener noreferrer">{resource.PersonalSite}</a>
+                                    <b>Personal Site:</b>&nbsp;<a className="profileLink" href={resource.PersonalSite} target="_blank" rel="noopener noreferrer">{resource.PersonalSite}</a>
                                 </p> : null}
                             {resource.SummaryText !== '' ?
                                 <p className="col-md-12">

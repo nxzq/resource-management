@@ -15,13 +15,13 @@ class AddResource extends Component {
     state = {
         data: {
             "Id": "",
-            "FirstName": "test",
-            "LastName": "ltest",
-            "Role": "role city",
-            "Email": "emailad",
-            "Phone": "909090",
-            "LinkedIn": "linkningns",
-            "GitHub": "githubs",
+            "FirstName": "",
+            "LastName": "",
+            "Role": "",
+            "Email": "",
+            "Phone": "",
+            "LinkedIn": "",
+            "GitHub": "",
             "PersonalSite": "",
             "SummaryText": "",
             "Education": [],
@@ -30,10 +30,41 @@ class AddResource extends Component {
             "Certification": [],
             "Skills": []
         },
-        EducationForms: [],
-        CertificationForms: [],
-        ExperienceForms: [],
-        ProjectForms: []
+        Loading: true
+    }
+
+    componentDidMount() {
+        this.setState({ Loading: false })
+    }
+
+    handleChange = (e) => {
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data[e.target.name] = e.target.value
+        this.setState({ data })
+    }
+
+    handleEducationChange = (index, e) => {
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Education[index][e.target.name] = e.target.value
+        this.setState({ data })
+    }
+
+    handleCertificationChange = (index, e) => {
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Certification[index][e.target.name] = e.target.value
+        this.setState({ data })
+    }
+
+    handleExperienceChange = (index, e) => {
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Experience[index][e.target.name] = e.target.value
+        this.setState({ data })
+    }
+
+    handleProjectChange = (index, e) => {
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Project[index][e.target.name] = e.target.value
+        this.setState({ data })
     }
 
     handleSubmit = (e) => {
@@ -43,93 +74,95 @@ class AddResource extends Component {
     handleAddSkill = (skill) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Skills = [...this.state.data.Skills, skill]
-        this.setState({
-            data
-        })
+        this.setState({ data })
     }
 
     handleRemoveSkill = (skill) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Skills = this.state.data.Skills.filter(s => s !== skill)
-        this.setState({
-            data
-        })
+        this.setState({ data })
     }
 
     handleAddEducation = () => {
-        let index = this.state.EducationForms.length
-        this.setState({
-            EducationForms: [...this.state.EducationForms, <EducationForm key={index} index={index} removeEducation={this.handleRemoveEducation} />]
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Education.push(
+            {
+                "School": "",
+                "Location": "",
+                "GradDate": "",
+                "Degree": "",
+                "Major": [],
+                "Minor": []
+            }
+        )
+        this.setState({ data })
     }
 
     handleRemoveEducation = (index) => {
-        let form = []
-        if (this.state.EducationForms.length === 1 || this.state.EducationForms.length === index) {
-            form = [...this.state.EducationForms]
-            form.pop()
-        }
-        else form = [...this.state.EducationForms.slice(0, index), ...this.state.EducationForms.slice(index + 1)]
-        this.setState({
-            EducationForms: form
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        if (data.Education.length === 1 || data.Education.length === index) data.Education.pop()
+        else data.Education = [...data.Education.slice(0, index), ...data.Education.slice(index + 1)]
+        this.setState({ data })
     }
 
     handleAddCertification = () => {
-        let index = this.state.CertificationForms.length
-        this.setState({
-            CertificationForms: [...this.state.CertificationForms, <CertificationForm key={index} index={index} removeCertification={this.handleRemoveCertification} />]
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Certification.push(
+            {
+                "CertName": "",
+                "CertDate": "",
+                "CertAssociation": ""
+            }
+        )
+        this.setState({ data })
     }
 
     handleRemoveCertification = (index) => {
-        let form = []
-        if (this.state.CertificationForms.length === 1 || this.state.CertificationForms.length === index) {
-            form = [...this.state.EducationForms]
-            form.pop()
-        }
-        else form = [...this.state.CertificationForms.slice(0, index), ...this.state.CertificationForms.slice(index + 1)]
-        this.setState({
-            CertificationForms: form
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        if (data.Certification.length === 1 || data.Certification.length === index) data.Certification.pop()
+        else data.Certification = [...data.Certification.slice(0, index), ...data.Certification.slice(index + 1)]
+        this.setState({ data })
     }
 
     handleAddExperience = () => {
-        let index = this.state.ExperienceForms.length
-        this.setState({
-            ExperienceForms: [...this.state.ExperienceForms, <ExperienceForm key={index} index={index} removeExperience={this.handleRemoveExperience} />]
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Experience.push(
+            {
+                "JobTitle": "",
+                "JobOrg": "",
+                "JobStartDate": "",
+                "JobEndDate": "",
+                "JobInfo": ""
+            }
+        )
+        this.setState({ data })
     }
 
     handleRemoveExperience = (index) => {
-        let form = []
-        if (this.state.ExperienceForms.length === 1 || this.state.ExperienceForms.length === index) {
-            form = [...this.state.EducationForms]
-            form.pop()
-        }
-        else form = [...this.state.ExperienceForms.slice(0, index), ...this.state.ExperienceForms.slice(index + 1)]
-        this.setState({
-            ExperienceForms: form
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        if (data.Experience.length === 1 || data.Experience.length === index) data.Experience.pop()
+        else data.Experience = [...data.Experience.slice(0, index), ...data.Experience.slice(index + 1)]
+        this.setState({ data })
     }
-
+    
     handleAddProject = () => {
-        let index = this.state.ProjectForms.length
-        this.setState({
-            ProjectForms: [...this.state.ProjectForms, <ProjectForm key={index} index={index} removeProject={this.handleRemoveProject} />]
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data.Project.push(
+            {
+                "ProjName": "",
+                "ProjDate": "",
+                "ProjAssociation": "",
+                "ProjInfo": ""
+            }
+        )
+        this.setState({ data })
     }
 
     handleRemoveProject = (index) => {
-        let form = []
-        if (this.state.ProjectForms.length === 1 || this.state.ProjectForms.length === index) {
-            form = [...this.state.EducationForms]
-            form.pop()
-        }
-        else form = [...this.state.ProjectForms.slice(0, index), ...this.state.ProjectForms.slice(index + 1)]
-        this.setState({
-            ProjectForms: form
-        })
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        if (data.Project.length === 1 || data.Project.length === index) data.Project.pop()
+        else data.Project = [...data.Project.slice(0, index), ...data.Project.slice(index + 1)]
+        this.setState({ data })
     }
 
     render() {
@@ -142,14 +175,33 @@ class AddResource extends Component {
                         <AboutForm />
                         <SectionHeader name="Summary" />
                         <SummaryForm />
-                        <DynamicSectionHeader name="Education" count={this.state.EducationForms.length} addForm={this.handleAddEducation} />
-                        {this.state.EducationForms}
-                        <DynamicSectionHeader name="Certifications" count={this.state.CertificationForms.length} addForm={this.handleAddCertification} />
-                        {this.state.CertificationForms}
-                        <DynamicSectionHeader name="Experience" count={this.state.ExperienceForms.length} addForm={this.handleAddExperience} />
-                        {this.state.ExperienceForms}
-                        <DynamicSectionHeader name="Projects" count={this.state.ProjectForms.length} addForm={this.handleAddProject} />
-                        {this.state.ProjectForms}
+                        <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
+                        {this.state.data.Education.map((element, index) =>
+                            <EducationForm key={index} index={index} 
+                            removeEducation={this.handleRemoveEducation} handleEducationChange={this.handleEducationChange}
+                            School={element.School} Location={element.Location} Degree={element.Degree} 
+                            Major={element.Major} Minor={element.Minor} GradDate={element.GradDate} />
+                        )}
+                        <DynamicSectionHeader name="Certifications" count={this.state.data.Certification.length} addForm={this.handleAddCertification} />
+                        {this.state.data.Certification.map((element, index) =>
+                            <CertificationForm key={index} index={index} 
+                            removeCertification={this.handleRemoveCertification} handleCertificationChange={this.handleCertificationChange}
+                            CertName={element.CertName} CertDate={element.CertDate} CertAssociation={element.CertAssociation} />
+                        )}
+                        <DynamicSectionHeader name="Experience" count={this.state.data.Experience.length} addForm={this.handleAddExperience} />
+                        {this.state.data.Experience.map((element, index) =>
+                            <ExperienceForm key={index} index={index} 
+                            removeExperience={this.handleRemoveExperience} handleExperienceChange={this.handleExperienceChange}
+                            JobTitle={element.JobTitle} JobOrg={element.JobOrg} JobStartDate={element.JobStartDate} 
+                            JobEndDate={element.JobEndDate} JobInfo={element.JobInfo} />
+                        )}
+                        <DynamicSectionHeader name="Projects" count={this.state.data.Project.length} addForm={this.handleAddProject} />
+                        {this.state.data.Project.map((element, index) =>
+                            <ProjectForm key={index} index={index} 
+                            removeProject={this.handleRemoveProject} handleProjectChange={this.handleProjectChange}
+                            ProjName={element.ProjName} ProjDate={element.ProjDate} 
+                            ProjAssociation={element.ProjAssociation} ProjInfo={element.ProjInfo} />
+                        )}
                         <SectionHeader name="Skills" />
                         <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
                         <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>

@@ -2,12 +2,12 @@ import React from 'react';
 import { Label, Input, FormGroup } from 'reactstrap';
 
 
-const SummaryForm = ({ SummaryText }) => {
+const SummaryForm = ({ SummaryText, handleChange }) => {
     return (
         <div>
             <FormGroup>
-                <Label for="summaryText">Summary</Label>
-                <Input type="textarea" name="summaryText" id="summaryText" placeholder="Summary (Optional)" value={SummaryText} />
+                <Label for="SummaryText">Summary</Label>
+                <Input type="textarea" name="SummaryText" id="SummaryText" placeholder="Summary (Optional)" value={SummaryText} onChange={handleChange} />
             </FormGroup>
             <hr />
         </div>

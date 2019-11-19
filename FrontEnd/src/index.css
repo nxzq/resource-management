@@ -44,3 +44,19 @@ nav a:hover {
 #edit {
   color: #212529;
 }
+
+#edit:hover {
+  color: #212529;
+  opacity: 0.75;
+}
+
+.profileLink {
+  text-decoration: none;
+  color: #212529;
+}
+
+.profileLink:hover{
+  text-decoration: none;
+  color: #212529;
+  opacity: 0.75;
+}

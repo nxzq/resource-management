@@ -24,6 +24,12 @@ i {
 
 #edit {
   color: #fff;
+  opacity: 0.90;
+}
+
+#edit:hover {
+  color: #fff;
+  opacity: 0.60;
 }
 
 th, td {
@@ -85,4 +91,16 @@ input, textarea, select, .custom-checkbox {
   background-color: transparent !important; 
   border-color: transparent !important;
   text-decoration: none !important;
+}
+
+.profileLink {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.90;
+}
+
+.profileLink:hover{
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.60;
 }
