@@ -45,7 +45,7 @@ const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDat
                 }
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="JobInfo">Details</Label>
-                    <Input required type="textarea" name="JobInfo" id="JobInfo" placeholder="Experience Details" value={JobInfo} onChange={(e) => { handleExperienceChange(index, e) }} />
+                    <Input type="textarea" name="JobInfo" id="JobInfo" placeholder="Experience Details" value={JobInfo} onChange={(e) => { handleExperienceChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                     <Button onClick={() => { removeExperience(index) }} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>

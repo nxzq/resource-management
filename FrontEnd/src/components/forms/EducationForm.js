@@ -42,7 +42,7 @@ const EducationForm = ({ index, removeEducation, School, Location, Degree, Major
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="Minor">Minor(s)</Label>
-                    <Input required type="text" name="Minor" id="Minor" placeholder="Declared Minor(s)" value={Minor} onChange={(e) => { handleEducationChange(index, e) }} />
+                    <Input type="text" name="Minor" id="Minor" placeholder="Declared Minor(s)" value={Minor} onChange={(e) => { handleEducationChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
                     <Button onClick={() => { removeEducation(index) }} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>

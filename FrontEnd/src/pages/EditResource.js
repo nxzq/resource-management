@@ -33,7 +33,7 @@ class EditResource extends Component {
             "Skills": []
         },
         submitted: false,
-        loading: true
+        Loading: true
     }
 
     componentDidMount() {
@@ -185,7 +185,7 @@ class EditResource extends Component {
         return this.state.submitted ? <Redirect to="/resources" /> : (
             <div>
                 <Header name={'Edit Resource Form'} />
-                {this.state.loading ? <div className="text-center"><Spinner color="primary" /></div> :
+                {this.state.Loading ? <div className="text-center"><Spinner color="primary" /></div> :
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
                         <SectionHeader name="About" />
