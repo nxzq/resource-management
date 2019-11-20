@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Container, Form, Button } from 'reactstrap';
 import Header from '../components/Header';
 import AboutForm from '../components/forms/AboutForm';
@@ -29,12 +30,7 @@ class AddResource extends Component {
             "Project": [],
             "Certification": [],
             "Skills": []
-        },
-        Loading: true
-    }
-
-    componentDidMount() {
-        this.setState({ Loading: false })
+        }
     }
 
     handleChange = (e) => {
@@ -69,6 +65,11 @@ class AddResource extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        const data = JSON.parse(JSON.stringify(this.state.data))
+        axios.post(`http://localhost:5000/api/resource`, { data })
+            .then(res => {
+            })
+        // Redirect
     }
 
     handleAddSkill = (skill) => {
@@ -172,9 +173,11 @@ class AddResource extends Component {
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
                         <SectionHeader name="About" />
-                        <AboutForm />
+                        <AboutForm handleChange={this.handleChange} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} Role={this.state.data.Role}
+                            Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
+                            GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
                         <SectionHeader name="Summary" />
-                        <SummaryForm />
+                        <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
                         <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
                         {this.state.data.Education.map((element, index) =>
                             <EducationForm key={index} index={index} 

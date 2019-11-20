@@ -25,8 +25,9 @@ const Resources = () => {
 
   const getSkillMatch = (skills) => {
     let count = 0
+    if (skills !== undefined) {
     let personalSkills = skills.map(function (value) {
-      return value.toLowerCase();
+      return value.toLowerCase();  
     })
     let jobSkills = neededSkills.map(function (value) {
       return value.toLowerCase();
@@ -39,6 +40,7 @@ const Resources = () => {
     let num = (Math.floor((count / jobSkills.length) * 100))
     if (neededSkills.length === 0) return 0
     else return num
+    } else return 0
   }
 
   const getMatchedSkills = (skills) => {

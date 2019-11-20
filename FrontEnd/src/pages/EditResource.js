@@ -77,6 +77,12 @@ class EditResource extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        const { match: { params } } = this.props;
+        const data = JSON.parse(JSON.stringify(this.state.data))
+        axios.put(`http://localhost:5000/api/resources/${params.id}`, { data })
+            .then(res => {
+            })
+        // Redirect
     }
 
     handleAddSkill = (skill) => {

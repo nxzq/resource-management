@@ -51,16 +51,28 @@ app.get('/api/resources/:id', (req, res) => {
     res.send(resource);
 });
 
-// // POST Resource By ID [{NOT CURRNENTLY WORKING}]
-// app.post('/api/resource', (req, res) => {
-//     // 400 Bad Request
-//     // if (error) return res.status(400).send(result.error.details[0].message);
-//     let resource = {
-//         // Create Object
-//     };
-//     resources.push(resource);
-//     res.send(resource);
-// });
+// POST Resource By ID
+app.post('/api/resource', (req, res) => {
+    // 400 Bad Request
+    // if (error) return res.status(400).send(result.error.details[0].message);
+    let resource = req.body.data
+    resource.Id = (Math.max.apply(Math, resources.map(function(o) { return o.Id; }))) + 1
+    resources.push(resource);
+    res.send(resource);
+});
+
+// UPDATE Resource By ID
+app.put('/api/resources/:id', (req, res) => {
+    // Find Resource
+    let resource = resources.find(r => r.Id === parseInt(req.params.id))
+    // 404 Not Found
+    if (!resource) return res.status(404).send('The resource with the given ID was not found');
+    // Update Resource
+    resource = req.body.data
+    let update = resources.findIndex(x => x.Id == resource.Id);
+    resources[update] = resource
+    res.send(resource);
+});
 
 // // DELETE Resource By ID [{NOT CURRNENTLY WORKING}]
 // app.delete('/api/resources/:id', (req, res) => {
@@ -72,17 +84,6 @@ app.get('/api/resources/:id', (req, res) => {
 //     let index = resources.indexOf(resource);
 //     resources.splice(index, 1);
 //     // Return
-//     res.send(resource);
-// });
-
-// // UPDATE Resource By ID [{NOT CURRNENTLY WORKING}]
-// app.put('/api/resources/:id', (req, res) => {
-//     // Find Resource
-//     let resource = resources.find(r => r.Id === parseInt(req.params.id));
-//     // 404 Not Found
-//     if (!resource) return res.status(404).send('The resource with the given ID was not found');
-//     // Update Resource
-//         // Logic
 //     res.send(resource);
 // });
 

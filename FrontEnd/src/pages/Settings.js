@@ -10,7 +10,7 @@ const Settings = ({ toggleDarkTheme, DarkTheme }) => {
             <Container>
                 <div>
                     <FormGroup>
-                        <CustomInput onClick={toggleDarkTheme} type="switch" checked={DarkTheme} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode" />
+                        <CustomInput onClick={toggleDarkTheme} type="switch" checked={DarkTheme} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
                     </FormGroup>
                 </div>
             </Container>
