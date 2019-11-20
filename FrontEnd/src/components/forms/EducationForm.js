@@ -3,7 +3,6 @@ import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
 
 const EducationForm = ({ index, removeEducation, School, Location, Degree, Major, Minor, GradDate, handleEducationChange }) => {
-    var today = new Date();
     return (
         <div>
             <Row>
@@ -27,7 +26,14 @@ const EducationForm = ({ index, removeEducation, School, Location, Degree, Major
                 </FormGroup>
                 <FormGroup className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                     <Label for="GradDate">Graduation Date</Label>
-                    <Input type="number" name="GradDate" id="GradDate" min="1900" max={today.getFullYear()} step="1" placeholder="Graduation Year" value={GradDate} onChange={(e) => { handleEducationChange(index, e) }} />
+                    <Input
+                        type="date"
+                        name="GradDate"
+                        id="GradDate"
+                        value={GradDate}
+                        placeholder="date placeholder"
+                        onChange={(e) => { handleEducationChange(index, e) }}
+                    />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="Major">Major(s)</Label>

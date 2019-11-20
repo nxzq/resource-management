@@ -2,7 +2,7 @@ import React from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
 const CertificationForm = ({ index, removeCertification, CertName, CertDate, CertAssociation, handleCertificationChange }) => {
-    var today = new Date();
+
     return (
         <div>
             <Row>
@@ -11,8 +11,15 @@ const CertificationForm = ({ index, removeCertification, CertName, CertDate, Cer
                     <Input type="text" name="CertName" id="CertName" placeholder="Certification Name" value={CertName} onChange={(e) => { handleCertificationChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="CertDate">Date</Label>
-                    <Input type="number" name="CertDate" id="CertDate" min="1900" max={today.getFullYear()} step="1" placeholder="Certification Date" value={CertDate} onChange={(e) => { handleCertificationChange(index, e) }} />
+                    <Label for="GradDate">Date Achieved</Label>
+                    <Input
+                        type="date"
+                        name="CertDate"
+                        id="CertDate"
+                        value={CertDate}
+                        placeholder="date placeholder"
+                        onChange={(e) => { handleCertificationChange(index, e) }}
+                    />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="CertAssociation">Association</Label>
