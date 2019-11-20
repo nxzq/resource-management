@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Form, Button, Spinner } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Container, Row, Col, Form, Button, Spinner } from 'reactstrap';
 import Header from '../components/Header';
 import AboutForm from '../components/forms/AboutForm';
 import SummaryForm from '../components/forms/SummaryForm';
@@ -221,7 +222,21 @@ class EditResource extends Component {
                         )}
                         <SectionHeader name="Skills" />
                         <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
-                        <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
+                        <Row>
+                            <Col md="6">
+                        <div>
+                            <Link style={{ textDecoration: 'none' }} to={"/profile/" + this.state.data.Id}>
+                                <Button className="btn-block">Cancel</Button>
+                            </Link>
+                        </div>
+                        </Col>
+                        <Col md="6">
+                        <div>
+                            {' '}
+                            <Button type="submit" className="btn-block" color="primary">Submit Form</Button>
+                        </div>
+                        </Col>
+                        </Row>
                     </Form>
                 </Container>
                 }
