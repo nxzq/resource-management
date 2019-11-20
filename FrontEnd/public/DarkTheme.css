@@ -6,7 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* background-color: #1a1919; */
-    background-color: #171717;
+    background-color: #121212;
     color: #fff;
     opacity: 0.90;
 }
@@ -42,7 +42,7 @@ th, td {
 }
 
 .card {
-  background-color: #171717;
+  background-color: #121212;
   color: #fff;
   opacity: 0.90;
 }
@@ -77,7 +77,7 @@ input, textarea, select, .custom-checkbox {
 }
 
 .modal-content {
-  background-color: #171717;
+  background-color: #121212;
 }
 
 .rounded-input {
@@ -102,4 +102,10 @@ input, textarea, select, .custom-checkbox {
   text-decoration: none;
   color: #fff;
   opacity: 0.60;
+}
+
+.themeToggle {
+  background-color: #121212;
+  color: #fff;
+  opacity: 0.90;
 }

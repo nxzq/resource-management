@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Tooltip } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Tooltip, UncontrolledPopover, PopoverBody, CustomInput } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({ toggleDarkTheme, DarkTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   const [helpToolTip, setHelpToolTip] = useState(false);
   const toggleHelpToolTip = () => setHelpToolTip(!helpToolTip);
-
-  const [settingsToolTip, setSettingsToolTip] = useState(false);
-  const toggleSettingsToolTip = () => setSettingsToolTip(!settingsToolTip);
 
   return (
     <div>
@@ -34,11 +31,13 @@ const NavBar = () => {
               Help
             </Tooltip>
             <NavItem>
-              <NavLink style={{ color: 'inherit' }} id="settingsIcon" tag={Link} to="/settings"><i className="fas fa-cog fa-lg"></i></NavLink>
+              <NavLink style={{ color: 'inherit' }} id="settingsIcon" ><i className="fas fa-cog fa-lg"></i></NavLink>
             </NavItem>
-            <Tooltip placement="bottom" isOpen={settingsToolTip} target="settingsIcon" toggle={toggleSettingsToolTip}>
-              Settings
-            </Tooltip>
+            <UncontrolledPopover className="themeToggle" trigger="legacy" placement="bottom" target="settingsIcon">
+              <PopoverBody>
+                <CustomInput style={{color: 'inherit'}} onChange={toggleDarkTheme} type="switch" checked={DarkTheme} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
+              </PopoverBody>
+            </UncontrolledPopover>
           </Nav>
         </Collapse>
       </Navbar>
