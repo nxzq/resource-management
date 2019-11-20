@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Button, Table, Progress, Input, Spinner } from 'reactstrap';
+import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
@@ -104,49 +104,59 @@ const Resources = () => {
       <Header name={'Resource Management'} />
       <Container>
         <Row>
-          <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" className="col-xl-1 col-lg-1 col-md-4 col-sm-6 col-xs-6" />
-          <div className="rounded-input col-xl-7 col-lg-7 col-md-8 col-sm-6 col-xs-6">
-            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{ color: '#007bff' }} className="fa fa-search"></i></button>
+          <Col md="2">
+            <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" />
+          </Col>
+          <Col lg="5" md="10">
+            <div>
+              <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{ color: '#007bff' }} className="fa fa-search"></i></button>
+                  </div>
+                  <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
+                  </Input>
                 </div>
-                <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
-                </Input>
               </div>
             </div>
-          </div>
-          <Link style={{ textDecoration: 'none' }} to="/addjob" className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
-            <Button style={{ height: '50px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
-              &nbsp;&nbsp;Add Job
-            </Button>
-          </Link>
-          <Link style={{ textDecoration: 'none' }} to="/addresource" className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
-            <Button style={{ height: '50px', textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
-              &nbsp;&nbsp;Add Resource
-            </Button>
-          </Link>
+          </Col>
+          <Col lg="2" md="6">
+            <Link style={{ textDecoration: 'none' }} to="/addjob">
+              <Button style={{ height: '50px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
+                &nbsp;&nbsp;Add Job
+              </Button>
+            </Link>
+          </Col>
+          <Col lg="3" md="6">
+            <Link style={{ textDecoration: 'none' }} to="/addresource">
+              <Button style={{ height: '50px', textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+                &nbsp;&nbsp;Add Resource
+              </Button>
+            </Link>
+          </Col>
         </Row>
         <Row>
-          <Table striped>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Email</th>
-                {showSkillMatch ? <th>Skill Match</th> : null}
-                <th>Action</th>
-              </tr>
-            </thead>
-            {data[0] === undefined ?
-              <tbody>
-                <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
-              </tbody>
-              :
-              <tbody>
-                {tableData()}
-              </tbody>}
-          </Table>
+          <Col>
+            <Table striped>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Email</th>
+                  {showSkillMatch ? <th>Skill Match</th> : null}
+                  <th>Action</th>
+                </tr>
+              </thead>
+              {data[0] === undefined ?
+                <tbody>
+                  <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
+                </tbody>
+                :
+                <tbody>
+                  {tableData()}
+                </tbody>}
+            </Table>
+          </Col>
         </Row>
       </Container>
     </div>
