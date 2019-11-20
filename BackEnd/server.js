@@ -11,23 +11,20 @@ app.use(cors())
 const PORT = process.env.PORT || 5000;
 
 // Mock Data
-var resources
-fs.readFile('./MockData/Resources.json', 'utf8', (err, jsonString) => {
-    if (err) {
-        console.log("File read failed:", err)
-        return 
-    }
-    resources = JSON.parse(jsonString)
-})
-
+const getMockData = () => {return JSON.parse(fs.readFileSync('./MockData/Resources.json','utf8'))}
+ 
 // GET ALL
 app.get('/api/resources', (req, res) => {
+    // Get Data
+    resources = getMockData()
     res.send(resources);
 });
 
 // GET Table Data
 app.get('/api/resources/table', (req, res) => {
     let tableData = []
+    // Get Data
+    resources = getMockData()
     resources.forEach(r => {
         data = {
             Id: r.Id,
@@ -44,6 +41,8 @@ app.get('/api/resources/table', (req, res) => {
 
 // GET Resource By ID
 app.get('/api/resources/:id', (req, res) => {
+    // Get Data
+    resources = getMockData()
     // Find Resource
     let resource = resources.find(r => r.Id === parseInt(req.params.id));
     // 404 Not Found
@@ -55,14 +54,19 @@ app.get('/api/resources/:id', (req, res) => {
 app.post('/api/resource', (req, res) => {
     // 400 Bad Request
     // if (error) return res.status(400).send(result.error.details[0].message);
+    // Get Data
+    resources = getMockData()
     let resource = req.body.data
     resource.Id = (Math.max.apply(Math, resources.map(function(o) { return o.Id; }))) + 1
     resources.push(resource);
     res.send(resource);
+    fs.writeFileSync('./MockData/Resources.json', JSON.stringify(resources))
 });
 
 // UPDATE Resource By ID
 app.put('/api/resources/:id', (req, res) => {
+    // Get Data
+    resources = getMockData()
     // Find Resource
     let resource = resources.find(r => r.Id === parseInt(req.params.id))
     // 404 Not Found
@@ -72,6 +76,7 @@ app.put('/api/resources/:id', (req, res) => {
     let update = resources.findIndex(x => x.Id == resource.Id);
     resources[update] = resource
     res.send(resource);
+    fs.writeFileSync('./MockData/Resources.json', JSON.stringify(resources))
 });
 
 // // DELETE Resource By ID [{NOT CURRNENTLY WORKING}]
