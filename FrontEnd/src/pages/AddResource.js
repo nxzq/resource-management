@@ -69,7 +69,7 @@ class AddResource extends Component {
         axios.post(`http://localhost:5000/api/resource`, { data })
             .then(res => {
             })
-        // Redirect
+        this.props.history.push('/resources')
     }
 
     handleAddSkill = (skill) => {

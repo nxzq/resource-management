@@ -82,7 +82,7 @@ class EditResource extends Component {
         axios.put(`http://localhost:5000/api/resources/${params.id}`, { data })
             .then(res => {
             })
-        // Redirect
+        this.props.history.push('/resources')
     }
 
     handleAddSkill = (skill) => {
