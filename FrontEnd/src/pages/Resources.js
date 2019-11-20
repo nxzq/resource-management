@@ -102,7 +102,7 @@ const Resources = () => {
   return (
     <div>
       <Header name={'Resource Management'} />
-      <Container fluid>
+      <Container>
         <Row>
           <Col md="2">
             <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" />

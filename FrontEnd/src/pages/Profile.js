@@ -49,10 +49,10 @@ const Profile = (props) => {
                 <p><b>Location:</b>&nbsp;{resource.Education[i].Location}</p>
                 <p><b>Graduation Date:</b>&nbsp;{resource.Education[i].GradDate}</p>
                 <p><b>Degree:</b>&nbsp;{resource.Education[i].Degree}</p>
-                <p><b>Major:</b>&nbsp;{resource.Education[i].Major.join(', ')}</p>
+                <p><b>Major:</b>&nbsp;{resource.Education[i].Major}</p>
                 {resource.Education[i].Minor[0] ?
                     <p>
-                        <b>Minor:</b>&nbsp;{resource.Education[i].Minor.join(', ')}
+                        <b>Minor:</b>&nbsp;{resource.Education[i].Minor}
                     </p> : null}
             </div>
             ]

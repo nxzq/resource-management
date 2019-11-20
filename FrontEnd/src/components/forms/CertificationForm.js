@@ -27,7 +27,7 @@ const CertificationForm = ({ index, removeCertification, CertName, CertDate, Cer
                     <Input required type="text" name="CertAssociation" id="CertAssociation" placeholder="Certification Association" value={CertAssociation} onChange={(e) => { handleCertificationChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-                    <Button onClick={() => { removeCertification(index) }} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>
+                    <Button onClick={() => { removeCertification(index) }} style={{ marginTop: '32px' }} color="danger">Remove Certification</Button>
                 </FormGroup>
             </Row>
             <hr />

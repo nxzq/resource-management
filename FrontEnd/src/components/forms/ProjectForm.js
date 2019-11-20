@@ -23,7 +23,7 @@ const ProjectForm = ({ index, removeProject, ProjName, ProjDate, ProjAssociation
                     <Input type="textarea" name="ProjInfo" id="ProjInfo" placeholder="Project Details" value={ProjInfo} onChange={(e) => { handleProjectChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                    <Button onClick={() => { removeProject(index) }} style={{ marginTop: '32px' }} color="danger">Remove Education</Button>
+                    <Button onClick={() => { removeProject(index) }} style={{ marginTop: '32px' }} color="danger">Remove Project</Button>
                 </FormGroup>
             </Row>
             <hr />
