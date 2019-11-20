@@ -74,7 +74,7 @@ const Resources = () => {
 
   const tableData = () => {
     let rawData = (search === '' ? [...data] : Search())
-    rawData = rawData.sort((a, b) => a.FirstName !== b.FirstName ? a.FirstName > b.FirstName ? 1 : -1 : 0)
+    rawData = rawData.sort((a, b) => a.FirstName.toLowerCase() !== b.FirstName.toLowerCase() ? a.FirstName.toLowerCase() > b.FirstName.toLowerCase() ? 1 : -1 : 0)
     let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
       <tr key={person.Id}>
         <td>{person.FirstName + ' ' + person.LastName}</td>
@@ -102,7 +102,7 @@ const Resources = () => {
   return (
     <div>
       <Header name={'Resource Management'} />
-      <Container>
+      <Container fluid>
         <Row>
           <Col md="2">
             <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" />
