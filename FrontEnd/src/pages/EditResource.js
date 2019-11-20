@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Spinner } from 'reactstrap';
 import Header from '../components/Header';
 import AboutForm from '../components/forms/AboutForm';
@@ -32,7 +32,8 @@ class EditResource extends Component {
             "Certification": [],
             "Skills": []
         },
-        Loading: true
+        submitted: false,
+        loading: true
     }
 
     componentDidMount() {
@@ -82,8 +83,8 @@ class EditResource extends Component {
         const data = JSON.parse(JSON.stringify(this.state.data))
         axios.put(`http://localhost:5000/api/resources/${params.id}`, { data })
             .then(res => {
+                this.setState({ submitted: true })
             })
-        this.props.history.push('/resources')
     }
 
     handleAddSkill = (skill) => {
@@ -181,10 +182,10 @@ class EditResource extends Component {
     }
 
     render() {
-        return (
+        return this.state.submitted ? <Redirect to="/resources" /> : (
             <div>
                 <Header name={'Edit Resource Form'} />
-                {this.state.Loading ? <div className="text-center"><Spinner color="primary" /></div> :
+                {this.state.loading ? <div className="text-center"><Spinner color="primary" /></div> :
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
                         <SectionHeader name="About" />

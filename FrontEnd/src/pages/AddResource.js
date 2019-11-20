@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import { Container, Form, Button } from 'reactstrap';
 import Header from '../components/Header';
 import AboutForm from '../components/forms/AboutForm';
@@ -30,7 +31,8 @@ class AddResource extends Component {
             "Project": [],
             "Certification": [],
             "Skills": []
-        }
+        },
+        submitted: false
     }
 
     handleChange = (e) => {
@@ -68,8 +70,8 @@ class AddResource extends Component {
         const data = JSON.parse(JSON.stringify(this.state.data))
         axios.post(`http://localhost:5000/api/resource`, { data })
             .then(res => {
+                this.setState({ submitted: true })
             })
-        this.props.history.push('/resources')
     }
 
     handleAddSkill = (skill) => {
@@ -167,8 +169,9 @@ class AddResource extends Component {
     }
 
     render() {
-        return (
+        return this.state.submitted ? <Redirect to="/resources" /> : (
             <div>
+                
                 <Header name={'Add Resource Form'} />
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
