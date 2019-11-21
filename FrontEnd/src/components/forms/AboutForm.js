@@ -34,7 +34,7 @@ const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, 
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="Phone">Phone</Label>
-                    <Input required type="tel" name="Phone" id="Phone" placeholder="Phone Number" value={Phone} onChange={handleChange} />
+                    <Input required type="tel" name="Phone" id="Phone" placeholder="Phone Number (##########)" value={Phone} onChange={handleChange} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="LinkedIn">LinkedIn</Label>

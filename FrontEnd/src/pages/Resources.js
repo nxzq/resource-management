@@ -114,7 +114,7 @@ const Resources = () => {
                   <div className="input-group-prepend">
                     <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{ color: '#007bff' }} className="fa fa-search"></i></button>
                   </div>
-                  <Input style={{ marginRight: '25px', marginLeft: '15px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
+                  <Input style={{ marginRight: '25px', marginLeft: '15px', marginTop: '5px', marginBottom: '5px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
                   </Input>
                 </div>
               </div>
@@ -122,14 +122,14 @@ const Resources = () => {
           </Col>
           <Col lg="2" md="6">
             <Link style={{ textDecoration: 'none' }} to="/addjob">
-              <Button style={{ height: '50px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
+              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
                 &nbsp;&nbsp;Add Job
               </Button>
             </Link>
           </Col>
           <Col lg="3" md="6">
             <Link style={{ textDecoration: 'none' }} to="/addresource">
-              <Button style={{ height: '50px', textDecoration: 'none' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
                 &nbsp;&nbsp;Add Resource
               </Button>
             </Link>
