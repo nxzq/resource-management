@@ -89,10 +89,14 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <Link style={{ textDecoration: 'none', color: '#212529' }} to={"/profile/" + person.Id}><i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user"
-            aria-hidden="true"></i></Link>
+          <Link style={{ textDecoration: 'none', color: '#212529' }} to={"/profile/" + person.Id}>
+            <i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user fa-lg"
+            aria-hidden="true"></i>
+            <span class="sr-only">Profile</span>
+          </Link>
           <span>&nbsp;&nbsp;</span>
-          <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt"></i>
+          <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt fa-lg"></i>
+          <span class="sr-only">Create Resume</span>
         </td>
       </tr>
     ))

@@ -93,9 +93,13 @@ app.put('/api/resources/:id', (req, res) => {
 // });
 
 // PORT
+// LocalHost
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`);
 });
 
-// // Port on Yash Network
+// // Yash Network (New Office)
 // app.listen(5000, '10.27.12.207');
+
+// // Yash Network (Old Office)
+// app.listen(5000, '10.1.100.119');

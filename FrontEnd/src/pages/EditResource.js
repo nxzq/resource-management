@@ -35,7 +35,7 @@ class EditResource extends Component {
         submitted: false,
         Loading: true
     }
-
+    
     componentDidMount() {
         const { match: { params } } = this.props;
         axios.get(`http://localhost:5000/api/resources/${params.id}`)
@@ -107,8 +107,8 @@ class EditResource extends Component {
                 "Location": "",
                 "GradDate": "",
                 "Degree": "",
-                "Major": [],
-                "Minor": []
+                "Major": "",
+                "Minor": ""
             }
         )
         this.setState({ data })

@@ -11,7 +11,7 @@ const ProjectForm = ({ index, removeProject, ProjName, ProjDate, ProjAssociation
                     <Input required type="text" name="ProjName" id="ProjName" placeholder="Project Name" value={ProjName} onChange={(e) => { handleProjectChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <Label for="ProjDate">Date</Label>
+                    <Label for="ProjDate">Year</Label>
                     <Input required type="number" name="ProjDate" id="ProjDate" min="1900" max={today.getFullYear()} step="1" placeholder="Project Date" value={ProjDate} onChange={(e) => { handleProjectChange(index, e) }} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">

@@ -44,13 +44,13 @@ class AddResource extends Component {
 
     handleChange = (e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
-        data[e.target.name] = e.target.value
+        data[e.target.name] = e.target.value.trim()
         this.setState({ data })
     }
 
     handleEducationChange = (index, e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
-        data.Education[index][e.target.name] = e.target.value
+        data.Education[index][e.target.name] = e.target.value.trim()
         this.setState({ data })
     }
 
@@ -101,8 +101,8 @@ class AddResource extends Component {
                 "Location": "",
                 "GradDate": "",
                 "Degree": "",
-                "Major": [],
-                "Minor": []
+                "Major": "",
+                "Minor": ""
             }
         )
         this.setState({ data })
