@@ -35,6 +35,13 @@ class AddResource extends Component {
         submitted: false
     }
 
+    handleCurrentPositionChange = (index, e) => {
+        console.log(index)
+        let currentPosition = this.state.currentPosition
+        currentPosition[index] = !currentPosition[index]
+        this.setState({ currentPosition })
+    }
+
     handleChange = (e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data[e.target.name] = e.target.value

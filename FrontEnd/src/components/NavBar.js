@@ -33,7 +33,7 @@ const NavBar = ({ toggleDarkTheme, DarkTheme }) => {
             <NavItem>
               <NavLink style={{ color: 'inherit' }} id="settingsIcon" ><i className="fas fa-cog fa-lg"></i></NavLink>
             </NavItem>
-            <UncontrolledPopover className="themeToggle" trigger="legacy" placement="bottom" target="settingsIcon">
+            <UncontrolledPopover trigger="legacy" placement="bottom" target="settingsIcon">
               <PopoverBody>
                 <CustomInput style={{color: 'inherit'}} onChange={toggleDarkTheme} type="switch" checked={DarkTheme} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
               </PopoverBody>

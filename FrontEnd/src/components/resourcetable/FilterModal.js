@@ -10,7 +10,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
     const handleChange = (e) => {
         setSkill(e.target.value)
     }
-    // Added an event handler for hitting enter to add a new skill to the filter.
+
     const handleKeyPress = e => {
         if (e.key === "Enter") handleAddSkill(e)
     }
@@ -59,10 +59,14 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
+    // useEffect (() => {
+    //     if (modal === true) inputRef.current.focus()
+    // }, [modal])
+
     return (
         <div>
             <Button style={{ height: '50px', textDecoration: 'none' }} onClick={toggle} className="btn-block shadow-none" type="button"><i className="fas fa-filter"></i>&nbsp;&nbsp;Filter</Button>
-            <Modal isOpen={modal} toggle={toggle}>
+            <Modal isOpen={modal} toggle={toggle} autoFocus={false}>
                 <ModalHeader className="modalheader" toggle={toggle}>Filter Based on Skills</ModalHeader>
                 <ModalBody className="modalbody">
                     <Row>
@@ -72,7 +76,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                                     <div className="input-group-prepend">
                                         <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
                                     </div>
-                                    <Input onChange={handleChange} onKeyPress={handleKeyPress} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />
+                                    <Input autoFocus={true} onChange={handleChange} onKeyPress={handleKeyPress} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />
                                 </div>
                             </div>
                         </div>
