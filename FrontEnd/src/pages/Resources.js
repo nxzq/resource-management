@@ -77,7 +77,11 @@ const Resources = () => {
     rawData = rawData.sort((a, b) => a.FirstName.toLowerCase() !== b.FirstName.toLowerCase() ? a.FirstName.toLowerCase() > b.FirstName.toLowerCase() ? 1 : -1 : 0)
     let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
       <tr key={person.Id}>
-        <td>{person.FirstName + ' ' + person.LastName}</td>
+        <td>
+          <Link style={{ textDecoration: 'none' }} class="table-data" to={"/profile/" + person.Id}>
+            {person.FirstName + ' ' + person.LastName}
+          </Link>
+        </td>
         <td>{person.Role}</td>
         <td>{person.Email}</td>
         {showSkillMatch ?
@@ -89,14 +93,14 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <Link style={{ textDecoration: 'none', color: '#212529' }} to={"/profile/" + person.Id}>
+          <Link style={{ textDecoration: 'none' }} class="table-data" to={"/profile/" + person.Id}>
             <i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user fa-lg"
             aria-hidden="true"></i>
-            <span class="sr-only">Profile</span>
+            <span className="sr-only">Profile</span>
           </Link>
           <span>&nbsp;&nbsp;</span>
           <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt fa-lg"></i>
-          <span class="sr-only">Create Resume</span>
+          <span className="sr-only">Create Resume</span>
         </td>
       </tr>
     ))
@@ -118,6 +122,7 @@ const Resources = () => {
                   <div className="input-group-prepend">
                     <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{ color: '#007bff' }} className="fa fa-search"></i></button>
                   </div>
+                  <label className="sr-only" htmlFor="myInput">Search</label>
                   <Input style={{ marginRight: '25px', marginLeft: '15px', marginTop: '5px', marginBottom: '5px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
                   </Input>
                 </div>

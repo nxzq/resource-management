@@ -103,3 +103,13 @@ input, textarea, select, .custom-checkbox {
   color: #fff;
   opacity: 0.60;
 }
+
+.table-data {
+  color: #fff;
+  opacity: 0.90;
+}
+
+.table-data:hover {
+  color: #fff;
+  opacity: 0.60;
+}

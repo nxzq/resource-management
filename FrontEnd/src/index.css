@@ -60,3 +60,12 @@ nav a:hover {
   color: #212529;
   opacity: 0.75;
 }
+
+.table-data {
+  color: #212529;
+}
+
+.table-data:hover {
+  color: #212529;
+  opacity: 0.75;
+}

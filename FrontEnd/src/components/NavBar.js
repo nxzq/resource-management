@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Tooltip, UncontrolledPopover, PopoverBody, CustomInput } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Tooltip } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ toggleDarkTheme, DarkTheme }) => {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   const [helpToolTip, setHelpToolTip] = useState(false);
   const toggleHelpToolTip = () => setHelpToolTip(!helpToolTip);
+
+  const [settingsToolTip, setSettingsToolTip] = useState(false);
+  const toggleSettingsToolTip = () => setSettingsToolTip(!settingsToolTip);
 
   return (
     <div>
@@ -25,19 +28,23 @@ const NavBar = ({ toggleDarkTheme, DarkTheme }) => {
               <NavLink style={{ color: 'inherit' }} tag={Link} to="/resources">Resources</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink style={{ color: 'inherit' }} id="helpIcon" tag={Link} to="/help"><i className="fas fa-question-circle fa-lg"></i></NavLink>
+              <NavLink style={{ color: 'inherit' }} id="helpIcon" tag={Link} to="/help">
+                <i className="fas fa-question-circle fa-lg"></i>
+                <span className="sr-only">Help</span>
+              </NavLink>
             </NavItem>
             <Tooltip placement="bottom" isOpen={helpToolTip} target="helpIcon" toggle={toggleHelpToolTip}>
               Help
             </Tooltip>
             <NavItem>
-              <NavLink style={{ color: 'inherit' }} id="settingsIcon" ><i className="fas fa-cog fa-lg"></i></NavLink>
+              <NavLink style={{ color: 'inherit' }} id="settingsIcon" tag={Link} to="/settings">
+                <i className="fas fa-cog fa-lg"></i>
+                <span className="sr-only">Settings</span>
+                </NavLink>
             </NavItem>
-            <UncontrolledPopover trigger="legacy" placement="bottom" target="settingsIcon">
-              <PopoverBody>
-                <CustomInput style={{color: 'inherit'}} onChange={toggleDarkTheme} type="switch" checked={DarkTheme} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
-              </PopoverBody>
-            </UncontrolledPopover>
+            <Tooltip placement="bottom" isOpen={settingsToolTip} target="settingsIcon" toggle={toggleSettingsToolTip}>
+              Settings
+            </Tooltip>
           </Nav>
         </Collapse>
       </Navbar>
