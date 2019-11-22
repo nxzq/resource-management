@@ -74,7 +74,10 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                             <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
-                                        <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{color: '#007bff'}} className="fa fa-search"></i></button>
+                                        <button id="button-addon2" type="submit" className="btn btn-link text-primary">
+                                            <i style={{color: '#005ba1'}} className="fa fa-search"></i>
+                                            <span className="sr-only">Search Icon</span>
+                                        </button>
                                     </div>
                                     <Input autoFocus={true} onChange={handleChange} onKeyPress={handleKeyPress} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />
                                 </div>
@@ -88,7 +91,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                     <NeededSkill skills={skillFilter} removeSkill={handleRemoveSkill} />
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" className="shadow-none" onClick={handleFilter}>Filter</Button>{' '}
+                    <Button color="primary" className="blue-button shadow-none" onClick={handleFilter}>Filter</Button>{' '}
                     <Button color="secondary" className="shadow-none" onClick={handleCancel}>Remove Filter</Button>
                 </ModalFooter>
             </Modal>

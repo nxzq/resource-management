@@ -83,7 +83,7 @@ const Resources = () => {
           </Link>
         </td>
         <td>{person.Role}</td>
-        <td>{person.Email}</td>
+        <td><a style={{ textDecoration: 'none' }} className="table-data" href='mailto: {person.Email}'>{person.Email}</a></td>
         {showSkillMatch ?
           <td>
             <div>
@@ -94,8 +94,7 @@ const Resources = () => {
           : null}
         <td>
           <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
-            <i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user fa-lg"
-            aria-hidden="true"></i>
+            <i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user fa-lg"></i>
             <span className="sr-only">Profile</span>
           </Link>
           <span>&nbsp;&nbsp;</span>
@@ -120,7 +119,10 @@ const Resources = () => {
               <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <button id="button-addon2" type="submit" className="btn btn-link text-primary"><i style={{ color: '#007bff' }} className="fa fa-search"></i></button>
+                    <button id="button-addon2" type="submit" className="btn btn-link text-primary">
+                      <i style={{ color: '#005ba1' }} aria-hidden="true" className="fa fa-search"></i>
+                      <span className="sr-only">Search Icon</span>
+                    </button>
                   </div>
                   <label className="sr-only" htmlFor="myInput">Search</label>
                   <Input style={{ marginRight: '25px', marginLeft: '15px', marginTop: '5px', marginBottom: '5px' }} type="search" id="myInput" onChange={handleSearch} value={search} placeholder="Find an Employee" aria-describedby="button-addon2" className="form-control border-0 bg-light">
