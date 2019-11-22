@@ -234,7 +234,7 @@ class EditResource extends Component {
                         <Col md="6">
                         <div>
                             {' '}
-                            <Button type="submit" className="btn-block" color="primary">Submit Form</Button>
+                            <Button type="submit" className="blue-button btn-block" color="primary">Submit Form</Button>
                         </div>
                         </Col>
                         </Row>

@@ -217,7 +217,7 @@ class AddResource extends Component {
                         )}
                         <SectionHeader name="Skills" />
                         <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
-                        <Button type="submit" className="col-md-12" color="primary">Submit Form</Button>
+                        <Button type="submit" className="blue-button col-md-12" color="primary">Submit Form</Button>
                     </Form>
                 </Container>
             </div>

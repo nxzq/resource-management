@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Header from './components/Header';
 import Overview from './pages/Overview';
 import Resources from './pages/Resources';
 import Help from './pages/Help';
@@ -22,7 +21,6 @@ function App() {
       <div className="App">
         {DarkTheme ? <link rel="stylesheet" type="text/css" href='./DarkTheme.css' /> : ''}
         <NavBar />
-        <Header />
         <Route exact path='/' component={Overview} />
         <Route path='/resources' component={Resources} />
         <Route path='/help' component={Help} />

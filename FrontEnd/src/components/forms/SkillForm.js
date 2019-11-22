@@ -35,7 +35,7 @@ const SkillForm = ({ skills, addSkill, removeSkill }) => {
                 <FormGroup className="col-xl-3 col-lg-3 col-md-3 d-none d-md-block" />
                 <FormGroup className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <Button color="primary" onClick={handleAddSkill} id="add-skill" className="shadow-none" style={{ marginTop: '32px' }}>
-                        <i style={{color: 'inherit'}} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add Skill</Button>
+                        <i style={{color: 'inherit'}} className="fas fa-plus-square fa-lg"></i>&nbsp;&nbsp;Add Skill</Button>
                 </FormGroup>
             </Row>
             <Skill skills={skills} removeSkill={removeSkill} />

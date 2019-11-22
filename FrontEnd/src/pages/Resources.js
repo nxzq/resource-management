@@ -78,7 +78,7 @@ const Resources = () => {
     let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
       <tr key={person.Id}>
         <td>
-          <Link style={{ textDecoration: 'none' }} class="table-data" to={"/profile/" + person.Id}>
+          <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
             {person.FirstName + ' ' + person.LastName}
           </Link>
         </td>
@@ -93,7 +93,7 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <Link style={{ textDecoration: 'none' }} class="table-data" to={"/profile/" + person.Id}>
+          <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
             <i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user fa-lg"
             aria-hidden="true"></i>
             <span className="sr-only">Profile</span>
@@ -131,14 +131,14 @@ const Resources = () => {
           </Col>
           <Col lg="2" md="6">
             <Link style={{ textDecoration: 'none' }} to="/addjob">
-              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
+              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
                 &nbsp;&nbsp;Add Job
               </Button>
             </Link>
           </Col>
           <Col lg="3" md="6">
             <Link style={{ textDecoration: 'none' }} to="/addresource">
-              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
                 &nbsp;&nbsp;Add Resource
               </Button>
             </Link>
