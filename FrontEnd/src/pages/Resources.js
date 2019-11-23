@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
+import ResumeModal from '../components/resourcetable/ResumeModal'
 
 const Resources = () => {
 
@@ -93,13 +94,7 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
-            <i data-toggle="tooltip" data-placement="left" title="View Profile" className="far fa-user fa-lg"></i>
-            <span className="sr-only">Profile</span>
-          </Link>
-          <span>&nbsp;&nbsp;</span>
-          <i data-toggle="tooltip" data-placement="right" title="Create Resume" className="far fa-file-alt fa-lg"></i>
-          <span className="sr-only">Create Resume</span>
+          <ResumeModal />
         </td>
       </tr>
     ))
@@ -119,9 +114,8 @@ const Resources = () => {
               <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <button id="button-addon2" type="submit" className="btn btn-link text-primary">
+                    <button id="button-addon2" type="submit" aria-label="Search" className="btn btn-link text-primary">
                       <i style={{ color: '#005ba1' }} aria-hidden="true" className="fa fa-search"></i>
-                      <span className="sr-only">Search Icon</span>
                     </button>
                   </div>
                   <label className="sr-only" htmlFor="myInput">Search</label>

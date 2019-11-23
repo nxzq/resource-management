@@ -59,10 +59,6 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
-    // useEffect (() => {
-    //     if (modal === true) inputRef.current.focus()
-    // }, [modal])
-
     return (
         <div>
             <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} onClick={toggle} className="btn-block shadow-none" type="button"><i className="fas fa-filter"></i>&nbsp;&nbsp;Filter</Button>
@@ -74,9 +70,8 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                             <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
-                                        <button id="button-addon2" type="submit" className="btn btn-link text-primary">
-                                            <i style={{color: '#005ba1'}} className="fa fa-search"></i>
-                                            <span className="sr-only">Search Icon</span>
+                                        <button id="button-addon2" type="submit" aria-label="Search" className="btn btn-link text-primary">
+                                            <i style={{color: '#005ba1'}} aria-hidden="true" className="fa fa-search"></i>
                                         </button>
                                     </div>
                                     <Input autoFocus={true} onChange={handleChange} onKeyPress={handleKeyPress} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />

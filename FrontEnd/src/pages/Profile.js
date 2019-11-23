@@ -147,7 +147,7 @@ const Profile = (props) => {
                                 <b>Role:</b>&nbsp;{resource.Role}
                             </p>
                             <p className="col-md-6">
-                                <b>Email:</b>&nbsp;{resource.Email}
+                                <b>Email:</b>&nbsp;<a style={{ textDecoration: 'none' }} className="profileLink" href='mailto: {resource.Email}'>{resource.Email}</a>
                             </p>
                             <p className="col-md-6">
                                 <b>Phone:</b>&nbsp;{resource.Phone.length === 10 ?
