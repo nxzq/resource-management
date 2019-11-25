@@ -12,11 +12,11 @@ const ResumeModal = () => {
             <span className="sr-only">Resume</span>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader className="modalheader" toggle={toggle}>Resume</ModalHeader>
-                <ModalBody className="modalbody">
-
+                <ModalBody className="modalbody">               
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" className="blue-button shadow-none" onClick={toggle}>Download</Button>{' '}
+                    <Button color="primary" className="blue-button shadow-none" onClick={toggle}>Download</Button>
+                    {' '}
                     <Button color="secondary" className="shadow-none" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>
