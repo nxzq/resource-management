@@ -94,7 +94,7 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <ResumeModal />
+          <ResumeModal FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
         </td>
       </tr>
     ))
@@ -142,7 +142,7 @@ const Resources = () => {
         </Row>
         <Row>
           <Col>
-            <Table striped>
+            <Table striped borderless>
               <thead>
                 <tr>
                   <th>Name</th>

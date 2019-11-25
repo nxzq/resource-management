@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Tooltip } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import HoverToolTip from './HoverToolTip';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-
-  const [helpToolTip, setHelpToolTip] = useState(false);
-  const toggleHelpToolTip = () => setHelpToolTip(!helpToolTip);
-
-  const [settingsToolTip, setSettingsToolTip] = useState(false);
-  const toggleSettingsToolTip = () => setSettingsToolTip(!settingsToolTip);
 
   return (
     <div>
@@ -33,18 +28,14 @@ const NavBar = () => {
                 <span className="sr-only">Help</span>
               </NavLink>
             </NavItem>
-            <Tooltip placement="bottom" isOpen={helpToolTip} target="helpIcon" toggle={toggleHelpToolTip}>
-              Help
-            </Tooltip>
+            <HoverToolTip placement='bottom' target='helpIcon' content='Help' />
             <NavItem>
               <NavLink style={{ color: 'inherit' }} id="settingsIcon" tag={Link} to="/settings">
                 <i className="fas fa-cog fa-lg"></i>
                 <span className="sr-only">Settings</span>
                 </NavLink>
             </NavItem>
-            <Tooltip placement="bottom" isOpen={settingsToolTip} target="settingsIcon" toggle={toggleSettingsToolTip}>
-              Settings
-            </Tooltip>
+            <HoverToolTip placement='bottom' target='settingsIcon' content='Settings' />
           </Nav>
         </Collapse>
       </Navbar>
