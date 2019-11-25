@@ -10,7 +10,7 @@ const ResumeModal = () => {
         <div>
             <i onClick={toggle} data-toggle="tooltip" data-placement="right" title="Resume" className="table-data far fa-file-alt fa-lg"></i>
             <span className="sr-only">Resume</span>
-            <Modal isOpen={modal} toggle={toggle}>
+            <Modal isOpen={modal} toggle={toggle} size='lg'>
                 <ModalHeader className="modalheader" toggle={toggle}>Resume</ModalHeader>
                 <ModalBody className="modalbody">               
                 </ModalBody>

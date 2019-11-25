@@ -138,3 +138,12 @@ hr {
     opacity: 0.25;
     padding: 0; 
 }
+
+button.close {
+  color: #fff
+}
+
+button.close:hover {
+  color: #fff;
+  opacity: 0.90
+}
