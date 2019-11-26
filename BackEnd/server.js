@@ -39,6 +39,16 @@ app.get('/api/resources/table', (req, res) => {
     res.send(tableData);
 });
 
+// app.get('/api/resources/pdf', function (req, res) {
+//     let filePath = './MockData/Resumes/NicklasLanmanResume.pdf';   
+//     fs.readFile(__dirname + filePath , function (err,data){
+//         res.contentType('application/pdf');
+//         res.send(data);
+//     });
+// });
+
+app.get('/api/resources/pdf', (req, res) => res.download('./MockData/Resumes/NicklasLanmanResume.pdf'))
+
 // GET Resource By ID
 app.get('/api/resources/:id', (req, res) => {
     // Get Data

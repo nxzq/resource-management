@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import HoverToolTip from '../HoverToolTip';
+// import HoverToolTip from '../HoverToolTip';
 
 const ResumeModal = ({ FirstName, LastName, id }) => {
 
+    const [data, setData] = useState();
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+
+    useEffect(() => {
+        axios({
+            url: `http://localhost:5000/api/resources/pdf`, //your url
+            method: 'GET',
+            responseType: 'blob', // important
+        }).then(res => {
+            //Create a Blob from the PDF Stream
+            const file = new Blob(
+                [res.data], 
+                {type: 'application/pdf'});
+            //Build a URL from the file
+            const fileURL = URL.createObjectURL(file);
+            setData(fileURL)
+          })
+      }, [])
 
     return (
         <div>
@@ -13,16 +31,16 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
                 <i className="table-data far fa-file-alt fa-lg"></i>
                 <span className="sr-only">Resume</span>
             </Button>
-            <HoverToolTip placement='right' target={"resumeModalButton"+id} content='View Resume' />
-            <Modal isOpen={modal} toggle={toggle} size='lg'>
+            {/* <HoverToolTip placement='right' target={"resumeModalButton"+id} content='View Resume' /> */}
+            <Modal isOpen={modal} toggle={toggle} size='lg' contentClassName="ResumeModal">
                 <ModalHeader className="modalheader" toggle={toggle}>{FirstName} {LastName} Resume</ModalHeader>
-                <ModalBody className="modalbody">  
-                <object width='100%' height='500px' data="https://www.easthighavid.com/uploads/1/3/3/6/13367187/the_one_pager.pdf" type="application/pdf">
-                    <iframe id="Resume" title="Resume" src="https://www.easthighavid.com/uploads/1/3/3/6/13367187/the_one_pager.pdf"></iframe>
-                </object>             
+                <ModalBody className="modalbody"> 
+                    <object width='100%' height='100%' data={data} type="application/pdf">
+                        <iframe id="Resume" title="Resume" src={data}></iframe>
+                    </object>           
                 </ModalBody>
                 <ModalFooter>
-                    <a download href="https://www.easthighavid.com/uploads/1/3/3/6/13367187/the_one_pager.pdf">
+                    <a download href={data}>
                         <Button color="primary" className="blue-button shadow-none" onClick={toggle}>Download</Button>
                     </a>
                     {' '}

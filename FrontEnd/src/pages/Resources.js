@@ -84,7 +84,7 @@ const Resources = () => {
           </Link>
         </td>
         <td>{person.Role}</td>
-        <td><a style={{ textDecoration: 'none' }} className="table-data" href='mailto: {person.Email}'>{person.Email}</a></td>
+        <td><a style={{ textDecoration: 'none' }} className="table-data" href={'mailto: ' + person.Email}>{person.Email}</a></td>
         {showSkillMatch ?
           <td>
             <div>
