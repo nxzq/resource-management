@@ -20,6 +20,13 @@ app.get('/api/resources', (req, res) => {
     res.send(resources);
 });
 
+// GET ALL Skills
+app.get('/api/skills', (req, res) => {
+    // Get Data
+    resources = JSON.parse(fs.readFileSync('./MockData/Skills.json','utf8'))
+    res.send(resources);
+});
+
 // GET Table Data
 app.get('/api/resources/table', (req, res) => {
     let tableData = []
