@@ -11,15 +11,15 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
 
     useEffect(() => {
         axios({
-            url: `http://localhost:5000/api/resources/pdf`, //your url
+            url: `http://localhost:5000/api/resources/pdf`,
             method: 'GET',
-            responseType: 'blob', // important
+            responseType: 'blob',
         }).then(res => {
-            //Create a Blob from the PDF Stream
+            // Create a Blob from the PDF Stream
             const file = new Blob(
                 [res.data], 
                 {type: 'application/pdf'});
-            //Build a URL from the file
+            // Build a URL from the file
             const fileURL = URL.createObjectURL(file);
             setData(fileURL)
           })

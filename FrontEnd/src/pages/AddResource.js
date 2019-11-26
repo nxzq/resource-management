@@ -10,6 +10,7 @@ import CertificationForm from '../components/forms/CertificationForm';
 import ExperienceForm from '../components/forms/ExperienceForm';
 import ProjectForm from '../components/forms/ProjectForm';
 import SkillForm from '../components/forms/SkillForm';
+import ResumeUpload from '../components/forms/ResumeUpload';
 import SectionHeader from '../components/SectionHeader';
 import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
@@ -217,6 +218,8 @@ class AddResource extends Component {
                         )}
                         <SectionHeader name="Skills" />
                         <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
+                        <SectionHeader name="Resume" />
+                        <ResumeUpload />
                         <Button type="submit" className="blue-button col-md-12" color="primary">Submit Form</Button>
                     </Form>
                 </Container>

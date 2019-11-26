@@ -10,6 +10,7 @@ import CertificationForm from '../components/forms/CertificationForm';
 import ExperienceForm from '../components/forms/ExperienceForm';
 import ProjectForm from '../components/forms/ProjectForm';
 import SkillForm from '../components/forms/SkillForm';
+import ResumeUpload from '../components/forms/ResumeUpload';
 import SectionHeader from '../components/SectionHeader';
 import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
@@ -223,20 +224,22 @@ class EditResource extends Component {
                         )}
                         <SectionHeader name="Skills" />
                         <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
+                        <SectionHeader name="Resume" />
+                        <ResumeUpload />
                         <Row>
                             <Col md="6">
-                        <div>
-                            <Link style={{ textDecoration: 'none' }} to={"/profile/" + this.state.data.Id}>
-                                <Button className="btn-block">Cancel</Button>
-                            </Link>
-                        </div>
-                        </Col>
-                        <Col md="6">
-                        <div>
-                            {' '}
-                            <Button type="submit" className="blue-button btn-block" color="primary">Submit Form</Button>
-                        </div>
-                        </Col>
+                                <div>
+                                    <Link style={{ textDecoration: 'none' }} to={"/profile/" + this.state.data.Id}>
+                                        <Button className="btn-block">Cancel</Button>
+                                    </Link>
+                                </div>
+                                </Col>
+                                <Col md="6">
+                                <div>
+                                    {' '}
+                                    <Button type="submit" className="blue-button btn-block" color="primary">Submit Form</Button>
+                                </div>
+                            </Col>
                         </Row>
                     </Form>
                 </Container>
