@@ -10,7 +10,7 @@ import CertificationForm from '../components/forms/CertificationForm';
 import ExperienceForm from '../components/forms/ExperienceForm';
 import ProjectForm from '../components/forms/ProjectForm';
 import SkillForm from '../components/forms/SkillForm';
-// import ResumeUpload from '../components/forms/ResumeUpload';
+import ResumeUpload from '../components/forms/ResumeUpload';
 import SectionHeader from '../components/SectionHeader';
 import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
@@ -183,6 +183,8 @@ class EditResource extends Component {
                 {this.state.Loading ? <div className="text-center"><Spinner color="primary" /></div> :
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
+                        <SectionHeader name="Resume" />
+                        <ResumeUpload />
                         <SectionHeader name="About" />
                         <AboutForm handleChange={this.handleChange} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} Role={this.state.data.Role}
                             Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
@@ -218,8 +220,6 @@ class EditResource extends Component {
                         )}
                         <SectionHeader name="Skills" />
                         <SkillForm skills={this.state.data.Skills} handleSkillsChange={this.handleSkillsChange} />
-                        {/* <SectionHeader name="Resume" />
-                        <ResumeUpload /> */}
                         <Row>
                             <Col md="6">
                                 <div>
