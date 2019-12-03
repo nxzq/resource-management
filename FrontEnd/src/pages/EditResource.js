@@ -88,15 +88,9 @@ class EditResource extends Component {
             })
     }
 
-    handleAddSkill = (skill) => {
+    handleSkillsChange = (skills) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
-        data.Skills = [...this.state.data.Skills, skill]
-        this.setState({ data })
-    }
-
-    handleRemoveSkill = (skill) => {
-        let data = JSON.parse(JSON.stringify(this.state.data))
-        data.Skills = this.state.data.Skills.filter(s => s !== skill)
+        data.Skills = skills
         this.setState({ data })
     }
 
@@ -223,7 +217,7 @@ class EditResource extends Component {
                             ProjAssociation={element.ProjAssociation} ProjInfo={element.ProjInfo} />
                         )}
                         <SectionHeader name="Skills" />
-                        <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
+                        <SkillForm skills={this.state.data.Skills} handleSkillsChange={this.handleSkillsChange} />
                         {/* <SectionHeader name="Resume" />
                         <ResumeUpload /> */}
                         <Row>

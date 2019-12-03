@@ -26,7 +26,7 @@ const Resources = () => {
 
   const getSkillMatch = (skills) => {
     let count = 0
-    if (skills !== undefined) {
+    if (skills !== undefined && neededSkills !== undefined) {
     let personalSkills = skills.map(function (value) {
       return value.toLowerCase();  
     })
@@ -45,19 +45,17 @@ const Resources = () => {
   }
 
   const getMatchedSkills = (skills) => {
-    let personalSkills = skills.map(value => value.toLowerCase())
-    let jobSkills = neededSkills.map(value => value.toLowerCase())
+    let personalSkills = skills.map(value => value)
+    let jobSkills = neededSkills.map(value => value)
     let matched = jobSkills.filter(value => personalSkills.includes(value))
-    matched = matched.map(value => value.charAt(0).toUpperCase() + value.substring(1))
     matched = matched.join(', ')
     return matched
   }
 
   const getUnmatchedSkills = (skills) => {
-    let personalSkills = skills.map(value => value.toLowerCase())
-    let jobSkills = neededSkills.map(value => value.toLowerCase())
+    let personalSkills = skills.map(value => value)
+    let jobSkills = neededSkills.map(value => value)
     let unmatched = jobSkills.filter(value => !personalSkills.includes(value))
-    unmatched = unmatched.map(value => value.charAt(0).toUpperCase() + value.substring(1))
     unmatched = unmatched.join(', ')
     return unmatched
   }

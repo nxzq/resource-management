@@ -1,31 +1,28 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from 'reactstrap';
-import NeededSkill from './NeededSkill';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Select from 'react-select';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, FormGroup } from 'reactstrap';
 
 const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) => {
 
-    const [skill, setSkill] = useState('')
+    const [availSkills, setAvailSkills] = useState()
     const [skillFilter, setSkillFilter] = useState([...neededSkills])
+    const [selectedSkills, setSelectedSkills] = useState(neededSkills.map(s => ({ label: s, value: s })))
 
-    const handleChange = (e) => {
-        setSkill(e.target.value)
-    }
-
-    const handleKeyPress = e => {
-        if (e.key === "Enter") handleAddSkill(e)
-    }
-    const handleAddSkill = (e) => {
-        e.preventDefault()
-        if (skill === '') return
-        else {
-            setSkillFilter([...skillFilter, skill])
-            setSkill('')
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/skills`)
+          .then(res => {
+            const resourceData = res.data.Skills.map(s => ({ label: s, value: s }))
+            setAvailSkills(resourceData)
+          })
+      }, [])
+    const handleChange = selectedOption => {
+        if (selectedOption !== undefined && selectedOption !== null) {
+            let skills = selectedOption.map(s => s.value)
+            setSkillFilter([...skills])
+            setSelectedSkills(selectedOption)
         }
-    }
-    const handleRemoveSkill = (skill) => {
-        let remove = skillFilter.filter(s => s !== skill)
-        setSkillFilter(remove)
-    }
+    };
     const handleFilter = (e) => {
         e.preventDefault()
         if (skillFilter.length === 0) {
@@ -49,10 +46,12 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
             hideSkillMatch()
             setNeededSkill([])
             setSkillFilter([])
+            setSelectedSkills([])
             toggle()
         } else {
             setNeededSkill([])
             setSkillFilter([])
+            setSelectedSkills([])
             toggle()
         }
     }
@@ -66,24 +65,11 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                 <ModalHeader className="modalheader" toggle={toggle}>Filter Based on Skills</ModalHeader>
                 <ModalBody className="modalbody">
                     <Row>
-                        <div className="rounded-input col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                            <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                                <div className="input-group">
-                                    <div className="input-group-prepend">
-                                        <button id="button-addon2" type="submit" aria-label="Search" className="btn btn-link text-primary">
-                                            <i style={{color: '#005ba1'}} aria-hidden="true" className="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                    <Input autoFocus={true} onChange={handleChange} onKeyPress={handleKeyPress} style={{ marginRight: '15px', marginLeft: '15px' }} value={skill} type="search" id="myInput" placeholder="Search for Skill" aria-describedby="button-addon2" className="form-control border-0 bg-light" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <Button onClick={handleAddSkill} id="add-skill" className="shadow-none" style={{ marginTop: '5px' }}>
-                                <i style={{color: 'inherit'}} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add</Button>
-                        </div>
+                        <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label className="sr-only">Skills:</label>
+                            <Select autoFocus={true} isMulti options={availSkills} onChange={handleChange} value={selectedSkills} />
+                        </FormGroup>
                     </Row>
-                    <NeededSkill skills={skillFilter} removeSkill={handleRemoveSkill} />
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" className="blue-button shadow-none" onClick={handleFilter}>Filter</Button>{' '}

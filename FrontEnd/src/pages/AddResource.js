@@ -37,7 +37,6 @@ class AddResource extends Component {
     }
 
     handleCurrentPositionChange = (index, e) => {
-        console.log(index)
         let currentPosition = this.state.currentPosition
         currentPosition[index] = !currentPosition[index]
         this.setState({ currentPosition })
@@ -80,17 +79,11 @@ class AddResource extends Component {
             .then(res => {
                 this.setState({ submitted: true })
             })
-    }
+    } 
 
-    handleAddSkill = (skill) => {
+    handleSkillsChange = (skills) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
-        data.Skills = [...this.state.data.Skills, skill]
-        this.setState({ data })
-    }
-
-    handleRemoveSkill = (skill) => {
-        let data = JSON.parse(JSON.stringify(this.state.data))
-        data.Skills = this.state.data.Skills.filter(s => s !== skill)
+        data.Skills = skills
         this.setState({ data })
     }
 
@@ -217,7 +210,7 @@ class AddResource extends Component {
                             ProjAssociation={element.ProjAssociation} ProjInfo={element.ProjInfo} />
                         )}
                         <SectionHeader name="Skills" />
-                        <SkillForm skills={this.state.data.Skills} addSkill={this.handleAddSkill} removeSkill={this.handleRemoveSkill} />
+                        <SkillForm skills={this.state.data.Skills} handleSkillsChange={this.handleSkillsChange} />
                         {/* <SectionHeader name="Resume" />
                         <ResumeUpload /> */}
                         <Button type="submit" className="blue-button col-md-12" color="primary">Submit Form</Button>
