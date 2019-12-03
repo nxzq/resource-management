@@ -28,10 +28,10 @@ const Resources = () => {
     let count = 0
     if (skills !== undefined && neededSkills !== undefined) {
     let personalSkills = skills.map(function (value) {
-      return value.toLowerCase();  
+      return value;  
     })
     let jobSkills = neededSkills.map(function (value) {
-      return value.toLowerCase();
+      return value;
     })
     for (let i in personalSkills) {
       if (jobSkills.indexOf(personalSkills[i]) > -1) {

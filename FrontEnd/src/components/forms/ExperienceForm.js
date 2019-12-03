@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Label, Input, FormGroup, Row, Button, CustomInput } from 'reactstrap';
 
-const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange }) => {
+const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange, CurrentPosition }) => {
     const [currentPosition, setCurrentPostion] = useState( JobEndDate === '' && index === 0 ? true : false)
     return (
         <div>
