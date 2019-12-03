@@ -209,7 +209,7 @@ const Profile = (props) => {
                         </Row>
                         <Row>
                             <Link className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right" style={{ textDecoration: 'none' }} to="/resources">
-                                <Button style={{}} color="primary">Return To Resources</Button>
+                                <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button shadow-none" color="primary">Return To Resources</Button>
                             </Link>
                         </Row>
                     </Container>

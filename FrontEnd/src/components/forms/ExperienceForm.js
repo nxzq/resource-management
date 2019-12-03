@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { Label, Input, FormGroup, Row, Button, CustomInput } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange, CurrentPosition }) => {
-    const [currentPosition, setCurrentPostion] = useState( JobEndDate === '' && index === 0 ? true : false)
+const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange }) => {
+    const [currentPosition, setCurrentPostion] = useState( JobEndDate === '' ? true : false)
     return (
         <div>
             <Row>
-                { index === 0 ?
-                <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <CustomInput type="checkbox" id="exampleCustomCheckbox" className="unselectable" label="Current Position" checked={currentPosition} onChange={() => {setCurrentPostion(!currentPosition)}} value={currentPosition} />
-                </FormGroup>
-                : null}
+                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <FormGroup check>
+                        <Label check>
+                            <Input type="checkbox" className="unselectable" checked={currentPosition} 
+                            onChange={() => {setCurrentPostion(!currentPosition)}} value={currentPosition}/>{' '}
+                            Current Position
+                        </Label>
+                    </FormGroup>
+                </div>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="JobTitle">Title</Label>
                     <Input required type="text" name="JobTitle" id="JobTitle" placeholder="Title/Role" value={JobTitle} onChange={(e) => { handleExperienceChange(index, e) }} />
@@ -22,7 +26,6 @@ const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDat
                 <FormGroup className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <Label for="JobStartDate">Start Date</Label>
                     <Input
-                        required
                         type="date"
                         name="JobStartDate"
                         id="JobStartDate"
@@ -31,7 +34,7 @@ const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDat
                         onChange={(e) => { handleExperienceChange(index, e) }}
                     />
                 </FormGroup>
-                { currentPosition === true && index === 0 ?
+                { currentPosition === true ?
                 <FormGroup className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <Label for="JobStartDate">End Date</Label>
                     <Input

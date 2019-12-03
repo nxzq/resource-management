@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
-import ResumeModal from '../components/resourcetable/ResumeModal'
+import ResumeModal from '../components/resourcetable/ResumeModal';
 
 const Resources = () => {
 

@@ -38,15 +38,15 @@ const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, 
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="LinkedIn">LinkedIn</Label>
-                    <Input type="text" name="LinkedIn" id="LinkedIn" placeholder="https://www.linkedin.com/in/yourlink (Optional)" value={LinkedIn} onChange={handleChange} />
+                    <Input type="url" name="LinkedIn" id="LinkedIn" placeholder="https://www.linkedin.com/in/yourlink (Optional)" value={LinkedIn} onChange={handleChange} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="GitHub">GitHub</Label>
-                    <Input type="text" name="GitHub" id="GitHub" placeholder="https://www.github.com/youraccount (Optional)" value={GitHub} onChange={handleChange} />
+                    <Input type="url" name="GitHub" id="GitHub" placeholder="https://www.github.com/youraccount (Optional)" value={GitHub} onChange={handleChange} />
                 </FormGroup>
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="PersonalSite">Personal Website</Label>
-                    <Input type="text" name="PersonalSite" id="PersonalSite" placeholder="https://www.yoursiteurl.com (Optional)" value={PersonalSite} onChange={handleChange} />
+                    <Input type="url" name="PersonalSite" id="PersonalSite" placeholder="https://www.yoursiteurl.com (Optional)" value={PersonalSite} onChange={handleChange} />
                 </FormGroup>
             </Row>
             <hr />
