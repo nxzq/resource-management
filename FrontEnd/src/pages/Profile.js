@@ -36,6 +36,9 @@ const Profile = (props) => {
             .then(res => {
                 const resourceData = res.data;
                 setResource(resourceData)
+            })
+            .catch(error => {
+                console.log(error)
             }) // eslint-disable-next-line
     }, [])
 

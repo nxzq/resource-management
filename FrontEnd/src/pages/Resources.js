@@ -22,6 +22,9 @@ const Resources = () => {
         const resourceData = res.data;
         setData(resourceData)
       })
+      .catch(error => {
+          console.log(error)
+      })
   }, [])
 
   const getSkillMatch = (skills) => {

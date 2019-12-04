@@ -48,9 +48,10 @@ app.get('/api/resources/table', (req, res) => {
 
 // GET RESUME FILE
 app.get('/api/resources/pdf', (req, res) => {
-    res.set('Content-Type', 'application/pdf');
-    res.set('Accept', "application/json");
-    res.set('Access-Control-Expose-Headers', 'Content-Disposition')
+    res.set({
+        'Content-Type': "application/pdf",
+        'Accept': "application/json"
+    })
     res.download('./MockData/Resumes/NicklasLanmanResume.pdf', "NicklasLanmanResume.pdf");
 })
 

@@ -28,6 +28,9 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             console.log(fileURL)
             setData(fileURL)
           })
+          .catch(error => {
+            setData('')
+        })
       });
 
     return (
