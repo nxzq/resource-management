@@ -92,7 +92,7 @@ const Resources = () => {
           </td>
           : null}
         <td>
-          <ResumeModal FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
+          <ResumeModal key={person.Id} FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
         </td>
       </tr>
     ))

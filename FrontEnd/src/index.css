@@ -106,3 +106,7 @@ nav a:hover {
 .ResumeModal {
   height: 90vh;
 }
+
+.disabledBtn{
+  pointer-events: none;
+}
