@@ -14,13 +14,18 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
           .then(res => {
             const resourceData = res.data.Skills.map(s => ({ label: s, value: s }))
             setAvailSkills(resourceData)
-          })
-      }, [])
+        }).catch(error => {
+            console.log(error)
+        })
+    }, [])
     const handleChange = selectedOption => {
         if (selectedOption !== undefined && selectedOption !== null) {
             let skills = selectedOption.map(s => s.value)
             setSkillFilter([...skills])
             setSelectedSkills(selectedOption)
+        } else {
+            setSkillFilter([])
+            setSelectedSkills([])
         }
     };
     const handleFilter = (e) => {
