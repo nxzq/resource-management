@@ -46,13 +46,20 @@ app.get('/api/resources/table', (req, res) => {
     res.send(tableData);
 });
 
-// GET RESUME FILE
-app.get('/api/resources/pdf', (req, res) => {
-    res.set({
-        'Content-Type': "application/pdf",
-        'Accept': "application/json"
-    })
-    res.download('./MockData/Resumes/NicklasLanmanResume.pdf', "NicklasLanmanResume.pdf");
+// GET Resume By ID
+app.get('/api/resources/resume/:id', (req, res) => {
+    let path = './MockData/Resumes/' + (req.params.id) + '.pdf'
+    try {
+        if (fs.existsSync(path)) {
+            res.set({
+                'Content-Type': "application/pdf",
+                'Accept': "application/json"
+            })
+            res.download(path, "resume.pdf");
+        }
+      } catch(err) {
+            res.status(404).send('The resource with the given ID was not found');
+      }
 })
 
 // GET Resource By ID

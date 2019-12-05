@@ -183,12 +183,12 @@ class EditResource extends Component {
                 {this.state.Loading ? <div className="text-center"><Spinner color="primary" /></div> :
                 <Container className="ResourceForm">
                     <Form onSubmit={this.handleSubmit}>
-                        <SectionHeader name="Resume" />
-                        <ResumeUpload />
                         <SectionHeader name="About" />
                         <AboutForm handleChange={this.handleChange} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} Role={this.state.data.Role}
                             Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
                             GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
+                        <SectionHeader name="Resume" />
+                        <ResumeUpload />
                         <SectionHeader name="Summary" />
                         <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
                         <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
