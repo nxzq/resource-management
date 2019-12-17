@@ -17,18 +17,29 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             url: `http://localhost:5000/api/resources/resume/${id}`,
             method: 'GET',
             responseType: 'blob',
+            headers: new Headers({
+                'Content-Type': 'application/pdf'
+            })
         }).then(res => {
             // Create a Blob from the PDF Stream
             const file = new Blob(
                 [res.data], 
                 {type: 'application/pdf'});
             // Build a URL from the file
-            const fileURL = URL.createObjectURL(file);
+            const fileURL = URL.createObjectURL(file) + '#toolbar=0&navpanes=0';
             setData(fileURL)
         }).catch(error => {
             setData('')
         })
       });
+
+    const downloadResume = (() => {
+            const a = document.createElement('a');
+            a.download = FirstName+LastName+'Resume.pdf';
+            a.href = data;
+            a.click();
+            a.href = '#';
+    })
 
     return (
         <div>
@@ -54,10 +65,8 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
                 </ModalBody>
                 <ModalFooter>
                 { data === '' ?
-                    <Button color="primary" className="blue-button disabledBtn shadow-none" disabled onClick={toggle}>Download</Button> :
-                    <a download href={data}>
-                        <Button color="primary" className="blue-button shadow-none" onClick={toggle}>Download</Button>
-                    </a>
+                    <Button color="primary" className="blue-button disabledBtn shadow-none" disabled>Download</Button> :
+                    <Button color="primary" className="blue-button shadow-none" onClick={downloadResume}>Download</Button>
                 }
                     {' '}
                     <Button color="secondary" className="shadow-none" onClick={toggle}>Cancel</Button>
