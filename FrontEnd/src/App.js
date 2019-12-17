@@ -20,7 +20,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {DarkTheme ? <link rel="stylesheet" type="text/css" href='./DarkTheme.css' /> : ''}
-        <NavBar />
+        <NavBar DarkTheme={DarkTheme}/>
         <Route exact path='/' component={Overview} />
         <Route path='/resources' component={Resources} />
         <Route path='/help' component={Help} />

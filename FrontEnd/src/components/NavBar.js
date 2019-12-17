@@ -3,7 +3,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import { Link } from 'react-router-dom';
 import HoverToolTip from './HoverToolTip';
 
-const NavBar = () => {
+const NavBar = ({ DarkTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -11,7 +11,9 @@ const NavBar = () => {
     <div>
       <Navbar color="faded" expand="md">
         <NavbarBrand href="https://www.yash.com/">
-          <img id="logo" alt="YASH Technologies" src="https://www.yash.com/wp-content/themes/Yash/images/yash-logo.svg" title="YASH Technologies" width="70" />
+          {DarkTheme ? 
+          <img id="yashLogo" alt="YASH Technologies" src='/yash-logo-white.svg' width="70" /> : 
+          <img id="yashLogo" alt="YASH Technologies" src='/yash-logo.svg' width="70" />}
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

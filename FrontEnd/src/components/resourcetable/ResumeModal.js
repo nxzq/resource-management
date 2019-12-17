@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormText } from 'reactstrap';
-// import HoverToolTip from '../HoverToolTip';
 
 const ResumeModal = ({ FirstName, LastName, id }) => {
 
@@ -43,11 +42,10 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
 
     return (
         <div>
-            <Button onClick={toggle} id={"resumeModalButton"+id} className='shadow-none' style={{textDecoration: 'none', backgroundColor: 'transparent', border: 'transparent', height: '35px'}}>
+            <Button onClick={toggle} id={"resumeModalButton"+id} title="View Resume" className='shadow-none' style={{textDecoration: 'none', backgroundColor: 'transparent', border: 'transparent', height: '35px'}}>
                 <i className="table-data far fa-file-alt fa-lg"></i>
                 <span className="sr-only">Resume</span>
             </Button>
-            {/* <HoverToolTip placement='right' target={"resumeModalButton"+id} content='View Resume' /> */}
             <Modal isOpen={modal} toggle={toggle} size='lg' contentClassName="ResumeModal">
                 <ModalHeader className="modalheader" toggle={toggle}>{FirstName} {LastName} Resume</ModalHeader>
                 <ModalBody style={{ position: 'relative' }} className="modalbody"> 
