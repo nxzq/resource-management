@@ -13,7 +13,7 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
 
     const getResume = (() => {
         axios({
-            url: `http://localhost:5000/api/resources/resume/${id}`,
+            url: `http://localhost:5000/api/resources/${id}/resume`,
             method: 'GET',
             responseType: 'blob',
             headers: new Headers({
