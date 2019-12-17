@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 const fs = require('fs')
+const {resumeUpload} = require('./helpers/multer');
 
 // enable middleware || pipeline
 app.use(express.json())
@@ -47,7 +48,7 @@ app.get('/api/resources/table', (req, res) => {
 });
 
 // GET Resume By ID
-app.get('/api/resources/resume/:id', (req, res) => {
+app.get('/api/resources/:id/resume', (req, res) => {
     let path = './MockData/Resumes/' + (req.params.id) + '.pdf'
     try {
         if (fs.existsSync(path)) {
@@ -56,11 +57,41 @@ app.get('/api/resources/resume/:id', (req, res) => {
                 'Accept': "application/json"
             })
             res.download(path, "resume.pdf");
+        } else {
+            res.status(404).send('The resource with the given ID was not found');
         }
       } catch(err) {
             res.status(404).send('The resource with the given ID was not found');
       }
-})
+});
+
+// POST Resume By ID
+app.post('/api/resources/:id/resume', resumeUpload.single('resume'), (req, res) => {
+    if (req.invalidFile) {
+        res.status(400).send(req.invalidFile);
+        return;
+    } else if (req.file.size > 1000**2*2) {
+        res.status(400).send('File too large.');
+    }
+    res.status(204).end();
+});
+
+// HEAD Resume headers
+app.head('/api/resources/:id/resume', (req, res) => {
+    let path = './MockData/Resumes/' + (req.params.id) + '.pdf'
+    if (fs.existsSync(path)) {
+        const stats = fs.statSync(path);
+        res.set({
+            'Content-Type': 'application/pdf',
+            'Accept': 'application/json',
+            'Content-Disposition': 'attachment; filename="resume.pdf"',
+            'Content-Length': stats.size
+        });
+        res.status(200).end();
+    } else {
+        res.status(404).end();
+    }
+});
 
 // GET Resource By ID
 app.get('/api/resources/:id', (req, res) => {
