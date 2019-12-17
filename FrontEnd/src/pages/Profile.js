@@ -136,7 +136,7 @@ const Profile = (props) => {
                     <Header name={
                         <div>
                             {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;
-                    <Link style={{ textDecoration: 'none' }} to={"/editresource/" + id}>
+                            <Link style={{ textDecoration: 'none' }} to={"/editresource/" + id}>
                                 <i id="edit" className="fas fa-edit"></i>
                             </Link>
                             <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>

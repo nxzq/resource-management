@@ -34,6 +34,7 @@ class EditResource extends Component {
             "Skills": []
         },
         submitted: false,
+        resume: '',
         Loading: true
     }
     
@@ -46,6 +47,11 @@ class EditResource extends Component {
                 this.setState({ Loading: false })
             })
         // eslint-disable-next-line
+    }
+
+    handleResume = (e) => {
+        let resume = e.target.value
+        this.setState({ resume })
     }
 
     handleChange = (e) => {
@@ -188,7 +194,7 @@ class EditResource extends Component {
                             Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
                             GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
                         <SectionHeader name="Resume" />
-                        <ResumeUpload />
+                        <ResumeUpload resume={this.state.resume} handleResume={this.handleResume} />
                         <SectionHeader name="Summary" />
                         <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
                         <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
