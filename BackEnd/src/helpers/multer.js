@@ -11,20 +11,12 @@ const resumeStorage = (() => {
   });
 })();
 
-const resumeUpload = multer({
+export const resumeUpload = multer({
   storage: resumeStorage,
   fileFilter: (req, file, cb) => {
-    try {
-      const valid = file.mimetype === 'application/pdf';
-      if (!valid) {
-        req.invalidFile = 'Invalid mimetype';
-      }
-      cb(null, valid);
-    } catch (e) {
-      cb(e);
+    const valid = file.mimetype === 'application/pdf';
+    if (!valid) {
+      req.invalidFile = 'Invalid mimetype';
     }
+    cb(null, valid);
   }});
-
-module.exports = {
-  resumeUpload
-};

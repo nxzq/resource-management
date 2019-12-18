@@ -38,7 +38,7 @@ export const createResource = async (resource) => {
   resource.Id = (Math.max.apply(Math, resources.map(function(o) { return o.Id; }))) + 1;
   resources.push(resource);
   saveResources(resources);
-  return [null, resources];
+  return [null, resource];
 };
 
 /**
