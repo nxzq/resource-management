@@ -1,9 +1,9 @@
 # ResourceManagement
 
 # BackEnd (http://localhost:5000):
-cd BackEnd
-node server.js
+cd BackEnd <br/>
+npm start
 
 # FrontEnd (http://localhost:3000):
-cd FrontEnd
+cd FrontEnd <br/>
 npm start
