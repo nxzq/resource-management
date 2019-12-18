@@ -147,3 +147,7 @@ button.close:hover {
   color: #fff;
   opacity: 0.90
 }
+
+#select-search {
+ color: black; 
+}

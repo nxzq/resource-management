@@ -107,6 +107,6 @@ nav a:hover {
   height: 90vh;
 }
 
-.disabledBtn{
+.disabledBtn {
   pointer-events: none;
 }
