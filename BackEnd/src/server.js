@@ -1,162 +1,56 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import express from 'express';
+import cluster from 'cluster';
 import cors from 'cors';
-import fs from 'fs';
-import {resumeUpload} from './helpers/multer';
+import express from 'express';
+import os from 'os';
+import routes from './routes';
+import { validGet } from './helpers';
 
-const app = express();
+// Cluster for better performance and uptime
+if (cluster.isMaster) {
+  console.log(`Master ${process.pid} is running.`);
+  const maxCores = process.env.MAX_CORES || 1;
+  for (let i = 0; i < Math.min(Number(maxCores), os.cpus().length); i++) {
+    cluster.fork();
+  }
 
-// enable middleware || pipeline
-app.use(express.json());
-app.use(cors());
-
-// PORT
-const PORT = process.env.PORT || 5000;
-
-// Mock Data
-const getMockData = () => JSON.parse(fs.readFileSync('./MockData/Resources.json','utf8'));
- 
-// GET ALL
-app.get('/api/resources', (req, res) => {
-  // Get Data
-  const resources = getMockData();
-  res.send(resources);
-});
-
-// GET ALL Skills
-app.get('/api/skills', (req, res) => {
-  // Get Data
-  const resources = JSON.parse(fs.readFileSync('./MockData/Skills.json','utf8'));
-  res.send(resources);
-});
-
-// GET Table Data
-app.get('/api/resources/table', (req, res) => {
-  let tableData = [];
-  // Get Data
-  const resources = getMockData();
-  resources.forEach(r => {
-    const data = {
-      Id: r.Id,
-      FirstName: r.FirstName,
-      LastName: r.LastName,
-      Role: r.Role,
-      Email: r.Email,
-      Skills: r.Skills
-    };
-    tableData.push(data);
+  // start new worker after crash
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`Worker ${worker.process.pid} died with exit code (${code}): ${signal || 'no signal'}`);
+    cluster.fork();
   });
-  res.send(tableData);
-});
 
-// GET Resume By ID
-app.get('/api/resources/:id/resume', (req, res) => {
-  let path = './MockData/Resumes/' + (req.params.id) + '.pdf';
-  try {
-    if (fs.existsSync(path)) {
-      res.set({
-        'Content-Type': 'application/pdf',
-        'Accept': 'application/json'
-      });
-      res.download(path, 'resume.pdf');
-    } else {
-      res.status(404).send('The resource with the given ID was not found');
-    }
-  } catch(err) {
-    res.status(404).send('The resource with the given ID was not found');
-  }
-});
+} else {
+  const app = express();
 
-// POST Resume By ID
-app.post('/api/resources/:id/resume', resumeUpload.single('resume'), (req, res) => {
-  if (req.invalidFile) {
-    res.status(400).send(req.invalidFile);
-    return;
-  } else if (req.file.size > 1000**2*2) {
-    res.status(400).send('File too large.');
-  }
-  res.status(204).end();
-});
+  // enable middleware || pipeline
+  app.use(express.json());
+  app.use(cors());
+  app.use('/api', routes);
+  // handle exceptions caught by express
+  // eslint-disable-next-line no-unused-vars
+  app.use((err, req, res, next) => {
+    res.status(validGet(err, 'statusCode', 'status') || 500)[validGet(err, 'statusCode', 'responseType') || 'send'](validGet(err, 'statusCode', 'message') || 'Internal Server Error');
+    console.error(err.stack);
+    if (!err.isOperational) {
+      // TODO: log to logging service
+      process.exit(1);
+    } // else okay
+  });
 
-// HEAD Resume headers
-app.head('/api/resources/:id/resume', (req, res) => {
-  let path = './MockData/Resumes/' + (req.params.id) + '.pdf';
-  if (fs.existsSync(path)) {
-    const stats = fs.statSync(path);
-    res.set({
-      'Content-Type': 'application/pdf',
-      'Accept': 'application/json',
-      'Content-Disposition': 'attachment; filename="resume.pdf"',
-      'Content-Length': stats.size
-    });
-    res.status(200).end();
-  } else {
-    res.status(404).end();
-  }
-});
+  const PORT = process.env.PORT || 5000;
 
-// GET Resource By ID
-app.get('/api/resources/:id', (req, res) => {
-  // Get Data
-  const resources = getMockData();
-  // Find Resource
-  let resource = resources.find(r => r.Id === parseInt(req.params.id));
-  // 404 Not Found
-  if (!resource) return res.status(404).send('The resource with the given ID was not found');
-  res.send(resource);
-});
+  // requests will be balanced between cores so use the same port
+  app.listen(PORT, () => {
+    console.log(`Worker ${process.pid} listening on port ${PORT}...`);
+  });
 
-// POST Resource By ID
-app.post('/api/resource', (req, res) => {
-  // 400 Bad Request
-  // if (error) return res.status(400).send(result.error.details[0].message);
-  // Get Data
-  const resources = getMockData();
-  let resource = req.body.data;
-  resource.Id = (Math.max.apply(Math, resources.map(function(o) { return o.Id; }))) + 1;
-  resources.push(resource);
-  res.send(resource);
-  fs.writeFileSync('./MockData/Resources.json', JSON.stringify(resources));
-});
-
-// UPDATE Resource By ID
-app.put('/api/resources/:id', (req, res) => {
-  // Get Data
-  const resources = getMockData();
-  // Find Resource
-  let resource = resources.find(r => r.Id === parseInt(req.params.id));
-  // 404 Not Found
-  if (!resource) return res.status(404).send('The resource with the given ID was not found');
-  // Update Resource
-  resource = req.body.data;
-  let update = resources.findIndex(x => x.Id == resource.Id);
-  resources[update] = resource;
-  res.send(resource);
-  fs.writeFileSync('./MockData/Resources.json', JSON.stringify(resources));
-});
-
-// // DELETE Resource By ID [{NOT CURRNENTLY WORKING}]
-// app.delete('/api/resources/:id', (req, res) => {
-//     // Find Resource
-//     let resource = resources.find(r => r.Id === parseInt(req.params.id));
-//     // 404 Not Found
-//     if (!resource) return res.status(404).send('The resource with the given ID was not found');
-//     // Delete
-//     let index = resources.indexOf(resource);
-//     resources.splice(index, 1);
-//     // Return
-//     res.send(resource);
-// });
-
-// PORT
-// LocalHost
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}...`);
-});
-
-// // Yash Network (New Office)
-// app.listen(5000, '10.27.12.207');
-
-// // Yash Network (Old Office)
-// app.listen(5000, '10.1.100.119');
+  process.on('uncaughtException', (error) => {
+    console.error(error.stack);
+    if (!error.isOperational) {
+      // TODO: log to logging service
+      process.exit(1);
+    } // else okay
+  });
+}
