@@ -75,7 +75,7 @@ class AddResource extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const data = JSON.parse(JSON.stringify(this.state.data))
-        axios.post(`http://localhost:5000/api/resource`, { data })
+        axios.post(`http://localhost:5000/api/resources`, { data })
             .then(res => {
                 this.setState({ submitted: true })
             })
