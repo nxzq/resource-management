@@ -66,7 +66,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
     return (
         <div>
             <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} onClick={toggle} className="btn-block shadow-none" type="button"><i className="fas fa-filter"></i>&nbsp;&nbsp;Filter</Button>
-            <Modal isOpen={modal} toggle={toggle} autoFocus={false}>
+            <Modal isOpen={modal} toggle={toggle} centered={true} autoFocus={false}>
                 <ModalHeader className="modalheader" toggle={toggle}>Filter Based on Skills</ModalHeader>
                 <ModalBody className="modalbody">
                     <Row>

@@ -143,7 +143,7 @@ const Resources = () => {
         </Row>
         <Row>
           <Col>
-            <Table striped borderless>
+            <Table striped borderless responsive>
               <thead>
                 <tr>
                   <th>Name</th>
