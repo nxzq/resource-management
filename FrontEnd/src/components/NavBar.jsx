@@ -11,7 +11,7 @@ const NavBar = ({ DarkTheme }) => {
   return (
     <div>
         <Navbar color="faded" light={!DarkTheme} dark={DarkTheme} expand="md">
-        <NavbarBrand href="https://www.yash.com/">
+        <NavbarBrand>
           {DarkTheme ? 
           <img id="yashLogo" alt="YASH Technologies" src='/yash-logo-white.svg' width="70" /> : 
           <img id="yashLogo" alt="YASH Technologies" src='/yash-logo.svg' width="70" />}
