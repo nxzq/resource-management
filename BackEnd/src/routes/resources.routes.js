@@ -20,9 +20,29 @@ router.route('/')
 
 router.route('/table')
   .get(async (req, res) => {
-    const resources = await ResourcesService.readResources([
-      'Id', 'FirstName', 'LastName', 'Role', 'Email', 'Skills'
-    ]);
+    const search = req.query.search || '';
+    const skillsQuery = req.query.skills || '';
+    const separator = req.query.separator || ',';
+    const skills = skillsQuery.split(separator).map(skill => skill.trim());
+    const countSkills = (resource) => {
+      const Skills = new Set(resource.Skills);
+      return skills.reduce((a, c) => Skills.has(c) ? a+1 : a, 0);
+    };
+    const defaultSort = (a, b) => getName(a).localeCompare(getName(b));
+    const getName = ({FirstName, LastName}) => `${FirstName} ${LastName}`;
+    const resources = await ResourcesService.readResources({
+      projection: [
+        'Id', 'FirstName', 'LastName', 'Role', 'Email', 'Skills'
+      ],
+      skip: req.query.skip,
+      top: req.query.top,
+      page: true,
+      selection: (resource =>
+        getName(resource).toLowerCase().includes(search.toLowerCase()) ||
+        resource.Role.includes(search)
+      ),
+      sort: (skills.length ? ((a, b) => (countSkills(b) - countSkills(a)) || defaultSort(a, b))  : defaultSort)
+    });
     res.send(resources);
   });
 
