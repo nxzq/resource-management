@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormText } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormText, Spinner } from 'reactstrap';
 
 const ResumeModal = ({ FirstName, LastName, id }) => {
 
     const [data, setData] = useState('');
     const [modal, setModal] = useState(false);
+    const [loader, setLoader] =useState(true);
     const toggle = () => {
         setModal(!modal)
         if (!modal) getResume()
@@ -27,8 +28,10 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             // Build a URL from the file
             const fileURL = URL.createObjectURL(file) + '#toolbar=0&navpanes=0';
             setData(fileURL)
+            setLoader(false)
         }).catch(error => {
             setData('')
+            setLoader(false)
         })
       });
 
@@ -49,7 +52,9 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             <Modal isOpen={modal} toggle={toggle} centered size='lg' contentClassName="ResumeModal">
                 <ModalHeader className="modalheader" toggle={toggle}>{FirstName} {LastName} Resume</ModalHeader>
                 <ModalBody style={{ position: 'relative' }} className="modalbody"> 
-                { data === '' ? 
+                { loader ? 
+                <div style={{ top: '50%', right: '50%', position: 'absolute' }} className="text-center"><Spinner color="primary" /></div>
+                : data === '' ? 
                 <div className="text-center" style={{position: 'relative', top: '50%'}}>
                     <h3>No Resume Uploaded</h3>
                     <FormText color="muted">
@@ -62,7 +67,7 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
                 } 
                 </ModalBody>
                 <ModalFooter>
-                { data === '' ?
+                { loader ? null : data === '' ?
                     <Button color="primary" className="blue-button disabledBtn shadow-none" disabled>Download</Button> :
                     <Button color="primary" className="blue-button shadow-none" onClick={downloadResume}>Download</Button>
                 }

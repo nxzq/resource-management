@@ -34,7 +34,8 @@ class EditResource extends Component {
             "Skills": []
         },
         submitted: false,
-        resume: '',
+        existingResume: false,
+        resumeUpload: '',
         Loading: true
     }
     
@@ -43,8 +44,15 @@ class EditResource extends Component {
         axios.get(`http://localhost:5000/api/resources/${params.id}`)
             .then(res => {
                 const resourceData = res.data;
-                this.setState({data: resourceData})
+                this.setState({ data: resourceData })
                 this.setState({ Loading: false })
+            })
+        axios.head(`http://localhost:5000/api/resources/${params.id}/resume`)
+            .then(res => {
+                console.log(res)
+                this.setState({ existingResume: true })
+            }).catch(err => {
+                this.setState({ existingResume: false })
             })
         // eslint-disable-next-line
     }
@@ -194,7 +202,8 @@ class EditResource extends Component {
                             Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
                             GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
                         <SectionHeader name="Resume" />
-                        <ResumeUpload resume={this.state.resume} handleResume={this.handleResume} />
+                        <ResumeUpload resume={this.state.resume} handleResume={this.handleResume} existingResume={this.state.existingResume}
+                        id={this.state.data.Id} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} />
                         <SectionHeader name="Summary" />
                         <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
                         <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
