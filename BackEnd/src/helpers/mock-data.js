@@ -7,13 +7,23 @@ const FS = fs.promises || fs;
  * @param {string[]} projection optional Array of fields to select from data
  * @returns {object[]} results from the file
  */
-export const getMockData = async (name, projection) => {
-  let results = JSON.parse(await FS.readFile(`./MockData/${name}.json`,'utf8'));
-  if (projection) {
-    results = results.map(result => projection.reduce((o, f) => ({...o, [f]: result[f]}), {}));
-  }
-  return results;
-};
+export const getMockData = (() => {
+  const DEFAULT_OPTIONS = { skip: 0, top: 10, page: false };
+  return async (name, opts={}) => {
+    let { page, projection, selection, skip, sort, top } = {...DEFAULT_OPTIONS, ...opts};
+    let results = JSON.parse(await FS.readFile(`./MockData/${name}.json`,'utf8'));
+    if (selection) results = results.filter(selection);
+    if (sort) results.sort(sort);
+    if (projection) results = results.map(result => projection.reduce((o, f) => ({...o, [f]: result[f]}), {}));
+    const count = results.length;
+    if (!page) return results;
+    skip = Number(skip) || DEFAULT_OPTIONS.skip;
+    top = Number(top) || DEFAULT_OPTIONS.top;
+    if ((top || top === 0) && (skip || skip === 0)) results = results.slice(skip, top+skip);
+    page = { skip, top, count };
+    return { results, page };
+  };
+})();
 
 /**
  * 
