@@ -13,8 +13,8 @@ const NavBar = ({ DarkTheme }) => {
         <Navbar color="faded" light={!DarkTheme} dark={DarkTheme} expand="md">
         <NavbarBrand>
           {DarkTheme ? 
-          <img id="yashLogo" alt="YASH Technologies" src='/yash-logo-white.svg' width="70" /> : 
-          <img id="yashLogo" alt="YASH Technologies" src='/yash-logo.svg' width="70" />}
+          <img id="yashLogo" alt="YASH Technologies" src='/img/yash-logo-white.svg' width="70" /> : 
+          <img id="yashLogo" alt="YASH Technologies" src='/img/yash-logo.svg' width="70" />}
         </NavbarBrand>
         <NavbarToggler onClick={toggle} className="mr-2"/>
         <Collapse isOpen={isOpen} navbar>

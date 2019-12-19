@@ -46,7 +46,7 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
                 <i className="table-data far fa-file-alt fa-lg"></i>
                 <span className="sr-only">Resume</span>
             </Button>
-            <Modal isOpen={modal} toggle={toggle} size='lg' contentClassName="ResumeModal">
+            <Modal isOpen={modal} toggle={toggle} centered size='lg' contentClassName="ResumeModal">
                 <ModalHeader className="modalheader" toggle={toggle}>{FirstName} {LastName} Resume</ModalHeader>
                 <ModalBody style={{ position: 'relative' }} className="modalbody"> 
                 { data === '' ? 
