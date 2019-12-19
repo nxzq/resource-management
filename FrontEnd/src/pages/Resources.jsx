@@ -11,13 +11,22 @@ const Resources = () => {
 
   const [neededSkills, setNeededSkill] = useState([]);
   const [search, setSearch] = useState('');
+  const [top] = useState(10)
+  const [skip] = useState(0)
   const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/resources/table`)
+    axios.get(`http://localhost:5000/api/resources/table`,
+    {params: {
+      top: top,
+      skip: skip,
+      search: search,
+      skills: neededSkills
+    }
+    })
       .then(res => {
         const resourceData = res.data;
         setData(resourceData)
@@ -25,7 +34,7 @@ const Resources = () => {
       .catch(error => {
           console.log(error)
       })
-  }, [])
+  }, [top, skip, search, neededSkills])
 
   const getSkillMatch = (skills) => {
     let count = 0
