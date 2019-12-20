@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../api/index';
 import InfiniteScroll from 'react-infinite-scroller';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -26,7 +26,7 @@ const Resources = () => {
   }, [])
 
   const loadFunc = () => {
-    axios.get(`http://localhost:5000/api/resources/table`,
+    axios.get(`resources/table`,
     {params: {
       top: top,
       skip: skip,

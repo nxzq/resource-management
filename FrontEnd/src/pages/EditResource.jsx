@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../api/index';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Spinner } from 'reactstrap';
 import Header from '../components/Header';
@@ -41,13 +41,13 @@ class EditResource extends Component {
     
     componentDidMount() {
         const { match: { params } } = this.props;
-        axios.get(`http://localhost:5000/api/resources/${params.id}`)
+        axios.get(`resources/${params.id}`)
             .then(res => {
                 const resourceData = res.data;
                 this.setState({ data: resourceData })
                 this.setState({ Loading: false })
             })
-        axios.head(`http://localhost:5000/api/resources/${params.id}/resume`)
+        axios.head(`resources/${params.id}/resume`)
             .then(res => {
                 console.log(res)
                 this.setState({ existingResume: true })
@@ -97,7 +97,7 @@ class EditResource extends Component {
         e.preventDefault()
         const { match: { params } } = this.props;
         const data = JSON.parse(JSON.stringify(this.state.data))
-        axios.put(`http://localhost:5000/api/resources/${params.id}`, { data })
+        axios.put(`resources/${params.id}`, { data })
             .then(res => {
                 this.setState({ submitted: true })
             })

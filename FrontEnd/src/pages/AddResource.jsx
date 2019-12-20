@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../api/index';
 import { Redirect } from 'react-router-dom';
 import { Container, Form, Button } from 'reactstrap';
 import Header from '../components/Header';
@@ -75,7 +75,7 @@ class AddResource extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const data = JSON.parse(JSON.stringify(this.state.data))
-        axios.post(`http://localhost:5000/api/resources`, { data })
+        axios.post(`api/resources`, { data })
             .then(res => {
                 this.setState({ submitted: true })
             })

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../api/index';
 import { Container, Row, Tooltip, Spinner, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -32,7 +32,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         const { match: { params } } = props;
-        axios.get(`http://localhost:5000/api/resources/${params.id}`)
+        axios.get(`resources/${params.id}`)
             .then(res => {
                 const resourceData = res.data;
                 setResource(resourceData)
