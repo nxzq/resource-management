@@ -104,7 +104,7 @@ class EditResource extends Component {
         if (this.state.files) {
             const formData = new FormData();
             formData.append('resume', this.state.files[0]);
-            axios.post(`http://localhost:5000/api/resources/${params.id}/resume`, formData);
+            axios.post(`resources/${params.id}/resume`, formData);
         }
     }
 

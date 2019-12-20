@@ -89,7 +89,7 @@ class AddResource extends Component {
                 if (this.state.files) {
                     const formData = new FormData();
                     formData.append('resume', this.state.files[0]);
-                    axios.post(`http://localhost:5000/api/resources/${res.data.Id}/resume`, formData);
+                    axios.post(`resources/${res.data.Id}/resume`, formData);
                 }
             })
     } 
