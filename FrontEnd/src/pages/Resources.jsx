@@ -12,7 +12,7 @@ const Resources = () => {
 
   const [neededSkills, setNeededSkill] = useState([]);
   const [search, setSearch] = useState('');
-  const [top] = useState(10);
+  const [top] = useState(5);
   const [skip, setSkip] = useState(0);
   const [count, setCount] =useState(0);
   const [showSkillMatch, setShowSkillMatch] = useState(false);
@@ -85,8 +85,8 @@ const Resources = () => {
   }
 
   const tableData = 
-    [...data].map((person) => (
-      <tr key={person.Id}>
+    [...data].map((person, i) => (
+      <tr key={i}>
         <td>
           <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
             {person.FirstName + ' ' + person.LastName}
