@@ -33,7 +33,15 @@ class AddResource extends Component {
             "Certification": [],
             "Skills": []
         },
-        submitted: false
+        submitted: false,
+        resume: '',
+        files: null
+    }
+    
+    handleResume = (e) => {
+        let resume = e.target.value;
+        let files = e.target.files;
+        this.setState({ resume, files });
     }
 
     handleCurrentPositionChange = (index, e) => {
@@ -78,6 +86,11 @@ class AddResource extends Component {
         axios.post(`http://localhost:5000/api/resources`, { data })
             .then(res => {
                 this.setState({ submitted: true })
+                if (this.state.files) {
+                    const formData = new FormData();
+                    formData.append('resume', this.state.files[0]);
+                    axios.post(`http://localhost:5000/api/resources/${res.data.Id}/resume`, formData);
+                }
             })
     } 
 
@@ -181,7 +194,8 @@ class AddResource extends Component {
                             Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
                             GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
                         <SectionHeader name="Resume" />
-                        <ResumeUpload />
+                        <ResumeUpload resume={this.state.resume} handleResume={this.handleResume} existingResume={this.state.existingResume}
+                        id={this.state.data.Id} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} />
                         <SectionHeader name="Summary" />
                         <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
                         <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />

@@ -33,6 +33,7 @@ class EditResource extends Component {
             "Certification": [],
             "Skills": []
         },
+        files: null,
         submitted: false,
         existingResume: false,
         resume: '',
@@ -49,7 +50,6 @@ class EditResource extends Component {
             })
         axios.head(`http://localhost:5000/api/resources/${params.id}/resume`)
             .then(res => {
-                console.log(res)
                 this.setState({ existingResume: true })
             }).catch(err => {
                 this.setState({ existingResume: false })
@@ -58,9 +58,9 @@ class EditResource extends Component {
     }
 
     handleResume = (e) => {
-        let resume = e.target.value
-        this.setState({ resume })
-        console.log(this.state.resume)
+        let resume = e.target.value;
+        let files = e.target.files;
+        this.setState({ resume, files });
     }
 
     handleChange = (e) => {
@@ -100,7 +100,12 @@ class EditResource extends Component {
         axios.put(`http://localhost:5000/api/resources/${params.id}`, { data })
             .then(res => {
                 this.setState({ submitted: true })
-            })
+            });
+        if (this.state.files) {
+            const formData = new FormData();
+            formData.append('resume', this.state.files[0]);
+            axios.post(`http://localhost:5000/api/resources/${params.id}/resume`, formData);
+        }
     }
 
     handleSkillsChange = (skills) => {
