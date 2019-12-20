@@ -34,14 +34,14 @@ nav a:hover {
   user-select: none;
 }
 
-#section-header, #add-skill {
+.section-header, #add-skill {
   color: #005ba1; 
   background-color: transparent; 
   border-color: transparent;
   text-decoration: none;
 }
 
-#section-header:hover, #add-skill:hover {
+.section-header:hover, #add-skill:hover {
   color: #005ba1; 
   opacity: 0.90;
   background-color: transparent; 

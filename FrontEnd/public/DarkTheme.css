@@ -83,7 +83,7 @@ input, textarea, select, .custom-checkbox {
   opacity: 0.90
 }
 
-#section-header, #add-skill {
+.section-header, #add-skill {
   color: #fff; 
   opacity: 0.60;
   background-color: transparent; 
@@ -91,7 +91,7 @@ input, textarea, select, .custom-checkbox {
   text-decoration: none;
 }
 
-#section-header:hover, #add-skill:hover {
+.section-header:hover, #add-skill:hover {
   color: #fff; 
   opacity: 0.50;
   background-color: transparent; 

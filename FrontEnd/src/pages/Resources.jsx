@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../api/index';
+import InfiniteScroll from 'react-infinite-scroller';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -11,15 +12,21 @@ const Resources = () => {
 
   const [neededSkills, setNeededSkill] = useState([]);
   const [search, setSearch] = useState('');
-  const [top] = useState(10)
-  const [skip] = useState(0)
+  const [top] = useState(10);
+  const [skip, setSkip] = useState(0);
+  const [count, setCount] =useState(0);
   const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/resources/table`,
+    loadFunc()
+    // eslint-disable-next-line
+  }, [])
+
+  const loadFunc = () => {
+    axios.get(`resources/table`,
     {params: {
       top: top,
       skip: skip,
@@ -28,13 +35,14 @@ const Resources = () => {
     }
     })
       .then(res => {
-        const resourceData = res.data.results;
-        setData(resourceData)
+        setData([...data, ...res.data.results])
+        setCount(res.data.page.count)
+        setSkip(skip+top)
       })
       .catch(error => {
           console.log(error)
       })
-  }, [top, skip, search, neededSkills])
+  }
 
   const getSkillMatch = (skills) => {
     let count = 0
@@ -76,8 +84,8 @@ const Resources = () => {
     setSearch(e.target.value)
   }
 
-  const tableData = () => {
-    let tableData = [...data].map((person) => (
+  const tableData = 
+    [...data].map((person) => (
       <tr key={person.Id}>
         <td>
           <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
@@ -98,9 +106,7 @@ const Resources = () => {
           <ResumeModal key={person.Id} FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
         </td>
       </tr>
-    ))
-    return tableData
-  }
+    ));
 
   return (
     <div>
@@ -158,9 +164,15 @@ const Resources = () => {
                   <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
                 </tbody>
                 :
-                <tbody>
-                  {tableData()}
-                </tbody>}
+                <InfiniteScroll
+                    pageStart={0}
+                    loadMore={ loadFunc }
+                    hasMore={ data.length < count }
+                    element='tbody'
+                    loader={<tr key={1}><td colSpan="10" className="text-center"><Spinner /></td></tr>}
+                >
+                    {tableData}
+                </InfiniteScroll>}
             </Table>
           </Col>
         </Row>
