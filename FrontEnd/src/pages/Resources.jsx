@@ -24,11 +24,11 @@ const Resources = () => {
       top: top,
       skip: skip,
       search: search,
-      skills: neededSkills
+      skills: neededSkills.join()
     }
     })
       .then(res => {
-        const resourceData = res.data;
+        const resourceData = res.data.results;
         setData(resourceData)
       })
       .catch(error => {
@@ -72,21 +72,12 @@ const Resources = () => {
     return unmatched
   }
 
-  const Search = () => {
-    let rawData = data.filter(resource => resource.Role.toLowerCase().includes(search.toLowerCase())
-      || resource.FirstName.toLowerCase().includes(search.toLowerCase())
-      || resource.LastName.toLowerCase().includes(search.toLowerCase()))
-    return rawData
-  }
-
   const handleSearch = (e) => {
     setSearch(e.target.value)
   }
 
   const tableData = () => {
-    let rawData = (search === '' ? [...data] : Search())
-    rawData = rawData.sort((a, b) => a.FirstName.toLowerCase() !== b.FirstName.toLowerCase() ? a.FirstName.toLowerCase() > b.FirstName.toLowerCase() ? 1 : -1 : 0)
-    let tableData = rawData.sort((a, b) => (getSkillMatch(a.Skills) > getSkillMatch(b.Skills)) ? -1 : 1).map((person) => (
+    let tableData = [...data].map((person) => (
       <tr key={person.Id}>
         <td>
           <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>

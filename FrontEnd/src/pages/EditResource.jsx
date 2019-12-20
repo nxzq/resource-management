@@ -35,7 +35,7 @@ class EditResource extends Component {
         },
         submitted: false,
         existingResume: false,
-        resumeUpload: '',
+        resume: '',
         Loading: true
     }
     
@@ -60,6 +60,7 @@ class EditResource extends Component {
     handleResume = (e) => {
         let resume = e.target.value
         this.setState({ resume })
+        console.log(this.state.resume)
     }
 
     handleChange = (e) => {
