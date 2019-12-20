@@ -3,7 +3,7 @@ import { Button, Row } from 'reactstrap';
 
 const DynamicSectionHeader = ({ name, count, addForm}) => {
     const AddFormButton = (count) => {
-        while (count < 3) return <Button color="primary" id="section-header" className="shadow-none" onClick={addForm}>
+        while (count < 3) return <Button color="primary" className="section-header shadow-none" onClick={addForm}>
             <i style={{ color: 'inherit' }} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add New {name}</Button>
     }
     return (
