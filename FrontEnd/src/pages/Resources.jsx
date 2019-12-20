@@ -12,7 +12,7 @@ const Resources = () => {
 
   const [neededSkills, setNeededSkill] = useState([]);
   const [search, setSearch] = useState('');
-  const [top] = useState(5);
+  const [top] = useState(10);
   const [skip, setSkip] = useState(0);
   const [count, setCount] =useState(0);
   const [showSkillMatch, setShowSkillMatch] = useState(false);
