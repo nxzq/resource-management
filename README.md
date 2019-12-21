@@ -10,7 +10,8 @@ npm start
 
 # TODO
 
--> D3.js Graphs on Overview Page <br/>
+-> Pagination <br/>
+-> D3 Graphs on Overview Page <br/>
+-> Form Validation <br/>
 -> Sticky Footer <br/>
--> Add more Skills to MockData <br/>
--> Accessibility Review <br/>
+-> Add more Skills <br/>
