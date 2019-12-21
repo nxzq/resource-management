@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../api/index';
-import InfiniteScroll from 'react-infinite-scroller';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -12,20 +11,16 @@ const Resources = () => {
 
   const [neededSkills, setNeededSkill] = useState([]);
   const [search, setSearch] = useState('');
-  const [top] = useState(10);
-  const [skip, setSkip] = useState(0);
-  const [count, setCount] =useState(0);
+  const [top] = useState(10)
+  const [skip] = useState(0)
+  // eslint-disable-next-line
+  const [count, setCount] = useState(null)
   const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
   const [data, setData] = useState([])
 
   useEffect(() => {
-    loadFunc()
-    // eslint-disable-next-line
-  }, [])
-
-  const loadFunc = () => {
     axios.get(`resources/table`,
     {params: {
       top: top,
@@ -35,14 +30,14 @@ const Resources = () => {
     }
     })
       .then(res => {
-        setData([...data, ...res.data.results])
-        setCount(res.data.page.count)
-        setSkip(skip+top)
+        console.log(res)
+        const resourceData = res.data.results;
+        setData(resourceData)
       })
       .catch(error => {
           console.log(error)
       })
-  }
+  }, [top, skip, search, neededSkills])
 
   const getSkillMatch = (skills) => {
     let count = 0
@@ -85,8 +80,8 @@ const Resources = () => {
   }
 
   const tableData = 
-    [...data].map((person, i) => (
-      <tr key={i}>
+    [...data].map((person) => (
+      <tr key={person.Id}>
         <td>
           <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
             {person.FirstName + ' ' + person.LastName}
@@ -106,17 +101,14 @@ const Resources = () => {
           <ResumeModal key={person.Id} FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
         </td>
       </tr>
-    ));
+    ))
 
   return (
     <div>
       <Header name={'Resource Management'} />
       <Container>
         <Row>
-          <Col md="2">
-            <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" />
-          </Col>
-          <Col lg="5" md="10">
+          <Col lg="6" md="12">
             <div>
               <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                 <div className="input-group">
@@ -132,14 +124,10 @@ const Resources = () => {
               </div>
             </div>
           </Col>
-          <Col lg="2" md="6">
-            <Link style={{ textDecoration: 'none' }} to="/addjob">
-              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button btn-block shadow-none" id="addJob" type="button" color="primary"><i className="fas fa-plus"></i>
-                &nbsp;&nbsp;Add Job
-              </Button>
-            </Link>
+          <Col lg="3" md="6" xs="6">
+            <FilterModal neededSkills={neededSkills} setNeededSkill={setNeededSkill} toggleSkillMatch={toggleShowSkillMatch} notHidden={showSkillMatch} hideSkillMatch={hideShowSkillMatch} id="filter" />
           </Col>
-          <Col lg="3" md="6">
+          <Col lg="3" md="6" xs="6">
             <Link style={{ textDecoration: 'none' }} to="/addresource">
               <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
                 &nbsp;&nbsp;Add Resource
@@ -164,15 +152,9 @@ const Resources = () => {
                   <tr><td colSpan="10" className="text-center"><Spinner color="primary" /></td></tr>
                 </tbody>
                 :
-                <InfiniteScroll
-                    pageStart={0}
-                    loadMore={ loadFunc }
-                    hasMore={ data.length < count }
-                    element='tbody'
-                    loader={<tr key={1}><td colSpan="10" className="text-center"><Spinner /></td></tr>}
-                >
-                    {tableData}
-                </InfiniteScroll>}
+                <tbody>
+                  {tableData}
+                </tbody>}
             </Table>
           </Col>
         </Row>
