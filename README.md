@@ -11,7 +11,8 @@ npm start
 # TODO
 
 -> Pagination <br/>
--> D3 Graphs on Overview Page <br/>
+-> D3.js Graphs on Overview Page <br/>
 -> Form Validation <br/>
 -> Sticky Footer <br/>
+-> Case-Insensitive Role Search <br/>
 -> Add more Skills <br/>
