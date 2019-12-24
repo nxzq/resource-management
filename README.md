@@ -19,3 +19,4 @@ React Application with lightweight Node.js and Express Back-End <br/>
 -> Populate Help Page <br/>
 -> Case-Insensitive Role Search <br/>
 -> Add more Skills <br/>
+-> Edit Dark Theme CSS <br/>
