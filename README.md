@@ -10,8 +10,7 @@ React Application with lightweight Node.js and Express Back-End <br/>
   * cd FrontEnd <br/>
     * npm start <br/>
 
-# TODO
-
+### TODO <br/>
 * Pagination <br/>
 * D3.js Graphs on Overview Page <br/>
 * Form Validation <br/>
