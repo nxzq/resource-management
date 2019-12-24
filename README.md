@@ -1,12 +1,14 @@
 # ResourceManagement
 
-BackEnd (http://localhost:5000): <br/>
-cd BackEnd <br/>
-npm start
+React Application with lightweight Node.js and Express Back-End <br/> 
 
-FrontEnd (http://localhost:3000): <br/>
-cd FrontEnd <br/>
-npm start
+### To Demo <br/>
+* BackEnd (http://localhost:5000): <br/>
+  * cd BackEnd <br/>
+    * npm start <br/>
+* FrontEnd (http://localhost:3000): <br/>
+  * cd FrontEnd <br/>
+    * npm start <br/>
 
 # TODO
 
