@@ -4,7 +4,7 @@
         "FirstName": "Nicklas",
         "LastName": "Lanman",
         "Role": "Software Engineer",
-        "Email": "nicklas.lanman@yash.com",
+        "Email": "nicklas.lanman@genericlogocompany.com",
         "Phone": "1234567890",
         "LinkedIn": "https://www.linkedin.com/in/nicklaslanman",
         "GitHub": "https://github.com/nicklaslanman",
@@ -31,7 +31,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -62,12 +62,12 @@
         "FirstName": "Sam",
         "LastName": "Eakin",
         "Role": "Jr. Software Developer",
-        "Email": "sam.eakin@yash.com",
+        "Email": "sam.eakin@genericlogocompany.com",
         "Phone": "1234567890",
         "LinkedIn": "https://www.linkedin.com/in/sam-eakin-321059138/",
         "GitHub": "https://github.com/SamEakin",
         "PersonalSite": "https://github.com/SamEakin",
-        "SummaryText": "Jr. Software Developer at Yash Technologies",
+        "SummaryText": "Jr. Software Developer at Generic Logo Company",
         "Education": [
             {
                 "School": "University of Iowa",
@@ -81,7 +81,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": "Interface with Clients for project proposals, planning, and requirements gathering. Ensure communication between client and off-shore development teams goes smoothly."
@@ -110,7 +110,7 @@
             {
                 "ProjName": "MS LookBook",
                 "ProjDate": "2019",
-                "ProjAssociation": "YASH",
+                "ProjAssociation": "Generic Logo Company",
                 "ProjInfo": "Assisted in the testing, and content creation for a custom SharePoint Online site."
             }
         ],
@@ -139,12 +139,12 @@
         "FirstName": "John",
         "LastName": "Anderson",
         "Role": "Sr. Technical Lead",
-        "Email": "john.anderson@yash.com",
+        "Email": "john.anderson@genericlogocompany.com",
         "Phone": "1234567890",
         "LinkedIn": "https://www.linkedin.com/in/anderjohn",
         "GitHub": "https://github.com/anderjohn",
         "PersonalSite": "www.googleanderjohn.com",
-        "SummaryText": "Sr. Technical Lead at Yash Technologies",
+        "SummaryText": "Sr. Technical Lead at Generic Logo Company",
         "Education": [
             {
                 "School": "University of Nebraska Omaha",
@@ -166,7 +166,7 @@
         "Experience": [
             {
                 "JobTitle": "Sr. Tech Lead",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2018-01-01",
                 "JobEndDate": "",
                 "JobInfo": "Provide a variety of technical solutions for vendors like Zantos. Experienced in project phases using Agile Methodologies. Demonstrated knowledge in Azure DevOps, Sharepoint, React, RESTful API, Unity and C#"
@@ -227,12 +227,12 @@
         "FirstName": "Travis",
         "LastName": "Platt",
         "Role": "Business Analyst",
-        "Email": "travis.platt@yash.com",
+        "Email": "travis.platt@genericlogocompany.com",
         "Phone": "6494621459",
         "LinkedIn": "",
         "GitHub": "",
         "PersonalSite": "",
-        "SummaryText": "Business Analyst at Yash Technologies",
+        "SummaryText": "Business Analyst at Generic Logo Company",
         "Education": [
             {
                 "School": "Louisiana State University",
@@ -246,7 +246,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -261,7 +261,7 @@
         "FirstName": "Mary",
         "LastName": "Dixon",
         "Role": "UI/UX Developer",
-        "Email": "mary.dixon@yash.com",
+        "Email": "mary.dixon@genericlogocompany.com",
         "Phone": "9483152461",
         "LinkedIn": "",
         "GitHub": "",
@@ -280,7 +280,7 @@
         "Experience": [
             {
                 "JobTitle": "UI/UX Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2018-06-11",
                 "JobEndDate": "",
                 "JobInfo": "Front-End Developer"
@@ -303,7 +303,7 @@
         "FirstName": "Todd",
         "LastName": "Dooley",
         "Role": "Data Analyst",
-        "Email": "todd.dooley@yash.com",
+        "Email": "todd.dooley@genericlogocompany.com",
         "Phone": "4564518465",
         "LinkedIn": "",
         "GitHub": "",
@@ -322,7 +322,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -343,7 +343,7 @@
         "FirstName": "Brendan",
         "LastName": "Legett",
         "Role": "Jr. Software Developer",
-        "Email": "brendan.legett@yash.com",
+        "Email": "brendan.legett@genericlogocompany.com",
         "Phone": "3098308383",
         "LinkedIn": "https://www.linkedin.com/in/brendan-legett-884495106",
         "GitHub": "https://github.com/blegett",
@@ -362,7 +362,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -407,7 +407,7 @@
         "FirstName": "Andre",
         "LastName": "Prawira",
         "Role": "Jr. Software Developer",
-        "Email": "andre.prawira@yash.com",
+        "Email": "andre.prawira@genericlogocompany.com",
         "Phone": "11234567890",
         "LinkedIn": "",
         "GitHub": "",
@@ -426,7 +426,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -449,7 +449,7 @@
         "FirstName": "Matthew",
         "LastName": "Voels",
         "Role": "Jr. Software Developer",
-        "Email": "matthew.voels@yash.com",
+        "Email": "matthew.voels@genericlogocompany.com",
         "Phone": "11234567890",
         "LinkedIn": "",
         "GitHub": "",
@@ -468,7 +468,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -493,7 +493,7 @@
         "FirstName": "Mohammed",
         "LastName": "Aldalooj",
         "Role": "Jr. Software Developer",
-        "Email": "mohammed.aldalooj@yash.com",
+        "Email": "mohammed.aldalooj@genericlogocompany.com",
         "Phone": "11549863251",
         "LinkedIn": "https://www.linkedin.com/in/mohammed-aldalooj-523a1b160",
         "GitHub": "",
@@ -512,7 +512,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": "Cog Search"
@@ -522,7 +522,7 @@
             {
                 "ProjName": "Cognitive Search POC",
                 "ProjDate": "2019",
-                "ProjAssociation": "Yash Technologies",
+                "ProjAssociation": "Generic Logo Company",
                 "ProjInfo": ""
             }
         ],
@@ -544,7 +544,7 @@
         "FirstName": "Sam",
         "LastName": "Hyderbell",
         "Role": "Jr. Software Developer",
-        "Email": "sam.hyderbell@yash.com",
+        "Email": "sam.hyderbell@genericlogocompany.com",
         "Phone": "4242184950",
         "LinkedIn": "https://www.linkedin.com/in/hydersam",
         "GitHub": "https://github.com/hydersam",
@@ -563,7 +563,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": "Worked closely with onshore and offshore team to achieve quality and performance goals. Pulled from Graduated Training Program to work on a .NET team."
@@ -573,7 +573,7 @@
             {
                 "ProjName": "Azure Cloud Migration",
                 "ProjDate": "2019",
-                "ProjAssociation": "Yash Technologies",
+                "ProjAssociation": "Generic Logo Company",
                 "ProjInfo": "Designed solutions with CI/CD pipelines in order to automate processes for users to create, build, and deploy products through the cloud with little interaction needed. Automated creation and queuing of build pipelines using Powershell and Azure Rest API. Created Azure resources through Azure ARM template configurations. "
             }
         ],
@@ -603,7 +603,7 @@
         "FirstName": "Tim",
         "LastName": "Johnson",
         "Role": "Jr. Software Developer",
-        "Email": "tim.johnson@yash.com",
+        "Email": "tim.johnson@genericlogocompany.com",
         "Phone": "7914461492",
         "LinkedIn": "",
         "GitHub": "",
@@ -622,7 +622,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ".NET Developer"
@@ -646,7 +646,7 @@
         "FirstName": "John",
         "LastName": "Jackson",
         "Role": "Jr. Software Developer",
-        "Email": "john.jackson@yash.com",
+        "Email": "john.jackson@genericlogocompany.com",
         "Phone": "1231231234",
         "LinkedIn": "",
         "GitHub": "",
@@ -665,7 +665,7 @@
         "Experience": [
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -686,7 +686,7 @@
         "FirstName": "Ian",
         "LastName": "Taylor",
         "Role": "DevOps Engineer",
-        "Email": "ian.taylor@yash.com",
+        "Email": "ian.taylor@genericlogocompany.com",
         "Phone": "11234567890",
         "LinkedIn": "",
         "GitHub": "",
@@ -705,14 +705,14 @@
         "Experience": [
             {
                 "JobTitle": "DevOps Engineer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-11-01",
                 "JobEndDate": "",
                 "JobInfo": ""
             },
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "2019-11-01",
                 "JobInfo": ""
@@ -722,7 +722,7 @@
             {
                 "ProjName": "ECIF",
                 "ProjDate": "2019",
-                "ProjAssociation": "Yash Technologies",
+                "ProjAssociation": "Generic Logo Company",
                 "ProjInfo": ""
             }
         ],
@@ -740,7 +740,7 @@
         "FirstName": "Caleb",
         "LastName": "Reiter",
         "Role": "Software Engineer",
-        "Email": "caleb.reiter@yash.com",
+        "Email": "caleb.reiter@genericlogocompany.com",
         "Phone": "11234567890",
         "LinkedIn": "",
         "GitHub": "",
@@ -759,7 +759,7 @@
         "Experience": [
             {
                 "JobTitle": "Software Engineer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2018-06-11",
                 "JobEndDate": "",
                 "JobInfo": ""
@@ -777,7 +777,7 @@
         "FirstName": "Samuel",
         "LastName": "Jones",
         "Role": "Jr. Software Developer",
-        "Email": "sam@yash.com",
+        "Email": "sam@genericlogocompany.com",
         "Phone": "6789998212",
         "LinkedIn": "https://www.linkedin.com/in/samuelquintonjones",
         "GitHub": "",
@@ -796,7 +796,7 @@
         "Experience": [
             {
                 "JobTitle": "Jr. Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2006-10-29",
                 "JobEndDate": "",
                 "JobInfo": "HUEHUEHUEHUEHUEHUEHUEHUEHUEHUE"
@@ -838,7 +838,7 @@
         "FirstName": "Bradley",
         "LastName": "Quid",
         "Role": "Jr. Software Developer",
-        "Email": "bradley.quid@yash.com",
+        "Email": "bradley.quid@genericlogocompany.com",
         "Phone": "2246286866",
         "LinkedIn": "",
         "GitHub": "",
@@ -864,7 +864,7 @@
             },
             {
                 "JobTitle": "Junior Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "2019-12-02",
                 "JobInfo": "I did Mixed Reality stuff."
@@ -893,7 +893,7 @@
         "FirstName": "Hemachandra",
         "LastName": "Ghanta",
         "Role": "Jr. Software Developer",
-        "Email": "hemachandra.ghanta@yash.com",
+        "Email": "hemachandra.ghanta@genericlogocompany.com",
         "Phone": "2345670882",
         "LinkedIn": "",
         "GitHub": "",
@@ -912,7 +912,7 @@
         "Experience": [
             {
                 "JobTitle": "Jr. Software Developer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ".NET developer leveraging Microsoft technologies"
@@ -929,7 +929,7 @@
             {
                 "ProjName": "Real time Monitoring using azure Kinect",
                 "ProjDate": "2019",
-                "ProjAssociation": "Yash Technologies",
+                "ProjAssociation": "Generic Logo Company",
                 "ProjInfo": "Track assembly sequence using azure kinect camera connected to the Microsoft's custom vision AI"
             }
         ],
@@ -947,7 +947,7 @@
         "FirstName": "Ben",
         "LastName": "Heyerdahl",
         "Role": "Jr. Software Developer",
-        "Email": "benjamin.heyerdahl@yash.com",
+        "Email": "benjamin.heyerdahl@genericlogocompany.com",
         "Phone": "5551112222",
         "LinkedIn": "",
         "GitHub": "",
@@ -965,18 +965,18 @@
         ],
         "Experience": [
             {
-                "JobTitle": "Yash",
-                "JobOrg": "Yash",
+                "JobTitle": "Generic Logo Company",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-11-10",
                 "JobEndDate": "",
-                "JobInfo": "YASHHHH"
+                "JobInfo": "Generic Logo CompanyHHH"
             }
         ],
         "Project": [
             {
                 "ProjName": "Drone Stuff",
                 "ProjDate": "2019",
-                "ProjAssociation": "YASH BABY",
+                "ProjAssociation": "Generic Logo Company BABY",
                 "ProjInfo": "YEASHHHHH"
             }
         ],
@@ -996,7 +996,7 @@
         "FirstName": "Ike",
         "LastName": "Campbell",
         "Role": "DevOps Engineer",
-        "Email": "isaac.campbell@yash.com",
+        "Email": "isaac.campbell@genericlogocompany.com",
         "Phone": "11231231234",
         "LinkedIn": "",
         "GitHub": "",
@@ -1015,7 +1015,7 @@
         "Experience": [
             {
                 "JobTitle": "DevOps Engineer",
-                "JobOrg": "Yash Technologies",
+                "JobOrg": "Generic Logo Company",
                 "JobStartDate": "2019-06-17",
                 "JobEndDate": "",
                 "JobInfo": ""
