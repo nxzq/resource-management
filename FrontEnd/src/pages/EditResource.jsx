@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from '../api/index';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Spinner } from 'reactstrap';
-import Header from '../components/Header';
+import Header from '../components/headers/Header';
 import AboutForm from '../components/forms/AboutForm';
 import SummaryForm from '../components/forms/SummaryForm';
 import EducationForm from '../components/forms/EducationForm';
@@ -11,7 +11,7 @@ import ExperienceForm from '../components/forms/ExperienceForm';
 import ProjectForm from '../components/forms/ProjectForm';
 import SkillForm from '../components/forms/SkillForm';
 import ResumeUpload from '../components/forms/ResumeUpload';
-import SectionHeader from '../components/SectionHeader';
+import SectionHeader from '../components/headers/SectionHeader';
 import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
 
 class EditResource extends Component {

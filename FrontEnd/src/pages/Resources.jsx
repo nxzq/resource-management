@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../api/index';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../components/headers/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
 import ResumeModal from '../components/resourcetable/ResumeModal';

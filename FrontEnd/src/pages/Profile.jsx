@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from '../api/index';
 import { Container, Row, Tooltip, Spinner, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import SectionHeader from '../components/SectionHeader';
+import Header from '../components/headers/Header';
+import SectionHeader from '../components/headers/SectionHeader';
 
 const Profile = (props) => {
 

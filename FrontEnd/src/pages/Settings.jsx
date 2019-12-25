@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, FormGroup, CustomInput } from 'reactstrap';
-import Header from '../components/Header';
+import Header from '../components/headers/Header';
 
 const Settings = ({ toggleDarkTheme, DarkTheme }) => {
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import HoverToolTip from './HoverToolTip';
-import Logo from '../img/generic-logo.svg'
-import DarkThemeLogo from '../img/generic-logo-dark.svg'
+import HoverToolTip from '../other/HoverToolTip';
+import Logo from '../../img/generic-logo.svg'
+import DarkThemeLogo from '../../img/generic-logo-dark.svg'
 
 const NavBar = ({ DarkTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +15,8 @@ const NavBar = ({ DarkTheme }) => {
         <Navbar color="faded" light={!DarkTheme} dark={DarkTheme} expand="md">
         <NavbarBrand>
           {DarkTheme ? 
-          <img id="yashLogo" alt="YASH Technologies" src={DarkThemeLogo} width="150" /> : 
-          <img id="yashLogo" alt="YASH Technologies" src={Logo} width="150" />}
+          <img alt="Company Logo" src={DarkThemeLogo} width="150" /> : 
+          <img alt="Company Logo" src={Logo} width="150" />}
         </NavbarBrand>
         <NavbarToggler onClick={toggle} className="mr-2"/>
         <Collapse isOpen={isOpen} navbar>
