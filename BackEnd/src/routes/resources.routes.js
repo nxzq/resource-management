@@ -39,7 +39,7 @@ router.route('/table')
       page: true,
       selection: (resource =>
         getName(resource).toLowerCase().includes(search.toLowerCase()) ||
-        resource.Role.includes(search)
+        resource.Role.toLowerCase().includes(search.toLowerCase())
       ),
       sort: (skills.length ? ((a, b) => (countSkills(b) - countSkills(a)) || defaultSort(a, b))  : defaultSort)
     });
