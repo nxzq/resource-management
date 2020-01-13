@@ -23,22 +23,28 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App Site">
         {DarkTheme ? <link rel="stylesheet" type="text/css" href='./DarkTheme.css' /> : null}
-        <NavBar DarkTheme={DarkTheme}/>
-        <Route exact path='/' component={Overview} />
-        <FilterContextProvider>
-          <Route path='/resources' component={Resources} />
-        </FilterContextProvider>
-        <Route path='/help' component={Help} />
-        <Route path='/settings' render={(props) => <Settings {...props} toggleDarkTheme={toggleDarkTheme} DarkTheme={DarkTheme} />} />
-        <Route path='/addresource' component={AddResource} />
-        <Route path='/editresource/:id' component={EditResource} />
-        <Route path='/profile/:id' component={Profile} />
-        <br />
+        <div className="Site-content">
+          <div className="App-header">
+            <NavBar DarkTheme={DarkTheme} />
+          </div>
+          <div className="main">
+            <Route exact path='/' component={Overview} />
+            <FilterContextProvider>
+              <Route path='/resources' component={Resources} />
+            </FilterContextProvider>
+            <Route path='/help' component={Help} />
+            <Route path='/settings' render={(props) => <Settings {...props} toggleDarkTheme={toggleDarkTheme} DarkTheme={DarkTheme} />} />
+            <Route path='/addresource' component={AddResource} />
+            <Route path='/editresource/:id' component={EditResource} />
+            <Route path='/profile/:id' component={Profile} />
+          </div>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>
+
   );
 }
 

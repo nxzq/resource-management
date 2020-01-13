@@ -14,7 +14,6 @@ React Application with lightweight Node.js and Express Back-End <br/>
 * Pagination <br/>
 * D3.js Graphs on Overview Page <br/>
 * Form Validation <br/>
-* Sticky Footer <br/>
 * Populate Help Page <br/>
 * Add more Skills <br/>
 * Edit Dark Theme CSS <br/>
