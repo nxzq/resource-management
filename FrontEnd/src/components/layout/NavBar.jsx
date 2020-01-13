@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import HoverToolTip from '../other/HoverToolTip';
+import HoverToolTip from '../ui/HoverToolTip';
 import Logo from '../../img/generic-logo.svg'
 import DarkThemeLogo from '../../img/generic-logo-dark.svg'
 

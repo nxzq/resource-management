@@ -9,6 +9,7 @@ import AddResource from './pages/AddResource';
 import EditResource from './pages/EditResource';
 import Profile from './pages/Profile';
 import Footer from './components/layout/Footer';
+import FilterContextProvider from './contexts/FilterContext';
 
 function App() {
 
@@ -23,10 +24,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {DarkTheme ? <link rel="stylesheet" type="text/css" href='./DarkTheme.css' /> : ''}
+        {DarkTheme ? <link rel="stylesheet" type="text/css" href='./DarkTheme.css' /> : null}
         <NavBar DarkTheme={DarkTheme}/>
         <Route exact path='/' component={Overview} />
-        <Route path='/resources' component={Resources} />
+        <FilterContextProvider>
+          <Route path='/resources' component={Resources} />
+        </FilterContextProvider>
         <Route path='/help' component={Help} />
         <Route path='/settings' render={(props) => <Settings {...props} toggleDarkTheme={toggleDarkTheme} DarkTheme={DarkTheme} />} />
         <Route path='/addresource' component={AddResource} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from '../api/index';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -6,16 +6,16 @@ import Header from '../components/headers/Header';
 import SkillCollapse from '../components/resourcetable/SkillCollapse';
 import FilterModal from '../components/resourcetable/FilterModal';
 import ResumeModal from '../components/resourcetable/ResumeModal';
+import { FilterContext } from '../contexts/FilterContext';
 
 const Resources = () => {
 
-  const [neededSkills, setNeededSkill] = useState([]);
+  const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext);
   const [search, setSearch] = useState('');
   const [top] = useState(10)
   const [skip] = useState(0)
   // eslint-disable-next-line
   const [count, setCount] = useState(null)
-  const [showSkillMatch, setShowSkillMatch] = useState(false);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
   const [data, setData] = useState([])
