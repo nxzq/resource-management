@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './components/layout/NavBar';
 import Overview from './pages/Overview';
@@ -12,8 +12,13 @@ import Footer from './components/layout/Footer';
 
 function App() {
 
-  const [DarkTheme, setDarkTheme] = useState(false);
+  const themePreference = localStorage.getItem('Settings');
+  const [DarkTheme, setDarkTheme] = useState(Settings ? JSON.parse(themePreference) : false);
   const toggleDarkTheme = () => setDarkTheme(!DarkTheme);
+
+  useEffect(() => {
+    localStorage.setItem('Settings', JSON.stringify(DarkTheme))
+  }, [DarkTheme])
 
   return (
     <BrowserRouter>
