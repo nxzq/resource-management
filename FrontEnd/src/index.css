@@ -135,3 +135,9 @@ nav a:hover {
   height: 0;
   visibility: hidden;
 }
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-collapse {
+      height: auto !important;
+  }
+}

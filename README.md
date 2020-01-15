@@ -17,4 +17,3 @@ React Application with lightweight Node.js and Express Back-End <br/>
 * Populate Help Page <br/>
 * Add more Skills <br/>
 * Edit Dark Theme CSS <br/>
-* Remove onClick Animation on NavBar <br/>
