@@ -14,7 +14,7 @@ import FilterContextProvider from './contexts/FilterContext';
 function App() {
 
   const themePreference = localStorage.getItem('Settings');
-  const [DarkTheme, setDarkTheme] = useState(Settings ? JSON.parse(themePreference) : false);
+  const [DarkTheme, setDarkTheme] = useState(themePreference ? JSON.parse(themePreference) : false);
   const toggleDarkTheme = () => setDarkTheme(!DarkTheme);
 
   useEffect(() => {
