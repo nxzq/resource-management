@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--text);
 }
 
 code {
@@ -17,12 +19,41 @@ i{
   font-style: normal;
 }
 
+#myInput {
+  color: black !important;
+}
+
+input, textarea, select, .custom-checkbox {
+  background-color: var(--background) !important;
+  color: var(--text) !important;
+}
+
+.modal-content {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+#select-search {
+  color: black; 
+}
+
+button.close {
+  color: var(--text);
+}
+
+button.close:hover {
+  color: var(--text);
+  opacity: 0.90
+}
+
 nav a {
-  color: rgba(0,0,0,.65) !important;
+  color: var(--text) !important;
+  opacity: .9;
 }
 
 nav a:hover {
-  color: rgba(0,0,0,.85) !important;
+  color: var(--text) !important;
+  opacity: .55;
 }
 
 .unselectable {
@@ -35,14 +66,14 @@ nav a:hover {
 }
 
 .section-header, #add-skill {
-  color: #005ba1; 
+  color: var(--primary); 
   background-color: transparent; 
   border-color: transparent;
   text-decoration: none;
 }
 
 .section-header:hover, #add-skill:hover {
-  color: #005ba1; 
+  color: var(--primary); 
   opacity: 0.90;
   background-color: transparent; 
   border-color: transparent;
@@ -50,7 +81,7 @@ nav a:hover {
 }
 
 .section-header:active, #add-skill:active {
-  color: #005ba1; 
+  color: var(--primary); 
   opacity: 0.80;
   background-color: transparent; 
   border-color: transparent;
@@ -58,48 +89,52 @@ nav a:hover {
 }
 
 #edit {
-  color: #212529;
+  color: var(--text);
 }
 
 #edit:hover {
-  color: #212529;
+  color: var(--text);
   opacity: 0.75;
 }
 
 .profileLink {
   text-decoration: none;
-  color: #212529;
+  color: var(--text);
 }
 
 .profileLink:hover{
   text-decoration: none;
-  color: #212529;
+  color: var(--text);
   opacity: 0.75;
 }
 
+table, th, td {
+  color: var(--text);
+}
+
 .table-data {
-  color: #212529;
+  color: var(--text);
 }
 
 .table-data:hover {
-  color: #212529;
+  color: var(--text);
   opacity: 0.75;
 }
 
 .blue-button {
-  background-color: #005ba1; 
-  border-color: #005ba1;
+  background-color: var(--primary); 
+  border-color: var(--primary);
 }
 
 .blue-button:hover {
-  background-color: #005ba1; 
-  border-color: #005ba1;
+  background-color: var(--primary); 
+  border-color: var(--primary);
   opacity: 0.90;
 }
 
 .blue-button:active {
-  background-color: #005ba1; 
-  border-color: #005ba1;
+  background-color: var(--primary); 
+  border-color: var(--primary);
   opacity: 0.80;
 }
 

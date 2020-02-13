@@ -110,7 +110,7 @@ const Resources = () => {
         <Row>
           <Col lg="6" md="12">
             <div>
-              <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+              <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4" id="resource-search">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <button id="button-addon2" type="submit" aria-label="Search" className="btn btn-link text-primary">

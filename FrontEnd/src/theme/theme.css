@@ -1,0 +1,3 @@
+*:not(body) {
+    transition: all .5 ease;
+}

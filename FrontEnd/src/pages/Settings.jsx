@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, FormGroup, CustomInput } from 'reactstrap';
 import Header from '../components/headers/Header';
+import { ThemeContext } from '../theme/ThemeContext'
 
-const Settings = ({ toggleDarkTheme, DarkTheme }) => {
+const Settings = () => {
+
+    const { dark, toggleTheme } = useContext(ThemeContext);
 
     return (
         <div>
@@ -10,7 +13,7 @@ const Settings = ({ toggleDarkTheme, DarkTheme }) => {
             <Container>
                 <div>
                     <FormGroup>
-                        <CustomInput onChange={toggleDarkTheme} type="switch" checked={DarkTheme} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
+                        <CustomInput onChange={toggleTheme} type="switch" checked={dark} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
                     </FormGroup>
                 </div>
             </Container>
