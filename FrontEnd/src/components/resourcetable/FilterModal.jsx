@@ -72,7 +72,7 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
                     <Row>
                         <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label className="sr-only">Skills:</label>
-                            <Select autoFocus={true} id="select-search" isMulti options={availSkills} onChange={handleChange} value={selectedSkills} />
+                            <Select style={{backgroundColor: '#fff'}}  autoFocus={true} id="select-search" isMulti options={availSkills} onChange={handleChange} value={selectedSkills} />
                         </FormGroup>
                     </Row>
                 </ModalBody>

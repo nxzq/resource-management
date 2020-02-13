@@ -17,7 +17,7 @@ const NavBar = ({ DarkTheme }) => {
         <Navbar color="faded" light={!dark} dark={dark} expand="md">
         <NavbarBrand>
           {dark ? 
-          <img alt="Company Logo" src={dark} width="150" /> : 
+          <img alt="Company Logo" src={DarkThemeLogo} width="150" /> : 
           <img alt="Company Logo" src={Logo} width="150" />}
         </NavbarBrand>
         <NavbarToggler onClick={toggle} className="mr-2"/>

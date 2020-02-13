@@ -23,7 +23,7 @@ i{
   color: black !important;
 }
 
-input, textarea, select, .custom-checkbox {
+.card {
   background-color: var(--background) !important;
   color: var(--text) !important;
 }
