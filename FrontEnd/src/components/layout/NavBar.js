@@ -1,16 +1,32 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import HoverToolTip from '../ui/HoverToolTip';
 import Logo from '../../img/generic-logo.svg'
 import DarkThemeLogo from '../../img/generic-logo-dark.svg'
 import { ThemeContext } from '../../theme/ThemeContext';
 
-const NavBar = ({ DarkTheme }) => {
+const NavBar = (props, { DarkTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const { dark } = useContext(ThemeContext);
-  
+
+  const handleKeyDown = (e) => {
+    if (e.shiftKey && e.which === 79) {
+      props.history.push('/')
+    } else if (e.shiftKey && e.which === 82) {
+      props.history.push('/resources')
+    } else if (e.shiftKey && e.which === 72) {
+      props.history.push('/help')
+    } else if (e.shiftKey && e.which === 83) {
+      props.history.push('/settings')
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown)
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <div>
@@ -50,4 +66,4 @@ const NavBar = ({ DarkTheme }) => {
   );
 }
 
-export default NavBar;
+export default withRouter(NavBar);

@@ -30,7 +30,6 @@ const Resources = () => {
     }
     })
       .then(res => {
-        console.log(res)
         const resourceData = res.data.results;
         setData(resourceData)
       })
