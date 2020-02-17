@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import axios from '../api/index';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -19,6 +19,7 @@ const Resources = () => {
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
   const [data, setData] = useState([])
+  const page = useRef(null)
 
   useEffect(() => {
     axios.get(`resources/table`,
@@ -37,6 +38,10 @@ const Resources = () => {
           console.log(error)
       })
   }, [top, skip, search, neededSkills])
+
+  useEffect(() => {
+    if (page !== null) page.current.focus();
+  }, [page])
 
   const getSkillMatch = (skills) => {
     let count = 0
@@ -103,7 +108,7 @@ const Resources = () => {
     ))
 
   return (
-    <div>
+    <div tabIndex={-1} ref={page} id="resourcePage">
       <Header name={'Resource Management'} />
       <Container>
         <Row>
@@ -112,7 +117,7 @@ const Resources = () => {
               <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4" id="resource-search">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <button id="button-addon2" type="submit" aria-label="Search" className="btn btn-link text-primary">
+                    <button id="button-addon2" tabIndex={-1} type="submit" aria-label="Search" className="btn btn-link text-primary">
                       <i style={{ color: '#005ba1' }} aria-hidden="true" className="fa fa-search"></i>
                     </button>
                   </div>
@@ -128,7 +133,7 @@ const Resources = () => {
           </Col>
           <Col lg="3" md="6" xs="6">
             <Link style={{ textDecoration: 'none' }} to="/addresource">
-              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
+              <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} tabIndex={-1} className="blue-button btn-block shadow-none" id="addResource" type="button" color="primary"><i className="fas fa-plus"></i>
                 &nbsp;&nbsp;Add Resource
               </Button>
             </Link>

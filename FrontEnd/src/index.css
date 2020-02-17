@@ -19,6 +19,10 @@ i{
   font-style: normal;
 }
 
+#resourcePage:focus {
+  outline: none;
+}
+
 #myInput {
   color: black !important;
 }
@@ -37,6 +41,10 @@ i{
   color: black; 
 }
 
+button:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+}
+
 button.close {
   color: var(--text);
 }
@@ -52,6 +60,11 @@ nav a {
 }
 
 nav a:hover {
+  color: var(--text) !important;
+  opacity: .55;
+}
+
+nav a:focus {
   color: var(--text) !important;
   opacity: .55;
 }

@@ -45,7 +45,7 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
 
     return (
         <div>
-            <Button onClick={toggle} id={"resumeModalButton"+id} title="View Resume" className='shadow-none' style={{textDecoration: 'none', backgroundColor: 'transparent', border: 'transparent', height: '35px'}}>
+            <Button onClick={toggle} tabIndex={0} id={"resumeModalButton"+id} title="View Resume" className='shadow-none' style={{textDecoration: 'none', backgroundColor: 'transparent', border: 'transparent', height: '35px'}}>
                 <i className="table-data far fa-file-alt fa-lg"></i>
                 <span className="sr-only">Resume</span>
             </Button>
