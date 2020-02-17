@@ -19,7 +19,7 @@ i{
   font-style: normal;
 }
 
-#resourcePage:focus {
+.page:focus {
   outline: none;
 }
 
