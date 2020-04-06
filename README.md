@@ -4,7 +4,7 @@ React Application with lightweight Node.js and Express Back-End <br/>
 
 
 ### Theming <br/>
-<table width=100%> 
+<table width=100%>
  <td><img src="screenshots/light-theme.png"/></td>
  <td><img src="screenshots/dark-theme.png"/></td>
 </table>
