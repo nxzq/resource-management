@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import NavBar from '../components/layout/NavBar';
-import Overview from '../views/Overview';
-import Resources from '../views/Resources';
-import Help from '../views/Help';
-import Settings from '../views/Settings';
-import AddResource from '../views/AddResource';
-import EditResource from '../views/EditResource';
-import Profile from '../views/Profile';
-import Footer from '../components/layout/Footer';
+import NavBar from '../components/layout/NavBar/NavBar';
+import Overview from '../views/Overview/Overview';
+import Resources from '../views/Resources/Resources';
+import Help from '../views/Help/Help';
+import Settings from '../views/Settings/Settings';
+import AddResource from '../views/AddResource/AddResource';
+import EditResource from '../views/EditResource/EditResource';
+import Profile from '../views/Profile/Profile';
+import Footer from '../components/layout/Footer/Footer';
 import FilterContextProvider from '../contexts/FilterContext';
 
 function App() {

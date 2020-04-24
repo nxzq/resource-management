@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
-import axios from '../api/index';
+import axios from '../../api/index';
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Header from '../components/headers/Header';
-import SkillCollapse from '../components/resourcetable/SkillCollapse';
-import FilterModal from '../components/resourcetable/FilterModal';
-import ResumeModal from '../components/resourcetable/ResumeModal';
-import { FilterContext } from '../contexts/FilterContext';
+import Header from '../../components/layout/Header/Header';
+import SkillCollapse from '../../components/resourceTable/SkillCollapse/SkillCollapse';
+import FilterModal from '../../components/resourceTable/FilterModal/FilterModal';
+import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal';
+import { FilterContext } from '../../contexts/FilterContext';
 
 const Resources = () => {
 

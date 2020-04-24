@@ -1,6 +1,6 @@
 import React from 'react';
 import { CustomInput, FormGroup, Row, FormText } from 'reactstrap';
-import ResumeModal from '../resourcetable/ResumeModal'
+import ResumeModal from '../../resourceTable/ResumeModal/ResumeModal'
 
 const ResumeUpload = ({ resume, handleResume, existingResume, id, FirstName, LastName }) => {
     return (

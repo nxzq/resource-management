@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import axios from '../api/index';
+import axios from '../../api/index';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Spinner } from 'reactstrap';
-import Header from '../components/headers/Header';
-import AboutForm from '../components/forms/AboutForm';
-import SummaryForm from '../components/forms/SummaryForm';
-import EducationForm from '../components/forms/EducationForm';
-import CertificationForm from '../components/forms/CertificationForm';
-import ExperienceForm from '../components/forms/ExperienceForm';
-import ProjectForm from '../components/forms/ProjectForm';
-import SkillForm from '../components/forms/SkillForm';
-import ResumeUpload from '../components/forms/ResumeUpload';
-import SectionHeader from '../components/headers/SectionHeader';
-import DynamicSectionHeader from '../components/forms/DynamicSectionHeader';
+import Header from '../../components/layout/Header/Header';
+import AboutForm from '../../components/forms/AboutForm/AboutForm';
+import SummaryForm from '../../components/forms/SummaryForm/SummaryForm';
+import EducationForm from '../../components/forms/EducationForm/EducationForm';
+import CertificationForm from '../../components/forms/CertificationForm/CertificationForm';
+import ExperienceForm from '../../components/forms/ExperienceForm/ExperienceForm';
+import ProjectForm from '../../components/forms/ProjectForm/ProjectForm';
+import SkillForm from '../../components/forms/SkillForm/SkillForm';
+import ResumeUpload from '../../components/forms/ResumeUpload/ResumeUpload';
+import SectionHeader from '../../components/layout/SectionHeader/SectionHeader';
+import DynamicSectionHeader from '../../components/layout/DynamicSectionHeader/DynamicSectionHeader';
 
 class EditResource extends Component {
     state = {

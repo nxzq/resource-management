@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
-import HoverToolTip from '../ui/HoverToolTip';
-import Logo from '../../img/generic-logo.svg'
-import DarkThemeLogo from '../../img/generic-logo-dark.svg'
-import { ThemeContext } from '../../theme/ThemeContext';
+import HoverToolTip from '../HoverToolTip/HoverToolTip';
+import Logo from '../../../img/generic-logo.svg'
+import DarkThemeLogo from '../../../img/generic-logo-dark.svg'
+import { ThemeContext } from '../../../theme/ThemeContext';
 
 const NavBar = (props, { DarkTheme }) => {
   const [isOpen, setIsOpen] = useState(false);

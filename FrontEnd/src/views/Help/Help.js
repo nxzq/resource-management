@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'reactstrap';
-import Header from '../components/headers/Header';
+import Header from '../../components/layout/Header/Header';
 
 const Help = () => {
 
