@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Container, FormGroup, CustomInput } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
 import { ThemeContext } from '../../theme/ThemeContext'
 
-const Settings = () => {
+export default function Settings() {
 
     const { dark, toggleTheme } = useContext(ThemeContext);
     const page = useRef();
-    const [ready, setReady] = useState(false)
 
     const handleEnter = (e) => {
         if (e.keyCode === 13) toggleTheme()
@@ -15,9 +14,9 @@ const Settings = () => {
 
     useEffect(() => {
         if (page.current) {
-            setReady(true)
             page.current.focus()
         }
+        // eslint-disable-next-line
     }, [page.current])
 
     return (
@@ -32,6 +31,4 @@ const Settings = () => {
             </Container>
         </div>
     );
-}
-
-export default Settings;
+};

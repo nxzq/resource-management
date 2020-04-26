@@ -1,12 +1,10 @@
 import React from 'react';
 
-const SectionHeader = ({ name }) => {
+export default function SectionHeader({ name }) {
     return (
         <div>
             <h3>{name}</h3>
             <hr />
         </div>
     )
-}
-
-export default SectionHeader
+};

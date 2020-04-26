@@ -4,18 +4,6 @@ import { render, cleanup } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import Header from '../Header';
 
-const NewHOC = (PassedComponent) => {
-  return class extends React.Component {
-    render() {
-      return (
-        <div>
-          <PassedComponent {...this.props} />
-        </div>
-      )
-    }
-  }
-}
-
 afterEach(cleanup);
 
 describe('Test Header', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const CertificationForm = ({ index, removeCertification, CertName, CertDate, CertAssociation, handleCertificationChange }) => {
+export default function CertificationForm({ index, removeCertification, CertName, CertDate, CertAssociation, handleCertificationChange }) {
 
     return (
         <div>
@@ -33,6 +33,4 @@ const CertificationForm = ({ index, removeCertification, CertName, CertDate, Cer
             <hr />
         </div>
     )
-}
-
-export default CertificationForm;
+};

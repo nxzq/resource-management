@@ -1,8 +1,10 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const ProjectForm = ({ index, removeProject, ProjName, ProjDate, ProjAssociation, ProjInfo, handleProjectChange }) => {
+export default function ProjectForm({ index, removeProject, ProjName, ProjDate, ProjAssociation, ProjInfo, handleProjectChange }) {
+
     var today = new Date();
+
     return (
         <div>
             <Row>
@@ -29,6 +31,4 @@ const ProjectForm = ({ index, removeProject, ProjName, ProjDate, ProjAssociation
             <hr />
         </div>
     )
-}
-
-export default ProjectForm
+};

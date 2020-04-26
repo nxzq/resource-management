@@ -2,7 +2,7 @@ import React from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
 
-const EducationForm = ({ index, removeEducation, School, Location, Degree, Major, Minor, GradDate, handleEducationChange }) => {
+export default function EducationForm({ index, removeEducation, School, Location, Degree, Major, Minor, GradDate, handleEducationChange }) {
     return (
         <div>
             <Row>
@@ -51,6 +51,4 @@ const EducationForm = ({ index, removeEducation, School, Location, Degree, Major
             <hr />
         </div>
     )
-}
-
-export default EducationForm
+};

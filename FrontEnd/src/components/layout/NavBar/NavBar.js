@@ -31,12 +31,14 @@ const NavBar = (props, { DarkTheme }) => {
     if (helpRef.current) {
       setHelpReady(true)
     }
+    // eslint-disable-next-line
   }, [helpRef.current])
 
   useEffect(() => {
     if (settingsRef.current) {
       setSettingsReady(true)
     }
+    // eslint-disable-next-line
   }, [settingsRef.current])
 
   const close = (e) => {

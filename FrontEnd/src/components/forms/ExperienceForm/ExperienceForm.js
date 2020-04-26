@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange }) => {
+export default function ExperienceForm({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange }) {
+
     const [currentPosition, setCurrentPostion] = useState( JobEndDate === '' ? true : false)
+
     return (
         <div>
             <Row>
@@ -72,6 +74,4 @@ const ExperienceForm = ({ index, removeExperience, JobTitle, JobOrg, JobStartDat
             <hr />
         </div>
     )
-}
-
-export default ExperienceForm
+};

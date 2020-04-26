@@ -8,7 +8,7 @@ import FilterModal from '../../components/resourceTable/FilterModal/FilterModal'
 import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal';
 import { FilterContext } from '../../contexts/FilterContext';
 
-const Resources = () => {
+export default function Resources() {
 
   const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext);
   const [search, setSearch] = useState('');
@@ -165,6 +165,4 @@ const Resources = () => {
       </Container>
     </div>
   );
-}
-
-export default Resources;
+};

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormText, Spinner } from 'reactstrap';
 
-const ResumeModal = ({ FirstName, LastName, id }) => {
+export default function ResumeModal({ FirstName, LastName, id }) {
 
     const [data, setData] = useState('');
     const [modal, setModal] = useState(false);
@@ -77,6 +77,4 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             </Modal>
         </div>
     );
-}
-
-export default ResumeModal;
+};

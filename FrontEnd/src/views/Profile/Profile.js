@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/layout/Header/Header';
 import SectionHeader from '../../components/layout/SectionHeader/SectionHeader';
 
-const Profile = (props) => {
+export default function Profile(props) {
 
     const [id] = useState(props.match.params.id)
     const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -220,6 +220,4 @@ const Profile = (props) => {
             }
         </div>
     );
-}
-
-export default Profile;
+};

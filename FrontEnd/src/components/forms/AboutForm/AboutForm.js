@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row } from 'reactstrap';
 
-const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) => {
+export default function AboutForm({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) {
     return (
         <div>
             <Row>
@@ -52,6 +52,4 @@ const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, 
             <hr />
         </div>
     )
-}
-
-export default AboutForm
+};

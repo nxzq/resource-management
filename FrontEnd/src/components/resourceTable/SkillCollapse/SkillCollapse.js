@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Collapse, Card, CardBody, CardHeader } from 'reactstrap';
 
-const SkillPopOver = ({ matched, unmatched, content }) => {
+export default function SkillPopOver({ matched, unmatched, content }) {
+
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -25,6 +26,4 @@ const SkillPopOver = ({ matched, unmatched, content }) => {
       </Collapse>
     </div>
   );
-}
-
-export default SkillPopOver;
+};

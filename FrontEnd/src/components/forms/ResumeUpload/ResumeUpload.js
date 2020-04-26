@@ -2,7 +2,7 @@ import React from 'react';
 import { CustomInput, FormGroup, Row, FormText } from 'reactstrap';
 import ResumeModal from '../../resourceTable/ResumeModal/ResumeModal'
 
-const ResumeUpload = ({ resume, handleResume, existingResume, id, FirstName, LastName }) => {
+export default function ResumeUpload({ resume, handleResume, existingResume, id, FirstName, LastName }) {
     return (
         <div>
             <Row>
@@ -26,6 +26,4 @@ const ResumeUpload = ({ resume, handleResume, existingResume, id, FirstName, Las
             <hr />
         </div>
     )
-}
-
-export default ResumeUpload
+};

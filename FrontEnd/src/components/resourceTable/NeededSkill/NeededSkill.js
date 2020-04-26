@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row, Badge, Button } from 'reactstrap';
 
-const NeededSkill = ({ skills, removeSkill }) => {
+export default function NeededSkill({ skills, removeSkill }) {
+
     const style = {
         minHeight: '15px',
         marginRight: '5px',
@@ -9,6 +10,7 @@ const NeededSkill = ({ skills, removeSkill }) => {
         marginTop: '5px',
         marginBottom: '5px'
     }
+    
     const badges = (skills) => {
         let badges = []
         if (skills.length === 0) {}
@@ -24,6 +26,4 @@ const NeededSkill = ({ skills, removeSkill }) => {
             {badges(skills)}
         </Row>
     )
-}
-
-export default NeededSkill
+};

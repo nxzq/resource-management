@@ -8,4 +8,4 @@ export default function Header({name}) {
             <hr />
         </div>
     )
-}
+};
