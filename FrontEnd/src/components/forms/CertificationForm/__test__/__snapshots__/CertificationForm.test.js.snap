@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test CertificationForm matches snapshot 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="CertName"
+      >
+        Name
+      </label>
+      <input
+        className="form-control"
+        id="CertName"
+        name="CertName"
+        onChange={[Function]}
+        placeholder="Certification Name"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="GradDate"
+      >
+        Date Achieved
+      </label>
+      <input
+        className="form-control"
+        id="CertDate"
+        name="CertDate"
+        onChange={[Function]}
+        placeholder="date placeholder"
+        required={true}
+        type="date"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="CertAssociation"
+      >
+        Association
+      </label>
+      <input
+        className="form-control"
+        id="CertAssociation"
+        name="CertAssociation"
+        onChange={[Function]}
+        placeholder="Certification Association"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right form-group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-danger"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginTop": "32px",
+          }
+        }
+        type="button"
+      >
+        Remove Certification
+      </button>
+    </div>
+  </div>
+  <hr />
+</div>
+`;

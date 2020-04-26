@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ResumeUpload matches snapshot 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <div
+        className="custom-file"
+      >
+        <input
+          accept="application/pdf"
+          className="custom-file-input"
+          id="ResumeUpload"
+          name="ResumeUpload"
+          onChange={[Function]}
+          type="file"
+        />
+        <label
+          className="custom-file-label"
+          htmlFor="ResumeUpload"
+        >
+          Choose file
+        </label>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        Please upload your most up to date resume in PDF format.
+      </small>
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    />
+  </div>
+  <hr />
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Header matches snapshot 1`] = `
+<div>
+  <hr />
+  <h1
+    className="text-center"
+  />
+  <hr />
+</div>
+`;
