@@ -141,6 +141,7 @@ exports[`Test App matches snapshot 1`] = `
           <hr />
           <h1
             className="text-center"
+            data-testid="header"
           >
             Overview
           </h1>

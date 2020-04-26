@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Settings matches snapshot 1`] = `
+<div
+  class="page"
+  tabIndex={-1}
+>
+  <div>
+    <hr />
+    <h1
+      className="text-center"
+      data-testid="header"
+    >
+      Settings
+    </h1>
+    <hr />
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      <div
+        className="form-group"
+      >
+        <div
+          className="custom-switch custom-control"
+        >
+          <input
+            checked={false}
+            className="custom-control-input"
+            id="darkModeSwitch"
+            name="darkModeSwitch"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="custom-control-label"
+            htmlFor="darkModeSwitch"
+          >
+            Dark Mode (Beta)
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

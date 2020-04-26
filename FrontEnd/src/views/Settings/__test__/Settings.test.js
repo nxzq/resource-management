@@ -2,6 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import Settings from '../Settings';
+import ThemeContextProvider from '../../../theme/ThemeContext';
 
 afterEach(cleanup);
 

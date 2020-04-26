@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Container, FormGroup, CustomInput } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
 import { ThemeContext } from '../../theme/ThemeContext'
@@ -6,15 +6,19 @@ import { ThemeContext } from '../../theme/ThemeContext'
 const Settings = () => {
 
     const { dark, toggleTheme } = useContext(ThemeContext);
-    const page = useRef(null);
+    const page = useRef();
+    const [ready, setReady] = useState(false)
 
     const handleEnter = (e) => {
         if (e.keyCode === 13) toggleTheme()
     }
 
     useEffect(() => {
-        if (page !== null) page.current.focus();
-    }, [page])
+        if (page.current) {
+            setReady(true)
+            page.current.focus()
+        }
+    }, [page.current])
 
     return (
         <div tabIndex={-1} ref={page} class="page">
