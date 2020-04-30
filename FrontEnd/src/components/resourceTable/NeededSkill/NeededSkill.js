@@ -15,8 +15,8 @@ export default function NeededSkill({ skills, removeSkill }) {
         let badges = []
         if (skills.length === 0) {}
         else badges = skills.map((skill) => (
-            <Button style={style} className="shadow-none" color="secondary" outline>
-                <Badge onClick={() => { removeSkill(skill) }} key={skill} color="secondary">X</Badge> {skill}
+            <Button style={style} key={skill} aclassName="shadow-none" color="secondary" outline>
+                <Badge onClick={() => { removeSkill(skill) }} color="secondary">X</Badge> {skill}
             </Button>
         ))
         return badges

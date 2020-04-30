@@ -2,14 +2,14 @@
 
 exports[`Test Settings matches snapshot 1`] = `
 <div
-  class="page"
+  className="page"
   tabIndex={-1}
 >
   <div>
     <hr />
     <h1
       className="text-center"
-      data-testid="header"
+      data-testid="header-name"
     >
       Settings
     </h1>

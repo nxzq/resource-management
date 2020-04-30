@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test NavBar matches snapshot 1`] = `
+<div>
+  <nav
+    className="navbar navbar-expand-md navbar-light bg-faded"
+  >
+    <a
+      className="navbar-brand"
+    >
+      <img
+        alt="Company Logo"
+        src="generic-logo.svg"
+        width="150"
+      />
+    </a>
+    <button
+      aria-label="Toggle navigation"
+      className="mr-2 navbar-toggler"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      style={Object {}}
+    >
+      <ul
+        className="ml-auto navbar-nav"
+      >
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "inherit",
+              }
+            }
+          >
+            Overview
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/resources"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "inherit",
+              }
+            }
+          >
+            Resources
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/help"
+            id={
+              Object {
+                "current": undefined,
+              }
+            }
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "inherit",
+              }
+            }
+          >
+            <i
+              className="fas fa-question-circle fa-lg"
+            />
+            <span
+              className="sr-only"
+            >
+              Help
+            </span>
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/settings"
+            id={
+              Object {
+                "current": undefined,
+              }
+            }
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "inherit",
+              }
+            }
+          >
+            <i
+              className="fas fa-cog fa-lg"
+            />
+            <span
+              className="sr-only"
+            >
+              Settings
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

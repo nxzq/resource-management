@@ -20,7 +20,7 @@ export default function Settings() {
     }, [page.current])
 
     return (
-        <div tabIndex={-1} ref={page} class="page">
+        <div tabIndex={-1} ref={page} className="page">
             <Header name={'Settings'} />
             <Container>
                 <div>

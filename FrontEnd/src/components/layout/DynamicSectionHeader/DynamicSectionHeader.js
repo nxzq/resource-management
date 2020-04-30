@@ -10,7 +10,7 @@ export default function DynamicSectionHeader({ name, count, addForm}) {
         <div>
             <Row>
             <div className="col-md-9">
-                <h3>{name}</h3>
+                <h3 data-testid="dynamic-header-name">{name}</h3>
             </div>
             <div className="col-md-3">
                 {AddFormButton(count)}

@@ -5,7 +5,7 @@ exports[`Test Header matches snapshot 1`] = `
   <hr />
   <h1
     className="text-center"
-    data-testid="header"
+    data-testid="header-name"
   />
   <hr />
 </div>

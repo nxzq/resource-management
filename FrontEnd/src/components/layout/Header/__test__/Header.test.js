@@ -20,9 +20,8 @@ describe('Test Header', () => {
   });
 
   it('renders correctly', () => {
-    const Component = NewHOC(Header)
     const { getByTestId } = render(<Header name={'test'} />);
-    expect(getByTestId("header").textContent).toBe("test");
+    expect(getByTestId("header-name").textContent).toBe("test");
   });
 
 });

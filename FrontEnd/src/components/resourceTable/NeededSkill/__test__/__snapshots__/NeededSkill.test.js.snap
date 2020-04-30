@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test NeededSkill matches snapshot 1`] = `
+<div
+  className="col-md-12 row"
+>
+  <button
+    aclassName="shadow-none"
+    aria-label={null}
+    className="btn btn-outline-secondary"
+    onClick={[Function]}
+    style={
+      Object {
+        "marginBottom": "5px",
+        "marginLeft": "5px",
+        "marginRight": "5px",
+        "marginTop": "5px",
+        "minHeight": "15px",
+      }
+    }
+  >
+    <span
+      className="badge badge-secondary"
+      onClick={[Function]}
+    >
+      X
+    </span>
+     
+    Java
+  </button>
+</div>
+`;

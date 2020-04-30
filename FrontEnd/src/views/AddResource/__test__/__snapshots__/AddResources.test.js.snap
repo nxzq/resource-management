@@ -6,7 +6,7 @@ exports[`Test AddResource matches snapshot 1`] = `
     <hr />
     <h1
       className="text-center"
-      data-testid="header"
+      data-testid="header-name"
     >
       Add Resource Form
     </h1>
@@ -306,7 +306,9 @@ exports[`Test AddResource matches snapshot 1`] = `
           <div
             className="col-md-9"
           >
-            <h3>
+            <h3
+              data-testid="dynamic-header-name"
+            >
               Education
             </h3>
           </div>
@@ -341,7 +343,9 @@ exports[`Test AddResource matches snapshot 1`] = `
           <div
             className="col-md-9"
           >
-            <h3>
+            <h3
+              data-testid="dynamic-header-name"
+            >
               Certifications
             </h3>
           </div>
@@ -376,7 +380,9 @@ exports[`Test AddResource matches snapshot 1`] = `
           <div
             className="col-md-9"
           >
-            <h3>
+            <h3
+              data-testid="dynamic-header-name"
+            >
               Experience
             </h3>
           </div>
@@ -411,7 +417,9 @@ exports[`Test AddResource matches snapshot 1`] = `
           <div
             className="col-md-9"
           >
-            <h3>
+            <h3
+              data-testid="dynamic-header-name"
+            >
               Projects
             </h3>
           </div>
