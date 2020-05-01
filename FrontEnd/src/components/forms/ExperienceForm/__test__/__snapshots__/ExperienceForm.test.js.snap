@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test ExperienceForm matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <div>
   <div
     className="row"
@@ -17,6 +17,7 @@ exports[`Test ExperienceForm matches snapshot 1`] = `
           <input
             checked={false}
             className="unselectable form-check-input"
+            data-testid="currentPositionCheck"
             onChange={[Function]}
             type="checkbox"
             value={false}
@@ -75,6 +76,7 @@ exports[`Test ExperienceForm matches snapshot 1`] = `
       </label>
       <input
         className="form-control"
+        data-testid="startDate"
         id="JobStartDate"
         name="JobStartDate"
         onChange={[Function]}
@@ -93,6 +95,7 @@ exports[`Test ExperienceForm matches snapshot 1`] = `
       </label>
       <input
         className="form-control"
+        data-testid="endDate"
         id="JobEndDate"
         name="JobEndDate"
         onChange={[Function]}

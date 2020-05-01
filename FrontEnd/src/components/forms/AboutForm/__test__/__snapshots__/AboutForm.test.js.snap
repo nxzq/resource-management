@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test AboutForm matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <div>
   <div
     className="row"
@@ -61,9 +61,9 @@ exports[`Test AboutForm matches snapshot 1`] = `
         required={true}
       >
         <option
+          defaultValue={true}
           disabled={true}
           hidden={true}
-          selected={true}
           value=""
         >
           Please Select

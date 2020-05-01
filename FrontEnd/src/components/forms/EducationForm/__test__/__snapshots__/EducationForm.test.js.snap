@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test EducationForm matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <div>
   <div
     className="row"
@@ -61,8 +61,8 @@ exports[`Test EducationForm matches snapshot 1`] = `
         required={true}
       >
         <option
+          defaultValue={true}
           disabled={true}
-          selected={true}
           value=""
         >
           Please Select
@@ -92,6 +92,7 @@ exports[`Test EducationForm matches snapshot 1`] = `
       </label>
       <input
         className="form-control"
+        data-testid="educationDateInput"
         id="GradDate"
         name="GradDate"
         onChange={[Function]}

@@ -5,9 +5,8 @@ exports[`Test NeededSkill matches snapshot 1`] = `
   className="col-md-12 row"
 >
   <button
-    aclassName="shadow-none"
     aria-label={null}
-    className="btn btn-outline-secondary"
+    className="shadow-none btn btn-outline-secondary"
     onClick={[Function]}
     style={
       Object {

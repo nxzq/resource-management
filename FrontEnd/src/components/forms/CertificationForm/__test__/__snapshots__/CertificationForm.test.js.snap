@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test CertificationForm matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <div>
   <div
     className="row"
@@ -35,6 +35,7 @@ exports[`Test CertificationForm matches snapshot 1`] = `
       </label>
       <input
         className="form-control"
+        data-testid="certDateInput"
         id="CertDate"
         name="CertDate"
         onChange={[Function]}

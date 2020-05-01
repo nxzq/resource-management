@@ -11,7 +11,7 @@ export default function ExperienceForm({ index, removeExperience, JobTitle, JobO
                 <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <FormGroup check>
                         <Label check>
-                            <Input type="checkbox" className="unselectable" checked={currentPosition} 
+                            <Input type="checkbox" className="unselectable" checked={currentPosition} data-testid="currentPositionCheck"
                             onChange={() => {setCurrentPostion(!currentPosition)}} value={currentPosition}/>{' '}
                             Current Position
                         </Label>
@@ -32,6 +32,7 @@ export default function ExperienceForm({ index, removeExperience, JobTitle, JobO
                         name="JobStartDate"
                         id="JobStartDate"
                         value={JobStartDate}
+                        data-testid="startDate"
                         placeholder="date placeholder"
                         onChange={(e) => { handleExperienceChange(index, e) }}
                     />
@@ -45,8 +46,8 @@ export default function ExperienceForm({ index, removeExperience, JobTitle, JobO
                         name="JobEndDate"
                         id="JobEndDate"
                         value={JobEndDate}
+                        data-testid="endDateDisabled"
                         placeholder="date placeholder"
-                        onChange={(e) => { handleExperienceChange(index, e) }}
                     />
                 </FormGroup>
                 :
@@ -58,6 +59,7 @@ export default function ExperienceForm({ index, removeExperience, JobTitle, JobO
                         name="JobEndDate"
                         id="JobEndDate"
                         value={JobEndDate}
+                        data-testid="endDate"
                         placeholder="date placeholder"
                         onChange={(e) => { handleExperienceChange(index, e) }}
                     />

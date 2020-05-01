@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test AddResource matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <div>
   <div>
     <hr />
@@ -91,9 +91,9 @@ exports[`Test AddResource matches snapshot 1`] = `
               value=""
             >
               <option
+                defaultValue={true}
                 disabled={true}
                 hidden={true}
-                selected={true}
                 value=""
               >
                 Please Select

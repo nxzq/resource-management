@@ -7,23 +7,19 @@ import ThemeContextProvider from '../../theme/ThemeContext';
 
 afterEach(cleanup);
 
-describe('Test App', () => {
+it('matches snapshot', async () => {
+  const tree = renderer.create(
+    <ThemeContextProvider dark={true}>
+      <App />
+    </ThemeContextProvider>).toJSON()
+  expect(tree).toMatchSnapshot();
+});
 
-  it('matches snapshot', () => {
-    const tree = renderer.create(
-      <ThemeContextProvider dark={true}>
-        <App />
-      </ThemeContextProvider>).toJSON()
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(
-      <ThemeContextProvider dark={true}>
-        <App />
-      </ThemeContextProvider>, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
+it('renders without crashing', async () => {
+  const div = document.createElement('div');
+  ReactDOM.render(
+    <ThemeContextProvider dark={true}>
+      <App />
+    </ThemeContextProvider>, div);
+  ReactDOM.unmountComponentAtNode(div);
 });

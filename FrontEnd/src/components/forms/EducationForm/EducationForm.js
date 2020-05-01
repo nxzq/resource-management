@@ -17,7 +17,7 @@ export default function EducationForm({ index, removeEducation, School, Location
                 <FormGroup className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                     <Label for="Degree">Degree</Label>
                     <Input required type="select" name="Degree" id="Degree" placeholder="Degree Obtained" value={Degree} onChange={(e) => { handleEducationChange(index, e) }} >
-                        <option value='' selected disabled>Please Select</option>
+                        <option value='' defaultValue disabled>Please Select</option>
                         <option>Associate</option>
                         <option>Bachelor</option>
                         <option>Master</option>
@@ -32,6 +32,7 @@ export default function EducationForm({ index, removeEducation, School, Location
                         name="GradDate"
                         id="GradDate"
                         value={GradDate}
+                        data-testid="educationDateInput"
                         placeholder="date placeholder"
                         onChange={(e) => { handleEducationChange(index, e) }}
                     />

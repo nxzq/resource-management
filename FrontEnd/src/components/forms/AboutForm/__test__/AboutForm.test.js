@@ -6,17 +6,13 @@ import AboutForm from '../AboutForm';
 
 afterEach(cleanup);
 
-describe('Test AboutForm', () => {
+it('matches snapshot', async () => {
+  const tree = renderer.create(<AboutForm />).toJSON()
+  expect(tree).toMatchSnapshot();
+});
 
-  it('matches snapshot', () => {
-    const tree = renderer.create(<AboutForm />).toJSON()
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<AboutForm />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
+it('renders without crashing', async () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<AboutForm />, div);
+  ReactDOM.unmountComponentAtNode(div);
 });

@@ -18,6 +18,7 @@ export default function CertificationForm({ index, removeCertification, CertName
                         name="CertDate"
                         id="CertDate"
                         value={CertDate}
+                        data-testid="certDateInput"
                         placeholder="date placeholder"
                         onChange={(e) => { handleCertificationChange(index, e) }}
                     />
