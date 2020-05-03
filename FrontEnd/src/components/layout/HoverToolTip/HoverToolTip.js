@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tooltip } from 'reactstrap';
 
-export default function HoverToolTip({ target, content, placement }) {
+export default React.memo(function HoverToolTip({ target, content, placement }) {
 
     const [tooltipOpen, setTooltipOpen] = useState(false);
     const toggle = () => setTooltipOpen(!tooltipOpen);
@@ -13,4 +13,4 @@ export default function HoverToolTip({ target, content, placement }) {
             </Tooltip>
         </div>
     );
-};
+});

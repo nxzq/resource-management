@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header({name}) {
+export default React.memo(function Header({name}) {
     return (
         <div>
             <hr />
@@ -8,4 +8,4 @@ export default function Header({name}) {
             <hr />
         </div>
     )
-};
+});

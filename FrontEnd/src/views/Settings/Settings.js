@@ -3,7 +3,7 @@ import { Container, FormGroup, CustomInput } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
 import { ThemeContext } from '../../theme/ThemeContext'
 
-export default function Settings() {
+export default React.memo(function Settings() {
 
     const { dark, toggleTheme } = useContext(ThemeContext);
     const page = useRef();
@@ -31,4 +31,4 @@ export default function Settings() {
             </Container>
         </div>
     );
-};
+});

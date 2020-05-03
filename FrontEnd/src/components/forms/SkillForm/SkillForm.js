@@ -3,9 +3,8 @@ import axios from 'axios';
 import Select from 'react-select';
 import { Label, FormGroup, Row } from 'reactstrap';
 
-export default function SkillForm({ skills, handleSkillsChange, test }) {
+export default React.memo(function SkillForm({ skills, handleSkillsChange, test }) {
 
-    console.log(skills)
     const [availSkills, setAvailSkills] = useState()
     const [selectedSkills, setSelectedSkills] = useState(skills !== undefined ? skills.map(s => ({ label: s, value: s })) : '' )
 
@@ -41,4 +40,4 @@ export default function SkillForm({ skills, handleSkillsChange, test }) {
             <hr />
         </div>
     )
-};
+});

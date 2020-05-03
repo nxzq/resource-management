@@ -235,4 +235,4 @@ class AddResource extends Component {
     }
 }
 
-export default AddResource;
+export default React.memo(AddResource);

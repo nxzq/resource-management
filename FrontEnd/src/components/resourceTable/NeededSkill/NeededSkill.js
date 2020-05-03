@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Badge, Button } from 'reactstrap';
 
-export default function NeededSkill({ skills, removeSkill }) {
+export default React.memo(function NeededSkill({ skills, removeSkill }) {
 
     const style = {
         minHeight: '15px',
@@ -26,4 +26,4 @@ export default function NeededSkill({ skills, removeSkill }) {
             {badges(skills)}
         </Row>
     )
-};
+});

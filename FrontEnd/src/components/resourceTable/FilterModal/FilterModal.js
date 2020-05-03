@@ -3,7 +3,7 @@ import axios from 'axios';
 import Select from 'react-select';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, FormGroup } from 'reactstrap';
 
-export default function FilterModal({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) {
+export default React.memo(function FilterModal({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) {
 
     const [availSkills, setAvailSkills] = useState()
     const [skillFilter, setSkillFilter] = useState([...neededSkills])
@@ -83,4 +83,4 @@ export default function FilterModal({ toggleSkillMatch, hideSkillMatch, notHidde
             </Modal>
         </div>
     );
-};
+});

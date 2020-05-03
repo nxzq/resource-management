@@ -2,7 +2,7 @@ import React from 'react';
 import { Label, Input, FormGroup } from 'reactstrap';
 
 
-export default function SummaryForm({ SummaryText, handleChange }) {
+export default React.memo(function SummaryForm({ SummaryText, handleChange }) {
     return (
         <div>
             <FormGroup>
@@ -12,4 +12,4 @@ export default function SummaryForm({ SummaryText, handleChange }) {
             <hr />
         </div>
     )
-};
+});

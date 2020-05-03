@@ -90,4 +90,4 @@ const NavBar = (props, { DarkTheme }) => {
   );
 }
 
-export default withRouter(NavBar);
+export default React.memo(withRouter(NavBar));

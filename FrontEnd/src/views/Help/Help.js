@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
 
-export default function Help() {
+export default React.memo(function Help() {
 
     return (
         <div>
@@ -23,4 +23,4 @@ export default function Help() {
             </Container>
         </div>
     );
-};
+});

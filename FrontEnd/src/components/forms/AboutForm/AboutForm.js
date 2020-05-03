@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row } from 'reactstrap';
 
-export default function AboutForm({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) {
+export default React.memo(function AboutForm({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) {
     return (
         <div>
             <Row>
@@ -52,4 +52,4 @@ export default function AboutForm({ FirstName, LastName, Role, Email, Phone, Lin
             <hr />
         </div>
     )
-};
+});

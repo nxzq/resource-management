@@ -2,7 +2,7 @@ import React from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
 
-export default function EducationForm({ index, removeEducation, School, Location, Degree, Major, Minor, GradDate, handleEducationChange }) {
+export default React.memo(function EducationForm({ index, removeEducation, School, Location, Degree, Major, Minor, GradDate, handleEducationChange }) {
     return (
         <div>
             <Row>
@@ -52,4 +52,4 @@ export default function EducationForm({ index, removeEducation, School, Location
             <hr />
         </div>
     )
-};
+});

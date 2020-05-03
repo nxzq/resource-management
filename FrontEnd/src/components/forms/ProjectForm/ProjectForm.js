@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-export default function ProjectForm({ index, removeProject, ProjName, ProjDate, ProjAssociation, ProjInfo, handleProjectChange }) {
+export default React.memo(function ProjectForm({ index, removeProject, ProjName, ProjDate, ProjAssociation, ProjInfo, handleProjectChange }) {
 
     var today = new Date();
 
@@ -31,4 +31,4 @@ export default function ProjectForm({ index, removeProject, ProjName, ProjDate, 
             <hr />
         </div>
     )
-};
+});

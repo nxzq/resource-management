@@ -264,4 +264,4 @@ class EditResource extends Component {
     }
 }
 
-export default EditResource;
+export default React.memo(EditResource);

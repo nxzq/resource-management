@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Label, Input, FormGroup, Row, Button } from 'reactstrap';
 
-export default function ExperienceForm({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange }) {
+export default React.memo(function ExperienceForm({ index, removeExperience, JobTitle, JobOrg, JobStartDate, JobEndDate, JobInfo, handleExperienceChange }) {
 
     const [currentPosition, setCurrentPostion] = useState( JobEndDate === '' ? true : false)
 
@@ -76,4 +76,4 @@ export default function ExperienceForm({ index, removeExperience, JobTitle, JobO
             <hr />
         </div>
     )
-};
+});

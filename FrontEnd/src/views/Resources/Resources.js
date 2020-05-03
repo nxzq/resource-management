@@ -8,7 +8,7 @@ import FilterModal from '../../components/resourceTable/FilterModal/FilterModal'
 import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal';
 import { FilterContext } from '../../contexts/FilterContext';
 
-export default function Resources() {
+export default React.memo(function Resources() {
 
   const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext);
   const [search, setSearch] = useState('');
@@ -43,7 +43,7 @@ export default function Resources() {
     if (page !== null) page.current.focus();
   }, [page])
 
-  const getSkillMatch = (skills) => {
+  const getSkillMatch = React.useCallback((skills) => {
     let count = 0
     if (skills !== undefined && neededSkills !== undefined) {
     let personalSkills = skills.map(function (value) {
@@ -61,23 +61,23 @@ export default function Resources() {
     if (neededSkills.length === 0) return 0
     else return num
     } else return 0
-  }
+  }, [neededSkills]);
 
-  const getMatchedSkills = (skills) => {
+  const getMatchedSkills = React.useCallback((skills) => {
     let personalSkills = skills.map(value => value)
     let jobSkills = neededSkills.map(value => value)
     let matched = jobSkills.filter(value => personalSkills.includes(value))
     matched = matched.join(', ')
     return matched
-  }
+  }, [neededSkills]);
 
-  const getUnmatchedSkills = (skills) => {
+  const getUnmatchedSkills = React.useCallback((skills) => {
     let personalSkills = skills.map(value => value)
     let jobSkills = neededSkills.map(value => value)
     let unmatched = jobSkills.filter(value => !personalSkills.includes(value))
     unmatched = unmatched.join(', ')
     return unmatched
-  }
+  }, [neededSkills]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
@@ -165,4 +165,4 @@ export default function Resources() {
       </Container>
     </div>
   );
-};
+});
