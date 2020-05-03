@@ -5,6 +5,7 @@ import { Label, FormGroup, Row } from 'reactstrap';
 
 export default function SkillForm({ skills, handleSkillsChange, test }) {
 
+    console.log(skills)
     const [availSkills, setAvailSkills] = useState()
     const [selectedSkills, setSelectedSkills] = useState(skills !== undefined ? skills.map(s => ({ label: s, value: s })) : '' )
 
@@ -34,7 +35,7 @@ export default function SkillForm({ skills, handleSkillsChange, test }) {
             <Row>
                 <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <Label for="skillsSelect">Skills</Label>
-                    <Select isMulti id="select-search" options={availSkills} name="skillsSelect" onChange={handleChange} value={selectedSkills} />
+                    <Select isMulti id="select-search" options={availSkills} name="skillsSelect" onChange={handleChange} value={selectedSkills} data-testid="skillSelect" />
                 </FormGroup>
             </Row>
             <hr />
