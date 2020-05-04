@@ -8,7 +8,7 @@ export default React.memo(function HoverToolTip({ target, content, placement }) 
 
     return (
         <div>
-            <Tooltip placement={placement} isOpen={tooltipOpen} target={target} toggle={toggle}>
+            <Tooltip placement={placement} isOpen={tooltipOpen} target={target} toggle={toggle} data-testid="HoverToolTip">
                 {content}
             </Tooltip>
         </div>

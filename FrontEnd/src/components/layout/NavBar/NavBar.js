@@ -68,7 +68,7 @@ const NavBar = (props, { DarkTheme }) => {
               <NavLink style={{ color: 'inherit' }} tag={Link} to="/resources" onClick={close}>Resources</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink style={{ color: 'inherit' }} id={helpRef} tag={Link} to="/help" onClick={close}>
+              <NavLink style={{ color: 'inherit' }} id={helpRef} tag={Link} to="/help" onClick={close} data-testid="helpNav">
                 <i className="fas fa-question-circle fa-lg"></i>
                 <span className="sr-only">Help</span>
               </NavLink>
@@ -76,7 +76,7 @@ const NavBar = (props, { DarkTheme }) => {
             {helpReady &&
             <HoverToolTip placement='bottom' target={helpRef.current} content='Help' />}
             <NavItem>
-              <NavLink style={{ color: 'inherit' }} id={settingsRef} tag={Link} to="/settings" onClick={close}>
+              <NavLink style={{ color: 'inherit' }} id={settingsRef} tag={Link} to="/settings" onClick={close} data-testid="settingsNav">
                 <i className="fas fa-cog fa-lg"></i>
                 <span className="sr-only">Settings</span>
                 </NavLink>

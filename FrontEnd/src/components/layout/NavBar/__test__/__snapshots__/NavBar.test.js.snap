@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test NavBar matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <div>
   <nav
     className="navbar navbar-expand-md navbar-light bg-faded"
@@ -68,6 +68,7 @@ exports[`Test NavBar matches snapshot 1`] = `
         >
           <a
             className="nav-link"
+            data-testod="helpNav"
             href="/help"
             id={
               Object {
@@ -96,6 +97,7 @@ exports[`Test NavBar matches snapshot 1`] = `
         >
           <a
             className="nav-link"
+            data-testod="settingsNav"
             href="/settings"
             id={
               Object {

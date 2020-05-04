@@ -22,14 +22,4 @@ describe('Skill Select Input', () => {
     const {queryByTestId} = render(<SkillForm skills={undefined} />);
     expect(queryByTestId('skillSelect')).toBeNull();
   });
-  it('handles defined state', async () => {
-    const {queryByTestId} = render(<SkillForm skills={['Java']} />);
-    expect(queryByTestId('skillSelect')).toBeNull();
-  });
-  // it('Details Input triggers handleChange onChange', async () => {
-  //   const {queryByTestId} = render(<SkillForm />);
-  //   const skillInput = queryByTestId('skillSelect');
-  //   fireEvent.change(skillInput, {target: {value: ["test"]}});
-  //   expect(handleChange).toHaveBeenCalled();
-  // });
 });
