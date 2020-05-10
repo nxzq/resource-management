@@ -36,49 +36,49 @@ class AddResource extends Component {
         submitted: false,
         resume: '',
         files: null
-    }
+    };
     
     handleResume = (e) => {
         let resume = e.target.value;
         let files = e.target.files;
         this.setState({ resume, files });
-    }
+    };
 
     handleCurrentPositionChange = (index, e) => {
         let currentPosition = this.state.currentPosition
         currentPosition[index] = !currentPosition[index]
         this.setState({ currentPosition })
-    }
+    };
 
     handleChange = (e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data[e.target.name] = e.target.value
         this.setState({ data })
-    }
+    };
 
     handleEducationChange = (index, e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Education[index][e.target.name] = e.target.value
         this.setState({ data })
-    }
+    };
 
     handleCertificationChange = (index, e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Certification[index][e.target.name] = e.target.value
         this.setState({ data })
-    }
+    };
 
     handleExperienceChange = (index, e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Experience[index][e.target.name] = e.target.value
         this.setState({ data })
-    }
+    };
 
     handleProjectChange = (index, e) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Project[index][e.target.name] = e.target.value
         this.setState({ data })
-    }
+    };
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -92,13 +92,13 @@ class AddResource extends Component {
                     axios.post(`resources/${res.data.Id}/resume`, formData);
                 }
             })
-    } 
+    };
 
     handleSkillsChange = (skills) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         data.Skills = skills
         this.setState({ data })
-    }
+    };
 
     handleAddEducation = () => {
         let data = JSON.parse(JSON.stringify(this.state.data))
@@ -113,14 +113,14 @@ class AddResource extends Component {
             }
         )
         this.setState({ data })
-    }
+    };
 
     handleRemoveEducation = (index) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         if (data.Education.length === 1 || data.Education.length === index) data.Education.pop()
         else data.Education = [...data.Education.slice(0, index), ...data.Education.slice(index + 1)]
         this.setState({ data })
-    }
+    };
 
     handleAddCertification = () => {
         let data = JSON.parse(JSON.stringify(this.state.data))
@@ -132,14 +132,14 @@ class AddResource extends Component {
             }
         )
         this.setState({ data })
-    }
+    };
 
     handleRemoveCertification = (index) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         if (data.Certification.length === 1 || data.Certification.length === index) data.Certification.pop()
         else data.Certification = [...data.Certification.slice(0, index), ...data.Certification.slice(index + 1)]
         this.setState({ data })
-    }
+    };
 
     handleAddExperience = () => {
         let data = JSON.parse(JSON.stringify(this.state.data))
@@ -153,14 +153,14 @@ class AddResource extends Component {
             }
         )
         this.setState({ data })
-    }
+    };
 
     handleRemoveExperience = (index) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         if (data.Experience.length === 1 || data.Experience.length === index) data.Experience.pop()
         else data.Experience = [...data.Experience.slice(0, index), ...data.Experience.slice(index + 1)]
         this.setState({ data })
-    }
+    };
     
     handleAddProject = () => {
         let data = JSON.parse(JSON.stringify(this.state.data))
@@ -173,14 +173,14 @@ class AddResource extends Component {
             }
         )
         this.setState({ data })
-    }
+    };
 
     handleRemoveProject = (index) => {
         let data = JSON.parse(JSON.stringify(this.state.data))
         if (data.Project.length === 1 || data.Project.length === index) data.Project.pop()
         else data.Project = [...data.Project.slice(0, index), ...data.Project.slice(index + 1)]
         this.setState({ data })
-    }
+    };
 
     render() {
         return this.state.submitted ? <Redirect to="/resources" /> : (
@@ -232,7 +232,7 @@ class AddResource extends Component {
                 </Container>
             </div>
         );
-    }
-}
+    };
+};
 
 export default React.memo(AddResource);

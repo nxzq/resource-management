@@ -4,8 +4,8 @@ import { Button, Row } from 'reactstrap';
 export default React.memo(function DynamicSectionHeader({ name, count, addForm}) {
     const AddFormButton = (count) => {
         while (count < 3) return <Button color="primary" className="section-header shadow-none" onClick={addForm}>
-            <i style={{ color: 'inherit' }} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add New {name}</Button>
-    }
+            <i style={{ color: 'inherit' }} className="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add New {name}</Button>;
+    };
     return (
         <div>
             <Row>
@@ -19,5 +19,5 @@ export default React.memo(function DynamicSectionHeader({ name, count, addForm})
             <hr />
             
         </div>
-    )
+    );
 });

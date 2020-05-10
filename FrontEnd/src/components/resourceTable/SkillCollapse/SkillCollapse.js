@@ -7,8 +7,8 @@ export default React.memo(function SkillPopOver({ matched, unmatched, content })
   const toggle = () => setIsOpen(!isOpen);
 
   const handleEnter = (e) => {
-    if (e.keyCode === 13) toggle()
-}
+    if (e.keyCode === 13) toggle();
+  };
   
   return (
     <div>

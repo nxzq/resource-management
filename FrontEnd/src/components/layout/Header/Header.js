@@ -7,5 +7,5 @@ export default React.memo(function Header({name}) {
             <h1 data-testid="header-name" className='text-center' >{name}</h1>
             <hr />
         </div>
-    )
+    );
 });

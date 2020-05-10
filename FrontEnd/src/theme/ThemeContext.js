@@ -12,17 +12,17 @@ export default function ThemeContextProvider(props) {
     const applyTheme = theme => {
         const root = document.getElementsByTagName('html')[0];
         root.style.cssText = theme.join(';');
-    }
+    };
 
     useLayoutEffect(() => {
         applyTheme(dark ? darkTheme : lightTheme);
         localStorage.setItem('Theme', JSON.stringify(dark));
-    }, [dark])
+    }, [dark]);
 
     return(
         <ThemeContext.Provider value={{ dark, toggleTheme }}>
             {props.children}
         </ThemeContext.Provider>
-    )
+    );
 
 }

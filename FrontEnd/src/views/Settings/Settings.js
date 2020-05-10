@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { Container, FormGroup, CustomInput } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
-import { ThemeContext } from '../../theme/ThemeContext'
+import { ThemeContext } from '../../theme/ThemeContext';
 
 export default React.memo(function Settings() {
 
@@ -9,12 +9,12 @@ export default React.memo(function Settings() {
     const page = useRef();
 
     const handleEnter = (e) => {
-        if (e.keyCode === 13) toggleTheme()
-    }
+        if (e.keyCode === 13) toggleTheme();
+    };
 
     useEffect(() => {
         if (page.current) {
-            page.current.focus()
+            page.current.focus();
         }
         // eslint-disable-next-line
     }, [page.current])

@@ -7,7 +7,7 @@ import SectionHeader from '../../components/layout/SectionHeader/SectionHeader';
 
 export default React.memo(function Profile(props) {
 
-    const [id] = useState(props.match.params.id)
+    const [id] = useState(props.match.params.id);
     const [tooltipOpen, setTooltipOpen] = useState(false);
     const toggle = () => setTooltipOpen(!tooltipOpen);
     const [resource, setResource] = useState(
@@ -28,23 +28,23 @@ export default React.memo(function Profile(props) {
             "Certification": [],
             "Skills": []
         }
-    )
+    );
 
     useEffect(() => {
         const { match: { params } } = props;
         axios.get(`resources/${params.id}`)
             .then(res => {
                 const resourceData = res.data;
-                setResource(resourceData)
+                setResource(resourceData);
             })
             .catch(error => {
-                console.log(error)
-            }) // eslint-disable-next-line
+                console.log(error);
+            }); // eslint-disable-next-line
     }, [])
 
     const Education = () => {
-        let Education = []
-        let width = resource.Education.length > 2 ? 4 : 6
+        let Education = [];
+        let width = resource.Education.length > 2 ? 4 : 6;
         for (let i = 0; i < resource.Education.length; i++) {
             Education = [...Education,
             <div key={Education.length} className={"col-md-" + width}>
@@ -58,14 +58,14 @@ export default React.memo(function Profile(props) {
                         <b>Minor:</b>&nbsp;{resource.Education[i].Minor}
                     </p> : null}
             </div>
-            ]
+            ];
         }
-        return resource.Education.length === 0 ? <div className="col-md-12"><p>None</p></div> : Education
-    }
+        return resource.Education.length === 0 ? <div className="col-md-12"><p>None</p></div> : Education;
+    };
 
     const Experience = () => {
-        let Experience = []
-        let width = resource.Experience.length > 2 ? 4 : 6
+        let Experience = [];
+        let width = resource.Experience.length > 2 ? 4 : 6;
         for (let i = 0; i < resource.Experience.length; i++) {
             Experience = [...Experience,
             <div key={Experience.length} className={"col-md-" + width}>
@@ -83,14 +83,14 @@ export default React.memo(function Profile(props) {
                     <p><b>Details:</b>&nbsp;{resource.Experience[i].JobInfo}</p>
                 }
             </div>
-            ]
+            ];
         }
-        return resource.Experience.length === 0 ? <div className="col-md-12"><p>None</p></div> : Experience
-    }
+        return resource.Experience.length === 0 ? <div className="col-md-12"><p>None</p></div> : Experience;
+    };
 
     const Project = () => {
-        let Project = []
-        let width = resource.Project.length > 2 ? 4 : 6
+        let Project = [];
+        let width = resource.Project.length > 2 ? 4 : 6;
         for (let i = 0; i < resource.Project.length; i++) {
             Project = [...Project,
             <div key={Project.length} className={"col-md-" + width}>
@@ -103,14 +103,14 @@ export default React.memo(function Profile(props) {
                     <p><b>Details:</b>&nbsp;{resource.Project[i].ProjInfo}</p>
                 }
             </div>
-            ]
+            ];
         }
-        return resource.Project.length === 0 ? <div className="col-md-12"><p>None</p></div> : Project
-    }
+        return resource.Project.length === 0 ? <div className="col-md-12"><p>None</p></div> : Project;
+    };
 
     const Certification = () => {
-        let Certification = []
-        let width = resource.Certification.length > 2 ? 4 : 6
+        let Certification = [];
+        let width = resource.Certification.length > 2 ? 4 : 6;
         for (let i = 0; i < resource.Certification.length; i++) {
             Certification = [...Certification,
             <div key={Certification.length} className={"col-md-" + width}>
@@ -118,16 +118,16 @@ export default React.memo(function Profile(props) {
                 <p><b>Certification Association:</b>&nbsp;{resource.Certification[i].CertAssociation}</p>
                 <p><b>Certification Date:</b>&nbsp;{resource.Certification[i].CertDate}</p>
             </div>
-            ]
+            ];
         }
-        return resource.Certification.length === 0 ? <div className="col-md-12"><p>None</p></div> : Certification
-    }
+        return resource.Certification.length === 0 ? <div className="col-md-12"><p>None</p></div> : Certification;
+    };
 
     const Skills = () => {
-        let skillList = resource.Skills.sort((a, b) => a.toLowerCase() !== b.toLowerCase() ? a.toLowerCase() > b.toLowerCase() ? 1 : -1 : 0)
+        let skillList = resource.Skills.sort((a, b) => a.toLowerCase() !== b.toLowerCase() ? a.toLowerCase() > b.toLowerCase() ? 1 : -1 : 0);
         return resource.Skills.length === 0 ? <div className="col-md-12"><p>None</p></div> :
-            <div className="col-md-12"><p><b>Skills:</b>&nbsp;{skillList.join(', ')}</p></div>
-    }
+            <div className="col-md-12"><p><b>Skills:</b>&nbsp;{skillList.join(', ')}</p></div>;
+    };
 
     return (
         <div>

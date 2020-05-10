@@ -3,31 +3,31 @@ import axios from 'axios';
 import Select from 'react-select';
 import { Label, FormGroup, Row } from 'reactstrap';
 
-export default React.memo(function SkillForm({ skills, handleSkillsChange, test }) {
+export default React.memo(function SkillForm({ skills, handleSkillsChange }) {
 
-    const [availSkills, setAvailSkills] = useState()
-    const [selectedSkills, setSelectedSkills] = useState(skills !== undefined ? skills.map(s => ({ label: s, value: s })) : '' )
+    const [availSkills, setAvailSkills] = useState();
+    const [selectedSkills, setSelectedSkills] = useState(skills !== undefined ? skills.map(s => ({ label: s, value: s })) : '' );
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/skills`)
           .then(res => {
-            const resourceData = res.data.Skills.map(s => ({ label: s, value: s }))
-            setAvailSkills(resourceData)
-          })
-      }, [])
+            const resourceData = res.data.Skills.map(s => ({ label: s, value: s }));
+            setAvailSkills(resourceData);
+          });
+      }, []);
 
     const handleChange = (selectedOption) => {
         if (selectedOption !== undefined && selectedOption !== null) {
-            setSelectedSkills([...selectedOption])
-            updateSkills(selectedOption)
+            setSelectedSkills([...selectedOption]);
+            updateSkills(selectedOption);
         }
         if (selectedOption === null) {
-            setSelectedSkills()
-            updateSkills(selectedOption)
+            setSelectedSkills();
+            updateSkills(selectedOption);
         }
     };
 
-    const updateSkills = (skills) => handleSkillsChange(skills ? skills.map(s => s.value) : [])
+    const updateSkills = (skills) => handleSkillsChange(skills ? skills.map(s => s.value) : []);
     
     return (
         <div>
@@ -39,5 +39,5 @@ export default React.memo(function SkillForm({ skills, handleSkillsChange, test 
             </Row>
             <hr />
         </div>
-    )
+    );
 });

@@ -11,5 +11,5 @@ export default React.memo(function SummaryForm({ SummaryText, handleChange }) {
             </FormGroup>
             <hr />
         </div>
-    )
+    );
 });

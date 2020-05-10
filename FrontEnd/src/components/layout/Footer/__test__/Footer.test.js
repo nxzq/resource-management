@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import Footer from '../Footer';
 
@@ -9,7 +9,7 @@ afterEach(cleanup);
 describe('Test Footer', () => {
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Footer />).toJSON()
+    const tree = renderer.create(<Footer />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

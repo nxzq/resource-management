@@ -2,11 +2,11 @@ import React, { useState, useContext, useEffect, useRef } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
 import HoverToolTip from '../HoverToolTip/HoverToolTip';
-import Logo from '../../../img/generic-logo.svg'
-import DarkThemeLogo from '../../../img/generic-logo-dark.svg'
+import Logo from '../../../img/generic-logo.svg';
+import DarkThemeLogo from '../../../img/generic-logo-dark.svg';
 import { ThemeContext } from '../../../theme/ThemeContext';
 
-const NavBar = (props, { DarkTheme }) => {
+const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [helpReady, setHelpReady] = useState(false);
   const [settingsReady, setSettingsReady] = useState(false);
@@ -17,36 +17,36 @@ const NavBar = (props, { DarkTheme }) => {
 
   const handleKeyDown = (e) => {
     if (e.shiftKey && e.which === 79) {
-      props.history.push('/')
+      props.history.push('/');
     } else if (e.shiftKey && e.which === 82) {
-      props.history.push('/resources')
+      props.history.push('/resources');
     } else if (e.shiftKey && e.which === 72) {
-      props.history.push('/help')
+      props.history.push('/help');
     } else if (e.shiftKey && e.which === 83) {
-      props.history.push('/settings')
+      props.history.push('/settings');
     }
-  }
+  };
 
   useEffect(() => {
     if (helpRef.current) {
-      setHelpReady(true)
+      setHelpReady(true);
     }
     // eslint-disable-next-line
   }, [helpRef.current])
 
   useEffect(() => {
     if (settingsRef.current) {
-      setSettingsReady(true)
+      setSettingsReady(true);
     }
     // eslint-disable-next-line
   }, [settingsRef.current])
 
-  const close = (e) => {
-    setIsOpen(false)
-  }
+  const close = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown)
+    document.addEventListener("keydown", handleKeyDown);
     // eslint-disable-next-line
   }, [])
 
@@ -88,6 +88,6 @@ const NavBar = (props, { DarkTheme }) => {
       </Navbar>
     </div>
   );
-}
+};
 
 export default React.memo(withRouter(NavBar));

@@ -51,5 +51,5 @@ export default React.memo(function AboutForm({ FirstName, LastName, Role, Email,
             </Row>
             <hr />
         </div>
-    )
+    );
 });
