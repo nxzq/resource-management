@@ -2,20 +2,6 @@
 
 React Application with lightweight Node.js and Express Back-End <br/> 
 
-
-### Theming <br/>
-<table width=100%>
- <td><img src="screenshots/light-theme.png"/></td>
- <td><img src="screenshots/dark-theme.png"/></td>
-</table>
-
-### Filtering <br/>
-<table width=100%> 
- <td><img src="screenshots/filter.png"/></td>
- <td><img src="screenshots/filter-view.png"/></td>
- <td><img src="screenshots/filter-view-expanded.png"/></td>
-</table>
-
 ### To Demo <br/>
 * BackEnd (http://localhost:5000): <br/>
 ```
