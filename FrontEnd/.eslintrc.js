@@ -3,7 +3,8 @@ module.exports = {
         commonjs: true,
         browser: true,
         es6: true,
-        jest: true
+        jest: true,
+        node: true
     },
     extends: [
         "eslint:recommended",
@@ -17,14 +18,29 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 11,
-        "sourceType": "module"
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "process": "readonly"
     },
     plugins: [
         "react"
     ],
     rules: {
         "react/prop-types": 0,
-        "semi": ['error', 'always'], 
+        "semi": ['error', 'always'],
+        "indent": [ 'error', 2 ],
+        "linebreak-style": [ 'error', 'unix' ],
+        "quotes": [ 'error', 'single' ],
+        "keyword-spacing": [ 'error' , {
+            "before": true,
+            "after": true
+        } ],
+        "object-curly-spacing": [ 'error', 'always' ],
+        "array-bracket-spacing": [ 'error', 'always' ]
+    },
+    settings: {
+        "react": {
+            "version": "detect"
+        }
     }
 };
