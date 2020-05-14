@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormText, Spinner } from 'reactstrap';
 
-const ResumeModal = ({ FirstName, LastName, id }) => {
+export default React.memo(function ResumeModal({ FirstName, LastName, id }) {
 
     const [data, setData] = useState('');
     const [modal, setModal] = useState(false);
     const [loader, setLoader] =useState(true);
     const toggle = () => {
-        setModal(!modal)
-        if (!modal) getResume()
+        setModal(!modal);
+        if (!modal) getResume();
     };
 
     const getResume = (() => {
@@ -27,12 +27,12 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
                 {type: 'application/pdf'});
             // Build a URL from the file
             const fileURL = URL.createObjectURL(file) + '#toolbar=0&navpanes=0';
-            setData(fileURL)
-            setLoader(false)
+            setData(fileURL);
+            setLoader(false);
         }).catch(error => {
-            setData('')
-            setLoader(false)
-        })
+            setData('');
+            setLoader(false);
+        });
       });
 
     const downloadResume = (() => {
@@ -41,7 +41,7 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             a.href = data;
             a.click();
             a.href = '#';
-    })
+    });
 
     return (
         <div>
@@ -77,6 +77,4 @@ const ResumeModal = ({ FirstName, LastName, id }) => {
             </Modal>
         </div>
     );
-}
-
-export default ResumeModal;
+});

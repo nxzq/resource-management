@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Input, FormGroup, Row } from 'reactstrap';
 
-const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) => {
+export default React.memo(function AboutForm({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) {
     return (
         <div>
             <Row>
@@ -16,7 +16,7 @@ const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, 
                 <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <Label for="Role">Role</Label>
                     <Input required type="select" name="Role" id="Role" placeholder="Title/Role" value={Role} onChange={handleChange} >
-                        <option value='' selected disabled hidden>Please Select</option>
+                        <option value='' defaultValue disabled hidden>Please Select</option>
                         <option>Business Analyst</option>
                         <option>Data Analyst</option>
                         <option>DevOps Engineer</option>
@@ -51,7 +51,5 @@ const AboutForm = ({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, 
             </Row>
             <hr />
         </div>
-    )
-}
-
-export default AboutForm
+    );
+});

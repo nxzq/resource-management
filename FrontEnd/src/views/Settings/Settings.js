@@ -1,23 +1,26 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { Container, FormGroup, CustomInput } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
-import { ThemeContext } from '../../theme/ThemeContext'
+import { ThemeContext } from '../../theme/ThemeContext';
 
-const Settings = () => {
+export default React.memo(function Settings() {
 
     const { dark, toggleTheme } = useContext(ThemeContext);
-    const page = useRef(null);
+    const page = useRef();
 
     const handleEnter = (e) => {
-        if (e.keyCode === 13) toggleTheme()
-    }
+        if (e.keyCode === 13) toggleTheme();
+    };
 
     useEffect(() => {
-        if (page !== null) page.current.focus();
-    }, [page])
+        if (page.current) {
+            page.current.focus();
+        }
+        // eslint-disable-next-line
+    }, [page.current])
 
     return (
-        <div tabIndex={-1} ref={page} class="page">
+        <div tabIndex={-1} ref={page} className="page">
             <Header name={'Settings'} />
             <Container>
                 <div>
@@ -28,6 +31,4 @@ const Settings = () => {
             </Container>
         </div>
     );
-}
-
-export default Settings;
+});

@@ -8,18 +8,18 @@ import FilterModal from '../../components/resourceTable/FilterModal/FilterModal'
 import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal';
 import { FilterContext } from '../../contexts/FilterContext';
 
-const Resources = () => {
+export default React.memo(function Resources() {
 
   const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext);
   const [search, setSearch] = useState('');
-  const [top] = useState(10)
-  const [skip] = useState(0)
+  const [top] = useState(10);
+  const [skip] = useState(0);
   // eslint-disable-next-line
-  const [count, setCount] = useState(null)
+  const [count, setCount] = useState(null);
   const hideShowSkillMatch = () => setShowSkillMatch(false);
   const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
-  const [data, setData] = useState([])
-  const page = useRef(null)
+  const [data, setData] = useState([]);
+  const page = useRef(null);
 
   useEffect(() => {
     axios.get(`resources/table`,
@@ -32,56 +32,56 @@ const Resources = () => {
     })
       .then(res => {
         const resourceData = res.data.results;
-        setData(resourceData)
+        setData(resourceData);
       })
       .catch(error => {
-          console.log(error)
-      })
-  }, [top, skip, search, neededSkills])
+          console.log(error);
+      });
+  }, [top, skip, search, neededSkills]);
 
   useEffect(() => {
     if (page !== null) page.current.focus();
-  }, [page])
+  }, [page]);
 
-  const getSkillMatch = (skills) => {
-    let count = 0
+  const getSkillMatch = React.useCallback((skills) => {
+    let count = 0;
     if (skills !== undefined && neededSkills !== undefined) {
     let personalSkills = skills.map(function (value) {
       return value;  
-    })
+    });
     let jobSkills = neededSkills.map(function (value) {
       return value;
-    })
+    });
     for (let i in personalSkills) {
       if (jobSkills.indexOf(personalSkills[i]) > -1) {
-        count++
+        count++;
       }
     }
-    let num = (Math.floor((count / jobSkills.length) * 100))
-    if (neededSkills.length === 0) return 0
-    else return num
-    } else return 0
-  }
+    let num = (Math.floor((count / jobSkills.length) * 100));
+    if (neededSkills.length === 0) return 0;
+    else return num;
+    } else return 0;
+  }, [neededSkills]);
 
-  const getMatchedSkills = (skills) => {
-    let personalSkills = skills.map(value => value)
-    let jobSkills = neededSkills.map(value => value)
-    let matched = jobSkills.filter(value => personalSkills.includes(value))
-    matched = matched.join(', ')
-    return matched
-  }
+  const getMatchedSkills = React.useCallback((skills) => {
+    let personalSkills = skills.map(value => value);
+    let jobSkills = neededSkills.map(value => value);
+    let matched = jobSkills.filter(value => personalSkills.includes(value));
+    matched = matched.join(', ');
+    return matched;
+  }, [neededSkills]);
 
-  const getUnmatchedSkills = (skills) => {
-    let personalSkills = skills.map(value => value)
-    let jobSkills = neededSkills.map(value => value)
-    let unmatched = jobSkills.filter(value => !personalSkills.includes(value))
-    unmatched = unmatched.join(', ')
-    return unmatched
-  }
+  const getUnmatchedSkills = React.useCallback((skills) => {
+    let personalSkills = skills.map(value => value);
+    let jobSkills = neededSkills.map(value => value);
+    let unmatched = jobSkills.filter(value => !personalSkills.includes(value));
+    unmatched = unmatched.join(', ');
+    return unmatched;
+  }, [neededSkills]);
 
   const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
+    setSearch(e.target.value);
+  };
 
   const tableData = 
     [...data].map((person) => (
@@ -105,7 +105,7 @@ const Resources = () => {
           <ResumeModal key={person.Id} FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
         </td>
       </tr>
-    ))
+    ));
 
   return (
     <div tabIndex={-1} ref={page} id="resourcePage">
@@ -165,6 +165,4 @@ const Resources = () => {
       </Container>
     </div>
   );
-}
-
-export default Resources;
+});

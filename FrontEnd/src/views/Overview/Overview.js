@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import Header from '../../components/layout/Header/Header';
 
-const Overview = () => {
+export default React.memo(function Overview() {
     return (
         <div>
             <Header name={'Overview'} />
@@ -13,6 +13,4 @@ const Overview = () => {
             </Container>
         </div>
     );
-}
-
-export default Overview;
+});

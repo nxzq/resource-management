@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Header = ({name}) => {
+export default React.memo(function Header({name}) {
     return (
         <div>
             <hr />
-            <h1 className='text-center' >{name}</h1>
+            <h1 data-testid="header-name" className='text-center' >{name}</h1>
             <hr />
         </div>
-        )
-    }
-    
-export default Header
+    );
+});

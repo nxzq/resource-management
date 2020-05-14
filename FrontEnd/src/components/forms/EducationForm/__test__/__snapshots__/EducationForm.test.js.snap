@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="School"
+      >
+        School
+      </label>
+      <input
+        className="form-control"
+        id="School"
+        name="School"
+        onChange={[Function]}
+        placeholder="Education/University"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="Location"
+      >
+        Location
+      </label>
+      <input
+        className="form-control"
+        id="Location"
+        name="Location"
+        onChange={[Function]}
+        placeholder="University Location"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="Degree"
+      >
+        Degree
+      </label>
+      <select
+        className="form-control"
+        id="Degree"
+        name="Degree"
+        onChange={[Function]}
+        placeholder="Degree Obtained"
+        required={true}
+      >
+        <option
+          defaultValue={true}
+          disabled={true}
+          value=""
+        >
+          Please Select
+        </option>
+        <option>
+          Associate
+        </option>
+        <option>
+          Bachelor
+        </option>
+        <option>
+          Master
+        </option>
+        <option>
+          PhD
+        </option>
+      </select>
+    </div>
+    <div
+      className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="GradDate"
+      >
+        Graduation Date
+      </label>
+      <input
+        className="form-control"
+        data-testid="educationDateInput"
+        id="GradDate"
+        name="GradDate"
+        onChange={[Function]}
+        placeholder="date placeholder"
+        required={true}
+        type="date"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="Major"
+      >
+        Major(s)
+      </label>
+      <input
+        className="form-control"
+        id="Major"
+        name="Major"
+        onChange={[Function]}
+        placeholder="Declared Major(s)"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+    >
+      <label
+        className=""
+        htmlFor="Minor"
+      >
+        Minor(s)
+      </label>
+      <input
+        className="form-control"
+        id="Minor"
+        name="Minor"
+        onChange={[Function]}
+        placeholder="Declared Minor(s)"
+        type="text"
+      />
+    </div>
+    <div
+      className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right form-group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-danger"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginTop": "32px",
+          }
+        }
+        type="button"
+      >
+        Remove Education
+      </button>
+    </div>
+  </div>
+  <hr />
+</div>
+`;

@@ -3,63 +3,63 @@ import axios from 'axios';
 import Select from 'react-select';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, FormGroup } from 'reactstrap';
 
-const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) => {
+export default React.memo(function FilterModal({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills, setNeededSkill }) {
 
-    const [availSkills, setAvailSkills] = useState()
-    const [skillFilter, setSkillFilter] = useState([...neededSkills])
-    const [selectedSkills, setSelectedSkills] = useState(neededSkills.map(s => ({ label: s, value: s })))
+    const [availSkills, setAvailSkills] = useState();
+    const [skillFilter, setSkillFilter] = useState([...neededSkills]);
+    const [selectedSkills, setSelectedSkills] = useState(neededSkills.map(s => ({ label: s, value: s })));
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/skills`)
           .then(res => {
-            const resourceData = res.data.Skills.map(s => ({ label: s, value: s }))
-            setAvailSkills(resourceData)
+            const resourceData = res.data.Skills.map(s => ({ label: s, value: s }));
+            setAvailSkills(resourceData);
         }).catch(error => {
-            console.log(error)
-        })
-    }, [])
+            console.log(error);
+        });
+    }, []);
     const handleChange = selectedOption => {
         if (selectedOption !== undefined && selectedOption !== null) {
-            let skills = selectedOption.map(s => s.value)
-            setSkillFilter([...skills])
-            setSelectedSkills(selectedOption)
+            let skills = selectedOption.map(s => s.value);
+            setSkillFilter([...skills]);
+            setSelectedSkills(selectedOption);
         } else {
-            setSkillFilter([])
-            setSelectedSkills([])
+            setSkillFilter([]);
+            setSelectedSkills([]);
         }
     };
     const handleFilter = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (skillFilter.length === 0) {
-            setNeededSkill(skillFilter)
-            hideSkillMatch()
-            toggle()
+            setNeededSkill(skillFilter);
+            hideSkillMatch();
+            toggle();
         }
         else if (notHidden === true) {
-            setNeededSkill(skillFilter)
-            toggle()
+            setNeededSkill(skillFilter);
+            toggle();
         }
         else {
-            setNeededSkill(skillFilter)
-            toggleSkillMatch()
-            toggle()
+            setNeededSkill(skillFilter);
+            toggleSkillMatch();
+            toggle();
         }
-    }
+    };
     const handleCancel = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (notHidden === true) {
-            hideSkillMatch()
-            setNeededSkill([])
-            setSkillFilter([])
-            setSelectedSkills([])
-            toggle()
+            hideSkillMatch();
+            setNeededSkill([]);
+            setSkillFilter([]);
+            setSelectedSkills([]);
+            toggle();
         } else {
-            setNeededSkill([])
-            setSkillFilter([])
-            setSelectedSkills([])
-            toggle()
+            setNeededSkill([]);
+            setSkillFilter([]);
+            setSelectedSkills([]);
+            toggle();
         }
-    }
+    };
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
@@ -83,6 +83,4 @@ const FilterModal = ({ toggleSkillMatch, hideSkillMatch, notHidden, neededSkills
             </Modal>
         </div>
     );
-}
-
-export default FilterModal;
+});
