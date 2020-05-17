@@ -1,93 +1,93 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
-import axios from '../../api/index';
-import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import Header from '../../components/layout/Header/Header';
-import SkillCollapse from '../../components/resourceTable/SkillCollapse/SkillCollapse';
-import FilterModal from '../../components/resourceTable/FilterModal/FilterModal';
-import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal';
-import { FilterContext } from '../../contexts/FilterContext';
+import React, { useState, useEffect, useContext, useRef } from 'react'
+import axios from '../../api/index'
+import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import Header from '../../components/layout/Header/Header'
+import SkillCollapse from '../../components/resourceTable/SkillCollapse/SkillCollapse'
+import FilterModal from '../../components/resourceTable/FilterModal/FilterModal'
+import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal'
+import { FilterContext } from '../../contexts/FilterContext'
 
 export default React.memo(function Resources() {
 
-  const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext);
-  const [search, setSearch] = useState('');
-  const [top] = useState(10);
-  const [skip] = useState(0);
+  const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext)
+  const [ search, setSearch ] = useState('')
+  const [ top ] = useState(10)
+  const [ skip ] = useState(0)
   // eslint-disable-next-line
   const [count, setCount] = useState(null);
-  const hideShowSkillMatch = () => setShowSkillMatch(false);
-  const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch);
-  const [data, setData] = useState([]);
-  const page = useRef(null);
+  const hideShowSkillMatch = () => setShowSkillMatch(false)
+  const toggleShowSkillMatch = () => setShowSkillMatch(!showSkillMatch)
+  const [ data, setData ] = useState([])
+  const page = useRef(null)
 
   useEffect(() => {
-    axios.get(`resources/table`,
-    {params: {
-      top: top,
-      skip: skip,
-      search: search,
-      skills: neededSkills.join()
-    }
-    })
+    axios.get('resources/table',
+      { params: {
+        top: top,
+        skip: skip,
+        search: search,
+        skills: neededSkills.join()
+      }
+      })
       .then(res => {
-        const resourceData = res.data.results;
-        setData(resourceData);
+        const resourceData = res.data.results
+        setData(resourceData)
       })
       .catch(error => {
-          console.log(error);
-      });
-  }, [top, skip, search, neededSkills]);
+        console.log(error)
+      })
+  }, [ top, skip, search, neededSkills ])
 
   useEffect(() => {
-    if (page !== null) page.current.focus();
-  }, [page]);
+    if (page !== null) page.current.focus()
+  }, [ page ])
 
   const getSkillMatch = React.useCallback((skills) => {
-    let count = 0;
+    let count = 0
     if (skills !== undefined && neededSkills !== undefined) {
-    let personalSkills = skills.map(function (value) {
-      return value;  
-    });
-    let jobSkills = neededSkills.map(function (value) {
-      return value;
-    });
-    for (let i in personalSkills) {
-      if (jobSkills.indexOf(personalSkills[i]) > -1) {
-        count++;
+      let personalSkills = skills.map(function (value) {
+        return value  
+      })
+      let jobSkills = neededSkills.map(function (value) {
+        return value
+      })
+      for (let i in personalSkills) {
+        if (jobSkills.indexOf(personalSkills[i]) > -1) {
+          count++
+        }
       }
-    }
-    let num = (Math.floor((count / jobSkills.length) * 100));
-    if (neededSkills.length === 0) return 0;
-    else return num;
-    } else return 0;
-  }, [neededSkills]);
+      let num = (Math.floor((count / jobSkills.length) * 100))
+      if (neededSkills.length === 0) return 0
+      else return num
+    } else return 0
+  }, [ neededSkills ])
 
   const getMatchedSkills = React.useCallback((skills) => {
-    let personalSkills = skills.map(value => value);
-    let jobSkills = neededSkills.map(value => value);
-    let matched = jobSkills.filter(value => personalSkills.includes(value));
-    matched = matched.join(', ');
-    return matched;
-  }, [neededSkills]);
+    let personalSkills = skills.map(value => value)
+    let jobSkills = neededSkills.map(value => value)
+    let matched = jobSkills.filter(value => personalSkills.includes(value))
+    matched = matched.join(', ')
+    return matched
+  }, [ neededSkills ])
 
   const getUnmatchedSkills = React.useCallback((skills) => {
-    let personalSkills = skills.map(value => value);
-    let jobSkills = neededSkills.map(value => value);
-    let unmatched = jobSkills.filter(value => !personalSkills.includes(value));
-    unmatched = unmatched.join(', ');
-    return unmatched;
-  }, [neededSkills]);
+    let personalSkills = skills.map(value => value)
+    let jobSkills = neededSkills.map(value => value)
+    let unmatched = jobSkills.filter(value => !personalSkills.includes(value))
+    unmatched = unmatched.join(', ')
+    return unmatched
+  }, [ neededSkills ])
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
+    setSearch(e.target.value)
+  }
 
   const tableData = 
-    [...data].map((person) => (
+    [ ...data ].map((person) => (
       <tr key={person.Id}>
         <td>
-          <Link style={{ textDecoration: 'none' }} className="table-data" to={"/profile/" + person.Id}>
+          <Link style={{ textDecoration: 'none' }} className="table-data" to={'/profile/' + person.Id}>
             {person.FirstName + ' ' + person.LastName}
           </Link>
         </td>
@@ -105,7 +105,7 @@ export default React.memo(function Resources() {
           <ResumeModal key={person.Id} FirstName={person.FirstName} LastName={person.LastName} id={person.Id} />
         </td>
       </tr>
-    ));
+    ))
 
   return (
     <div tabIndex={-1} ref={page} id="resourcePage">
@@ -164,5 +164,5 @@ export default React.memo(function Resources() {
         </Row>
       </Container>
     </div>
-  );
-});
+  )
+})

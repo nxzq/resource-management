@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { render, cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import Profile from '../Profile';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+import { render, cleanup } from '@testing-library/react'
+import renderer from 'react-test-renderer'
+import Profile from '../Profile'
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 describe('Test Profile', () => {
 
@@ -15,16 +15,16 @@ describe('Test Profile', () => {
         <Route path='/profile/:id' component={Profile} />
       </BrowserRouter>
     ).toJSON()
-    expect(tree).toMatchSnapshot();
-  });
+    expect(tree).toMatchSnapshot()
+  })
 
   it('renders without crashing', () => {
-    const div = document.createElement('div');
+    const div = document.createElement('div')
     ReactDOM.render(
       <BrowserRouter>
         <Route path='/profile/:id' component={Profile} />
-      </BrowserRouter>, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
+      </BrowserRouter>, div)
+    ReactDOM.unmountComponentAtNode(div)
+  })
 
-});
+})

@@ -18,11 +18,52 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
+    "lint": "./node_modules/.bin/eslint \"src/**/*.js\"",
+    "lint:fix": "./node_modules/.bin/eslint --fix \"src/**/*.js\"",
     "coverage": "react-scripts test --coverage --watch-all=false --env=jsdom --testResultsProcessor=./node_modules/jest-html-reporter"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018
+    },
+    "rules": {
+      "react/prop-types": 0,
+      "semi": [
+        "error",
+        "never"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "keyword-spacing": [
+        "error",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "array-bracket-spacing": [
+        "error",
+        "always"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -40,7 +81,8 @@
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.4",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.6.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.20.2",

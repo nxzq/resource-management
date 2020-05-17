@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { render, cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import Settings from '../Settings';
-import ThemeContextProvider from '../../../theme/ThemeContext';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+import { render, cleanup } from '@testing-library/react'
+import renderer from 'react-test-renderer'
+import Settings from '../Settings'
+import ThemeContextProvider from '../../../theme/ThemeContext'
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 describe('Test Settings', () => {
 
@@ -16,18 +16,18 @@ describe('Test Settings', () => {
         <Settings />
       </ThemeContextProvider>
     ).toJSON()
-    expect(tree).toMatchSnapshot();
-  });
+    expect(tree).toMatchSnapshot()
+  })
 
   it('renders without crashing', () => {
-    const div = document.createElement('div');
+    const div = document.createElement('div')
     ReactDOM.render(
       <ThemeContextProvider dark={true}>
         <BrowserRouter>
           <Settings />
         </BrowserRouter>
-      </ThemeContextProvider>, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
+      </ThemeContextProvider>, div)
+    ReactDOM.unmountComponentAtNode(div)
+  })
 
-});
+})
