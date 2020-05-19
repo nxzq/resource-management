@@ -18,8 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint \"src/**/*.js\"",
-    "lint:fix": "./node_modules/.bin/eslint --fix \"src/**/*.js\"",
+    "lint": "./node_modules/.bin/eslint \"src/**/*.js\" || exit 0",
+    "lint:fix": "./node_modules/.bin/eslint --fix \"src/**/*.js\" || exit 0",
     "coverage": "react-scripts test --coverage --watch-all=false --env=jsdom --testResultsProcessor=./node_modules/jest-html-reporter"
   },
   "eslintConfig": {
