@@ -4,12 +4,16 @@ import './styles/index.css'
 import App from './app/App'
 import * as serviceWorker from './utils/serviceWorker'
 import ThemeContextProvider from './theme/ThemeContext'
+import FilterContextProvider from './contexts/FilterContext'
 import './theme/theme.css'
 
 ReactDOM.render(
   <ThemeContextProvider>
+    <FilterContextProvider>
     <App />
+    </FilterContextProvider>
   </ThemeContextProvider>
+  
   , document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change

@@ -166,3 +166,13 @@ export default React.memo(function Resources() {
     </div>
   )
 })
+
+// export default React.memo(function Component() {
+
+//   return(
+//     <FilterContextProvider>
+//       <Resources />
+//     </FilterContextProvider>
+//   )
+
+// })
