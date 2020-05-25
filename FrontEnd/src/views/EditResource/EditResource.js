@@ -37,7 +37,8 @@ class EditResource extends Component {
       submitted: false,
       existingResume: false,
       resume: '',
-      Loading: true
+      loading: true,
+      notFound: false
     };
     
     componentDidMount() {
@@ -46,7 +47,10 @@ class EditResource extends Component {
         .then(res => {
           const resourceData = res.data
           this.setState({ data: resourceData })
-          this.setState({ Loading: false })
+          this.setState({ loading: false })
+        }).catch(err => {
+          console.log(err)
+          this.setState({ notFound: true })
         })
       axios.head(`resources/${params.id}/resume`)
         .then(res => {
@@ -199,66 +203,78 @@ class EditResource extends Component {
     render() {
       return this.state.submitted ? <Redirect to="/resources" /> : (
         <div>
-          <Header name={'Edit Resource Form'} />
-          {this.state.Loading ? <div className="text-center"><Spinner color="primary" /></div> :
-            <Container className="ResourceForm">
-              <Form onSubmit={this.handleSubmit}>
-                <SectionHeader name="About" />
-                <AboutForm handleChange={this.handleChange} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} Role={this.state.data.Role}
-                  Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
-                  GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
-                <SectionHeader name="Resume" />
-                <ResumeUpload resume={this.state.resume} handleResume={this.handleResume} existingResume={this.state.existingResume}
-                  id={this.state.data.Id} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} />
-                <SectionHeader name="Summary" />
-                <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
-                <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
-                {this.state.data.Education.map((element, index) =>
-                  <EducationForm key={index} index={index} 
-                    removeEducation={this.handleRemoveEducation} handleEducationChange={this.handleEducationChange}
-                    School={element.School} Location={element.Location} Degree={element.Degree} 
-                    Major={element.Major} Minor={element.Minor} GradDate={element.GradDate} />
-                )}
-                <DynamicSectionHeader name="Certifications" count={this.state.data.Certification.length} addForm={this.handleAddCertification} />
-                {this.state.data.Certification.map((element, index) =>
-                  <CertificationForm key={index} index={index} 
-                    removeCertification={this.handleRemoveCertification} handleCertificationChange={this.handleCertificationChange}
-                    CertName={element.CertName} CertDate={element.CertDate} CertAssociation={element.CertAssociation} />
-                )}
-                <DynamicSectionHeader name="Experience" count={this.state.data.Experience.length} addForm={this.handleAddExperience} />
-                {this.state.data.Experience.map((element, index) =>
-                  <ExperienceForm key={index} index={index} 
-                    removeExperience={this.handleRemoveExperience} handleExperienceChange={this.handleExperienceChange}
-                    JobTitle={element.JobTitle} JobOrg={element.JobOrg} JobStartDate={element.JobStartDate} 
-                    JobEndDate={element.JobEndDate} JobInfo={element.JobInfo} />
-                )}
-                <DynamicSectionHeader name="Projects" count={this.state.data.Project.length} addForm={this.handleAddProject} />
-                {this.state.data.Project.map((element, index) =>
-                  <ProjectForm key={index} index={index} 
-                    removeProject={this.handleRemoveProject} handleProjectChange={this.handleProjectChange}
-                    ProjName={element.ProjName} ProjDate={element.ProjDate} 
-                    ProjAssociation={element.ProjAssociation} ProjInfo={element.ProjInfo} />
-                )}
-                <SectionHeader name="Skills" />
-                <SkillForm skills={this.state.data.Skills} handleSkillsChange={this.handleSkillsChange} />
-                <Row>
-                  <Col md="6">
-                    <div>
-                      <Link style={{ textDecoration: 'none' }} to={'/profile/' + this.state.data.Id}>
-                        <Button className="btn-block">Cancel</Button>
-                      </Link>
-                    </div>
-                  </Col>
-                  <Col md="6">
-                    <div>
-                      {' '}
-                      <Button type="submit" className="blue-button btn-block" color="primary">Submit Form</Button>
-                    </div>
-                  </Col>
-                </Row>
-              </Form>
+          { this.state.notFound ?
+          <div>
+            <Container>
+              <div>
+                <h2>404 Resource Not Found</h2>
+                <Link to="/resources">Return to Resources</Link>
+              </div>
             </Container>
-          }
+          </div>
+          :
+          <div>
+            <Header name={'Edit Resource Form'} />
+            {this.state.loading ? <div className="text-center"><Spinner color="primary" /></div> :
+              <Container className="ResourceForm">
+                <Form onSubmit={this.handleSubmit}>
+                  <SectionHeader name="About" />
+                  <AboutForm handleChange={this.handleChange} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} Role={this.state.data.Role}
+                    Email={this.state.data.Email} Phone={this.state.data.Phone} LinkedIn={this.state.data.LinkedIn} 
+                    GitHub={this.state.data.GitHub} PersonalSite={this.state.data.PersonalSite} />
+                  <SectionHeader name="Resume" />
+                  <ResumeUpload resume={this.state.resume} handleResume={this.handleResume} existingResume={this.state.existingResume}
+                    id={this.state.data.Id} FirstName={this.state.data.FirstName} LastName={this.state.data.LastName} />
+                  <SectionHeader name="Summary" />
+                  <SummaryForm handleChange={this.handleChange} SummaryText={this.state.data.SummaryText} />
+                  <DynamicSectionHeader name="Education" count={this.state.data.Education.length} addForm={this.handleAddEducation} />
+                  {this.state.data.Education.map((element, index) =>
+                    <EducationForm key={index} index={index} 
+                      removeEducation={this.handleRemoveEducation} handleEducationChange={this.handleEducationChange}
+                      School={element.School} Location={element.Location} Degree={element.Degree} 
+                      Major={element.Major} Minor={element.Minor} GradDate={element.GradDate} />
+                  )}
+                  <DynamicSectionHeader name="Certifications" count={this.state.data.Certification.length} addForm={this.handleAddCertification} />
+                  {this.state.data.Certification.map((element, index) =>
+                    <CertificationForm key={index} index={index} 
+                      removeCertification={this.handleRemoveCertification} handleCertificationChange={this.handleCertificationChange}
+                      CertName={element.CertName} CertDate={element.CertDate} CertAssociation={element.CertAssociation} />
+                  )}
+                  <DynamicSectionHeader name="Experience" count={this.state.data.Experience.length} addForm={this.handleAddExperience} />
+                  {this.state.data.Experience.map((element, index) =>
+                    <ExperienceForm key={index} index={index} 
+                      removeExperience={this.handleRemoveExperience} handleExperienceChange={this.handleExperienceChange}
+                      JobTitle={element.JobTitle} JobOrg={element.JobOrg} JobStartDate={element.JobStartDate} 
+                      JobEndDate={element.JobEndDate} JobInfo={element.JobInfo} />
+                  )}
+                  <DynamicSectionHeader name="Projects" count={this.state.data.Project.length} addForm={this.handleAddProject} />
+                  {this.state.data.Project.map((element, index) =>
+                    <ProjectForm key={index} index={index} 
+                      removeProject={this.handleRemoveProject} handleProjectChange={this.handleProjectChange}
+                      ProjName={element.ProjName} ProjDate={element.ProjDate} 
+                      ProjAssociation={element.ProjAssociation} ProjInfo={element.ProjInfo} />
+                  )}
+                  <SectionHeader name="Skills" />
+                  <SkillForm skills={this.state.data.Skills} handleSkillsChange={this.handleSkillsChange} />
+                  <Row>
+                    <Col md="6">
+                      <div>
+                        <Link style={{ textDecoration: 'none' }} to={'/profile/' + this.state.data.Id}>
+                          <Button className="btn-block">Cancel</Button>
+                        </Link>
+                      </div>
+                    </Col>
+                    <Col md="6">
+                      <div>
+                        {' '}
+                        <Button type="submit" className="blue-button btn-block" color="primary">Submit Form</Button>
+                      </div>
+                    </Col>
+                  </Row>
+                </Form>
+              </Container>
+            }
+          </div>}
         </div>
       )
     };

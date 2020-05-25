@@ -8,6 +8,7 @@ import SectionHeader from '../../components/layout/SectionHeader/SectionHeader'
 export default React.memo(function Profile(props) {
 
   const [ id ] = useState(props.match.params.id)
+  const [ notFound, setNotFound ] = useState(false)
   const [ tooltipOpen, setTooltipOpen ] = useState(false)
   const toggle = () => setTooltipOpen(!tooltipOpen)
   const [ resource, setResource ] = useState(
@@ -39,6 +40,7 @@ export default React.memo(function Profile(props) {
       })
       .catch(error => {
         console.log(error)
+        setNotFound(true)
       }) // eslint-disable-next-line
     }, [])
 
@@ -131,93 +133,105 @@ export default React.memo(function Profile(props) {
 
   return (
     <div>
-      {resource.Id === null ? <div className="text-center"><Spinner color="primary" /></div> :
-        <div>
-          <Header name={
-            <div>
-              {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;
-              <Link style={{ textDecoration: 'none' }} to={'/editresource/' + id}>
-                <i id="edit" className="fas fa-edit"></i>
-              </Link>
-              <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>
-                                Edit Profile
-              </Tooltip>
-            </div>
-          } />
-          <Container>
-            <Row>
-              <p className="col-md-6">
-                <b>Role:</b>&nbsp;{resource.Role}
-              </p>
-              <p className="col-md-6">
-                <b>Email:</b>&nbsp;<a style={{ textDecoration: 'none' }} className="profileLink" href='mailto: {resource.Email}'>{resource.Email}</a>
-              </p>
-              <p className="col-md-6">
-                <b>Phone:</b>&nbsp;{resource.Phone.length === 10 ?
-                  `(${resource.Phone.substring(0, resource.Phone.length - 7)})-${resource.Phone.substring(resource.Phone.length - 7, resource.Phone.length - 4)}-${resource.Phone.substring(resource.Phone.length - 4, resource.Phone.length)}`
-                  : `+${resource.Phone.substring(0, resource.Phone.length - 10)} (${resource.Phone.substring(resource.Phone.length - 10, resource.Phone.length - 7)})-${resource.Phone.substring(resource.Phone.length - 7, resource.Phone.length - 4)}-${resource.Phone.substring(resource.Phone.length - 4, resource.Phone.length)}`
-                }
-              </p>
-              {resource.LinkedIn !== '' ?
+      { notFound ?
+      <div>
+        <Container>
+          <div>
+            <h2>404 Profile Not Found</h2>
+            <Link to="/resources">Return to Resources</Link>
+          </div>
+        </Container>
+      </div>
+      :
+      <div>
+        {resource.Id === null ? <div className="text-center"><Spinner color="primary" /></div> :
+          <div>
+            <Header name={
+              <div>
+                {resource.FirstName}&nbsp;{resource.LastName}&nbsp;&nbsp;
+                <Link style={{ textDecoration: 'none' }} to={'/editresource/' + id}>
+                  <i id="edit" className="fas fa-edit"></i>
+                </Link>
+                <Tooltip placement="right" isOpen={tooltipOpen} target="edit" toggle={toggle}>
+                                  Edit Profile
+                </Tooltip>
+              </div>
+            } />
+            <Container>
+              <Row>
                 <p className="col-md-6">
-                  <b>LinkedIn:</b>&nbsp;<a className="profileLink" href={resource.LinkedIn} target="_blank" rel="noopener noreferrer">{resource.LinkedIn}</a>
-                </p> : null}
-              {resource.GitHub !== '' ?
+                  <b>Role:</b>&nbsp;{resource.Role}
+                </p>
                 <p className="col-md-6">
-                  <b>GitHub:</b>&nbsp;<a className="profileLink" href={resource.GitHub} target="_blank" rel="noopener noreferrer">{resource.GitHub}</a>
-                </p> : null}
-              {resource.PersonalSite !== '' ?
+                  <b>Email:</b>&nbsp;<a style={{ textDecoration: 'none' }} className="profileLink" href='mailto: {resource.Email}'>{resource.Email}</a>
+                </p>
                 <p className="col-md-6">
-                  <b>Personal Site:</b>&nbsp;<a className="profileLink" href={resource.PersonalSite} target="_blank" rel="noopener noreferrer">{resource.PersonalSite}</a>
-                </p> : null}
-              {resource.SummaryText !== '' ?
-                <p className="col-md-12">
-                  <b>Summary:</b>&nbsp;{resource.SummaryText}
-                </p> : null}
-            </Row>
-            <br />
-            <Row>
-              <SectionHeader name={'Education'} />
-            </Row>
-            <Row>
-              {Education()}
-            </Row>
-            <br />
-            <Row>
-              <SectionHeader name={'Experience'} />
-            </Row>
-            <Row>
-              {Experience()}
-            </Row>
-            <br />
-            <Row>
-              <SectionHeader name={'Projects'} />
-            </Row>
-            <Row>
-              {Project()}
-            </Row>
-            <br />
-            <Row>
-              <SectionHeader name={'Certifications'} />
-            </Row>
-            <Row>
-              {Certification()}
-            </Row>
-            <br />
-            <Row>
-              <SectionHeader name={'Skills'} />
-            </Row>
-            <Row>
-              {Skills()}
-            </Row>
-            <Row>
-              <Link className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right" style={{ textDecoration: 'none' }} to="/resources">
-                <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button shadow-none" color="primary">Return To Resources</Button>
-              </Link>
-            </Row>
-          </Container>
-        </div>
-      }
+                  <b>Phone:</b>&nbsp;{resource.Phone.length === 10 ?
+                    `(${resource.Phone.substring(0, resource.Phone.length - 7)})-${resource.Phone.substring(resource.Phone.length - 7, resource.Phone.length - 4)}-${resource.Phone.substring(resource.Phone.length - 4, resource.Phone.length)}`
+                    : `+${resource.Phone.substring(0, resource.Phone.length - 10)} (${resource.Phone.substring(resource.Phone.length - 10, resource.Phone.length - 7)})-${resource.Phone.substring(resource.Phone.length - 7, resource.Phone.length - 4)}-${resource.Phone.substring(resource.Phone.length - 4, resource.Phone.length)}`
+                  }
+                </p>
+                {resource.LinkedIn !== '' ?
+                  <p className="col-md-6">
+                    <b>LinkedIn:</b>&nbsp;<a className="profileLink" href={resource.LinkedIn} target="_blank" rel="noopener noreferrer">{resource.LinkedIn}</a>
+                  </p> : null}
+                {resource.GitHub !== '' ?
+                  <p className="col-md-6">
+                    <b>GitHub:</b>&nbsp;<a className="profileLink" href={resource.GitHub} target="_blank" rel="noopener noreferrer">{resource.GitHub}</a>
+                  </p> : null}
+                {resource.PersonalSite !== '' ?
+                  <p className="col-md-6">
+                    <b>Personal Site:</b>&nbsp;<a className="profileLink" href={resource.PersonalSite} target="_blank" rel="noopener noreferrer">{resource.PersonalSite}</a>
+                  </p> : null}
+                {resource.SummaryText !== '' ?
+                  <p className="col-md-12">
+                    <b>Summary:</b>&nbsp;{resource.SummaryText}
+                  </p> : null}
+              </Row>
+              <br />
+              <Row>
+                <SectionHeader name={'Education'} />
+              </Row>
+              <Row>
+                {Education()}
+              </Row>
+              <br />
+              <Row>
+                <SectionHeader name={'Experience'} />
+              </Row>
+              <Row>
+                {Experience()}
+              </Row>
+              <br />
+              <Row>
+                <SectionHeader name={'Projects'} />
+              </Row>
+              <Row>
+                {Project()}
+              </Row>
+              <br />
+              <Row>
+                <SectionHeader name={'Certifications'} />
+              </Row>
+              <Row>
+                {Certification()}
+              </Row>
+              <br />
+              <Row>
+                <SectionHeader name={'Skills'} />
+              </Row>
+              <Row>
+                {Skills()}
+              </Row>
+              <Row>
+                <Link className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right" style={{ textDecoration: 'none' }} to="/resources">
+                  <Button style={{ height: '50px', textDecoration: 'none', marginTop: '5px', marginBottom: '5px' }} className="blue-button shadow-none" color="primary">Return To Resources</Button>
+                </Link>
+              </Row>
+            </Container>
+          </div>
+        }
+      </div>}
     </div>
   )
 })

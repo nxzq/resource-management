@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from 'reactstrap'
 
-export default React.memo(function Help() {
+export default React.memo(function PageNotFound() {
 
   return (
     <div>
