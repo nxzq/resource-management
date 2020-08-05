@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 import HoverToolTip from '../HoverToolTip/HoverToolTip'
 import Logo from '../../../img/generic-logo.svg'
 import DarkThemeLogo from '../../../img/generic-logo-dark.svg'
-import { ThemeContext } from '../../../theme/ThemeContext'
+import { ThemeContext } from '../../../contexts/theme/ThemeContext'
 
 const NavBar = (props) => {
   const [ isOpen, setIsOpen ] = useState(false)

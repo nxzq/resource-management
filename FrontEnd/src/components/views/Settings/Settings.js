@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { Container, FormGroup, CustomInput } from 'reactstrap'
 import Header from '../../layout/Header/Header'
-import { ThemeContext } from '../../../theme/ThemeContext'
+import { ThemeContext } from '../../../contexts/theme/ThemeContext'
 
 export default function Settings() {
 

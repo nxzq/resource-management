@@ -6,7 +6,7 @@ import Header from '../../layout/Header/Header'
 import SkillCollapse from '../../resourceTable/SkillCollapse/SkillCollapse'
 import FilterModal from '../../resourceTable/FilterModal/FilterModal'
 import ResumeModal from '../../resourceTable/ResumeModal/ResumeModal'
-import { FilterContext } from '../../../contexts/FilterContext'
+import { FilterContext } from '../../../contexts/FilterContext/FilterContext'
 
 export default function Resources() {
 

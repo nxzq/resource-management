@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import './styles/index.css'
 import App from './app/App'
 import * as serviceWorker from './utils/serviceWorker'
-import ThemeContextProvider from './theme/ThemeContext'
-import FilterContextProvider from './contexts/FilterContext'
-import './theme/theme.css'
+import ThemeContextProvider from './contexts/theme/ThemeContext'
+import FilterContextProvider from './contexts/FilterContext/FilterContext'
+import './contexts/theme/theme.css'
 
 ReactDOM.render(
   <ThemeContextProvider>
