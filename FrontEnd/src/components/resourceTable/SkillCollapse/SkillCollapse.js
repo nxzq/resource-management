@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Collapse, Card, CardBody, CardHeader } from 'reactstrap';
+import React, { useState } from 'react'
+import { Collapse, Card, CardBody, CardHeader } from 'reactstrap'
 
 export default React.memo(function SkillPopOver({ matched, unmatched, content }) {
 
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const [ isOpen, setIsOpen ] = useState(false)
+  const toggle = () => setIsOpen(!isOpen)
 
   const handleEnter = (e) => {
-    if (e.keyCode === 13) toggle();
-  };
+    if (e.keyCode === 13) toggle()
+  }
   
   return (
     <div>
@@ -25,5 +25,5 @@ export default React.memo(function SkillPopOver({ matched, unmatched, content })
         </Card>
       </Collapse>
     </div>
-  );
-});
+  )
+})
