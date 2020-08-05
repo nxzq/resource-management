@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { Container, FormGroup, CustomInput } from 'reactstrap'
-import Header from '../../components/layout/Header/Header'
-import { ThemeContext } from '../../theme/ThemeContext'
+import Header from '../../layout/Header/Header'
+import { ThemeContext } from '../../../theme/ThemeContext'
 
-export default React.memo(function Settings() {
+export default function Settings() {
 
   const { dark, toggleTheme } = useContext(ThemeContext)
   const page = useRef()
@@ -31,4 +31,4 @@ export default React.memo(function Settings() {
       </Container>
     </div>
   )
-})
+}

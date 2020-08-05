@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import axios from '../../api/index'
+import axios from '../../../api/index'
 import { Container, Row, Tooltip, Spinner, Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import Header from '../../components/layout/Header/Header'
-import SectionHeader from '../../components/layout/SectionHeader/SectionHeader'
+import Header from '../../layout/Header/Header'
+import SectionHeader from '../../layout/SectionHeader/SectionHeader'
 
-export default React.memo(function Profile(props) {
+export default function Profile(props) {
 
   const [ id ] = useState(props.match.params.id)
   const [ notFound, setNotFound ] = useState(false)
@@ -234,4 +234,4 @@ export default React.memo(function Profile(props) {
       </div>}
     </div>
   )
-})
+}

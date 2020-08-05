@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'reactstrap'
-import Header from '../../components/layout/Header/Header'
+import Header from '../../layout/Header/Header'
 
-export default React.memo(function Overview() {
+export default function Overview() {
   return (
     <div>
       <Header name={'Overview'} />
@@ -13,4 +13,4 @@ export default React.memo(function Overview() {
       </Container>
     </div>
   )
-})
+}

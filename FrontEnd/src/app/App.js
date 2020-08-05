@@ -1,15 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import NavBar from '../components/layout/NavBar/NavBar'
-import Overview from '../views/Overview/Overview'
-import Resources from '../views/Resources/Resources'
-import Help from '../views/Help/Help'
-import Settings from '../views/Settings/Settings'
-import AddResource from '../views/AddResource/AddResource'
-import EditResource from '../views/EditResource/EditResource'
-import Profile from '../views/Profile/Profile'
+import Overview from '../components/views/Overview/Overview'
+import Resources from '../components/views/Resources/Resources'
+import Help from '../components/views/Help/Help'
+import Settings from '../components/views/Settings/Settings'
+import AddResource from '../components/views/AddResource/AddResource'
+import EditResource from '../components/views/EditResource/EditResource'
+import Profile from '../components/views/Profile/Profile'
 import Footer from '../components/layout/Footer/Footer'
-import PageNotFound from '../error/PageNotFound/PageNotFound'
+import PageNotFound from '../components/errors/PageNotFound/PageNotFound'
 
 function App() {
 

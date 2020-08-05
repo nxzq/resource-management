@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
-import axios from '../../api/index'
+import axios from '../../../api/index'
 import { Container, Row, Col, Button, Table, Progress, Input, Spinner } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import Header from '../../components/layout/Header/Header'
-import SkillCollapse from '../../components/resourceTable/SkillCollapse/SkillCollapse'
-import FilterModal from '../../components/resourceTable/FilterModal/FilterModal'
-import ResumeModal from '../../components/resourceTable/ResumeModal/ResumeModal'
-import { FilterContext } from '../../contexts/FilterContext'
+import Header from '../../layout/Header/Header'
+import SkillCollapse from '../../resourceTable/SkillCollapse/SkillCollapse'
+import FilterModal from '../../resourceTable/FilterModal/FilterModal'
+import ResumeModal from '../../resourceTable/ResumeModal/ResumeModal'
+import { FilterContext } from '../../../contexts/FilterContext'
 
-export default React.memo(function Resources() {
+export default function Resources() {
 
   const { neededSkills, setNeededSkill, showSkillMatch, setShowSkillMatch } = useContext(FilterContext)
   const [ search, setSearch ] = useState('')
@@ -165,14 +165,4 @@ export default React.memo(function Resources() {
       </Container>
     </div>
   )
-})
-
-// export default React.memo(function Component() {
-
-//   return(
-//     <FilterContextProvider>
-//       <Resources />
-//     </FilterContextProvider>
-//   )
-
-// })
+}

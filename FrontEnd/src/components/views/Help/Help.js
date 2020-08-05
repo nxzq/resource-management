@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'reactstrap'
-import Header from '../../components/layout/Header/Header'
+import Header from '../../layout/Header/Header'
 
-export default React.memo(function Help() {
+export default function Help() {
 
   return (
     <div>
@@ -23,4 +23,4 @@ export default React.memo(function Help() {
       </Container>
     </div>
   )
-})
+}

@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import axios from '../../api/index'
+import axios from '../../../api/index'
 import { Redirect } from 'react-router-dom'
 import { Container, Form, Button } from 'reactstrap'
-import Header from '../../components/layout/Header/Header'
-import AboutForm from '../../components/forms/AboutForm/AboutForm'
-import SummaryForm from '../../components/forms/SummaryForm/SummaryForm'
-import EducationForm from '../../components/forms/EducationForm/EducationForm'
-import CertificationForm from '../../components/forms/CertificationForm/CertificationForm'
-import ExperienceForm from '../../components/forms/ExperienceForm/ExperienceForm'
-import ProjectForm from '../../components/forms/ProjectForm/ProjectForm'
-import SkillForm from '../../components/forms/SkillForm/SkillForm'
-import ResumeUpload from '../../components/forms/ResumeUpload/ResumeUpload'
-import SectionHeader from '../../components/layout/SectionHeader/SectionHeader'
-import DynamicSectionHeader from '../../components/layout/DynamicSectionHeader/DynamicSectionHeader'
+import Header from '../../layout/Header/Header'
+import AboutForm from '../../forms/AboutForm/AboutForm'
+import SummaryForm from '../../forms/SummaryForm/SummaryForm'
+import EducationForm from '../../forms/EducationForm/EducationForm'
+import CertificationForm from '../../forms/CertificationForm/CertificationForm'
+import ExperienceForm from '../../forms/ExperienceForm/ExperienceForm'
+import ProjectForm from '../../forms/ProjectForm/ProjectForm'
+import SkillForm from '../../forms/SkillForm/SkillForm'
+import ResumeUpload from '../../forms/ResumeUpload/ResumeUpload'
+import SectionHeader from '../../layout/SectionHeader/SectionHeader'
+import DynamicSectionHeader from '../../layout/DynamicSectionHeader/DynamicSectionHeader'
 
 class AddResource extends Component {
     state = {
@@ -235,4 +235,4 @@ class AddResource extends Component {
     };
 };
 
-export default React.memo(AddResource)
+export default AddResource
