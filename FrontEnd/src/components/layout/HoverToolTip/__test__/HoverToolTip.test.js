@@ -17,19 +17,20 @@ afterEach(cleanup)
 
 it('matches snapshot', async () => {
   const div = document.createElement('div')
-  const tree = renderer.create(
-    <HoverToolTip target={div} placement='bottom' content='TEST'/>
-  ).toJSON()
+  const tree = renderer
+    .create(<HoverToolTip target={div} placement="bottom" content="TEST" />)
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })
 
 it('renders without crashing', async () => {
   const div = document.createElement('div')
   ReactDOM.render(
-    <HoverToolTip target={div} placement='bottom' content='TEST'/>, div)
+    <HoverToolTip target={div} placement="bottom" content="TEST" />,
+    div
+  )
   ReactDOM.unmountComponentAtNode(div)
 })
-
 
 // it('hover fires toggle for tooltip', () => {
 //   const toggle = jest.fn();

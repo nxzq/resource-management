@@ -7,16 +7,16 @@ import FilterModal from '../FilterModal'
 afterEach(cleanup)
 
 describe('Test FilterModal', () => {
-
   it('matches snapshot', () => {
-    const tree = renderer.create(<FilterModal neededSkills={[ 'Java' ]}/>).toJSON()
+    const tree = renderer
+      .create(<FilterModal neededSkills={['Java']} />)
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
-  
+
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<FilterModal neededSkills={[ 'Java' ]} />, div)
+    ReactDOM.render(<FilterModal neededSkills={['Java']} />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

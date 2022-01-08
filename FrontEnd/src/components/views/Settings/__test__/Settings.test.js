@@ -4,18 +4,19 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import { render, cleanup } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import Settings from '../Settings'
-import ThemeContextProvider from '../../../theme/ThemeContext'
+import ThemeContextProvider from '../../../../contexts/theme/ThemeContext'
 
 afterEach(cleanup)
 
 describe('Test Settings', () => {
-
   it('matches snapshot', () => {
-    const tree = renderer.create(
-      <ThemeContextProvider dark={true}>
-        <Settings />
-      </ThemeContextProvider>
-    ).toJSON()
+    const tree = renderer
+      .create(
+        <ThemeContextProvider dark={true}>
+          <Settings />
+        </ThemeContextProvider>
+      )
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 
@@ -26,8 +27,9 @@ describe('Test Settings', () => {
         <BrowserRouter>
           <Settings />
         </BrowserRouter>
-      </ThemeContextProvider>, div)
+      </ThemeContextProvider>,
+      div
+    )
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

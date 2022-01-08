@@ -8,13 +8,14 @@ import Profile from '../Profile'
 afterEach(cleanup)
 
 describe('Test Profile', () => {
-
   it('matches snapshot', () => {
-    const tree = renderer.create(
-      <BrowserRouter>
-        <Route path='/profile/:id' component={Profile} />
-      </BrowserRouter>
-    ).toJSON()
+    const tree = renderer
+      .create(
+        <BrowserRouter>
+          <Route path="/profile/:id" component={Profile} />
+        </BrowserRouter>
+      )
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 
@@ -22,9 +23,10 @@ describe('Test Profile', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <BrowserRouter>
-        <Route path='/profile/:id' component={Profile} />
-      </BrowserRouter>, div)
+        <Route path="/profile/:id" component={Profile} />
+      </BrowserRouter>,
+      div
+    )
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

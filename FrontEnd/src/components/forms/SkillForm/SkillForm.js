@@ -4,21 +4,21 @@ import Select from 'react-select'
 import { Label, FormGroup, Row } from 'reactstrap'
 
 export default React.memo(function SkillForm({ skills, handleSkillsChange }) {
-
-  const [ availSkills, setAvailSkills ] = useState()
-  const [ selectedSkills, setSelectedSkills ] = useState(skills !== undefined ? skills.map(s => ({ label: s, value: s })) : '' )
+  const [availSkills, setAvailSkills] = useState()
+  const [selectedSkills, setSelectedSkills] = useState(
+    skills !== undefined ? skills.map((s) => ({ label: s, value: s })) : ''
+  )
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/skills')
-      .then(res => {
-        const resourceData = res.data.Skills.map(s => ({ label: s, value: s }))
-        setAvailSkills(resourceData)
-      })
+    axios.get('http://localhost:5353/api/skills').then((res) => {
+      const resourceData = res.data.Skills.map((s) => ({ label: s, value: s }))
+      setAvailSkills(resourceData)
+    })
   }, [])
 
   const handleChange = (selectedOption) => {
     if (selectedOption !== undefined && selectedOption !== null) {
-      setSelectedSkills([ ...selectedOption ])
+      setSelectedSkills([...selectedOption])
       updateSkills(selectedOption)
     }
     if (selectedOption === null) {
@@ -27,14 +27,23 @@ export default React.memo(function SkillForm({ skills, handleSkillsChange }) {
     }
   }
 
-  const updateSkills = (skills) => handleSkillsChange(skills ? skills.map(s => s.value) : [])
-    
+  const updateSkills = (skills) =>
+    handleSkillsChange(skills ? skills.map((s) => s.value) : [])
+
   return (
     <div>
       <Row>
         <FormGroup className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <Label for="skillsSelect">Skills</Label>
-          <Select isMulti id="select-search" options={availSkills} name="skillsSelect" onChange={handleChange} value={selectedSkills} data-testid="skillSelect" />
+          <Select
+            isMulti
+            id="select-search"
+            options={availSkills}
+            name="skillsSelect"
+            onChange={handleChange}
+            value={selectedSkills}
+            data-testid="skillSelect"
+          />
         </FormGroup>
       </Row>
       <hr />

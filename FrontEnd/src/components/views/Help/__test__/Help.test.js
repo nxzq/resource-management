@@ -7,7 +7,6 @@ import Help from '../Help'
 afterEach(cleanup)
 
 describe('Test Help', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<Help />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -18,5 +17,4 @@ describe('Test Help', () => {
     ReactDOM.render(<Help />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

@@ -4,7 +4,6 @@ import Header from '../../layout/Header/Header'
 import { ThemeContext } from '../../../contexts/theme/ThemeContext'
 
 export default function Settings() {
-
   const { dark, toggleTheme } = useContext(ThemeContext)
   const page = useRef()
 
@@ -17,7 +16,7 @@ export default function Settings() {
       page.current.focus()
     }
     // eslint-disable-next-line
-    }, [page.current])
+  }, [page.current])
 
   return (
     <div tabIndex={-1} ref={page} className="page">
@@ -25,7 +24,15 @@ export default function Settings() {
       <Container>
         <div>
           <FormGroup>
-            <CustomInput onChange={toggleTheme} onKeyDown={handleEnter} type="switch" checked={dark} id="darkModeSwitch" name="darkModeSwitch" label="Dark Mode (Beta)" />
+            <CustomInput
+              onChange={toggleTheme}
+              onKeyDown={handleEnter}
+              type="switch"
+              checked={dark}
+              id="darkModeSwitch"
+              name="darkModeSwitch"
+              label="Dark Mode (Beta)"
+            />
           </FormGroup>
         </div>
       </Container>

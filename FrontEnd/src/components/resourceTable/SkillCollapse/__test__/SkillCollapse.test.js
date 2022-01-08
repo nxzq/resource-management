@@ -7,7 +7,6 @@ import SkillCollapse from '../SkillCollapse'
 afterEach(cleanup)
 
 describe('Test SkillCollapse', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<SkillCollapse />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -18,5 +17,4 @@ describe('Test SkillCollapse', () => {
     ReactDOM.render(<SkillCollapse />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

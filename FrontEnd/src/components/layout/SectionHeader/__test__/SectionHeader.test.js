@@ -7,7 +7,6 @@ import SectionHeader from '../SectionHeader'
 afterEach(cleanup)
 
 describe('Test SectionHeader', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<SectionHeader />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -18,5 +17,4 @@ describe('Test SectionHeader', () => {
     ReactDOM.render(<SectionHeader />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

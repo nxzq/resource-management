@@ -7,7 +7,6 @@ import SummaryForm from '../SummaryForm'
 afterEach(cleanup)
 
 describe('Test SummaryForm', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<SummaryForm />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -18,5 +17,4 @@ describe('Test SummaryForm', () => {
     ReactDOM.render(<SummaryForm />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

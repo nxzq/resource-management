@@ -8,13 +8,14 @@ import EditResource from '../EditResource'
 afterEach(cleanup)
 
 describe('Test EditResource', () => {
-
   it('matches snapshot', () => {
-    const tree = renderer.create(
-      <BrowserRouter>
-        <Route path='/editresource/:id' component={EditResource} />
-      </BrowserRouter>
-    ).toJSON()
+    const tree = renderer
+      .create(
+        <BrowserRouter>
+          <Route path="/editresource/:id" component={EditResource} />
+        </BrowserRouter>
+      )
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 
@@ -22,9 +23,10 @@ describe('Test EditResource', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <BrowserRouter>
-        <Route path='/editresource/:id' component={EditResource} />
-      </BrowserRouter>, div)
+        <Route path="/editresource/:id" component={EditResource} />
+      </BrowserRouter>,
+      div
+    )
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

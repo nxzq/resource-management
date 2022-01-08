@@ -20,7 +20,9 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint \"src/**/*.js\" || exit 0",
     "lint:fix": "./node_modules/.bin/eslint --fix \"src/**/*.js\" || exit 0",
-    "coverage": "react-scripts test --coverage --watch-all=false --env=jsdom --testResultsProcessor=./node_modules/jest-html-reporter"
+    "coverage": "react-scripts test --coverage --watch-all=false --env=jsdom --testResultsProcessor=./node_modules/jest-html-reporter",
+    "prettier": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write ."
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -85,6 +87,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-react": "^7.20.0",
     "jest-html-reporter": "^3.1.0",
+    "prettier": "^2.5.1",
     "react-test-renderer": "^16.13.1"
   },
   "jest": {

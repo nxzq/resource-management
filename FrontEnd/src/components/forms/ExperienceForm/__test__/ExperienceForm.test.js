@@ -25,31 +25,41 @@ describe('Input Fields', () => {
     expect(queryByTestId('currentPositionCheck')).toBeFalsy
   })
   it('Title Input triggers handleExperienceChange onChange', async () => {
-    const { queryByPlaceholderText } = render(<ExperienceForm handleExperienceChange={handleExperienceChange} />)
+    const { queryByPlaceholderText } = render(
+      <ExperienceForm handleExperienceChange={handleExperienceChange} />
+    )
     const titleInput = queryByPlaceholderText('Title/Role')
     fireEvent.change(titleInput, { target: { value: 'test' } })
     expect(handleExperienceChange).toHaveBeenCalled()
   })
   it('Company Input triggers handleExperienceChange onChange', async () => {
-    const { queryByPlaceholderText } = render(<ExperienceForm handleExperienceChange={handleExperienceChange} />)
+    const { queryByPlaceholderText } = render(
+      <ExperienceForm handleExperienceChange={handleExperienceChange} />
+    )
     const companyInput = queryByPlaceholderText('Experience Association')
     fireEvent.change(companyInput, { target: { value: 'test' } })
     expect(handleExperienceChange).toHaveBeenCalled()
   })
   it('Start Date Input triggers handleExperienceChange onChange', async () => {
-    const { queryByTestId } = render(<ExperienceForm handleExperienceChange={handleExperienceChange} />)
+    const { queryByTestId } = render(
+      <ExperienceForm handleExperienceChange={handleExperienceChange} />
+    )
     const dateInput = queryByTestId('startDate')
     fireEvent.change(dateInput, { target: { value: '0001-01-01' } })
     expect(handleExperienceChange).toHaveBeenCalled()
   })
   it('End Date Input triggers handleExperienceChange onChange', async () => {
-    const { queryByTestId } = render(<ExperienceForm handleExperienceChange={handleExperienceChange} />)
+    const { queryByTestId } = render(
+      <ExperienceForm handleExperienceChange={handleExperienceChange} />
+    )
     const dateInput = queryByTestId('endDate')
     fireEvent.change(dateInput, { target: { value: '0001-01-01' } })
     expect(handleExperienceChange).toHaveBeenCalled()
   })
   it('Details Input triggers handleExperienceChange onChange', async () => {
-    const { queryByPlaceholderText } = render(<ExperienceForm handleExperienceChange={handleExperienceChange} />)
+    const { queryByPlaceholderText } = render(
+      <ExperienceForm handleExperienceChange={handleExperienceChange} />
+    )
     const detailsInput = queryByPlaceholderText('Experience Details')
     fireEvent.change(detailsInput, { target: { value: 'test' } })
     expect(handleExperienceChange).toHaveBeenCalled()
@@ -59,7 +69,9 @@ describe('Input Fields', () => {
 describe('Remove Button', () => {
   it('Button Removes Experience onClick', async () => {
     const removeExperience = jest.fn()
-    const { queryByText } = render(<ExperienceForm removeExperience={removeExperience} />)
+    const { queryByText } = render(
+      <ExperienceForm removeExperience={removeExperience} />
+    )
     fireEvent.click(queryByText('Remove Experience'))
     expect(removeExperience).toHaveBeenCalled()
   })

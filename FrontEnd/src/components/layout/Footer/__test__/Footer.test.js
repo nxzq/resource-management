@@ -7,7 +7,6 @@ import Footer from '../Footer'
 afterEach(cleanup)
 
 describe('Test Footer', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<Footer />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -18,5 +17,4 @@ describe('Test Footer', () => {
     ReactDOM.render(<Footer />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

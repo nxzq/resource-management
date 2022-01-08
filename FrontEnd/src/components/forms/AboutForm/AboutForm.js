@@ -1,22 +1,61 @@
 import React from 'react'
 import { Label, Input, FormGroup, Row } from 'reactstrap'
 
-export default React.memo(function AboutForm({ FirstName, LastName, Role, Email, Phone, LinkedIn, GitHub, PersonalSite, handleChange }) {
+export default React.memo(function AboutForm({
+  FirstName,
+  LastName,
+  Role,
+  Email,
+  Phone,
+  LinkedIn,
+  GitHub,
+  PersonalSite,
+  handleChange,
+}) {
   return (
     <div>
       <Row>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="FirstName">First Name</Label>
-          <Input autoFocus={(FirstName === '' ? true : false)} required type="text" spellCheck="false" name="FirstName" id="FirstName" placeholder="First Name" value={FirstName} onChange={handleChange} />
+          <Input
+            autoFocus={FirstName === '' ? true : false}
+            required
+            type="text"
+            spellCheck="false"
+            name="FirstName"
+            id="FirstName"
+            placeholder="First Name"
+            value={FirstName}
+            onChange={handleChange}
+          />
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="LastName">Last Name</Label>
-          <Input required type="text" spellCheck="false" name="LastName" id="LastName" placeholder="Last Name" value={LastName} onChange={handleChange} />
+          <Input
+            required
+            type="text"
+            spellCheck="false"
+            name="LastName"
+            id="LastName"
+            placeholder="Last Name"
+            value={LastName}
+            onChange={handleChange}
+          />
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="Role">Role</Label>
-          <Input required type="select" name="Role" id="Role" placeholder="Title/Role" value={Role} onChange={handleChange} >
-            <option value='' defaultValue disabled hidden>Please Select</option>
+          <Input
+            required
+            type="select"
+            name="Role"
+            id="Role"
+            placeholder="Title/Role"
+            value={Role}
+            onChange={handleChange}
+          >
+            <option value="" defaultValue disabled hidden>
+              Please Select
+            </option>
             <option>Business Analyst</option>
             <option>Data Analyst</option>
             <option>DevOps Engineer</option>
@@ -30,23 +69,61 @@ export default React.memo(function AboutForm({ FirstName, LastName, Role, Email,
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="Email">Email</Label>
-          <Input required type="email" name="Email" id="Email" placeholder="Email Address" value={Email} onChange={handleChange} />
+          <Input
+            required
+            type="email"
+            name="Email"
+            id="Email"
+            placeholder="Email Address"
+            value={Email}
+            onChange={handleChange}
+          />
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="Phone">Phone</Label>
-          <Input required type="tel" pattern="^[0-9]*$" name="Phone" id="Phone" placeholder="Phone Number (##########)" value={Phone} onChange={handleChange} />
+          <Input
+            required
+            type="tel"
+            pattern="^[0-9]*$"
+            name="Phone"
+            id="Phone"
+            placeholder="Phone Number (##########)"
+            value={Phone}
+            onChange={handleChange}
+          />
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="LinkedIn">LinkedIn</Label>
-          <Input type="url" name="LinkedIn" id="LinkedIn" placeholder="https://www.linkedin.com/in/yourlink (Optional)" value={LinkedIn} onChange={handleChange} />
+          <Input
+            type="url"
+            name="LinkedIn"
+            id="LinkedIn"
+            placeholder="https://www.linkedin.com/in/yourlink (Optional)"
+            value={LinkedIn}
+            onChange={handleChange}
+          />
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="GitHub">GitHub</Label>
-          <Input type="url" name="GitHub" id="GitHub" placeholder="https://www.github.com/youraccount (Optional)" value={GitHub} onChange={handleChange} />
+          <Input
+            type="url"
+            name="GitHub"
+            id="GitHub"
+            placeholder="https://www.github.com/youraccount (Optional)"
+            value={GitHub}
+            onChange={handleChange}
+          />
         </FormGroup>
         <FormGroup className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <Label for="PersonalSite">Personal Website</Label>
-          <Input type="url" name="PersonalSite" id="PersonalSite" placeholder="https://www.yoursiteurl.com (Optional)" value={PersonalSite} onChange={handleChange} />
+          <Input
+            type="url"
+            name="PersonalSite"
+            id="PersonalSite"
+            placeholder="https://www.yoursiteurl.com (Optional)"
+            value={PersonalSite}
+            onChange={handleChange}
+          />
         </FormGroup>
       </Row>
       <hr />

@@ -7,7 +7,6 @@ import ResumeModal from '../ResumeModal'
 afterEach(cleanup)
 
 describe('Test ResumeModal', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<ResumeModal />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -18,5 +17,4 @@ describe('Test ResumeModal', () => {
     ReactDOM.render(<ResumeModal />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-
 })

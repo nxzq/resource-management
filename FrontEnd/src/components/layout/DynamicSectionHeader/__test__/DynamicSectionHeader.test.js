@@ -7,7 +7,6 @@ import DynamicSectionHeader from '../DynamicSectionHeader'
 afterEach(cleanup)
 
 describe('Test DynamicSectionHeader', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<DynamicSectionHeader />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -23,5 +22,4 @@ describe('Test DynamicSectionHeader', () => {
     const { getByTestId } = render(<DynamicSectionHeader name={'test'} />)
     expect(getByTestId('dynamic-header-name').textContent).toBe('test')
   })
-
 })

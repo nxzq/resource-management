@@ -7,7 +7,6 @@ import Header from '../Header'
 afterEach(cleanup)
 
 describe('Test Header', () => {
-
   it('matches snapshot', () => {
     const tree = renderer.create(<Header />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -23,5 +22,4 @@ describe('Test Header', () => {
     const { getByTestId } = render(<Header name={'test'} />)
     expect(getByTestId('header-name').textContent).toBe('test')
   })
-
 })

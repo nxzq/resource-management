@@ -4,18 +4,20 @@ import { BrowserRouter } from 'react-router-dom'
 import { render, cleanup, fireEvent, act } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import NavBar from '../NavBar'
-import ThemeContextProvider from '../../../../theme/ThemeContext'
+import ThemeContextProvider from '../../../../contexts/theme/ThemeContext'
 
 afterEach(cleanup)
 
 it('matches snapshot', () => {
-  const tree = renderer.create(
-    <ThemeContextProvider>
-      <BrowserRouter>
-        <NavBar />
-      </BrowserRouter>
-    </ThemeContextProvider>
-  ).toJSON()
+  const tree = renderer
+    .create(
+      <ThemeContextProvider>
+        <BrowserRouter>
+          <NavBar />
+        </BrowserRouter>
+      </ThemeContextProvider>
+    )
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })
 
@@ -26,7 +28,9 @@ it('renders without crashing', () => {
       <BrowserRouter>
         <NavBar />
       </BrowserRouter>
-    </ThemeContextProvider>, div)
+    </ThemeContextProvider>,
+    div
+  )
   ReactDOM.unmountComponentAtNode(div)
 })
 
@@ -37,12 +41,16 @@ it('hover fires toggle for tooltip for help', () => {
       <BrowserRouter>
         <NavBar />
       </BrowserRouter>
-    </ThemeContextProvider>)
+    </ThemeContextProvider>
+  )
   act(() => {
-    fireEvent(getByTestId('helpNav'), new MouseEvent('mouseover', {
-      bubbles: true,
-      cancelable: true,
-    }))
+    fireEvent(
+      getByTestId('helpNav'),
+      new MouseEvent('mouseover', {
+        bubbles: true,
+        cancelable: true,
+      })
+    )
   })
   expect(toggle).toHaveBeenCalled()
 })
@@ -54,12 +62,16 @@ it('hover fires toggle for tooltip for settings', () => {
       <BrowserRouter>
         <NavBar />
       </BrowserRouter>
-    </ThemeContextProvider>)
+    </ThemeContextProvider>
+  )
   act(() => {
-    fireEvent(getByTestId('settingsNav'), new MouseEvent('mouseover', {
-      bubbles: true,
-      cancelable: true,
-    }))
+    fireEvent(
+      getByTestId('settingsNav'),
+      new MouseEvent('mouseover', {
+        bubbles: true,
+        cancelable: true,
+      })
+    )
   })
   expect(toggle).toHaveBeenCalled()
 })

@@ -3,7 +3,7 @@ export const lightTheme = [
   '--secondary: #333',
   '--text: #212529',
   '--input: #f2f2f2',
-  '--background: #ffffff'
+  '--background: #ffffff',
 ]
 
 export const darkTheme = [
@@ -11,5 +11,5 @@ export const darkTheme = [
   '--secondary: #414141',
   '--text: #e6e6e6',
   '--input: #414141',
-  '--background: #313131'
+  '--background: #313131',
 ]
