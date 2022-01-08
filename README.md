@@ -14,7 +14,7 @@ Light theme             |  Dark theme
 
 ```
   cd BackEnd
-  npm i
+  npm ci
   npm start
 ```
 
@@ -22,6 +22,6 @@ Light theme             |  Dark theme
 
 ```
   cd FrontEnd
-  npm i 
+  npm ci 
   npm start
 ```
