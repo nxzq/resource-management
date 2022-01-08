@@ -1,25 +1,21 @@
-# ResourceManagement
+# resource-management
 
-React Application with lightweight Node.js and Express Back-End <br/> 
+React Application with lightweight Node.js and Express Back-End
 
-### To Demo <br/>
-* BackEnd (http://localhost:5000): <br/>
+## To Demo Locally
+
+* BackEnd (http://localhost:5353):
+
 ```
   cd BackEnd
   npm i
   npm start
 ```
-* FrontEnd (http://localhost:3000): <br/>
+
+* FrontEnd (http://localhost:3000): 
+
 ```
   cd FrontEnd
   npm i 
   npm start
 ```
-
-### TODO <br/>
-* Pagination <br/>
-* D3.js Graphs on Overview Page <br/>
-* Form Validation <br/>
-* Populate Help Page <br/>
-* Add more Skills <br/>
-* Edit Dark Theme CSS <br/>

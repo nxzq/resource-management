@@ -39,7 +39,7 @@ if (cluster.isMaster) {
     } // else okay
   });
 
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 5353;
 
   // requests will be balanced between cores so use the same port
   app.listen(PORT, () => {
