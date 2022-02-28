@@ -3,11 +3,18 @@ import { lightTheme, darkTheme } from './themes'
 
 export const ThemeContext = createContext()
 
+const getInitialTheme = () => {
+  const themePreference = localStorage.getItem('dark')
+  if (themePreference) return !!JSON.stringify(themePreference)
+  else {
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark)')
+    if (userMedia.matches) return true
+    return false
+  }
+}
+
 export default function ThemeContextProvider(props) {
-  const themePreference = localStorage.getItem('Theme')
-  const [dark, setDark] = useState(
-    themePreference ? JSON.parse(themePreference) : false
-  )
+  const [dark, setDark] = useState(getInitialTheme())
   const toggleTheme = () => setDark(!dark)
 
   const applyTheme = (theme) => {
@@ -17,7 +24,7 @@ export default function ThemeContextProvider(props) {
 
   useLayoutEffect(() => {
     applyTheme(dark ? darkTheme : lightTheme)
-    localStorage.setItem('Theme', JSON.stringify(dark))
+    localStorage.setItem('dark', JSON.stringify(dark))
   }, [dark])
 
   return (
