@@ -1,0 +1,594 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div>
+    <hr />
+    <h1
+      className="text-center"
+      data-testid="header-name"
+    >
+      Add Resource Form
+    </h1>
+    <hr />
+  </div>
+  <div
+    className="ResourceForm container"
+  >
+    <form
+      className=""
+      onSubmit={[Function]}
+    >
+      <div>
+        <h3>
+          About
+        </h3>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="FirstName"
+            >
+              First Name
+            </label>
+            <input
+              autoFocus={true}
+              className="form-control"
+              id="FirstName"
+              name="FirstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={true}
+              spellCheck="false"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="LastName"
+            >
+              Last Name
+            </label>
+            <input
+              className="form-control"
+              id="LastName"
+              name="LastName"
+              onChange={[Function]}
+              placeholder="Last Name"
+              required={true}
+              spellCheck="false"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="Role"
+            >
+              Role
+            </label>
+            <select
+              className="form-control"
+              id="Role"
+              name="Role"
+              onChange={[Function]}
+              placeholder="Title/Role"
+              required={true}
+              value=""
+            >
+              <option
+                defaultValue={true}
+                disabled={true}
+                hidden={true}
+                value=""
+              >
+                Please Select
+              </option>
+              <option>
+                Business Analyst
+              </option>
+              <option>
+                Data Analyst
+              </option>
+              <option>
+                DevOps Engineer
+              </option>
+              <option>
+                Jr. Software Developer
+              </option>
+              <option>
+                Manager
+              </option>
+              <option>
+                Software Engineer
+              </option>
+              <option>
+                Solutions Architect
+              </option>
+              <option>
+                Sr. Technical Lead
+              </option>
+              <option>
+                UI/UX Developer
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="Email"
+            >
+              Email
+            </label>
+            <input
+              className="form-control"
+              id="Email"
+              name="Email"
+              onChange={[Function]}
+              placeholder="Email Address"
+              required={true}
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="Phone"
+            >
+              Phone
+            </label>
+            <input
+              className="form-control"
+              id="Phone"
+              name="Phone"
+              onChange={[Function]}
+              pattern="^[0-9]*$"
+              placeholder="Phone Number (##########)"
+              required={true}
+              type="tel"
+              value=""
+            />
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="LinkedIn"
+            >
+              LinkedIn
+            </label>
+            <input
+              className="form-control"
+              id="LinkedIn"
+              name="LinkedIn"
+              onChange={[Function]}
+              placeholder="https://www.linkedin.com/in/yourlink (Optional)"
+              type="url"
+              value=""
+            />
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="GitHub"
+            >
+              GitHub
+            </label>
+            <input
+              className="form-control"
+              id="GitHub"
+              name="GitHub"
+              onChange={[Function]}
+              placeholder="https://www.github.com/youraccount (Optional)"
+              type="url"
+              value=""
+            />
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="PersonalSite"
+            >
+              Personal Website
+            </label>
+            <input
+              className="form-control"
+              id="PersonalSite"
+              name="PersonalSite"
+              onChange={[Function]}
+              placeholder="https://www.yoursiteurl.com (Optional)"
+              type="url"
+              value=""
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div>
+        <h3>
+          Resume
+        </h3>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          >
+            <div
+              className="custom-file"
+            >
+              <input
+                accept="application/pdf"
+                className="custom-file-input"
+                id="ResumeUpload"
+                name="ResumeUpload"
+                onChange={[Function]}
+                type="file"
+                value=""
+              />
+              <label
+                className="custom-file-label"
+                htmlFor="ResumeUpload"
+              >
+                Choose file
+              </label>
+            </div>
+            <small
+              className="form-text text-muted"
+            >
+              Please upload your most up to date resume in PDF format.
+            </small>
+          </div>
+          <div
+            className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group"
+          />
+        </div>
+        <hr />
+      </div>
+      <div>
+        <h3>
+          Summary
+        </h3>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="form-group"
+        >
+          <label
+            className=""
+            htmlFor="SummaryText"
+          >
+            Summary
+          </label>
+          <textarea
+            className="form-control"
+            id="SummaryText"
+            name="SummaryText"
+            onChange={[Function]}
+            placeholder="Summary (Optional)"
+            value=""
+          />
+        </div>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-9"
+          >
+            <h3
+              data-testid="dynamic-header-name"
+            >
+              Education
+            </h3>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            <button
+              aria-label={null}
+              className="section-header shadow-none btn btn-primary"
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="fas fa-plus-circle fa-lg"
+                style={
+                  Object {
+                    "color": "inherit",
+                  }
+                }
+              />
+                Add New 
+              Education
+            </button>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-9"
+          >
+            <h3
+              data-testid="dynamic-header-name"
+            >
+              Certifications
+            </h3>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            <button
+              aria-label={null}
+              className="section-header shadow-none btn btn-primary"
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="fas fa-plus-circle fa-lg"
+                style={
+                  Object {
+                    "color": "inherit",
+                  }
+                }
+              />
+                Add New 
+              Certifications
+            </button>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-9"
+          >
+            <h3
+              data-testid="dynamic-header-name"
+            >
+              Experience
+            </h3>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            <button
+              aria-label={null}
+              className="section-header shadow-none btn btn-primary"
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="fas fa-plus-circle fa-lg"
+                style={
+                  Object {
+                    "color": "inherit",
+                  }
+                }
+              />
+                Add New 
+              Experience
+            </button>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-9"
+          >
+            <h3
+              data-testid="dynamic-header-name"
+            >
+              Projects
+            </h3>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            <button
+              aria-label={null}
+              className="section-header shadow-none btn btn-primary"
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="fas fa-plus-circle fa-lg"
+                style={
+                  Object {
+                    "color": "inherit",
+                  }
+                }
+              />
+                Add New 
+              Projects
+            </button>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div>
+        <h3>
+          Skills
+        </h3>
+        <hr />
+      </div>
+      <div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"
+          >
+            <label
+              className=""
+              htmlFor="skillsSelect"
+            >
+              Skills
+            </label>
+            <div
+              className=" css-2b097c-container"
+              id="select-search"
+              onKeyDown={[Function]}
+            >
+              <div
+                className=" css-yk16xz-control"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                <div
+                  className=" css-g1d714-ValueContainer"
+                >
+                  <div
+                    className=" css-1wa3eu0-placeholder"
+                  >
+                    Select...
+                  </div>
+                  <div
+                    className="css-b8ldur-Input"
+                  >
+                    <div
+                      className=""
+                      style={
+                        Object {
+                          "display": "inline-block",
+                        }
+                      }
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        autoCapitalize="none"
+                        autoComplete="off"
+                        autoCorrect="off"
+                        disabled={false}
+                        id="react-select-2-input"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        spellCheck="false"
+                        style={
+                          Object {
+                            "background": 0,
+                            "border": 0,
+                            "boxSizing": "content-box",
+                            "color": "inherit",
+                            "fontSize": "inherit",
+                            "label": "input",
+                            "opacity": 1,
+                            "outline": 0,
+                            "padding": 0,
+                            "width": "1px",
+                          }
+                        }
+                        tabIndex="0"
+                        type="text"
+                        value=""
+                      />
+                      <div
+                        style={
+                          Object {
+                            "height": 0,
+                            "left": 0,
+                            "overflow": "scroll",
+                            "position": "absolute",
+                            "top": 0,
+                            "visibility": "hidden",
+                            "whiteSpace": "pre",
+                          }
+                        }
+                      >
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className=" css-1hb7zxy-IndicatorsContainer"
+                >
+                  <span
+                    className=" css-1okebmr-indicatorSeparator"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className=" css-tlfecz-indicatorContainer"
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="css-6q0nyr-Svg"
+                      focusable="false"
+                      height={20}
+                      viewBox="0 0 20 20"
+                      width={20}
+                    >
+                      <path
+                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <input
+                  name="skillsSelect"
+                  type="hidden"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <button
+        aria-label={null}
+        className="blue-button col-md-12 btn btn-primary"
+        onClick={[Function]}
+        type="submit"
+      >
+        Submit Form
+      </button>
+    </form>
+  </div>
+</div>
+`;
