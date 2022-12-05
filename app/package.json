@@ -2,7 +2,7 @@
   "name": "resource-management-app",
   "version": "0.1.0",
   "private": true,
-  "author": "niknakz",
+  "author": "niqxyz",
   "dependencies": {
     "axios": "^0.21.2",
     "react": "^16.13.1",
