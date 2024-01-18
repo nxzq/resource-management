@@ -1,12 +1,12 @@
 # resource-management
 
-![demo](https://raw.githubusercontent.com/nxzq/misc/main/resource-management/demo.gif)
+![demo](/assets/demo.gif)
 
-React Application with lightweight Node.js and Express API that provides resource management (basic crud operations) and skill matching.
+React Application with lightweight Node.js and Express API that provides resource management (basic crud operations) and skill matching
 
 Light theme             |  Dark theme
 :-------------------------:|:-------------------------:
-![light theme](https://raw.githubusercontent.com/nxzq/misc/main/resource-management/light-theme.png)  |  ![dark theme](https://raw.githubusercontent.com/nxzq/misc/main/resource-management/dark-theme.png)
+![light theme](/assets/light-theme.png)  |  ![dark theme](/assets/dark-theme.png)
 
 ## To Use Locally
 

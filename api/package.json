@@ -1,10 +1,6 @@
 {
   "name": "resource-management-api",
   "version": "1.0.0",
-  "author": "nxzq",
-  "contributers": [
-    "Caleb Reiter"
-  ],
   "description": "",
   "main": "index.js",
   "scripts": {
